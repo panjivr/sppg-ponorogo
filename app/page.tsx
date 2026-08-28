@@ -2,6 +2,7 @@
 
 import { useEffect, useMemo, useState } from "react";
 import dynamic from "next/dynamic";
+import Link from "next/link";
 import type { Sppg, CandidateRuko } from "@/lib/types";
 import type { LatLng } from "@/lib/geo";
 import {
@@ -104,13 +105,21 @@ export default function Home() {
     <main className="flex h-screen flex-col md:flex-row">
       {/* Sidebar */}
       <aside className="flex w-full flex-col border-b border-slate-200 bg-white md:h-full md:w-96 md:border-b-0 md:border-r">
-        <header className="bg-brand px-4 py-3 text-white">
-          <h1 className="text-base font-bold leading-tight">
-            Peta SPPG Ponorogo
-          </h1>
-          <p className="text-xs text-brand-light">
-            Analisis lokasi ruko supplier dapur MBG
-          </p>
+        <header className="flex items-center justify-between gap-2 bg-brand px-4 py-3 text-white">
+          <div>
+            <h1 className="text-base font-bold leading-tight">
+              Peta SPPG Ponorogo
+            </h1>
+            <p className="text-xs text-brand-light">
+              Analisis lokasi ruko supplier dapur MBG
+            </p>
+          </div>
+          <Link
+            href="/supplier"
+            className="shrink-0 rounded-full border border-white/40 px-3 py-1.5 text-xs font-medium hover:bg-white/10"
+          >
+            🏪 Katalog
+          </Link>
         </header>
 
         <nav className="flex border-b border-slate-200 text-sm">
