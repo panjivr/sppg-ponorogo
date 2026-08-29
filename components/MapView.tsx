@@ -24,8 +24,9 @@ const PONOROGO_CENTER: [number, number] = [-7.868, 111.462];
 
 const STATUS_COLOR: Record<string, string> = {
   operasional: "#16a34a",
-  pembangunan: "#f59e0b",
-  rencana: "#64748b",
+  akan: "#f59e0b",
+  berhenti: "#94a3b8",
+  suspend: "#ef4444",
 };
 
 function dotIcon(color: string, highlight: boolean): L.DivIcon {
@@ -159,14 +160,29 @@ export default function MapView({
           <Popup>
             <div className="text-sm">
               <div className="font-semibold">{s.nama}</div>
+              {s.desa && (
+                <div className="text-xs text-slate-500">
+                  {s.desa}, Kec. {s.kecamatan}
+                </div>
+              )}
               <div className="text-slate-600">{s.alamat}</div>
               <div className="mt-1">
                 Status: <span className="font-medium">{s.status}</span>
               </div>
-              <div>Estimasi porsi/hari: {s.porsi.toLocaleString("id-ID")}</div>
+              <div>Penerima manfaat: {s.porsi.toLocaleString("id-ID")}</div>
+              {s.gmaps && (
+                <a
+                  href={s.gmaps}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-1 inline-block font-medium text-blue-600 underline"
+                >
+                  📍 Buka di Google Maps
+                </a>
+              )}
               {s.perkiraan && (
                 <div className="mt-1 text-amber-600">
-                  ⚠ koordinat perkiraan
+                  ⚠ koordinat perkiraan (klik Google Maps untuk titik pasti)
                 </div>
               )}
             </div>

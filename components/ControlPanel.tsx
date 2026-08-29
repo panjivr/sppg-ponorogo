@@ -82,8 +82,9 @@ export default function ControlPanel({
       <div className="border-t border-slate-200 pt-2 text-xs">
         <div className="mb-1 font-medium">Keterangan</div>
         <Legend color="#16a34a" text="Operasional" />
-        <Legend color="#f59e0b" text="Pembangunan" />
-        <Legend color="#64748b" text="Rencana" />
+        <Legend color="#f59e0b" text="Akan operasional" />
+        <Legend color="#94a3b8" text="Berhenti sementara" />
+        <Legend color="#ef4444" text="Suspend" />
       </div>
     </div>
   );

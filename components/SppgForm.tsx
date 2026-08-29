@@ -135,8 +135,9 @@ export default function SppgForm({
           }
         >
           <option value="operasional">Operasional</option>
-          <option value="pembangunan">Pembangunan</option>
-          <option value="rencana">Rencana</option>
+          <option value="akan">Akan operasional</option>
+          <option value="berhenti">Berhenti sementara</option>
+          <option value="suspend">Suspend</option>
         </select>
         <input
           className={input}

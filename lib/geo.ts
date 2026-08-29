@@ -28,10 +28,12 @@ export function bobotStatus(s: Sppg): number {
   switch (s.status) {
     case "operasional":
       return 1;
-    case "pembangunan":
-      return 0.6;
-    case "rencana":
-      return 0.4;
+    case "akan":
+      return 0.5;
+    case "berhenti":
+      return 0.2;
+    case "suspend":
+      return 0.2;
     default:
       return 0.4;
   }
