@@ -12,7 +12,16 @@ import {
 } from "@/lib/sppgMeta";
 
 /** Kartu rincian lengkap satu dapur SPPG. */
-export default function SppgDetailCard({ s }: { s: Sppg }) {
+export default function SppgDetailCard({
+  s,
+  yayasanCount,
+  onShowYayasan,
+}: {
+  s: Sppg;
+  /** jumlah dapur lain di yayasan yang sama (untuk info "benang merah"). */
+  yayasanCount?: number;
+  onShowYayasan?: () => void;
+}) {
   const meta = statusMeta(s.status);
   const d = s.detail ?? {};
   const pm = s.pm ?? {};
@@ -136,6 +145,14 @@ export default function SppgDetailCard({ s }: { s: Sppg }) {
           wa={picWa}
         />
         <Field label="Yayasan pengelola" value={d.yayasan} />
+        {d.yayasan && yayasanCount != null && yayasanCount > 0 && (
+          <button
+            onClick={onShowYayasan}
+            className="flex w-full items-center gap-1.5 rounded-md bg-brand/5 px-2.5 py-1.5 text-left text-[11px] font-medium text-brand hover:bg-brand/10"
+          >
+            🔗 Yayasan ini mengelola {yayasanCount + 1} dapur — lihat benang merahnya
+          </button>
+        )}
         <Field label="Bank (Virtual Account)" value={d.bankVa} />
       </div>
 

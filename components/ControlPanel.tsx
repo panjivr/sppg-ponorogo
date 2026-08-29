@@ -1,16 +1,21 @@
 "use client";
 
+import { useMemo } from "react";
 import type { Sppg } from "@/lib/types";
-import { computeStats, fmt, STATUS_META } from "@/lib/sppgMeta";
+import { computeStats, fmt, STATUS_META, yayasanGroups } from "@/lib/sppgMeta";
 
 interface Props {
   sppgList: Sppg[];
   radiusKm: number;
   showHeatmap: boolean;
   showRekomendasi: boolean;
+  showYayasan: boolean;
+  selectedYayasan: string | null;
   onRadiusChange: (v: number) => void;
   onToggleHeatmap: (v: boolean) => void;
   onToggleRekomendasi: (v: boolean) => void;
+  onToggleYayasan: (v: boolean) => void;
+  onSelectYayasan: (nama: string | null) => void;
 }
 
 export default function ControlPanel({
@@ -18,11 +23,16 @@ export default function ControlPanel({
   radiusKm,
   showHeatmap,
   showRekomendasi,
+  showYayasan,
+  selectedYayasan,
   onRadiusChange,
   onToggleHeatmap,
   onToggleRekomendasi,
+  onToggleYayasan,
+  onSelectYayasan,
 }: Props) {
   const s = computeStats(sppgList);
+  const groups = useMemo(() => yayasanGroups(sppgList), [sppgList]);
 
   return (
     <div className="space-y-4">
@@ -137,6 +147,62 @@ export default function ControlPanel({
             ⭐ titik pusat berbobot · 🔴 3 area dengan dapur terbanyak dalam radius{" "}
             {radiusKm} km. Perkiraan berdasarkan sebaran &amp; status dapur.
           </p>
+        )}
+      </section>
+
+      {/* Jaringan yayasan — benang merah */}
+      <section className="rounded-lg border border-slate-200 p-3">
+        <div className="flex items-center justify-between">
+          <h2 className="text-xs font-semibold uppercase tracking-wide text-slate-400">
+            Jaringan yayasan
+          </h2>
+          <span className="text-[11px] text-slate-400">
+            {groups.length} yayasan · {groups.reduce((a, g) => a + g.items.length, 0)} dapur
+          </span>
+        </div>
+        <Toggle
+          checked={showYayasan}
+          onChange={onToggleYayasan}
+          label="Tampilkan benang merah antar dapur"
+        />
+        <p className="mt-0.5 text-[11px] text-slate-500">
+          Garis menghubungkan dapur yang dikelola yayasan yang sama.
+        </p>
+
+        {showYayasan && (
+          <div className="mt-2 max-h-56 space-y-0.5 overflow-y-auto pr-1">
+            {selectedYayasan && (
+              <button
+                onClick={() => onSelectYayasan(null)}
+                className="mb-1 w-full rounded bg-slate-100 px-2 py-1 text-[11px] font-medium text-slate-600 hover:bg-slate-200"
+              >
+                ← Tampilkan semua jaringan
+              </button>
+            )}
+            {groups.map((g) => {
+              const active = selectedYayasan === g.nama;
+              return (
+                <button
+                  key={g.nama}
+                  onClick={() => onSelectYayasan(active ? null : g.nama)}
+                  className={`flex w-full items-center gap-2 rounded px-2 py-1 text-left text-xs ${
+                    active ? "bg-slate-100 ring-1 ring-slate-300" : "hover:bg-slate-50"
+                  }`}
+                >
+                  <span
+                    className="inline-block h-3 w-3 shrink-0 rounded-full border border-white shadow-sm"
+                    style={{ background: g.color }}
+                  />
+                  <span className="min-w-0 flex-1 truncate text-slate-700">
+                    {g.nama}
+                  </span>
+                  <span className="shrink-0 rounded-full bg-slate-100 px-1.5 text-[10px] font-semibold text-slate-500">
+                    {g.items.length}
+                  </span>
+                </button>
+              );
+            })}
+          </div>
         )}
       </section>
 

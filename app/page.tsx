@@ -37,6 +37,8 @@ export default function Home() {
   const [radiusKm, setRadiusKm] = useState(3);
   const [showHeatmap, setShowHeatmap] = useState(false);
   const [showRekomendasi, setShowRekomendasi] = useState(false);
+  const [showYayasan, setShowYayasan] = useState(false);
+  const [selectedYayasan, setSelectedYayasan] = useState<string | null>(null);
   const [tab, setTab] = useState<Tab>("analisis");
   const [placing, setPlacing] = useState<PlacingMode>("none");
   const [editingSppg, setEditingSppg] = useState<Sppg | null>(null);
@@ -158,9 +160,16 @@ export default function Home() {
               radiusKm={radiusKm}
               showHeatmap={showHeatmap}
               showRekomendasi={showRekomendasi}
+              showYayasan={showYayasan}
+              selectedYayasan={selectedYayasan}
               onRadiusChange={setRadiusKm}
               onToggleHeatmap={setShowHeatmap}
               onToggleRekomendasi={setShowRekomendasi}
+              onToggleYayasan={(v) => {
+                setShowYayasan(v);
+                if (!v) setSelectedYayasan(null);
+              }}
+              onSelectYayasan={setSelectedYayasan}
             />
           )}
 
@@ -220,6 +229,11 @@ export default function Home() {
                   setShowForm(true);
                 }}
                 onFocus={(s) => setFocusPoint({ lat: s.lat, lng: s.lng })}
+                onShowYayasan={(nama) => {
+                  setShowYayasan(true);
+                  setSelectedYayasan(nama);
+                  setTab("analisis");
+                }}
               />
             ))}
         </div>
@@ -252,8 +266,14 @@ export default function Home() {
           radiusKm={radiusKm}
           showHeatmap={showHeatmap}
           showRekomendasi={showRekomendasi}
+          showYayasan={showYayasan}
+          selectedYayasan={selectedYayasan}
           focusPoint={focusPoint}
           onMapClick={handleMapClick}
+          onSelectYayasan={(nama) => {
+            setShowYayasan(true);
+            setSelectedYayasan(nama);
+          }}
           onSelectRuko={(id) => {
             setSelectedRukoId(id);
             setTab("ruko");

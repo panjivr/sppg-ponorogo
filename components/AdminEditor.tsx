@@ -3,7 +3,7 @@
 import { useMemo, useState } from "react";
 import dynamic from "next/dynamic";
 import type { Sppg, SppgStatus, SppgPerijinan } from "@/lib/types";
-import { recalcPM, fmt, STATUS_META, PERIJINAN_ITEMS } from "@/lib/sppgMeta";
+import { recalcPM, fmt, STATUS_META, PERIJINAN_ITEMS, parseGmaps } from "@/lib/sppgMeta";
 
 const IZIN_OPTS = ["", "SUDAH", "PROSES", "BELUM PENGAJUAN"];
 
@@ -206,6 +206,28 @@ export default function AdminEditor({
             <a href={f.gmaps} target="_blank" rel="noopener noreferrer" className="font-medium text-blue-600 underline">Google Maps</a>
           ) : ("Google Maps")}
           {" "}agar presisi.
+        </p>
+        {/* Tempel dari Google Maps → set titik presisi */}
+        <div className="mt-2 flex gap-2">
+          <input
+            className={inp}
+            placeholder="Tempel URL / koordinat Google Maps (mis. -7.9603, 111.4689)"
+            onChange={(e) => {
+              const p = parseGmaps(e.target.value);
+              if (p) {
+                setF((s) => ({
+                  ...s,
+                  lat: p.lat.toFixed(6),
+                  lng: p.lng.toFixed(6),
+                  perkiraan: false,
+                }));
+                e.target.value = "";
+              }
+            }}
+          />
+        </div>
+        <p className="text-[11px] text-slate-400">
+          Buka lokasi di Google Maps, salin URL-nya (atau ketik &quot;lat, lng&quot;), tempel di sini — titik langsung disamakan.
         </p>
         <div className="mt-2">
           <CoordPicker
