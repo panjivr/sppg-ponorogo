@@ -11,7 +11,31 @@
     "lat": -7.835433,
     "lng": 111.500277,
     "perkiraan": true,
-    "sumber": "Database SPPG Kab. Ponorogo"
+    "sumber": "Database SPPG Kab. Ponorogo",
+    "pm": {
+      "pmSatdikTotal": 2120,
+      "pmSiswa": 1899,
+      "pmGuruTendik": 221,
+      "pmSatdikKelompok": 22,
+      "pm3bTotal": 303,
+      "pmBusui": 35,
+      "pmBumil": 33,
+      "pmBalita": 235,
+      "pm3bKelompok": 7
+    },
+    "detail": {
+      "idSppg": "LPJSIBRD",
+      "jenis": "SPPG MITRA",
+      "namaKa": "ALHILAL HAMDI",
+      "nomorKa": "082248573707",
+      "statusLabel": "OPERASIONAL",
+      "tglOperasional": "2026-04-06",
+      "yayasan": "Yayasan Berkah Rahayu Maju",
+      "bankVa": "BANK BNI",
+      "picNama": "IDA SETIYANINGSIH",
+      "picNomor": "082121405615",
+      "slhs": true
+    }
   },
   {
     "id": "sppg-ponorogo-babadan-babadan",
@@ -25,7 +49,31 @@
     "lat": -7.815865,
     "lng": 111.510606,
     "perkiraan": false,
-    "sumber": "Database SPPG Kab. Ponorogo"
+    "sumber": "Database SPPG Kab. Ponorogo",
+    "pm": {
+      "pmSatdikTotal": 2487,
+      "pmSiswa": 2115,
+      "pmGuruTendik": 372,
+      "pmSatdikKelompok": 19,
+      "pm3bTotal": 182,
+      "pmBusui": 51,
+      "pmBumil": 18,
+      "pmBalita": 113,
+      "pm3bKelompok": 5
+    },
+    "detail": {
+      "idSppg": "B7LO0DDP",
+      "jenis": "SPPG MITRA",
+      "namaKa": "RAYYAN HIDAYATULLAH",
+      "nomorKa": "085275427373",
+      "statusLabel": "OPERASIONAL",
+      "tglOperasional": "26 Februari 2026",
+      "yayasan": "Yayasan Pendidikan Islam Ulfatul Mutaalim",
+      "bankVa": "BANK BNI",
+      "picNama": "AHMAD BASTHOMI",
+      "picNomor": "081333927777",
+      "slhs": true
+    }
   },
   {
     "id": "sppg-ponorogo-babadan-kadipaten",
@@ -39,7 +87,31 @@
     "lat": -7.849944,
     "lng": 111.498944,
     "perkiraan": false,
-    "sumber": "Database SPPG Kab. Ponorogo"
+    "sumber": "Database SPPG Kab. Ponorogo",
+    "pm": {
+      "pmSatdikTotal": 2371,
+      "pmSiswa": 2071,
+      "pmGuruTendik": 300,
+      "pmSatdikKelompok": 21,
+      "pm3bTotal": 120,
+      "pmBusui": 24,
+      "pmBumil": 16,
+      "pmBalita": 80,
+      "pm3bKelompok": 3
+    },
+    "detail": {
+      "idSppg": "JPMDOKR1",
+      "jenis": "SPPG MITRA",
+      "namaKa": "YANUAR ARYA SATYA",
+      "nomorKa": "081235258564",
+      "statusLabel": "OPERASIONAL",
+      "tglOperasional": "5 Maret 2026",
+      "yayasan": "Yayasan Wening Arta Bakti",
+      "bankVa": "BANK BNI",
+      "picNama": "DIDIK YOKANAN",
+      "picNomor": "085797397001",
+      "slhs": true
+    }
   },
   {
     "id": "sppg-ponorogo-babadan-kertosari",
@@ -53,7 +125,31 @@
     "lat": -7.852491,
     "lng": 111.491282,
     "perkiraan": false,
-    "sumber": "Database SPPG Kab. Ponorogo"
+    "sumber": "Database SPPG Kab. Ponorogo",
+    "pm": {
+      "pmSatdikTotal": 979,
+      "pmSiswa": 864,
+      "pmGuruTendik": 115,
+      "pmSatdikKelompok": 11,
+      "pm3bTotal": 451,
+      "pmBusui": 72,
+      "pmBumil": 28,
+      "pmBalita": 351,
+      "pm3bKelompok": 10
+    },
+    "detail": {
+      "idSppg": "VVD4RKG8",
+      "jenis": "SPPG MITRA",
+      "namaKa": "FAHRIZAL BAGUS SAPUTRO",
+      "nomorKa": "0895342791158",
+      "statusLabel": "OPERASIONAL",
+      "tglOperasional": "30 Januari 2026",
+      "yayasan": "Yayasan Anak Bangsa Unggul Berdikari",
+      "bankVa": "BANK BNI",
+      "picNama": "ENI PURYANINGSIH",
+      "picNomor": "08111388558",
+      "slhs": true
+    }
   },
   {
     "id": "sppg-ponorogo-babadan-ngunut",
@@ -67,7 +163,31 @@
     "lat": -7.843264,
     "lng": 111.503794,
     "perkiraan": true,
-    "sumber": "Database SPPG Kab. Ponorogo"
+    "sumber": "Database SPPG Kab. Ponorogo",
+    "pm": {
+      "pmSatdikTotal": 2484,
+      "pmSiswa": 2198,
+      "pmGuruTendik": 286,
+      "pmSatdikKelompok": 30,
+      "pm3bTotal": 255,
+      "pmBusui": 58,
+      "pmBumil": 20,
+      "pmBalita": 177,
+      "pm3bKelompok": 6
+    },
+    "detail": {
+      "idSppg": "YTPXPFXZ",
+      "jenis": "SPPG MITRA",
+      "namaKa": "IBNU UMAR",
+      "nomorKa": "081233870855",
+      "statusLabel": "OPERASIONAL",
+      "tglOperasional": "2 Februari 2026",
+      "yayasan": "Yayasan Pelita Bangsa Jatim",
+      "bankVa": "BANK BRI",
+      "picNama": "DIAN MARDIANA",
+      "picNomor": "081223938881",
+      "slhs": true
+    }
   },
   {
     "id": "sppg-ponorogo-babadan-polorejo",
@@ -81,7 +201,31 @@
     "lat": -7.838886,
     "lng": 111.493901,
     "perkiraan": true,
-    "sumber": "Database SPPG Kab. Ponorogo"
+    "sumber": "Database SPPG Kab. Ponorogo",
+    "pm": {
+      "pmSatdikTotal": 2276,
+      "pmSiswa": 1930,
+      "pmGuruTendik": 346,
+      "pmSatdikKelompok": 18,
+      "pm3bTotal": 314,
+      "pmBusui": 66,
+      "pmBumil": 32,
+      "pmBalita": 216,
+      "pm3bKelompok": 7
+    },
+    "detail": {
+      "idSppg": "0HOVPLQ7",
+      "jenis": "SPPG MITRA",
+      "namaKa": "YOGA ARGANATA",
+      "nomorKa": "087766651884",
+      "statusLabel": "OPERASIONAL",
+      "tglTarget": "2025-11-13",
+      "yayasan": "Yayasan Haji Abdul Kariem Bin Hasan Besari",
+      "bankVa": "BANK BRI",
+      "picNama": "FRADDA VISCA ALVINI",
+      "picNomor": "081331559211",
+      "slhs": true
+    }
   },
   {
     "id": "sppg-ponorogo-babadan-kertosari-4",
@@ -95,7 +239,31 @@
     "lat": -7.834792,
     "lng": 111.506295,
     "perkiraan": true,
-    "sumber": "Database SPPG Kab. Ponorogo"
+    "sumber": "Database SPPG Kab. Ponorogo",
+    "pm": {
+      "pmSatdikTotal": 2392,
+      "pmSiswa": 2146,
+      "pmGuruTendik": 246,
+      "pmSatdikKelompok": 6,
+      "pm3bTotal": 239,
+      "pmBusui": 51,
+      "pmBumil": 16,
+      "pmBalita": 172,
+      "pm3bKelompok": 5
+    },
+    "detail": {
+      "idSppg": "WIXNDQ23",
+      "jenis": "SPPG MITRA",
+      "namaKa": "NURUL HAFIDZAH",
+      "nomorKa": "082311692325",
+      "statusLabel": "OPERASIONAL",
+      "tglOperasional": "30 Juli 2026",
+      "yayasan": "YPPSDP",
+      "bankVa": "BANK BNI",
+      "picNama": "YUDI SANTOSO",
+      "picNomor": "082146915746",
+      "slhs": true
+    }
   },
   {
     "id": "sppg-ponorogo-badegan-watubonang",
@@ -109,7 +277,32 @@
     "lat": -7.874655,
     "lng": 111.332134,
     "perkiraan": true,
-    "sumber": "Database SPPG Kab. Ponorogo"
+    "sumber": "Database SPPG Kab. Ponorogo",
+    "pm": {
+      "pmSatdikTotal": 2112,
+      "pmSiswa": 1809,
+      "pmGuruTendik": 303,
+      "pmSatdikKelompok": 31,
+      "pm3bTotal": 488,
+      "pmBusui": 72,
+      "pmBumil": 40,
+      "pmBalita": 376,
+      "pm3bKelompok": 10
+    },
+    "detail": {
+      "idSppg": "SIZQBVQT",
+      "jenis": "SPPG MITRA",
+      "namaKa": "RISYA KHUL KHASANAH",
+      "nomorKa": "085272350085",
+      "statusLabel": "OPERASIONAL",
+      "tglOperasional": "9 Januari 2026",
+      "tglTarget": "8 Desember 2025",
+      "yayasan": "Yayasan Ndalem Langgar Dhuwur",
+      "bankVa": "BANK BRI",
+      "picNama": "RIAN PRIYA HANDOKO",
+      "picNomor": "085747985222",
+      "slhs": true
+    }
   },
   {
     "id": "sppg-ponorogo-badegan-karangjoho",
@@ -123,7 +316,32 @@
     "lat": -7.883207,
     "lng": 111.33228,
     "perkiraan": false,
-    "sumber": "Database SPPG Kab. Ponorogo"
+    "sumber": "Database SPPG Kab. Ponorogo",
+    "pm": {
+      "pmSatdikTotal": 2279,
+      "pmSiswa": 2017,
+      "pmGuruTendik": 262,
+      "pmSatdikKelompok": 33,
+      "pm3bTotal": 440,
+      "pmBusui": 82,
+      "pmBumil": 53,
+      "pmBalita": 305,
+      "pm3bKelompok": 13
+    },
+    "detail": {
+      "idSppg": "H4ZWFHW5",
+      "jenis": "SPPG MITRA",
+      "namaKa": "TIKA DWI AYU BUDI HAPSARI",
+      "nomorKa": "082137780206",
+      "statusLabel": "OPERASIONAL",
+      "tglOperasional": "9 Januari 2026",
+      "tglTarget": "2025-11-12",
+      "yayasan": "Yayasan Arya Satja Lohjinawi",
+      "bankVa": "BANK BRI",
+      "picNama": "THERESIA ANITA SUSANTI RASONG",
+      "picNomor": "081262677733",
+      "slhs": true
+    }
   },
   {
     "id": "sppg-ponorogo-badegan-badegan",
@@ -137,7 +355,32 @@
     "lat": -7.874103,
     "lng": 111.331988,
     "perkiraan": false,
-    "sumber": "Database SPPG Kab. Ponorogo"
+    "sumber": "Database SPPG Kab. Ponorogo",
+    "pm": {
+      "pmSatdikTotal": 1638,
+      "pmSiswa": 1498,
+      "pmGuruTendik": 140,
+      "pmSatdikKelompok": 5,
+      "pm3bTotal": 604,
+      "pmBusui": 107,
+      "pmBumil": 49,
+      "pmBalita": 448,
+      "pm3bKelompok": 16
+    },
+    "detail": {
+      "idSppg": "GN1AOXWO",
+      "jenis": "SPPG MITRA",
+      "namaKa": "RIZHA YOGA SUSANTO",
+      "nomorKa": "088981071429",
+      "statusLabel": "OPERASIONAL",
+      "tglOperasional": "9 Januari 2026",
+      "tglTarget": "27 Oktober 2025",
+      "yayasan": "Yayasan Al-falah Ngrayun",
+      "bankVa": "BANK BRI",
+      "picNama": "RUDIANTO",
+      "picNomor": "082338188790",
+      "slhs": true
+    }
   },
   {
     "id": "sppg-ponorogo-balong-ngraket",
@@ -151,7 +394,31 @@
     "lat": -7.955451,
     "lng": 111.410686,
     "perkiraan": false,
-    "sumber": "Database SPPG Kab. Ponorogo"
+    "sumber": "Database SPPG Kab. Ponorogo",
+    "pm": {
+      "pmSatdikTotal": 2045,
+      "pmSiswa": 1839,
+      "pmGuruTendik": 206,
+      "pmSatdikKelompok": 21,
+      "pm3bTotal": 551,
+      "pmBusui": 177,
+      "pmBumil": 43,
+      "pmBalita": 331,
+      "pm3bKelompok": 7
+    },
+    "detail": {
+      "idSppg": "38QHHALB",
+      "jenis": "SPPG MITRA",
+      "namaKa": "ABDULAH INDRIAWAN",
+      "nomorKa": "085706375600",
+      "statusLabel": "OPERASIONAL",
+      "tglOperasional": "4 Februari 2026",
+      "yayasan": "Yayasan ppsdp",
+      "bankVa": "BANK BNI",
+      "picNama": "ARDHI FIRMAN PURWIANSYAH",
+      "picNomor": "081333348671",
+      "slhs": true
+    }
   },
   {
     "id": "sppg-ponorogo-balong-jalen",
@@ -165,7 +432,32 @@
     "lat": -7.957582,
     "lng": 111.429302,
     "perkiraan": false,
-    "sumber": "Database SPPG Kab. Ponorogo"
+    "sumber": "Database SPPG Kab. Ponorogo",
+    "pm": {
+      "pmSatdikTotal": 1715,
+      "pmSiswa": 1444,
+      "pmGuruTendik": 271,
+      "pmSatdikKelompok": 26,
+      "pm3bTotal": 575,
+      "pmBusui": 116,
+      "pmBumil": 80,
+      "pmBalita": 379,
+      "pm3bKelompok": 9
+    },
+    "detail": {
+      "idSppg": "ETA2DQAP",
+      "jenis": "SPPG MITRA",
+      "namaKa": "NIMAS REGITA NATASYA",
+      "nomorKa": "085746679402",
+      "statusLabel": "OPERASIONAL",
+      "tglOperasional": "9 Januari 2026",
+      "tglTarget": "2025-11-12",
+      "yayasan": "Yayasan Arya Satja Lohjinawi",
+      "bankVa": "BANK BRI",
+      "picNama": "ANJAR RETNOWATI, SP",
+      "picNomor": "082245034975",
+      "slhs": true
+    }
   },
   {
     "id": "sppg-ponorogo-balong-ngumpul",
@@ -179,7 +471,31 @@
     "lat": -7.950778,
     "lng": 111.399175,
     "perkiraan": false,
-    "sumber": "Database SPPG Kab. Ponorogo"
+    "sumber": "Database SPPG Kab. Ponorogo",
+    "pm": {
+      "pmSatdikTotal": 1832,
+      "pmSiswa": 1558,
+      "pmGuruTendik": 274,
+      "pmSatdikKelompok": 37,
+      "pm3bTotal": 583,
+      "pmBusui": 155,
+      "pmBumil": 59,
+      "pmBalita": 369
+    },
+    "detail": {
+      "idSppg": "KXZQ5YJA",
+      "jenis": "SPPG MITRA",
+      "namaKa": "MUHAMMAD CHOIRUL ANAM S.KEP",
+      "nomorKa": "082333962600",
+      "statusLabel": "BERHENTI OPS SEMENTARA",
+      "tglOperasional": "9 Januari 2026",
+      "tglTarget": "8 Desember 2025",
+      "yayasan": "Yayasan Pondok Pesantren Darul Istiqomah Balong",
+      "bankVa": "BANK BRI",
+      "picNama": "MUHAMMAD RIDWAN JAZULI",
+      "picNomor": "081775205662",
+      "slhs": true
+    }
   },
   {
     "id": "sppg-ponorogo-balong-karangan",
@@ -193,7 +509,32 @@
     "lat": -7.954261,
     "lng": 111.438831,
     "perkiraan": false,
-    "sumber": "Database SPPG Kab. Ponorogo"
+    "sumber": "Database SPPG Kab. Ponorogo",
+    "pm": {
+      "pmSatdikTotal": 2022,
+      "pmSiswa": 1720,
+      "pmGuruTendik": 302,
+      "pmSatdikKelompok": 27,
+      "pm3bTotal": 469,
+      "pmBusui": 121,
+      "pmBumil": 41,
+      "pmBalita": 307,
+      "pm3bKelompok": 31
+    },
+    "detail": {
+      "idSppg": "AIRVK7GL",
+      "jenis": "SPPG MITRA",
+      "namaKa": "PANDU PRABOWO MUKTI",
+      "nomorKa": "082228271451",
+      "statusLabel": "OPERASIONAL",
+      "tglOperasional": "9 Januari 2026",
+      "tglTarget": "2025-11-17",
+      "yayasan": "Yayasan Krishna Peduli Anak",
+      "bankVa": "BANK BRI",
+      "picNama": "MERIA LESTARI",
+      "picNomor": "081990908989",
+      "slhs": true
+    }
   },
   {
     "id": "sppg-ponorogo-bungkal-belang",
@@ -207,7 +548,31 @@
     "lat": -8.004707,
     "lng": 111.462712,
     "perkiraan": false,
-    "sumber": "Database SPPG Kab. Ponorogo"
+    "sumber": "Database SPPG Kab. Ponorogo",
+    "pm": {
+      "pmSatdikTotal": 1973,
+      "pmSiswa": 1670,
+      "pmGuruTendik": 303,
+      "pmSatdikKelompok": 36,
+      "pm3bTotal": 312,
+      "pmBusui": 77,
+      "pmBumil": 30,
+      "pmBalita": 205,
+      "pm3bKelompok": 18
+    },
+    "detail": {
+      "idSppg": "FHRF6QBC",
+      "jenis": "SPPG MITRA",
+      "namaKa": "BAGASKARA AJI PAMUNGKAS",
+      "nomorKa": "085232862825",
+      "statusLabel": "OPERASIONAL",
+      "tglOperasional": "9 Januari 2026",
+      "yayasan": "Yayasan Haji Abdul Kariem Bin Hasan Besari",
+      "bankVa": "BANK BRI",
+      "picNama": "AGUNG WIBOWO",
+      "picNomor": "082372765272",
+      "slhs": true
+    }
   },
   {
     "id": "sppg-ponorogo-bungkal-kunti",
@@ -221,7 +586,32 @@
     "lat": -7.989585,
     "lng": 111.454915,
     "perkiraan": false,
-    "sumber": "Database SPPG Kab. Ponorogo"
+    "sumber": "Database SPPG Kab. Ponorogo",
+    "pm": {
+      "pmSatdikTotal": 1672,
+      "pmSiswa": 1467,
+      "pmGuruTendik": 205,
+      "pmSatdikKelompok": 49,
+      "pm3bTotal": 559,
+      "pmBusui": 57,
+      "pmBumil": 51,
+      "pmBalita": 451,
+      "pm3bKelompok": 21
+    },
+    "detail": {
+      "idSppg": "ZDQYVFMM",
+      "jenis": "SPPG MITRA",
+      "namaKa": "WAHYUDI PUJIANTO",
+      "nomorKa": "082143145685",
+      "statusLabel": "OPERASIONAL",
+      "tglOperasional": "9 Januari 2026",
+      "tglTarget": "2025-11-24",
+      "yayasan": "Yayasan Pondok Pesantren Darul Istiqomah Balong",
+      "bankVa": "BANK BRI",
+      "picNama": "FRIMA HUDAYANA ADI",
+      "picNomor": "085259610660",
+      "slhs": true
+    }
   },
   {
     "id": "sppg-ponorogo-bungkal-kalisat",
@@ -235,7 +625,32 @@
     "lat": -8.034581,
     "lng": 111.456574,
     "perkiraan": false,
-    "sumber": "Database SPPG Kab. Ponorogo"
+    "sumber": "Database SPPG Kab. Ponorogo",
+    "pm": {
+      "pmSatdikTotal": 2045,
+      "pmSiswa": 1766,
+      "pmGuruTendik": 279,
+      "pmSatdikKelompok": 28,
+      "pm3bTotal": 556,
+      "pmBusui": 87,
+      "pmBumil": 38,
+      "pmBalita": 431,
+      "pm3bKelompok": 22
+    },
+    "detail": {
+      "idSppg": "O46RJWMH",
+      "jenis": "SPPG MITRA",
+      "namaKa": "RADIN BAGUS ALFIN NURCAHYO",
+      "nomorKa": "083897667767",
+      "statusLabel": "OPERASIONAL",
+      "tglOperasional": "9 Januari",
+      "tglTarget": "27 Oktober 2025",
+      "yayasan": "Yayasan Pondok Pesantren Darul Istiqomah Balong",
+      "bankVa": "BANK BRI",
+      "picNama": "EKA REKNO SETYANI",
+      "picNomor": "082237371981",
+      "slhs": true
+    }
   },
   {
     "id": "sppg-ponorogo-jambon-jambon-2",
@@ -249,7 +664,31 @@
     "lat": -7.91531,
     "lng": 111.354355,
     "perkiraan": false,
-    "sumber": "Database SPPG Kab. Ponorogo"
+    "sumber": "Database SPPG Kab. Ponorogo",
+    "pm": {
+      "pmSatdikTotal": 1832,
+      "pmSiswa": 1595,
+      "pmGuruTendik": 237,
+      "pmSatdikKelompok": 27,
+      "pm3bTotal": 663,
+      "pmBusui": 138,
+      "pmBumil": 50,
+      "pmBalita": 475,
+      "pm3bKelompok": 15
+    },
+    "detail": {
+      "idSppg": "X6POMZEH",
+      "jenis": "SPPG MITRA",
+      "namaKa": "RIKHA KHUL KHASANAH",
+      "nomorKa": "085272349998",
+      "statusLabel": "OPERASIONAL",
+      "tglOperasional": "2 Maret 2026",
+      "yayasan": "Yayasan Berkah Rahayu Maju",
+      "bankVa": "BANK BNI",
+      "picNama": "SRIYANTI",
+      "picNomor": "082231139885",
+      "slhs": true
+    }
   },
   {
     "id": "sppg-ponorogo-jambon-blembem",
@@ -263,7 +702,31 @@
     "lat": -7.890758,
     "lng": 111.37286,
     "perkiraan": true,
-    "sumber": "Database SPPG Kab. Ponorogo"
+    "sumber": "Database SPPG Kab. Ponorogo",
+    "pm": {
+      "pmSatdikTotal": 2194,
+      "pmSiswa": 1923,
+      "pmGuruTendik": 271,
+      "pmSatdikKelompok": 25,
+      "pm3bTotal": 858,
+      "pmBusui": 282,
+      "pmBumil": 78,
+      "pmBalita": 498,
+      "pm3bKelompok": 21
+    },
+    "detail": {
+      "idSppg": "BZDQDPBF",
+      "jenis": "SPPG MITRA",
+      "namaKa": "WOLFGANG ROWLAND TES",
+      "nomorKa": "082144831513",
+      "statusLabel": "OPERASIONAL",
+      "tglOperasional": "5 Februari 2026",
+      "yayasan": "Yayasan Anugrah Pantura Sehat",
+      "bankVa": "BANK BNI",
+      "picNama": "EKASARI SULISTYOWATI",
+      "picNomor": "081333506878",
+      "slhs": true
+    }
   },
   {
     "id": "sppg-ponorogo-jambon-menang",
@@ -277,7 +740,31 @@
     "lat": -7.868156,
     "lng": 111.38491,
     "perkiraan": false,
-    "sumber": "Database SPPG Kab. Ponorogo"
+    "sumber": "Database SPPG Kab. Ponorogo",
+    "pm": {
+      "pmSatdikTotal": 2151,
+      "pmSiswa": 1925,
+      "pmGuruTendik": 226,
+      "pmSatdikKelompok": 16,
+      "pm3bTotal": 591,
+      "pmBusui": 89,
+      "pmBumil": 53,
+      "pmBalita": 449,
+      "pm3bKelompok": 13
+    },
+    "detail": {
+      "idSppg": "S6SHZ4PN",
+      "jenis": "SPPG MITRA",
+      "namaKa": "RIZKA AYUNINGTYAS",
+      "nomorKa": "081558124030",
+      "statusLabel": "OPERASIONAL",
+      "tglOperasional": "26 Januari 2026",
+      "yayasan": "Yayasan Al-jihad Ponorogo",
+      "bankVa": "BANK BNI",
+      "picNama": "KHARISMA RIZA AYU PRICILIA",
+      "picNomor": "085934997441",
+      "slhs": true
+    }
   },
   {
     "id": "sppg-ponorogo-jambon-krebet",
@@ -291,7 +778,24 @@
     "lat": -7.900808,
     "lng": 111.379314,
     "perkiraan": false,
-    "sumber": "Database SPPG Kab. Ponorogo"
+    "sumber": "Database SPPG Kab. Ponorogo",
+    "pm": {
+      "pmSatdikTotal": 0,
+      "pm3bTotal": 0
+    },
+    "detail": {
+      "idSppg": "YIA09QCS",
+      "jenis": "SPPG MITRA",
+      "namaKa": "MOCH. SYAFI`I MISBACHUL MUFID",
+      "nomorKa": "085878924911",
+      "statusLabel": "BERHENTI OPS SEMENTARA",
+      "tglTarget": "20 Oktober 2025",
+      "yayasan": "Yayasan Bhakti Bhojana Nusantara",
+      "bankVa": "BANK BRI",
+      "picNama": "YUDHA BAGAS PRIAMBODO",
+      "picNomor": "082194410639",
+      "slhs": true
+    }
   },
   {
     "id": "sppg-ponorogo-jenangan-semanding",
@@ -305,7 +809,24 @@
     "lat": -7.809509,
     "lng": 111.557477,
     "perkiraan": false,
-    "sumber": "Database SPPG Kab. Ponorogo"
+    "sumber": "Database SPPG Kab. Ponorogo",
+    "pm": {
+      "pmSatdikTotal": 0,
+      "pm3bTotal": 0
+    },
+    "detail": {
+      "idSppg": "MBIZRVXV",
+      "jenis": "SPPG MITRA",
+      "namaKa": "SUKRON HASIBUAN",
+      "nomorKa": "085360424894",
+      "statusLabel": "SUSPEND",
+      "tglOperasional": "2026-04-09",
+      "yayasan": "Yayasan Pelita Bangsa Jatim",
+      "bankVa": "BANK BNI",
+      "picNama": "SYAUMA SISWA UTAMA",
+      "picNomor": "081212335629",
+      "slhs": true
+    }
   },
   {
     "id": "sppg-ponorogo-jenangan-ngrupit-2",
@@ -319,7 +840,31 @@
     "lat": -7.800827,
     "lng": 111.512784,
     "perkiraan": false,
-    "sumber": "Database SPPG Kab. Ponorogo"
+    "sumber": "Database SPPG Kab. Ponorogo",
+    "pm": {
+      "pmSatdikTotal": 2541,
+      "pmSiswa": 2306,
+      "pmGuruTendik": 235,
+      "pmSatdikKelompok": 28,
+      "pm3bTotal": 303,
+      "pmBusui": 93,
+      "pmBumil": 28,
+      "pmBalita": 182,
+      "pm3bKelompok": 3
+    },
+    "detail": {
+      "idSppg": "UNH4DMUG",
+      "jenis": "SPPG MITRA",
+      "namaKa": "ERIKA FITRIANA ROHMAN",
+      "nomorKa": "085708252096",
+      "statusLabel": "OPERASIONAL",
+      "tglOperasional": "26 Januari 2026",
+      "yayasan": "Yayasan Srikandi Langgeng Makmur",
+      "bankVa": "BANK BRI",
+      "picNama": "HARIES HERMANSYAH",
+      "picNomor": "082333181815",
+      "slhs": true
+    }
   },
   {
     "id": "sppg-ponorogo-jenangan-ngrupit",
@@ -333,7 +878,31 @@
     "lat": -7.800062,
     "lng": 111.50647,
     "perkiraan": false,
-    "sumber": "Database SPPG Kab. Ponorogo"
+    "sumber": "Database SPPG Kab. Ponorogo",
+    "pm": {
+      "pmSatdikTotal": 3308,
+      "pmSiswa": 2854,
+      "pmGuruTendik": 454,
+      "pmSatdikKelompok": 34,
+      "pm3bTotal": 283,
+      "pmBusui": 105,
+      "pmBumil": 32,
+      "pmBalita": 146,
+      "pm3bKelompok": 2
+    },
+    "detail": {
+      "idSppg": "5JHLMJXB",
+      "jenis": "SPPG MITRA",
+      "namaKa": "THORIQ KHOIRUL ANAM",
+      "nomorKa": "083843864340",
+      "statusLabel": "OPERASIONAL",
+      "tglTarget": "                                                                                                                                                                                                                                                                                                                                                                      ",
+      "yayasan": "Yayasan Whana Chatra Indonesia",
+      "bankVa": "BANK BRI",
+      "picNama": "TRI APRILIANTO SAPUTRO",
+      "picNomor": "082144761196",
+      "slhs": true
+    }
   },
   {
     "id": "sppg-ponorogo-jenangan-plalangan",
@@ -347,7 +916,31 @@
     "lat": -7.831766,
     "lng": 111.518805,
     "perkiraan": false,
-    "sumber": "Database SPPG Kab. Ponorogo"
+    "sumber": "Database SPPG Kab. Ponorogo",
+    "pm": {
+      "pmSatdikTotal": 3521,
+      "pmSiswa": 3183,
+      "pmGuruTendik": 338,
+      "pmSatdikKelompok": 17,
+      "pm3bTotal": 322,
+      "pmBusui": 66,
+      "pmBumil": 23,
+      "pmBalita": 233,
+      "pm3bKelompok": 8
+    },
+    "detail": {
+      "idSppg": "4GBL4RO2",
+      "jenis": "SPPG MITRA",
+      "namaKa": "NUR CHOLIS MUBARAK",
+      "nomorKa": "085161155171",
+      "statusLabel": "OPERASIONAL",
+      "tglTarget": "2025-11-17",
+      "yayasan": "Yayasan Hidayatul Mubtadiin Gonggang",
+      "bankVa": "BANK BRI",
+      "picNama": "SUSILO",
+      "picNomor": "085165458553",
+      "slhs": true
+    }
   },
   {
     "id": "sppg-ponorogo-jenangan-mrican",
@@ -361,7 +954,21 @@
     "lat": -7.864626,
     "lng": 111.529725,
     "perkiraan": false,
-    "sumber": "Database SPPG Kab. Ponorogo"
+    "sumber": "Database SPPG Kab. Ponorogo",
+    "pm": {
+      "pmSatdikTotal": 0,
+      "pm3bTotal": 0
+    },
+    "detail": {
+      "idSppg": "TH8CTRXC",
+      "jenis": "SPPG MITRA",
+      "namaKa": "Muh. Miftahul Ichsan",
+      "nomorKa": "087762519302",
+      "statusLabel": "AKAN OPERASIONAL",
+      "yayasan": "Yayasan Sosial Mimbar Arbai",
+      "bankVa": "BANK BNI",
+      "picNomor": "082223207177"
+    }
   },
   {
     "id": "sppg-ponorogo-jenangan-singosaren",
@@ -375,7 +982,22 @@
     "lat": -7.817358,
     "lng": 111.525052,
     "perkiraan": true,
-    "sumber": "Database SPPG Kab. Ponorogo"
+    "sumber": "Database SPPG Kab. Ponorogo",
+    "pm": {
+      "pmSatdikTotal": 0,
+      "pm3bTotal": 0
+    },
+    "detail": {
+      "idSppg": "QWQZNXPT",
+      "jenis": "SPPG MITRA",
+      "namaKa": "A. Ahsanul Septian Yasin",
+      "nomorKa": "082293244577",
+      "statusLabel": "AKAN OPERASIONAL",
+      "yayasan": "Yayasan Wening Arta Bakti",
+      "bankVa": "BANK BRI",
+      "picNama": "Eka Dara Ratmawati",
+      "picNomor": "085877379663"
+    }
   },
   {
     "id": "sppg-ponorogo-jetis-josari",
@@ -389,7 +1011,31 @@
     "lat": -7.95814,
     "lng": 111.46764,
     "perkiraan": true,
-    "sumber": "Database SPPG Kab. Ponorogo"
+    "sumber": "Database SPPG Kab. Ponorogo",
+    "pm": {
+      "pmSatdikTotal": 1725,
+      "pmSiswa": 1417,
+      "pmGuruTendik": 308,
+      "pmSatdikKelompok": 30,
+      "pm3bTotal": 410,
+      "pmBusui": 74,
+      "pmBumil": 47,
+      "pmBalita": 289,
+      "pm3bKelompok": 15
+    },
+    "detail": {
+      "idSppg": "2HAY987D",
+      "jenis": "SPPG MITRA",
+      "namaKa": "MUHAMMAD MASNGUDI",
+      "nomorKa": "08563519359",
+      "statusLabel": "OPERASIONAL",
+      "tglOperasional": "19 Januari 2026",
+      "yayasan": "Yayasan Pondok Pesantren Darul Istiqomah Balong",
+      "bankVa": "BANK BRI",
+      "picNama": "MURTININGSIH",
+      "picNomor": "081290620600",
+      "slhs": true
+    }
   },
   {
     "id": "sppg-ponorogo-jetis-ngasinan-2",
@@ -403,7 +1049,32 @@
     "lat": -7.965971,
     "lng": 111.471156,
     "perkiraan": true,
-    "sumber": "Database SPPG Kab. Ponorogo"
+    "sumber": "Database SPPG Kab. Ponorogo",
+    "pm": {
+      "pmSatdikTotal": 2446,
+      "pmSiswa": 2119,
+      "pmGuruTendik": 327,
+      "pmSatdikKelompok": 26,
+      "pm3bTotal": 574,
+      "pmBusui": 167,
+      "pmBumil": 57,
+      "pmBalita": 350,
+      "pm3bKelompok": 6
+    },
+    "detail": {
+      "idSppg": "DIRINPAI",
+      "jenis": "SPPG MITRA",
+      "namaKa": "RISQI WAHYUDATAMA",
+      "nomorKa": "08576564884",
+      "statusLabel": "OPERASIONAL",
+      "tglOperasional": "9 Januari 2026",
+      "tglTarget": "27 Oktober 2025",
+      "yayasan": "Yayasan Whana Chatra Indonesia",
+      "bankVa": "BANK BRI",
+      "picNama": "FAUZIY DWI BIMASAKTI",
+      "picNomor": "0895396647630",
+      "slhs": true
+    }
   },
   {
     "id": "sppg-ponorogo-jetis-ngasinan",
@@ -417,7 +1088,32 @@
     "lat": -7.96214,
     "lng": 111.46764,
     "perkiraan": false,
-    "sumber": "Database SPPG Kab. Ponorogo"
+    "sumber": "Database SPPG Kab. Ponorogo",
+    "pm": {
+      "pmSatdikTotal": 2613,
+      "pmSiswa": 2309,
+      "pmGuruTendik": 304,
+      "pmSatdikKelompok": 33,
+      "pm3bTotal": 281,
+      "pmBusui": 61,
+      "pmBumil": 43,
+      "pmBalita": 177,
+      "pm3bKelompok": 9
+    },
+    "detail": {
+      "idSppg": "NSALBYXX",
+      "jenis": "SPPG MITRA",
+      "namaKa": "MUHAMMAD ZAINUL FAD`LI",
+      "nomorKa": "08164846071",
+      "statusLabel": "OPERASIONAL",
+      "tglOperasional": "9 Januari  2026",
+      "tglTarget": "14 Oktober 2025",
+      "yayasan": "Yayasan Pondok Pesantren Nurul Anwar Babad Kedungadem Bojonegoro",
+      "bankVa": "BANK BRI",
+      "picNama": "ROOM ROWI AHMADHA NOVIANTO FITRI",
+      "picNomor": "082243898135",
+      "slhs": true
+    }
   },
   {
     "id": "sppg-ponorogo-kauman-gabel",
@@ -431,7 +1127,31 @@
     "lat": -7.870571,
     "lng": 111.419273,
     "perkiraan": false,
-    "sumber": "Database SPPG Kab. Ponorogo"
+    "sumber": "Database SPPG Kab. Ponorogo",
+    "pm": {
+      "pmSatdikTotal": 2352,
+      "pmSiswa": 2052,
+      "pmGuruTendik": 300,
+      "pmSatdikKelompok": 39,
+      "pm3bTotal": 340,
+      "pmBusui": 59,
+      "pmBumil": 25,
+      "pmBalita": 256,
+      "pm3bKelompok": 10
+    },
+    "detail": {
+      "idSppg": "JYX82TG2",
+      "jenis": "SPPG MITRA",
+      "namaKa": "YOGA ADI PRATAMA",
+      "nomorKa": "087753218068",
+      "statusLabel": "OPERASIONAL",
+      "tglOperasional": "21 Januari 2026",
+      "yayasan": "Yayasan Duta Ponorogo Emas",
+      "bankVa": "BANK BNI",
+      "picNama": "FERLIAN DWI NUGROHO",
+      "picNomor": "083812753569",
+      "slhs": true
+    }
   },
   {
     "id": "sppg-ponorogo-kauman-tegalombo",
@@ -445,7 +1165,32 @@
     "lat": -7.902444,
     "lng": 111.393528,
     "perkiraan": false,
-    "sumber": "Database SPPG Kab. Ponorogo"
+    "sumber": "Database SPPG Kab. Ponorogo",
+    "pm": {
+      "pmSatdikTotal": 2390,
+      "pmSiswa": 2113,
+      "pmGuruTendik": 277,
+      "pmSatdikKelompok": 38,
+      "pm3bTotal": 464,
+      "pmBusui": 79,
+      "pmBumil": 40,
+      "pmBalita": 345,
+      "pm3bKelompok": 16
+    },
+    "detail": {
+      "idSppg": "TP0OTDZB",
+      "jenis": "SPPG MITRA",
+      "namaKa": "RULIANA JUNITA FEBRYANTI",
+      "nomorKa": "081359223125",
+      "statusLabel": "OPERASIONAL",
+      "tglOperasional": "9 Januari 2026",
+      "tglTarget": "2025-11-03",
+      "yayasan": "Yayasan Pondok Pesantren Darul Istiqomah Balong",
+      "bankVa": "BANK BRI",
+      "picNama": "MOH. SAIIN",
+      "picNomor": "081222678678",
+      "slhs": true
+    }
   },
   {
     "id": "sppg-ponorogo-kauman-somoroto",
@@ -459,7 +1204,32 @@
     "lat": -7.874646,
     "lng": 111.398887,
     "perkiraan": false,
-    "sumber": "Database SPPG Kab. Ponorogo"
+    "sumber": "Database SPPG Kab. Ponorogo",
+    "pm": {
+      "pmSatdikTotal": 2204,
+      "pmSiswa": 1999,
+      "pmGuruTendik": 205,
+      "pmSatdikKelompok": 14,
+      "pm3bTotal": 440,
+      "pmBusui": 64,
+      "pmBumil": 41,
+      "pmBalita": 335,
+      "pm3bKelompok": 9
+    },
+    "detail": {
+      "idSppg": "NW1ZGSO8",
+      "jenis": "SPPG MITRA",
+      "namaKa": "RIZAL ZULFIKAR FIKRI",
+      "nomorKa": "085232389984",
+      "statusLabel": "OPERASIONAL",
+      "tglOperasional": "9 Januari 2026",
+      "tglTarget": "20 Oktober 2025",
+      "yayasan": "Yayasan Bhakti Bhojana Nusantara",
+      "bankVa": "BANK BRI",
+      "picNama": "DRAJAD RIZQI ANGGUN PERDANA",
+      "picNomor": "082332693773",
+      "slhs": true
+    }
   },
   {
     "id": "sppg-ponorogo-mlarak-joresan",
@@ -473,7 +1243,31 @@
     "lat": -7.934486,
     "lng": 111.513596,
     "perkiraan": false,
-    "sumber": "Database SPPG Kab. Ponorogo"
+    "sumber": "Database SPPG Kab. Ponorogo",
+    "pm": {
+      "pmSatdikTotal": 631,
+      "pmSiswa": 559,
+      "pmGuruTendik": 72,
+      "pmSatdikKelompok": 12,
+      "pm3bTotal": 227,
+      "pmBusui": 52,
+      "pmBumil": 20,
+      "pmBalita": 155,
+      "pm3bKelompok": 2
+    },
+    "detail": {
+      "idSppg": "JZBU1CB4",
+      "jenis": "SPPG MITRA",
+      "namaKa": "RAHMAD UFRAN",
+      "nomorKa": "082163422797",
+      "statusLabel": "OPERASIONAL",
+      "tglOperasional": "2026-04-20",
+      "yayasan": "Yayasan Bani Musthofa",
+      "bankVa": "BANK BNI",
+      "picNama": "JENNY PUTRI",
+      "picNomor": "082233790421",
+      "slhs": true
+    }
   },
   {
     "id": "sppg-ponorogo-mlarak-mlarak",
@@ -487,7 +1281,30 @@
     "lat": -7.924242,
     "lng": 111.508869,
     "perkiraan": true,
-    "sumber": "Database SPPG Kab. Ponorogo"
+    "sumber": "Database SPPG Kab. Ponorogo",
+    "pm": {
+      "pmSatdikTotal": 549,
+      "pmSiswa": 443,
+      "pmGuruTendik": 106,
+      "pmSatdikKelompok": 15,
+      "pm3bTotal": 395,
+      "pmBusui": 95,
+      "pmBumil": 26,
+      "pmBalita": 274,
+      "pm3bKelompok": 2
+    },
+    "detail": {
+      "idSppg": "RFXZTEXL",
+      "jenis": "SPPG MITRA",
+      "namaKa": "RAHMAN SARIP ALI",
+      "nomorKa": "082266135042",
+      "statusLabel": "OPERASIONAL",
+      "tglOperasional": "4 Mei 2026",
+      "yayasan": "Yayasan Hidayatul Mubtadiin Gonggang",
+      "bankVa": "BANK BNI",
+      "picNama": "WITANTO",
+      "picNomor": "081363755777"
+    }
   },
   {
     "id": "sppg-ponorogo-mlarak-ngrukem",
@@ -501,7 +1318,31 @@
     "lat": -7.930305,
     "lng": 111.526156,
     "perkiraan": false,
-    "sumber": "Database SPPG Kab. Ponorogo"
+    "sumber": "Database SPPG Kab. Ponorogo",
+    "pm": {
+      "pmSatdikTotal": 869,
+      "pmSiswa": 778,
+      "pmGuruTendik": 91,
+      "pmSatdikKelompok": 9,
+      "pm3bTotal": 228,
+      "pmBusui": 46,
+      "pmBumil": 21,
+      "pmBalita": 161,
+      "pm3bKelompok": 7
+    },
+    "detail": {
+      "idSppg": "BR0HOCTM",
+      "jenis": "SPPG MITRA",
+      "namaKa": "ALIF FADLURRAHMAN",
+      "nomorKa": "081359292200",
+      "statusLabel": "OPERASIONAL",
+      "tglOperasional": "4 Maret 2026",
+      "yayasan": "Yayasan Pondok Pesantren Darul Istiqomah Balong",
+      "bankVa": "BANK BNI",
+      "picNama": "MOH.SAIN",
+      "picNomor": "081222678678",
+      "slhs": true
+    }
   },
   {
     "id": "sppg-ponorogo-mlarak-tugu",
@@ -515,7 +1356,31 @@
     "lat": -7.932073,
     "lng": 111.512385,
     "perkiraan": true,
-    "sumber": "Database SPPG Kab. Ponorogo"
+    "sumber": "Database SPPG Kab. Ponorogo",
+    "pm": {
+      "pmSatdikTotal": 515,
+      "pmSiswa": 434,
+      "pmGuruTendik": 81,
+      "pmSatdikKelompok": 14,
+      "pm3bTotal": 553,
+      "pmBusui": 118,
+      "pmBumil": 84,
+      "pmBalita": 351,
+      "pm3bKelompok": 4
+    },
+    "detail": {
+      "idSppg": "JHLJKBBT",
+      "jenis": "SPPG MITRA",
+      "namaKa": "NIKO HUSNA SATRIA",
+      "nomorKa": "089515015096",
+      "statusLabel": "OPERASIONAL",
+      "tglOperasional": "3 Maret 2026",
+      "yayasan": "Yayasan Berkah Rahayu Maju",
+      "bankVa": "BANK BNI",
+      "picNama": "TATIK",
+      "picNomor": "082138885702",
+      "slhs": true
+    }
   },
   {
     "id": "sppg-ponorogo-mlarak-gontor",
@@ -526,10 +1391,34 @@
     "porsi": 1036,
     "alamat": "Desa Gontor, Kecamatan Mlarak, Kabupaten Ponorogo, Jawa Timur",
     "gmaps": "https://maps.app.goo.gl/xPhDDFtDiSC7Cwth8",
-    "lat": -7.927695,
-    "lng": 111.502492,
-    "perkiraan": true,
-    "sumber": "Database SPPG Kab. Ponorogo"
+    "lat": -7.925587,
+    "lng": 111.500269,
+    "perkiraan": false,
+    "sumber": "Database SPPG Kab. Ponorogo",
+    "pm": {
+      "pmSatdikTotal": 906,
+      "pmSiswa": 774,
+      "pmGuruTendik": 132,
+      "pmSatdikKelompok": 13,
+      "pm3bTotal": 130,
+      "pmBusui": 23,
+      "pmBumil": 11,
+      "pmBalita": 96,
+      "pm3bKelompok": 1
+    },
+    "detail": {
+      "idSppg": "AULIQ3B3",
+      "jenis": "SPPG MITRA",
+      "namaKa": "SINGGIH DWI NIRWANTO",
+      "nomorKa": "085738842656",
+      "statusLabel": "OPERASIONAL",
+      "tglOperasional": "12 Januari 2026",
+      "yayasan": "Yayasan Pondok Pesantren Darul Istiqomah Balong",
+      "bankVa": "BANK BRI",
+      "picNama": "ALWAN AKHSAN NUGROHO",
+      "picNomor": "081335533924",
+      "slhs": true
+    }
   },
   {
     "id": "sppg-ponorogo-mlarak-bajang",
@@ -543,7 +1432,31 @@
     "lat": -7.9236,
     "lng": 111.514887,
     "perkiraan": true,
-    "sumber": "Database SPPG Kab. Ponorogo"
+    "sumber": "Database SPPG Kab. Ponorogo",
+    "pm": {
+      "pmSatdikTotal": 693,
+      "pmSiswa": 601,
+      "pmGuruTendik": 92,
+      "pmSatdikKelompok": 6,
+      "pm3bTotal": 320,
+      "pmBusui": 73,
+      "pmBumil": 19,
+      "pmBalita": 228,
+      "pm3bKelompok": 2
+    },
+    "detail": {
+      "idSppg": "3UUKXT3H",
+      "jenis": "SPPG MITRA",
+      "namaKa": "NAHIDL DIYAN ILAHIY",
+      "nomorKa": "087755664939",
+      "statusLabel": "OPERASIONAL",
+      "tglOperasional": "28 januari 2026",
+      "yayasan": "Yayasan Pondok Pesantren Raudlatul Hunainiyah Handurusiyyah",
+      "bankVa": "BANK BRI",
+      "picNama": "SLAMET WIDODO",
+      "picNomor": "085236607971",
+      "slhs": true
+    }
   },
   {
     "id": "sppg-ponorogo-mlarak-jabung",
@@ -557,7 +1470,31 @@
     "lat": -7.919935,
     "lng": 111.486854,
     "perkiraan": false,
-    "sumber": "Database SPPG Kab. Ponorogo"
+    "sumber": "Database SPPG Kab. Ponorogo",
+    "pm": {
+      "pmSatdikTotal": 989,
+      "pmSiswa": 884,
+      "pmGuruTendik": 105,
+      "pmSatdikKelompok": 9,
+      "pm3bTotal": 130,
+      "pmBusui": 23,
+      "pmBumil": 19,
+      "pmBalita": 88,
+      "pm3bKelompok": 1
+    },
+    "detail": {
+      "idSppg": "XKQV7MVP",
+      "jenis": "SPPG MITRA",
+      "namaKa": "AYU KAHARDHIKA PRATAMA FITRIANI",
+      "nomorKa": "082332589512",
+      "statusLabel": "OPERASIONAL",
+      "tglOperasional": "26 Januari 2026",
+      "yayasan": "Yayasan Nurul Falah",
+      "bankVa": "BANK BRI",
+      "picNama": "SIDI",
+      "picNomor": "085293385409",
+      "slhs": true
+    }
   },
   {
     "id": "sppg-ponorogo-mlarak-siwalan",
@@ -571,7 +1508,31 @@
     "lat": -7.936913,
     "lng": 111.507369,
     "perkiraan": true,
-    "sumber": "Database SPPG Kab. Ponorogo"
+    "sumber": "Database SPPG Kab. Ponorogo",
+    "pm": {
+      "pmSatdikTotal": 474,
+      "pmSiswa": 413,
+      "pmGuruTendik": 61,
+      "pmSatdikKelompok": 10,
+      "pm3bTotal": 252,
+      "pmBusui": 21,
+      "pmBumil": 65,
+      "pmBalita": 166,
+      "pm3bKelompok": 2
+    },
+    "detail": {
+      "idSppg": "LPWXU6MR",
+      "jenis": "SPPG MITRA",
+      "namaKa": "RIDHA HARI PAHLAWAN",
+      "nomorKa": "0895706395750",
+      "statusLabel": "OPERASIONAL",
+      "tglOperasional": "3 Agustus 2026",
+      "tglTarget": "2026-03-08",
+      "yayasan": "Yayasan Drijaya Wahana Perkasa",
+      "bankVa": "BANK BRI",
+      "picNama": "Yolla Febri Prasetyaningsih",
+      "picNomor": "895339059068.0"
+    }
   },
   {
     "id": "sppg-ponorogo-mlarak-siwalan-2",
@@ -585,7 +1546,22 @@
     "lat": -7.91983,
     "lng": 111.503461,
     "perkiraan": true,
-    "sumber": "Database SPPG Kab. Ponorogo"
+    "sumber": "Database SPPG Kab. Ponorogo",
+    "pm": {
+      "pmSatdikTotal": 0,
+      "pm3bTotal": 0
+    },
+    "detail": {
+      "idSppg": "7M0YSD3Y",
+      "jenis": "SPPG MITRA",
+      "namaKa": "ILHAM DURAHMAN",
+      "nomorKa": "0895621782282",
+      "statusLabel": "AKAN OPERASIONAL",
+      "yayasan": "Yayasan Hidayatul Mubtadiin Gonggang",
+      "bankVa": "BANK BNI",
+      "picNama": "Rahma Balqis Mukarrohmah",
+      "picNomor": "085129601172"
+    }
   },
   {
     "id": "sppg-ponorogo-ngebel-wagir-lor",
@@ -599,7 +1575,31 @@
     "lat": -7.804595,
     "lng": 111.634866,
     "perkiraan": false,
-    "sumber": "Database SPPG Kab. Ponorogo"
+    "sumber": "Database SPPG Kab. Ponorogo",
+    "pm": {
+      "pmSatdikTotal": 1733,
+      "pmSiswa": 1491,
+      "pmGuruTendik": 242,
+      "pmSatdikKelompok": 52,
+      "pm3bTotal": 415,
+      "pmBusui": 95,
+      "pmBumil": 15,
+      "pmBalita": 305,
+      "pm3bKelompok": 6
+    },
+    "detail": {
+      "idSppg": "H68DKDMG",
+      "jenis": "SPPG MITRA",
+      "namaKa": "RIZKY TRIMUNANDAR",
+      "nomorKa": "08566798303",
+      "statusLabel": "OPERASIONAL",
+      "tglOperasional": "2026-04-04",
+      "yayasan": "Yayasan Berkah Rahayu Maju",
+      "bankVa": "BANK BNI",
+      "picNama": "TARSO",
+      "picNomor": "082242611777",
+      "slhs": true
+    }
   },
   {
     "id": "sppg-ponorogo-ngrayun-cepoko",
@@ -613,7 +1613,31 @@
     "lat": -8.068657,
     "lng": 111.496411,
     "perkiraan": false,
-    "sumber": "Database SPPG Kab. Ponorogo"
+    "sumber": "Database SPPG Kab. Ponorogo",
+    "pm": {
+      "pmSatdikTotal": 870,
+      "pmSiswa": 756,
+      "pmGuruTendik": 114,
+      "pmSatdikKelompok": 13,
+      "pm3bTotal": 414,
+      "pmBusui": 173,
+      "pmBumil": 23,
+      "pmBalita": 218,
+      "pm3bKelompok": 10
+    },
+    "detail": {
+      "idSppg": "HH4H2JMJ",
+      "jenis": "SPPG MITRA",
+      "namaKa": "JAWIRUDDIN",
+      "nomorKa": "082277557809",
+      "statusLabel": "OPERASIONAL",
+      "tglOperasional": "2026-04-22",
+      "yayasan": "Yayasan Jabal Rahmah Cipta",
+      "bankVa": "BANK BNI",
+      "picNama": "NYAMIN",
+      "picNomor": "082331203895",
+      "slhs": true
+    }
   },
   {
     "id": "sppg-ponorogo-ngrayun-ngrayun",
@@ -627,7 +1651,31 @@
     "lat": -8.079713,
     "lng": 111.447853,
     "perkiraan": false,
-    "sumber": "Database SPPG Kab. Ponorogo"
+    "sumber": "Database SPPG Kab. Ponorogo",
+    "pm": {
+      "pmSatdikTotal": 2358,
+      "pmSiswa": 2065,
+      "pmGuruTendik": 293,
+      "pmSatdikKelompok": 33,
+      "pm3bTotal": 375,
+      "pmBusui": 67,
+      "pmBumil": 27,
+      "pmBalita": 281,
+      "pm3bKelompok": 10
+    },
+    "detail": {
+      "idSppg": "USEZ6JRP",
+      "jenis": "SPPG MITRA",
+      "namaKa": "MAKRUF SETIAWAN",
+      "nomorKa": "082110752657",
+      "statusLabel": "OPERASIONAL",
+      "tglOperasional": "2 Februari 2026",
+      "yayasan": "Yayasan Pondok Pesantren Darul Istiqomah Balong",
+      "bankVa": "BANK BNI",
+      "picNama": "RESTU AGUS BUDIARTO",
+      "picNomor": "085336222666",
+      "slhs": true
+    }
   },
   {
     "id": "sppg-ponorogo-ngrayun-ngrayun-2",
@@ -641,7 +1689,30 @@
     "lat": -8.113799,
     "lng": 111.425723,
     "perkiraan": false,
-    "sumber": "Database SPPG Kab. Ponorogo"
+    "sumber": "Database SPPG Kab. Ponorogo",
+    "pm": {
+      "pmSatdikTotal": 1185,
+      "pmSiswa": 1013,
+      "pmGuruTendik": 172,
+      "pm3bTotal": 366,
+      "pmBusui": 74,
+      "pmBumil": 22,
+      "pmBalita": 270,
+      "pm3bKelompok": 7
+    },
+    "detail": {
+      "idSppg": "CDL1EZJP",
+      "jenis": "SPPG MITRA",
+      "namaKa": "DAVID SAGITA ROSTURIA",
+      "nomorKa": "082233963372",
+      "statusLabel": "OPERASIONAL",
+      "tglOperasional": "11 Mei 2026",
+      "tglTarget": "2026-11-05",
+      "yayasan": "Yayasan Laskar Peduli Sesama",
+      "bankVa": "BANK BNI",
+      "picNama": "KUKUH ARDIAN",
+      "picNomor": "082298148101"
+    }
   },
   {
     "id": "sppg-ponorogo-ponorogo-brotonegaran-2",
@@ -655,7 +1726,30 @@
     "lat": -7.864363,
     "lng": 111.4708,
     "perkiraan": true,
-    "sumber": "Database SPPG Kab. Ponorogo"
+    "sumber": "Database SPPG Kab. Ponorogo",
+    "pm": {
+      "pmSatdikTotal": 2443,
+      "pmSiswa": 2259,
+      "pmGuruTendik": 184,
+      "pmSatdikKelompok": 19,
+      "pm3bTotal": 197,
+      "pmBusui": 40,
+      "pmBumil": 14,
+      "pmBalita": 143,
+      "pm3bKelompok": 3
+    },
+    "detail": {
+      "idSppg": "YEWYM3ZS",
+      "jenis": "SPPG MITRA",
+      "namaKa": "JUNAEDI",
+      "nomorKa": "085230408760",
+      "statusLabel": "OPERASIONAL",
+      "tglOperasional": "11 Mei 2026",
+      "yayasan": "Yayasan Mandiri Persada Sejahtera",
+      "bankVa": "BANK BNI",
+      "picNama": "DWI RETNO WIDYMYARSIH",
+      "picNomor": "081335844410"
+    }
   },
   {
     "id": "sppg-ponorogo-ponorogo-keniten-2",
@@ -669,7 +1763,32 @@
     "lat": -7.846795,
     "lng": 111.462858,
     "perkiraan": false,
-    "sumber": "Database SPPG Kab. Ponorogo"
+    "sumber": "Database SPPG Kab. Ponorogo",
+    "pm": {
+      "pmSatdikTotal": 2362,
+      "pmSiswa": 2062,
+      "pmGuruTendik": 300,
+      "pmSatdikKelompok": 25,
+      "pm3bTotal": 195,
+      "pmBusui": 37,
+      "pmBumil": 9,
+      "pmBalita": 149,
+      "pm3bKelompok": 16
+    },
+    "detail": {
+      "idSppg": "MJUQDTH5",
+      "jenis": "SPPG MITRA",
+      "namaKa": "MOHAMAD TISON",
+      "nomorKa": "082233463829",
+      "statusLabel": "OPERASIONAL",
+      "tglOperasional": "2026-04-06",
+      "tglTarget": "2026-04-06",
+      "yayasan": "Yayasan Al Hikmah Nguri",
+      "bankVa": "BANK BNI",
+      "picNama": "NUR FAUZAN ROZALI",
+      "picNomor": "081333792345",
+      "slhs": true
+    }
   },
   {
     "id": "sppg-ponorogo-ponorogo-nologaten",
@@ -683,7 +1802,32 @@
     "lat": -7.866929,
     "lng": 111.475731,
     "perkiraan": false,
-    "sumber": "Database SPPG Kab. Ponorogo"
+    "sumber": "Database SPPG Kab. Ponorogo",
+    "pm": {
+      "pmSatdikTotal": 2896,
+      "pmSiswa": 2580,
+      "pmGuruTendik": 316,
+      "pmSatdikKelompok": 15,
+      "pm3bTotal": 180,
+      "pmBusui": 33,
+      "pmBumil": 7,
+      "pmBalita": 140,
+      "pm3bKelompok": 1
+    },
+    "detail": {
+      "idSppg": "3YOUIWAO",
+      "jenis": "SPPG MITRA",
+      "namaKa": "GIDEON",
+      "nomorKa": "087885248621",
+      "statusLabel": "OPERASIONAL",
+      "tglOperasional": "12 Februari 2026",
+      "tglTarget": "12 Februari 2026",
+      "yayasan": "Yayasan Yppsdp",
+      "bankVa": "BANK BNI",
+      "picNama": "DANNU MAHARDIKA",
+      "picNomor": "081234379996",
+      "slhs": true
+    }
   },
   {
     "id": "sppg-ponorogo-ponorogo-brotonegaran",
@@ -697,7 +1841,31 @@
     "lat": -7.885952,
     "lng": 111.461082,
     "perkiraan": false,
-    "sumber": "Database SPPG Kab. Ponorogo"
+    "sumber": "Database SPPG Kab. Ponorogo",
+    "pm": {
+      "pmSatdikTotal": 2357,
+      "pmSiswa": 2095,
+      "pmGuruTendik": 262,
+      "pmSatdikKelompok": 10,
+      "pm3bTotal": 166,
+      "pmBusui": 29,
+      "pmBumil": 13,
+      "pmBalita": 124,
+      "pm3bKelompok": 2
+    },
+    "detail": {
+      "idSppg": "XML9BX7V",
+      "jenis": "SPPG MITRA",
+      "namaKa": "BRAMASTO WICAKSONO",
+      "nomorKa": "08114012396",
+      "statusLabel": "OPERASIONAL",
+      "tglOperasional": "22 Januari 2026",
+      "yayasan": "Yayasan Mandiri Persada Sejahtera",
+      "bankVa": "BANK BNI",
+      "picNama": "SEGORO LUHUR KUSUMO DARU",
+      "picNomor": "082136724435",
+      "slhs": true
+    }
   },
   {
     "id": "sppg-ponorogo-ponorogo-banyudono",
@@ -711,7 +1879,31 @@
     "lat": -7.865139,
     "lng": 111.46901,
     "perkiraan": false,
-    "sumber": "Database SPPG Kab. Ponorogo"
+    "sumber": "Database SPPG Kab. Ponorogo",
+    "pm": {
+      "pmSatdikTotal": 2746,
+      "pmSiswa": 2473,
+      "pmGuruTendik": 273,
+      "pmSatdikKelompok": 13,
+      "pm3bTotal": 123,
+      "pmBusui": 14,
+      "pmBumil": 12,
+      "pmBalita": 97,
+      "pm3bKelompok": 4
+    },
+    "detail": {
+      "idSppg": "UWWVGQD2",
+      "jenis": "SPPG MITRA",
+      "namaKa": "ADELIA NUR KHARISMA",
+      "nomorKa": "082333805097",
+      "statusLabel": "BERHENTI OPS SEMENTARA",
+      "tglOperasional": "19 Januari 2026",
+      "yayasan": "Yayasan Whana Chatra Indonesia",
+      "bankVa": "BANK BRI",
+      "picNama": "NABILA PUTRI OCKTAVIA",
+      "picNomor": "082359163125",
+      "slhs": true
+    }
   },
   {
     "id": "sppg-ponorogo-ponorogo-purbosuman",
@@ -725,7 +1917,31 @@
     "lat": -7.877754,
     "lng": 111.482486,
     "perkiraan": false,
-    "sumber": "Database SPPG Kab. Ponorogo"
+    "sumber": "Database SPPG Kab. Ponorogo",
+    "pm": {
+      "pmSatdikTotal": 2852,
+      "pmSiswa": 2621,
+      "pmGuruTendik": 231,
+      "pmSatdikKelompok": 8,
+      "pm3bTotal": 256,
+      "pmBusui": 27,
+      "pmBumil": 30,
+      "pmBalita": 199,
+      "pm3bKelompok": 5
+    },
+    "detail": {
+      "idSppg": "CTFULAGO",
+      "jenis": "SPPG POLRI",
+      "namaKa": "SUBHAN ZAIN AL MUFLIHIN",
+      "nomorKa": "08986016464",
+      "statusLabel": "OPERASIONAL",
+      "tglTarget": "29 Desember 2025",
+      "yayasan": "Yayasan Kemala Bhayangkari Polres Ponorogo",
+      "bankVa": "BANK BRI",
+      "picNama": "SRI WURYANINGSIH",
+      "picNomor": "081231585985",
+      "slhs": true
+    }
   },
   {
     "id": "sppg-ponorogo-ponorogo-keniten",
@@ -739,7 +1955,32 @@
     "lat": -7.848462,
     "lng": 111.472718,
     "perkiraan": false,
-    "sumber": "Database SPPG Kab. Ponorogo"
+    "sumber": "Database SPPG Kab. Ponorogo",
+    "pm": {
+      "pmSatdikTotal": 2576,
+      "pmSiswa": 2330,
+      "pmGuruTendik": 246,
+      "pmSatdikKelompok": 6,
+      "pm3bTotal": 342,
+      "pmBusui": 29,
+      "pmBumil": 43,
+      "pmBalita": 270,
+      "pm3bKelompok": 7
+    },
+    "detail": {
+      "idSppg": "3TJQTQS7",
+      "jenis": "SPPG MITRA",
+      "namaKa": "AZI NUR ARFIAN",
+      "nomorKa": "081332795717",
+      "statusLabel": "OPERASIONAL",
+      "tglOperasional": "9 Januari 2026",
+      "tglTarget": "1 Desember 2025",
+      "yayasan": "Yayasan Whana Chatra Indonesia",
+      "bankVa": "BANK BRI",
+      "picNama": "ZULFA SYATHARI",
+      "picNomor": "081325663310",
+      "slhs": true
+    }
   },
   {
     "id": "sppg-ponorogo-ponorogo-tonatan-2",
@@ -753,7 +1994,32 @@
     "lat": -7.872194,
     "lng": 111.474316,
     "perkiraan": true,
-    "sumber": "Database SPPG Kab. Ponorogo"
+    "sumber": "Database SPPG Kab. Ponorogo",
+    "pm": {
+      "pmSatdikTotal": 3292,
+      "pmSiswa": 3104,
+      "pmGuruTendik": 188,
+      "pmSatdikKelompok": 1,
+      "pm3bTotal": 217,
+      "pmBusui": 26,
+      "pmBumil": 13,
+      "pmBalita": 178,
+      "pm3bKelompok": 1
+    },
+    "detail": {
+      "idSppg": "PTPONVCE",
+      "jenis": "SPPG PONPES",
+      "namaKa": "AS`AD HIDAYATULLOH",
+      "nomorKa": "088231901794",
+      "statusLabel": "OPERASIONAL",
+      "tglOperasional": "10 Januari 2026",
+      "tglTarget": "2026-11-29",
+      "yayasan": "Yayasan Pondok Pesantren Darul Huda",
+      "bankVa": "BANK BRI",
+      "picNama": "MUHAMMAD SYAMSI HASAN., SE",
+      "picNomor": "082264678595",
+      "slhs": true
+    }
   },
   {
     "id": "sppg-ponorogo-siman-tajug",
@@ -767,7 +2033,31 @@
     "lat": -7.869828,
     "lng": 111.475929,
     "perkiraan": false,
-    "sumber": "Database SPPG Kab. Ponorogo"
+    "sumber": "Database SPPG Kab. Ponorogo",
+    "pm": {
+      "pmSatdikTotal": 2645,
+      "pmSiswa": 2645,
+      "pmSatdikKelompok": 7,
+      "pm3bTotal": 413,
+      "pmBusui": 125,
+      "pmBumil": 32,
+      "pmBalita": 256,
+      "pm3bKelompok": 4
+    },
+    "detail": {
+      "idSppg": "BHLZOCSD",
+      "jenis": "SPPG MITRA",
+      "namaKa": "IVAN SULISTYO PRIBADI",
+      "nomorKa": "0895807880105",
+      "statusLabel": "OPERASIONAL",
+      "tglOperasional": "9 Januari 2026",
+      "tglTarget": "27 Oktober 2025",
+      "yayasan": "Yayasan Ihsan Mentari Barat",
+      "bankVa": "BANK BRI",
+      "picNama": "AGUS SETYOBUDI",
+      "picNomor": "081779955901",
+      "slhs": true
+    }
   },
   {
     "id": "sppg-ponorogo-ponorogo-kepatihan",
@@ -781,7 +2071,32 @@
     "lat": -7.883273,
     "lng": 111.461665,
     "perkiraan": false,
-    "sumber": "Database SPPG Kab. Ponorogo"
+    "sumber": "Database SPPG Kab. Ponorogo",
+    "pm": {
+      "pmSatdikTotal": 3434,
+      "pmSiswa": 3434,
+      "pmGuruTendik": 0,
+      "pmSatdikKelompok": 8,
+      "pm3bTotal": 159,
+      "pmBusui": 23,
+      "pmBumil": 11,
+      "pmBalita": 125,
+      "pm3bKelompok": 4
+    },
+    "detail": {
+      "idSppg": "G44SPKOQ",
+      "jenis": "SPPG MITRA",
+      "namaKa": "ADE BAHTIAR AZHARI",
+      "nomorKa": "085233811402",
+      "statusLabel": "OPERASIONAL",
+      "tglOperasional": "12 Januari 2026",
+      "tglTarget": "15 Oktober 2025",
+      "yayasan": "Yayasan Hidayatul Mubtadiin Gonggang",
+      "bankVa": "BANK BRI",
+      "picNama": "RAHMA BALQIS MUKARROHMAH",
+      "picNomor": "085148411635",
+      "slhs": true
+    }
   },
   {
     "id": "sppg-ponorogo-ponorogo-mangkujayan",
@@ -795,7 +2110,31 @@
     "lat": -7.85989,
     "lng": 111.462875,
     "perkiraan": false,
-    "sumber": "Database SPPG Kab. Ponorogo"
+    "sumber": "Database SPPG Kab. Ponorogo",
+    "pm": {
+      "pmSatdikTotal": 1870,
+      "pmSiswa": 1870,
+      "pmSatdikKelompok": 7,
+      "pm3bTotal": 278,
+      "pmBusui": 44,
+      "pmBumil": 24,
+      "pmBalita": 210,
+      "pm3bKelompok": 1
+    },
+    "detail": {
+      "idSppg": "6BZ9EGRA",
+      "jenis": "SPPG MITRA",
+      "namaKa": "DICKE PRIMANA KURNIADI, S.PD.",
+      "nomorKa": "085156415373",
+      "statusLabel": "SUSPEND",
+      "tglOperasional": "19 Januari 2026",
+      "tglTarget": "2025-11-12",
+      "yayasan": "Yayasan Bani Musthofa",
+      "bankVa": "BANK BRI",
+      "picNama": "CANON HIDAYATULLOH",
+      "picNomor": "081278042938",
+      "slhs": true
+    }
   },
   {
     "id": "sppg-ponorogo-ponorogo-tonatan",
@@ -809,7 +2148,32 @@
     "lat": -7.870251,
     "lng": 111.495773,
     "perkiraan": false,
-    "sumber": "Database SPPG Kab. Ponorogo"
+    "sumber": "Database SPPG Kab. Ponorogo",
+    "pm": {
+      "pmSatdikTotal": 1465,
+      "pmSiswa": 1260,
+      "pmGuruTendik": 205,
+      "pmSatdikKelompok": 5,
+      "pm3bTotal": 202,
+      "pmBusui": 37,
+      "pmBumil": 13,
+      "pmBalita": 152,
+      "pm3bKelompok": 1
+    },
+    "detail": {
+      "idSppg": "8F0ARCXT",
+      "jenis": "SPPG MITRA",
+      "namaKa": "SALMAN",
+      "nomorKa": "085241117769",
+      "statusLabel": "OPERASIONAL",
+      "tglOperasional": "8 Juni 2026",
+      "tglTarget": "2025-09-11",
+      "yayasan": "Yayasan Azmania",
+      "bankVa": "BANK BRI",
+      "picNama": "NOFIYATI",
+      "picNomor": "087738857295",
+      "slhs": true
+    }
   },
   {
     "id": "sppg-ponorogo-ponorogo-surodikraman",
@@ -823,7 +2187,31 @@
     "lat": -7.873911,
     "lng": 111.473382,
     "perkiraan": false,
-    "sumber": "Database SPPG Kab. Ponorogo"
+    "sumber": "Database SPPG Kab. Ponorogo",
+    "pm": {
+      "pmSatdikTotal": 2436,
+      "pmSiswa": 2234,
+      "pmGuruTendik": 202,
+      "pmSatdikKelompok": 10,
+      "pm3bTotal": 171,
+      "pmBusui": 24,
+      "pmBumil": 15,
+      "pmBalita": 132,
+      "pm3bKelompok": 1
+    },
+    "detail": {
+      "idSppg": "SEAKFUJP",
+      "jenis": "SPPG TNI AD I",
+      "namaKa": "CINDY PRAMUDEA SARI",
+      "nomorKa": "082128611797",
+      "statusLabel": "SUSPEND",
+      "tglOperasional": "8 Januari 2026",
+      "tglTarget": "6 Januari 2025",
+      "yayasan": "Yayasan Pundi Amal Nusantara",
+      "bankVa": "BANK BRI",
+      "picNama": "DICKY HARU PRIANKA",
+      "picNomor": "082185255949"
+    }
   },
   {
     "id": "sppg-ponorogo-kauman-kauman",
@@ -837,7 +2225,31 @@
     "lat": -7.872167,
     "lng": 111.456093,
     "perkiraan": false,
-    "sumber": "Database SPPG Kab. Ponorogo"
+    "sumber": "Database SPPG Kab. Ponorogo",
+    "pm": {
+      "pmSatdikTotal": 2272,
+      "pmSiswa": 2029,
+      "pmGuruTendik": 243,
+      "pmSatdikKelompok": 16,
+      "pm3bTotal": 266,
+      "pmBusui": 77,
+      "pmBumil": 16,
+      "pmBalita": 173,
+      "pm3bKelompok": 2
+    },
+    "detail": {
+      "idSppg": "LTSJU9YR",
+      "jenis": "SPPG MITRA",
+      "namaKa": "AGUS NUGROHO",
+      "nomorKa": "085732690646",
+      "statusLabel": "OPERASIONAL",
+      "tglOperasional": "26 Januari 2026",
+      "yayasan": "Yayasan Srikandi Langgeng Makmur",
+      "bankVa": "BANK BNI",
+      "picNama": "ALDILA SUCI RAHAYU, S.H.",
+      "picNomor": "081228740220",
+      "slhs": true
+    }
   },
   {
     "id": "sppg-ponorogo-ponorogo-brotonegaran-3",
@@ -851,7 +2263,25 @@
     "lat": -7.867815,
     "lng": 111.464424,
     "perkiraan": true,
-    "sumber": "Database SPPG Kab. Ponorogo"
+    "sumber": "Database SPPG Kab. Ponorogo",
+    "pm": {
+      "pmSatdikTotal": 0,
+      "pmSiswa": 0,
+      "pmGuruTendik": 0,
+      "pmSatdikKelompok": 0,
+      "pm3bTotal": 0
+    },
+    "detail": {
+      "idSppg": "JQSQRBRT",
+      "jenis": "SPPG MITRA",
+      "namaKa": "Nur Fa`Adillah Mustakim",
+      "nomorKa": "08999961998",
+      "statusLabel": "AKAN OPERASIONAL",
+      "yayasan": "Yayasan Mandiri Persada Sejahtera",
+      "bankVa": "BANK BNI",
+      "picNama": "AYURA FARADIVA",
+      "picNomor": "089683300100"
+    }
   },
   {
     "id": "sppg-ponorogo-pulung-kesugihan",
@@ -865,7 +2295,23 @@
     "lat": -7.845987,
     "lng": 111.612776,
     "perkiraan": false,
-    "sumber": "Database SPPG Kab. Ponorogo"
+    "sumber": "Database SPPG Kab. Ponorogo",
+    "pm": {
+      "pmSatdikTotal": 0,
+      "pm3bTotal": 0
+    },
+    "detail": {
+      "idSppg": "TOUTKLWX",
+      "jenis": "SPPG MITRA",
+      "namaKa": "M. AZIS TRI SAHPUTRA",
+      "nomorKa": "085258860511",
+      "statusLabel": "OPERASIONAL",
+      "tglOperasional": "9 Februari 2026",
+      "yayasan": "Yayasan Damadika Jawa Timur",
+      "bankVa": "BANK BNI",
+      "picNama": "INDRA WAHYU SETYANTO",
+      "picNomor": "081335844481"
+    }
   },
   {
     "id": "sppg-ponorogo-pulung-singgahan",
@@ -879,7 +2325,31 @@
     "lat": -7.874517,
     "lng": 111.643988,
     "perkiraan": false,
-    "sumber": "Database SPPG Kab. Ponorogo"
+    "sumber": "Database SPPG Kab. Ponorogo",
+    "pm": {
+      "pmSatdikTotal": 2265,
+      "pmSiswa": 2015,
+      "pmGuruTendik": 250,
+      "pmSatdikKelompok": 35,
+      "pm3bTotal": 585,
+      "pmBusui": 158,
+      "pmBumil": 41,
+      "pmBalita": 386,
+      "pm3bKelompok": 3
+    },
+    "detail": {
+      "idSppg": "N5NWCEEI",
+      "jenis": "SPPG MITRA",
+      "namaKa": "RIDHWAN SYAHPUTRA",
+      "nomorKa": "081335844481",
+      "statusLabel": "OPERASIONAL",
+      "tglOperasional": "2026-04-13",
+      "yayasan": "Yayasan Ababil Harapan Bangsa",
+      "bankVa": "BANK BNI",
+      "picNama": "ERFANSA WIDI NUR PRASETYO",
+      "picNomor": "085258860511",
+      "slhs": true
+    }
   },
   {
     "id": "sppg-ponorogo-pulung-sidoharjo",
@@ -893,7 +2363,22 @@
     "lat": -7.856252,
     "lng": 111.628382,
     "perkiraan": true,
-    "sumber": "Database SPPG Kab. Ponorogo"
+    "sumber": "Database SPPG Kab. Ponorogo",
+    "pm": {
+      "pmSatdikTotal": 0,
+      "pm3bTotal": 0
+    },
+    "detail": {
+      "idSppg": "9GFRQURM",
+      "jenis": "SPPG MITRA",
+      "namaKa": "SUMANI",
+      "nomorKa": "082229800068",
+      "statusLabel": "AKAN OPERASIONAL",
+      "yayasan": "Yayasan Maju Muda Berdikari",
+      "bankVa": "BANK BRI",
+      "picNama": "MAKHRUF EFENDI",
+      "picNomor": "085331211439"
+    }
   },
   {
     "id": "sppg-ponorogo-sambit-bulu",
@@ -907,7 +2392,32 @@
     "lat": -7.960624,
     "lng": 111.508616,
     "perkiraan": false,
-    "sumber": "Database SPPG Kab. Ponorogo"
+    "sumber": "Database SPPG Kab. Ponorogo",
+    "pm": {
+      "pmSatdikTotal": 2751,
+      "pmSiswa": 2426,
+      "pmGuruTendik": 325,
+      "pmSatdikKelompok": 38,
+      "pm3bTotal": 727,
+      "pmBusui": 120,
+      "pmBumil": 64,
+      "pmBalita": 543,
+      "pm3bKelompok": 8
+    },
+    "detail": {
+      "idSppg": "1H7VPNMY",
+      "jenis": "SPPG MITRA",
+      "namaKa": "IRFAN DWI CAHYONO",
+      "nomorKa": "081359611590",
+      "statusLabel": "OPERASIONAL",
+      "tglOperasional": "8 Januari 2026",
+      "tglTarget": "8 Desember 2025",
+      "yayasan": "Yayasan Garda Cendekia Madania",
+      "bankVa": "BNAK BRI",
+      "picNama": "ANAS BUDIHARJO",
+      "picNomor": "081218152632",
+      "slhs": true
+    }
   },
   {
     "id": "sppg-ponorogo-sampung-gelangkulon",
@@ -921,7 +2431,32 @@
     "lat": -7.87345,
     "lng": 111.34155,
     "perkiraan": false,
-    "sumber": "Database SPPG Kab. Ponorogo"
+    "sumber": "Database SPPG Kab. Ponorogo",
+    "pm": {
+      "pmSatdikTotal": 2007,
+      "pmSiswa": 1769,
+      "pmGuruTendik": 238,
+      "pmSatdikKelompok": 30,
+      "pm3bTotal": 453,
+      "pmBusui": 81,
+      "pmBumil": 36,
+      "pmBalita": 336,
+      "pm3bKelompok": 5
+    },
+    "detail": {
+      "idSppg": "QMXQRHKI",
+      "jenis": "SPPG POLRI",
+      "namaKa": "HAFIZA ZULFA AMALA",
+      "nomorKa": "081515735696",
+      "statusLabel": "OPERASIONAL",
+      "tglOperasional": "9 Januari 2026",
+      "tglTarget": "2025-11-17",
+      "yayasan": "Yayasan Kemala Bhayangkari Polres Ponorogo",
+      "bankVa": "BANK MANDIRI",
+      "picNama": "SITI ZULAIKAH",
+      "picNomor": "081355599770",
+      "slhs": true
+    }
   },
   {
     "id": "sppg-ponorogo-sampung-glinggang",
@@ -935,7 +2470,32 @@
     "lat": -7.871652,
     "lng": 111.353799,
     "perkiraan": false,
-    "sumber": "Database SPPG Kab. Ponorogo"
+    "sumber": "Database SPPG Kab. Ponorogo",
+    "pm": {
+      "pmSatdikTotal": 2096,
+      "pmSiswa": 1901,
+      "pmGuruTendik": 195,
+      "pmSatdikKelompok": 13,
+      "pm3bTotal": 311,
+      "pmBusui": 66,
+      "pmBumil": 31,
+      "pmBalita": 214,
+      "pm3bKelompok": 3
+    },
+    "detail": {
+      "idSppg": "N45WHHO3",
+      "jenis": "SPPG MITRA",
+      "namaKa": "CINTIA NURCAHYANI",
+      "nomorKa": "082245632338",
+      "statusLabel": "OPERASIONAL",
+      "tglOperasional": "8 Januari 2026",
+      "tglTarget": "2025-09-25",
+      "yayasan": "Yayasan Assunniyyah Athoyyibah Wangun",
+      "bankVa": "BANK BRI",
+      "picNama": "DIDIK HARYADI",
+      "picNomor": "081298697257",
+      "slhs": true
+    }
   },
   {
     "id": "sppg-ponorogo-sampung-kunti",
@@ -949,7 +2509,31 @@
     "lat": -7.84298,
     "lng": 111.35181,
     "perkiraan": false,
-    "sumber": "Database SPPG Kab. Ponorogo"
+    "sumber": "Database SPPG Kab. Ponorogo",
+    "pm": {
+      "pmSatdikTotal": 1888,
+      "pmSiswa": 1626,
+      "pmGuruTendik": 262,
+      "pmSatdikKelompok": 30,
+      "pm3bTotal": 328,
+      "pmBusui": 95,
+      "pmBumil": 30,
+      "pmBalita": 203,
+      "pm3bKelompok": 12
+    },
+    "detail": {
+      "idSppg": "TNXCRSB9",
+      "jenis": "SPPG MITRA",
+      "namaKa": "DIKA NOVITA SARI",
+      "nomorKa": "081938642242",
+      "statusLabel": "OPERASIONAL",
+      "tglOperasional": "28 Januari 2026",
+      "yayasan": "Yayasan Hidayatul Mubtadiin Gonggang",
+      "bankVa": "BANK BNI",
+      "picNama": "WITANTO",
+      "picNomor": "085165837428",
+      "slhs": true
+    }
   },
   {
     "id": "sppg-ponorogo-sawoo-grogol",
@@ -963,7 +2547,31 @@
     "lat": -7.969103,
     "lng": 111.535386,
     "perkiraan": false,
-    "sumber": "Database SPPG Kab. Ponorogo"
+    "sumber": "Database SPPG Kab. Ponorogo",
+    "pm": {
+      "pmSatdikTotal": 1863,
+      "pmSiswa": 1664,
+      "pmGuruTendik": 199,
+      "pmSatdikKelompok": 21,
+      "pm3bTotal": 345,
+      "pmBusui": 66,
+      "pmBumil": 36,
+      "pmBalita": 243,
+      "pm3bKelompok": 8
+    },
+    "detail": {
+      "idSppg": "WYD3ODR7",
+      "jenis": "SPPG MITRA",
+      "namaKa": "DIMAS RAHADIAN RIESANANDA",
+      "nomorKa": "089507773364",
+      "statusLabel": "OPERASIONAL",
+      "tglOperasional": "9 Februari 2026",
+      "yayasan": "Yayasan Damadika Jawa Timur",
+      "bankVa": "BANK BNI",
+      "picNama": "BANGUN JIHAD SABILIT",
+      "picNomor": "089620042959",
+      "slhs": true
+    }
   },
   {
     "id": "sppg-ponorogo-sawoo-ketro",
@@ -977,7 +2585,31 @@
     "lat": -7.955811,
     "lng": 111.534432,
     "perkiraan": false,
-    "sumber": "Database SPPG Kab. Ponorogo"
+    "sumber": "Database SPPG Kab. Ponorogo",
+    "pm": {
+      "pmSatdikTotal": 1615,
+      "pmSiswa": 1418,
+      "pmGuruTendik": 197,
+      "pmSatdikKelompok": 27,
+      "pm3bTotal": 287,
+      "pmBusui": 45,
+      "pmBumil": 30,
+      "pmBalita": 212,
+      "pm3bKelompok": 4
+    },
+    "detail": {
+      "idSppg": "HYD2TMPV",
+      "jenis": "SPPG MITRA",
+      "namaKa": "FATWA KUMALA AMBARI",
+      "nomorKa": "082331314187",
+      "statusLabel": "OPERASIONAL",
+      "tglOperasional": "10 Februari 2026",
+      "yayasan": "Yayasan Damadika Jawa Timur",
+      "bankVa": "BANK BNI",
+      "picNama": "OKTAVIYAN BAYU SAPUTRA",
+      "picNomor": "083845336368",
+      "slhs": true
+    }
   },
   {
     "id": "sppg-ponorogo-sawoo-pangkal",
@@ -991,7 +2623,31 @@
     "lat": -7.964056,
     "lng": 111.57275,
     "perkiraan": false,
-    "sumber": "Database SPPG Kab. Ponorogo"
+    "sumber": "Database SPPG Kab. Ponorogo",
+    "pm": {
+      "pmSatdikTotal": 1765,
+      "pmSiswa": 1579,
+      "pmGuruTendik": 186,
+      "pmSatdikKelompok": 18,
+      "pm3bTotal": 281,
+      "pmBusui": 72,
+      "pmBumil": 16,
+      "pmBalita": 193,
+      "pm3bKelompok": 7
+    },
+    "detail": {
+      "idSppg": "SMNAFUM7",
+      "jenis": "SPPG MITRA",
+      "namaKa": "BAGUS PRADANA MUZHAFFAR",
+      "nomorKa": "0881036080048",
+      "statusLabel": "OPERASIONAL",
+      "tglOperasional": "26 Februari 2026",
+      "yayasan": "Yayasan Pelita Stamba Nusantara",
+      "bankVa": "BANK BNI",
+      "picNama": "LIA RACHMAWATI",
+      "picNomor": "082141064522",
+      "slhs": true
+    }
   },
   {
     "id": "sppg-ponorogo-sawoo-sawoo",
@@ -1005,7 +2661,31 @@
     "lat": -7.95899,
     "lng": 111.547523,
     "perkiraan": true,
-    "sumber": "Database SPPG Kab. Ponorogo"
+    "sumber": "Database SPPG Kab. Ponorogo",
+    "pm": {
+      "pmSatdikTotal": 2271,
+      "pmSiswa": 2055,
+      "pmGuruTendik": 216,
+      "pmSatdikKelompok": 14,
+      "pm3bTotal": 145,
+      "pmBusui": 23,
+      "pmBumil": 40,
+      "pmBalita": 82,
+      "pm3bKelompok": 4
+    },
+    "detail": {
+      "idSppg": "ALG0K5TO",
+      "jenis": "SPPG MITRA",
+      "namaKa": "DESY KARTIKA WULANDARI",
+      "nomorKa": "082231153959",
+      "statusLabel": "OPERASIONAL",
+      "tglOperasional": "02 Februari 2026",
+      "yayasan": "Yayasan Damadika Jawa Timur",
+      "bankVa": "BANK BNI",
+      "picNama": "ANATA KUMALA WARDHANI, ST",
+      "picNomor": "085887021608",
+      "slhs": true
+    }
   },
   {
     "id": "sppg-ponorogo-siman-demangan",
@@ -1019,7 +2699,31 @@
     "lat": -7.874642,
     "lng": 111.492677,
     "perkiraan": false,
-    "sumber": "Database SPPG Kab. Ponorogo"
+    "sumber": "Database SPPG Kab. Ponorogo",
+    "pm": {
+      "pmSatdikTotal": 2101,
+      "pmSiswa": 1850,
+      "pmGuruTendik": 251,
+      "pmSatdikKelompok": 17,
+      "pm3bTotal": 492,
+      "pmBusui": 98,
+      "pmBumil": 37,
+      "pmBalita": 357,
+      "pm3bKelompok": 4
+    },
+    "detail": {
+      "idSppg": "JPZZ1X8P",
+      "jenis": "SPPG POLRI",
+      "namaKa": "FANNY SUKMA RIYANTI",
+      "nomorKa": "088989811211",
+      "statusLabel": "OPERASIONAL",
+      "tglOperasional": "17 Januari 2026",
+      "yayasan": "Yayasan Kemala Bhayangkari Polres Ponorogo",
+      "bankVa": "BANK BRI",
+      "picNama": "ENIK WIDAYATI",
+      "picNomor": "082140765218",
+      "slhs": true
+    }
   },
   {
     "id": "sppg-ponorogo-siman-patihan-kidul",
@@ -1033,7 +2737,32 @@
     "lat": -7.873619,
     "lng": 111.497528,
     "perkiraan": false,
-    "sumber": "Database SPPG Kab. Ponorogo"
+    "sumber": "Database SPPG Kab. Ponorogo",
+    "pm": {
+      "pmSatdikTotal": 2277,
+      "pmSiswa": 2048,
+      "pmGuruTendik": 229,
+      "pmSatdikKelompok": 30,
+      "pm3bTotal": 266,
+      "pmBusui": 60,
+      "pmBumil": 19,
+      "pmBalita": 187,
+      "pm3bKelompok": 3
+    },
+    "detail": {
+      "idSppg": "AP8DZ85R",
+      "jenis": "SPPG MITRA",
+      "namaKa": "WINDA MARTHA PRATIWI",
+      "nomorKa": "081392972029",
+      "statusLabel": "OPERASIONAL",
+      "tglOperasional": "8 Januari 2026",
+      "tglTarget": "27 Oktober 2025",
+      "yayasan": "Yayasan Berkah Srikandi Abadi",
+      "bankVa": "BANK BRI",
+      "picNama": "ERLINA MAYASARI",
+      "picNomor": "082337336967",
+      "slhs": true
+    }
   },
   {
     "id": "sppg-ponorogo-siman-ronowijayan",
@@ -1047,7 +2776,31 @@
     "lat": -7.865639,
     "lng": 111.489139,
     "perkiraan": false,
-    "sumber": "Database SPPG Kab. Ponorogo"
+    "sumber": "Database SPPG Kab. Ponorogo",
+    "pm": {
+      "pmSatdikTotal": 3292,
+      "pmSiswa": 2756,
+      "pmGuruTendik": 536,
+      "pmSatdikKelompok": 7,
+      "pm3bTotal": 128,
+      "pmBusui": 16,
+      "pmBumil": 17,
+      "pmBalita": 95,
+      "pm3bKelompok": 1
+    },
+    "detail": {
+      "idSppg": "FALNAB51",
+      "jenis": "SPPG MITRA",
+      "namaKa": "MUH. SYARIF HIDAYATULLAH",
+      "nomorKa": "082323357692",
+      "statusLabel": "OPERASIONAL",
+      "tglOperasional": "18 Januari 2026",
+      "yayasan": "Yayasan Whana Chatra Indonesia",
+      "bankVa": "BANK BRI",
+      "picNama": "ANGGA FIRDA TAMARA",
+      "picNomor": "0895412371407",
+      "slhs": true
+    }
   },
   {
     "id": "sppg-ponorogo-siman-pijeran",
@@ -1061,7 +2814,31 @@
     "lat": -7.88458,
     "lng": 111.50393,
     "perkiraan": false,
-    "sumber": "Database SPPG Kab. Ponorogo"
+    "sumber": "Database SPPG Kab. Ponorogo",
+    "pm": {
+      "pmSatdikTotal": 1418,
+      "pmSiswa": 1224,
+      "pmGuruTendik": 194,
+      "pmSatdikKelompok": 33,
+      "pm3bTotal": 366,
+      "pmBusui": 68,
+      "pmBumil": 31,
+      "pmBalita": 267,
+      "pm3bKelompok": 4
+    },
+    "detail": {
+      "idSppg": "HTNVQUW5",
+      "jenis": "SPPG MITRA",
+      "namaKa": "MUHAMMAD IRWINSYAH",
+      "nomorKa": "083830453970",
+      "statusLabel": "OPERASIONAL",
+      "tglOperasional": "2026-04-20",
+      "yayasan": "Yayasan Yppsdp",
+      "bankVa": "BANK BNI",
+      "picNama": "WAHYU NUGROHO",
+      "picNomor": "081216402173",
+      "slhs": true
+    }
   },
   {
     "id": "sppg-ponorogo-slahung-galak",
@@ -1075,7 +2852,31 @@
     "lat": -8.009662,
     "lng": 111.422124,
     "perkiraan": false,
-    "sumber": "Database SPPG Kab. Ponorogo"
+    "sumber": "Database SPPG Kab. Ponorogo",
+    "pm": {
+      "pmSatdikTotal": 2558,
+      "pmSiswa": 2245,
+      "pmGuruTendik": 313,
+      "pmSatdikKelompok": 30,
+      "pm3bTotal": 460,
+      "pmBusui": 98,
+      "pmBumil": 42,
+      "pmBalita": 320,
+      "pm3bKelompok": 6
+    },
+    "detail": {
+      "idSppg": "PQFMPG6P",
+      "jenis": "SPPG MITRA",
+      "namaKa": "FEBRIAN LUTFI PRAYOGA",
+      "nomorKa": "087733545515",
+      "statusLabel": "OPERASIONAL",
+      "tglOperasional": "12 Januari 2026",
+      "yayasan": "Yayasan Ndalem Langgar Dhuwur",
+      "bankVa": "BANK BRI",
+      "picNama": "RIAN PRIYA HANDOKO",
+      "picNomor": "085272350085",
+      "slhs": true
+    }
   },
   {
     "id": "sppg-ponorogo-slahung-slahung",
@@ -1089,7 +2890,31 @@
     "lat": -7.990972,
     "lng": 111.425256,
     "perkiraan": true,
-    "sumber": "Database SPPG Kab. Ponorogo"
+    "sumber": "Database SPPG Kab. Ponorogo",
+    "pm": {
+      "pmSatdikTotal": 3688,
+      "pmSiswa": 3306,
+      "pmGuruTendik": 382,
+      "pmSatdikKelompok": 36,
+      "pm3bTotal": 301,
+      "pmBusui": 58,
+      "pmBumil": 26,
+      "pmBalita": 217,
+      "pm3bKelompok": 6
+    },
+    "detail": {
+      "idSppg": "YC6RGVLD",
+      "jenis": "SPPG MITRA",
+      "namaKa": "HUSEN MUHAMMAD MUZAQI",
+      "nomorKa": "082244313190",
+      "statusLabel": "OPERASIONAL",
+      "tglTarget": "4 Agustus 2025",
+      "yayasan": "Yayasan Mualaf Indonesia Timur",
+      "bankVa": "BANK BRI",
+      "picNama": "DAMI KEMIATI",
+      "picNomor": "082128611797",
+      "slhs": true
+    }
   },
   {
     "id": "sppg-ponorogo-slahung-nailan",
@@ -1103,7 +2928,31 @@
     "lat": -7.980281,
     "lng": 111.428389,
     "perkiraan": false,
-    "sumber": "Database SPPG Kab. Ponorogo"
+    "sumber": "Database SPPG Kab. Ponorogo",
+    "pm": {
+      "pmSatdikTotal": 1942,
+      "pmSiswa": 1703,
+      "pmGuruTendik": 239,
+      "pmSatdikKelompok": 25,
+      "pm3bTotal": 347,
+      "pmBusui": 31,
+      "pmBumil": 71,
+      "pmBalita": 245,
+      "pm3bKelompok": 16
+    },
+    "detail": {
+      "idSppg": "RWX1D68D",
+      "jenis": "SPPG MITRA",
+      "namaKa": "SYURGA SETYA PUTRA. W.P",
+      "nomorKa": "085156070144",
+      "statusLabel": "OPERASIONAL",
+      "tglOperasional": "23 Febuari 2026",
+      "yayasan": "Yayasan Pendidikan Islam Ulfatul Mutaalim",
+      "bankVa": "BANK BNI",
+      "picNama": "AYU DWI SUKMAWATI",
+      "picNomor": "087831691434",
+      "slhs": true
+    }
   },
   {
     "id": "sppg-ponorogo-sooko-sooko",
@@ -1117,7 +2966,31 @@
     "lat": -7.908488,
     "lng": 111.673719,
     "perkiraan": false,
-    "sumber": "Database SPPG Kab. Ponorogo"
+    "sumber": "Database SPPG Kab. Ponorogo",
+    "pm": {
+      "pmSatdikTotal": 2342,
+      "pmSiswa": 2157,
+      "pmGuruTendik": 185,
+      "pmSatdikKelompok": 29,
+      "pm3bTotal": 326,
+      "pmBusui": 65,
+      "pmBumil": 0,
+      "pmBalita": 261,
+      "pm3bKelompok": 66
+    },
+    "detail": {
+      "idSppg": "5Z4TG5TQ",
+      "jenis": "SPPG MITRA",
+      "namaKa": "ANGGA SANJAYA",
+      "nomorKa": "08817054465",
+      "statusLabel": "OPERASIONAL",
+      "tglOperasional": "9 Februari 2026",
+      "yayasan": "Yayasan Pendidikan Islam Ulfatul Mutaalim",
+      "bankVa": "BANK BNI",
+      "picNama": "YAHYA ABDUL MATIEN",
+      "picNomor": "081215755787",
+      "slhs": true
+    }
   },
   {
     "id": "sppg-ponorogo-sukorejo-gelanglor",
@@ -1131,7 +3004,32 @@
     "lat": -7.81803,
     "lng": 111.43628,
     "perkiraan": false,
-    "sumber": "Database SPPG Kab. Ponorogo"
+    "sumber": "Database SPPG Kab. Ponorogo",
+    "pm": {
+      "pmSatdikTotal": 2795,
+      "pmSiswa": 2458,
+      "pmGuruTendik": 337,
+      "pmSatdikKelompok": 29,
+      "pm3bTotal": 177,
+      "pmBusui": 38,
+      "pmBumil": 14,
+      "pmBalita": 125,
+      "pm3bKelompok": 5
+    },
+    "detail": {
+      "idSppg": "NYKFK9WQ",
+      "jenis": "SPPG MITRA",
+      "namaKa": "NUR LAILATUL MUBAROKAH",
+      "nomorKa": "082331406908",
+      "statusLabel": "OPERASIONAL",
+      "tglOperasional": "12 Januari 2026",
+      "tglTarget": "2025-11-03",
+      "yayasan": "Yayasan Hidayatul Mubtadiin Gonggang",
+      "bankVa": "BANK BRI",
+      "picNama": "YUSUF IQBAL FIRDAUS",
+      "picNomor": "082135160501",
+      "slhs": true
+    }
   },
   {
     "id": "sppg-ponorogo-sukorejo-karanglo-lor",
@@ -1145,7 +3043,32 @@
     "lat": -7.86546,
     "lng": 111.427636,
     "perkiraan": false,
-    "sumber": "Database SPPG Kab. Ponorogo"
+    "sumber": "Database SPPG Kab. Ponorogo",
+    "pm": {
+      "pmSatdikTotal": 2792,
+      "pmSiswa": 2426,
+      "pmGuruTendik": 366,
+      "pmSatdikKelompok": 40,
+      "pm3bTotal": 87,
+      "pmBusui": 16,
+      "pmBumil": 22,
+      "pmBalita": 49,
+      "pm3bKelompok": 1
+    },
+    "detail": {
+      "idSppg": "ZEYFZPLI",
+      "jenis": "SPPG MITRA",
+      "namaKa": "RAFI NUR ANNAS",
+      "nomorKa": "082231590039",
+      "statusLabel": "OPERASIONAL",
+      "tglOperasional": "15 Januari 2026",
+      "tglTarget": "15 Januari 2026",
+      "yayasan": "Yayasan Srikandi Langgeng Makmur",
+      "bankVa": "BANK BRI",
+      "picNama": "BAGUS BUDI SANTOSO",
+      "picNomor": "081227879111",
+      "slhs": true
+    }
   },
   {
     "id": "sppg-ponorogo-sukorejo-serangan",
@@ -1159,7 +3082,32 @@
     "lat": -7.792881,
     "lng": 111.444758,
     "perkiraan": false,
-    "sumber": "Database SPPG Kab. Ponorogo"
+    "sumber": "Database SPPG Kab. Ponorogo",
+    "pm": {
+      "pmSatdikTotal": 2651,
+      "pmSiswa": 2318,
+      "pmGuruTendik": 333,
+      "pmSatdikKelompok": 43,
+      "pm3bTotal": 119,
+      "pmBusui": 21,
+      "pmBumil": 13,
+      "pmBalita": 85,
+      "pm3bKelompok": 1
+    },
+    "detail": {
+      "idSppg": "MG18J6AK",
+      "jenis": "SPPG MITRA",
+      "namaKa": "BAREB SETIADJI",
+      "nomorKa": "081546009922",
+      "statusLabel": "OPERASIONAL",
+      "tglOperasional": "12 Januari 2026",
+      "tglTarget": "12 Januari 2026",
+      "yayasan": "Yayasan PPSDP",
+      "bankVa": "BANK BRI",
+      "picNama": "RIZKY DWI PRASETYO",
+      "picNomor": "0895386101835",
+      "slhs": true
+    }
   },
   {
     "id": "sppg-ponorogo-pudak-tambang",
@@ -1168,12 +3116,34 @@
     "desa": "Tambang",
     "status": "akan",
     "porsi": 786,
-    "alamat": "Jl. Melau, Desa Tambang, Kec. Pudak, Kab. Ponorogo, Jawa Timur",
+    "alamat": "Jl. Melau, Desa Tambang, Kec. Pudak, Kab. Ponorogo, Jawa Timur Lat : -7.872950 Lon : 111.700804",
     "gmaps": "https://maps.app.goo.gl/apV75QtjuxjUKN1M7",
     "lat": -7.87295,
     "lng": 111.700804,
     "perkiraan": false,
-    "sumber": "Database SPPG Kab. Ponorogo"
+    "sumber": "Database SPPG Kab. Ponorogo",
+    "pm": {
+      "pmSatdikTotal": 528,
+      "pmSiswa": 453,
+      "pmGuruTendik": 75,
+      "pmSatdikKelompok": 11,
+      "pm3bTotal": 258,
+      "pmBusui": 32,
+      "pmBumil": 16,
+      "pmBalita": 210,
+      "pm3bKelompok": 6
+    },
+    "detail": {
+      "idSppg": "H6OUMSRN",
+      "jenis": "SPPG 3T",
+      "namaKa": "MAULANA AYUB AHMAD",
+      "nomorKa": "082199181823",
+      "statusLabel": "AKAN OPERASIONAL",
+      "yayasan": "Yayasan Hikmah Mitra Mandiri",
+      "bankVa": "BANK BTN",
+      "picNama": "DILLION ALANSYAH RAFID",
+      "picNomor": "08225796597"
+    }
   },
   {
     "id": "sppg-ponorogo-pudak-pudak-kulon",
@@ -1182,11 +3152,33 @@
     "desa": "Pudak Kulon",
     "status": "akan",
     "porsi": 871,
-    "alamat": "Jl. Raya Pulung-pudak, Desa Pudak Kulon, Kec. Pudak, Kab. Ponorogo, Jawa Timur ;",
+    "alamat": "Jl. Raya Pulung-pudak, Desa Pudak Kulon, Kec. Pudak, Kab. Ponorogo, Jawa Timur ; Lat : -7. 870905 ,long : 111.712631",
     "gmaps": "https://goo.gl/maps/MgjX5qgiJJJUffFV9?g_st=aw",
     "lat": -7.86895,
     "lng": 111.700804,
     "perkiraan": true,
-    "sumber": "Database SPPG Kab. Ponorogo"
+    "sumber": "Database SPPG Kab. Ponorogo",
+    "pm": {
+      "pmSatdikTotal": 514,
+      "pmSiswa": 457,
+      "pmGuruTendik": 57,
+      "pmSatdikKelompok": 9,
+      "pm3bTotal": 357,
+      "pmBusui": 40,
+      "pmBumil": 34,
+      "pmBalita": 283,
+      "pm3bKelompok": 7
+    },
+    "detail": {
+      "idSppg": "GRMW4OA1",
+      "jenis": "SPPG 3T",
+      "namaKa": "FADLI ARTIANSA RAHMAN",
+      "nomorKa": "082198226643",
+      "statusLabel": "AKAN OPERASIONAL",
+      "yayasan": "Yayasan Hikmah Mitra Mandiri",
+      "bankVa": "BANK BTN",
+      "picNama": "M ROIKAN AJHURI ASYAROFI",
+      "picNomor": "081229431976"
+    }
   }
 ]

@@ -16,6 +16,7 @@ import {
 import ControlPanel from "@/components/ControlPanel";
 import RukoManager from "@/components/RukoManager";
 import SppgForm from "@/components/SppgForm";
+import DataPanel from "@/components/DataPanel";
 
 const MapView = dynamic(() => import("@/components/MapView"), {
   ssr: false,
@@ -41,6 +42,7 @@ export default function Home() {
   const [editingSppg, setEditingSppg] = useState<Sppg | null>(null);
   const [showForm, setShowForm] = useState(false);
   const [pickedCoord, setPickedCoord] = useState<LatLng | null>(null);
+  const [focusPoint, setFocusPoint] = useState<LatLng | null>(null);
 
   // muat data dari localStorage + seed setelah mount (hindari mismatch SSR)
   useEffect(() => {
@@ -104,19 +106,24 @@ export default function Home() {
   return (
     <main className="flex h-screen flex-col md:flex-row">
       {/* Sidebar */}
-      <aside className="flex w-full flex-col border-b border-slate-200 bg-white md:h-full md:w-96 md:border-b-0 md:border-r">
-        <header className="flex items-center justify-between gap-2 bg-brand px-4 py-3 text-white">
-          <div>
-            <h1 className="text-base font-bold leading-tight">
-              Peta SPPG Ponorogo
-            </h1>
-            <p className="text-xs text-brand-light">
-              Analisis lokasi ruko supplier dapur MBG
-            </p>
+      <aside className="flex w-full flex-col border-b border-slate-200 bg-white md:h-full md:w-96 md:border-b-0 md:border-r md:shadow-sm">
+        <header className="flex items-center justify-between gap-2 bg-gradient-to-r from-brand-dark to-brand px-4 py-3.5 text-white">
+          <div className="flex items-center gap-2.5">
+            <span className="grid h-9 w-9 shrink-0 place-items-center rounded-lg bg-white/15 text-lg">
+              🍚
+            </span>
+            <div>
+              <h1 className="text-base font-bold leading-tight">
+                Peta SPPG Ponorogo
+              </h1>
+              <p className="text-[11px] text-brand-light">
+                Database dapur MBG &amp; analisis lokasi ruko supplier
+              </p>
+            </div>
           </div>
           <Link
             href="/supplier"
-            className="shrink-0 rounded-full border border-white/40 px-3 py-1.5 text-xs font-medium hover:bg-white/10"
+            className="shrink-0 rounded-full border border-white/40 px-3 py-1.5 text-xs font-medium transition hover:bg-white/15"
           >
             🏪 Katalog
           </Link>
@@ -133,10 +140,10 @@ export default function Home() {
             <button
               key={id}
               onClick={() => setTab(id)}
-              className={`flex-1 px-2 py-2 ${
+              className={`flex-1 px-2 py-2.5 transition ${
                 tab === id
                   ? "border-b-2 border-brand font-semibold text-brand"
-                  : "text-slate-500"
+                  : "border-b-2 border-transparent text-slate-500 hover:bg-slate-50 hover:text-slate-700"
               }`}
             >
               {label}
@@ -177,23 +184,13 @@ export default function Home() {
             />
           )}
 
-          {tab === "data" && (
-            <div className="space-y-3">
-              {!showForm && (
-                <button
-                  onClick={() => {
-                    setEditingSppg(null);
-                    setPickedCoord(null);
-                    setShowForm(true);
-                  }}
-                  className="w-full rounded bg-brand px-2 py-1.5 text-sm font-semibold text-white hover:bg-brand-dark"
-                >
-                  + Tambah SPPG baru
-                </button>
-              )}
-
-              {showForm && (
-                <div className="rounded border border-slate-200 p-2">
+          {tab === "data" &&
+            (showForm ? (
+              <div className="space-y-3">
+                <div className="rounded-lg border border-slate-200 bg-white p-3">
+                  <h2 className="mb-2 text-sm font-semibold text-slate-700">
+                    {editingSppg ? "Edit SPPG" : "Tambah SPPG baru"}
+                  </h2>
                   <SppgForm
                     editing={editingSppg}
                     pickedCoord={pickedCoord}
@@ -208,41 +205,36 @@ export default function Home() {
                     }}
                   />
                 </div>
-              )}
-
-              <ul className="space-y-1 text-sm">
-                {sppgList.map((s) => (
-                  <li
-                    key={s.id}
-                    className="flex items-center justify-between gap-2 rounded border border-slate-100 px-2 py-1"
-                  >
-                    <div className="min-w-0">
-                      <div className="truncate font-medium">{s.nama}</div>
-                      <div className="truncate text-xs text-slate-500">
-                        {s.kecamatan} · {s.status}
-                        {s.perkiraan && " · perkiraan"}
-                      </div>
-                    </div>
-                    <button
-                      onClick={() => {
-                        setEditingSppg(s);
-                        setPickedCoord(null);
-                        setShowForm(true);
-                      }}
-                      className="shrink-0 text-xs text-brand hover:underline"
-                    >
-                      edit
-                    </button>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          )}
+              </div>
+            ) : (
+              <DataPanel
+                sppgList={sppgList}
+                onAdd={() => {
+                  setEditingSppg(null);
+                  setPickedCoord(null);
+                  setShowForm(true);
+                }}
+                onEdit={(s) => {
+                  setEditingSppg(s);
+                  setPickedCoord(null);
+                  setShowForm(true);
+                }}
+                onFocus={(s) => setFocusPoint({ lat: s.lat, lng: s.lng })}
+              />
+            ))}
         </div>
 
-        <footer className="border-t border-slate-200 px-4 py-2 text-[10px] text-slate-400">
-          Data awal hasil riset sumber publik & sebagian koordinat perkiraan.
-          Peta © OpenStreetMap.
+        <footer className="flex items-center justify-between gap-2 border-t border-slate-200 px-4 py-2 text-[10px] text-slate-400">
+          <span>
+            Data awal database resmi & sebagian koordinat perkiraan. Peta ©
+            OpenStreetMap.
+          </span>
+          <Link
+            href="/admin"
+            className="shrink-0 rounded border border-slate-200 px-2 py-0.5 font-medium text-slate-500 hover:bg-slate-50 hover:text-brand"
+          >
+            🛠️ Admin
+          </Link>
         </footer>
       </aside>
 
@@ -260,6 +252,7 @@ export default function Home() {
           radiusKm={radiusKm}
           showHeatmap={showHeatmap}
           showRekomendasi={showRekomendasi}
+          focusPoint={focusPoint}
           onMapClick={handleMapClick}
           onSelectRuko={(id) => {
             setSelectedRukoId(id);

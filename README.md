@@ -16,8 +16,32 @@ ruko supplier yang buka 24 jam di titik ramai punya keunggulan.
   dapur tertinggi (🔴) sebagai kandidat lokasi ruko.
 - **Heatmap kepadatan** permintaan untuk melihat area terpadat.
 - **Kelola data SPPG** — tambah/edit titik dapur (koordinat bisa dipilih dengan klik peta).
+- **Halaman Admin** (`/admin`) — kelola seluruh database: edit titik koordinat dengan peta
+  presisi (klik/geser 📍), perbarui **jumlah penerima manfaat** (siswa, guru, balita, bumil,
+  busui — total dihitung otomatis), kontak, status, dan **ekspor/impor JSON** untuk cadangan.
 
 Data dapur & calon ruko yang Anda ubah/tambah disimpan di **localStorage browser** (tanpa server/DB).
+
+## Halaman Admin
+
+Buka **`/admin`** (kata sandi awal `sppg-admin`, ubah di `app/admin/page.tsx` konstanta
+`ADMIN_PASS`). Di sini Anda bisa:
+
+- **Perbaiki koordinat** tiap dapur seakurat mungkin — geser pin 📍 di peta atau tempel
+  lat/lng dari tautan Google Maps dapur tersebut (tersedia tombol langsung ke Maps).
+- **Update jumlah data** (PM) — total SATDIK, 3B, dan porsi/hari dihitung otomatis dari rincian.
+- **Ekspor JSON** sebagai cadangan / untuk menjadikan koreksi sebagai data permanen (ganti isi
+  `data/sppg.json`), atau **Impor JSON** untuk memulihkannya.
+- **Reset** ke data awal bila ada kesalahan.
+
+> Catatan: gate kata sandi bersifat *client-side* (bukan keamanan server). Untuk melindungi
+> halaman admin di produksi, batasi akses lewat Vercel (mis. password protection) atau proxy.
+
+### Presisi koordinat
+
+64 dari 85 titik memakai koordinat presisi dari database resmi (ditandai titik pasti); 21 titik
+masih **perkiraan** (ditandai ⚠) dan sebaiknya dikoreksi lewat halaman Admin dengan mencocokkan
+tautan Google Maps masing-masing dapur.
 
 ## Menjalankan lokal
 
