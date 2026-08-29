@@ -10,15 +10,31 @@ interface Props {
   onAdd: () => void;
   onEdit: (s: Sppg) => void;
   onFocus: (s: Sppg) => void;
+  onShowYayasan: (nama: string) => void;
 }
 
 type StatusFilter = "all" | SppgStatus;
 
-export default function DataPanel({ sppgList, onAdd, onEdit, onFocus }: Props) {
+export default function DataPanel({
+  sppgList,
+  onAdd,
+  onEdit,
+  onFocus,
+  onShowYayasan,
+}: Props) {
   const [q, setQ] = useState("");
   const [kec, setKec] = useState("all");
   const [status, setStatus] = useState<StatusFilter>("all");
   const [openId, setOpenId] = useState<string | null>(null);
+
+  const yayasanCounts = useMemo(() => {
+    const m = new Map<string, number>();
+    for (const s of sppgList) {
+      const y = s.detail?.yayasan?.trim();
+      if (y) m.set(y, (m.get(y) ?? 0) + 1);
+    }
+    return m;
+  }, [sppgList]);
 
   const kecamatanList = useMemo(
     () =>
@@ -156,7 +172,17 @@ export default function DataPanel({ sppgList, onAdd, onEdit, onFocus }: Props) {
 
               {open && (
                 <div className="border-t border-slate-100 bg-slate-50/60 px-3 py-3">
-                  <SppgDetailCard s={s} />
+                  <SppgDetailCard
+                    s={s}
+                    yayasanCount={
+                      s.detail?.yayasan
+                        ? (yayasanCounts.get(s.detail.yayasan.trim()) ?? 1) - 1
+                        : 0
+                    }
+                    onShowYayasan={() =>
+                      s.detail?.yayasan && onShowYayasan(s.detail.yayasan.trim())
+                    }
+                  />
                   <div className="mt-3 flex gap-2 border-t border-slate-200 pt-2">
                     <button
                       onClick={() => onFocus(s)}

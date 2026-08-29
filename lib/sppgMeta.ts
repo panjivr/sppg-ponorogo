@@ -193,3 +193,75 @@ export function perijinanProgress(p?: SppgPerijinan): { done: number; total: num
   }
   return { done, total: PERIJINAN_ITEMS.length };
 }
+
+// ── Jaringan yayasan (benang merah) ─────────────────────────────────────────
+
+/** Palet warna distinct untuk jaringan yayasan (benang merah). */
+export const YAYASAN_COLORS = [
+  "#dc2626", "#2563eb", "#7c3aed", "#059669", "#d97706",
+  "#db2777", "#0891b2", "#65a30d", "#e11d48", "#4f46e5",
+  "#ca8a04", "#0d9488", "#9333ea", "#c2410c", "#0284c7",
+  "#be123c", "#15803d", "#7e22ce",
+];
+
+export interface YayasanGroup {
+  nama: string;
+  color: string;
+  items: Sppg[];
+  totalPM: number;
+}
+
+/**
+ * Kelompokkan dapur per yayasan; hanya yayasan dengan ≥2 dapur (punya "benang
+ * merah"), diurutkan dari yang terbanyak, masing-masing diberi satu warna tetap.
+ */
+export function yayasanGroups(list: Sppg[]): YayasanGroup[] {
+  const map = new Map<string, Sppg[]>();
+  for (const s of list) {
+    const y = s.detail?.yayasan?.trim();
+    if (!y) continue;
+    if (!map.has(y)) map.set(y, []);
+    map.get(y)!.push(s);
+  }
+  const groups = Array.from(map.entries())
+    .filter(([, v]) => v.length > 1)
+    .sort((a, b) => b[1].length - a[1].length || a[0].localeCompare(b[0], "id"));
+  return groups.map(([nama, items], i) => ({
+    nama,
+    color: YAYASAN_COLORS[i % YAYASAN_COLORS.length],
+    items,
+    totalPM: items.reduce((a, s) => a + (s.porsi || 0), 0),
+  }));
+}
+
+/** Peta nama yayasan → warna (hanya yayasan multi-dapur). */
+export function yayasanColorMap(list: Sppg[]): Record<string, string> {
+  const out: Record<string, string> = {};
+  for (const g of yayasanGroups(list)) out[g.nama] = g.color;
+  return out;
+}
+
+/**
+ * Ekstrak koordinat dari URL/teks Google Maps yang ditempel.
+ * Mendukung: "@lat,lng", "!3dlat!4dlng", "q=lat,lng", "ll=lat,lng",
+ * dan "lat, lng" polos. Kembalikan null bila tak ditemukan.
+ */
+export function parseGmaps(input: string): { lat: number; lng: number } | null {
+  const s = (input || "").trim();
+  if (!s) return null;
+  const pats = [
+    /@(-?\d{1,3}\.\d+),(-?\d{1,3}\.\d+)/,
+    /!3d(-?\d{1,3}\.\d+)!4d(-?\d{1,3}\.\d+)/,
+    /[?&](?:q|ll|query|center)=(-?\d{1,3}\.\d+),\s*(-?\d{1,3}\.\d+)/,
+    /^(-?\d{1,3}\.\d+),\s*(-?\d{1,3}\.\d+)$/,
+  ];
+  for (const p of pats) {
+    const m = s.match(p);
+    if (m) {
+      const lat = parseFloat(m[1]);
+      const lng = parseFloat(m[2]);
+      if (Number.isFinite(lat) && Number.isFinite(lng)) return { lat, lng };
+    }
+  }
+  return null;
+}

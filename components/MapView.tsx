@@ -6,6 +6,7 @@ import {
   TileLayer,
   Marker,
   Circle,
+  Polyline,
   Popup,
   useMap,
   useMapEvents,
@@ -19,7 +20,13 @@ import {
   skorGrid,
   type LatLng,
 } from "@/lib/geo";
-import { STATUS_META, statusMeta, fmt, fmtTanggal } from "@/lib/sppgMeta";
+import {
+  STATUS_META,
+  statusMeta,
+  fmt,
+  fmtTanggal,
+  yayasanGroups,
+} from "@/lib/sppgMeta";
 
 const PONOROGO_CENTER: [number, number] = [-7.868, 111.462];
 
@@ -30,12 +37,18 @@ const STATUS_COLOR: Record<string, string> = {
   suspend: STATUS_META.suspend.color,
 };
 
-function dotIcon(color: string, highlight: boolean): L.DivIcon {
+function dotIcon(
+  color: string,
+  highlight: boolean,
+  ringColor?: string
+): L.DivIcon {
   const size = highlight ? 22 : 16;
-  const ring = highlight ? "box-shadow:0 0 0 4px rgba(37,99,235,0.35);" : "";
+  const border = ringColor ? ringColor : "#fff";
+  const bw = ringColor ? 3 : 2;
+  const glow = highlight ? "box-shadow:0 0 0 4px rgba(37,99,235,0.35);" : "";
   return L.divIcon({
     className: "sppg-icon",
-    html: `<div style="width:${size}px;height:${size}px;border-radius:50%;background:${color};border:2px solid #fff;${ring}"></div>`,
+    html: `<div style="width:${size}px;height:${size}px;border-radius:50%;background:${color};border:${bw}px solid ${border};${glow}"></div>`,
     iconSize: [size, size],
     iconAnchor: [size / 2, size / 2],
   });
@@ -106,9 +119,12 @@ interface MapViewProps {
   radiusKm: number;
   showHeatmap: boolean;
   showRekomendasi: boolean;
+  showYayasan?: boolean;
+  selectedYayasan?: string | null;
   focusPoint?: LatLng | null;
   onMapClick?: (p: LatLng) => void;
   onSelectRuko: (id: string) => void;
+  onSelectYayasan?: (nama: string | null) => void;
 }
 
 export default function MapView({
@@ -118,11 +134,23 @@ export default function MapView({
   radiusKm,
   showHeatmap,
   showRekomendasi,
+  showYayasan,
+  selectedYayasan,
   focusPoint,
   onMapClick,
   onSelectRuko,
+  onSelectYayasan,
 }: MapViewProps) {
   const selectedRuko = rukoList.find((r) => r.id === selectedRukoId) || null;
+
+  const groups = useMemo(() => yayasanGroups(sppgList), [sppgList]);
+  const yayasanColorById = useMemo(() => {
+    const m = new Map<string, string>();
+    if (showYayasan) {
+      for (const g of groups) for (const s of g.items) m.set(s.id, g.color);
+    }
+    return m;
+  }, [groups, showYayasan]);
 
   const highlightIds = useMemo(() => {
     if (!selectedRuko) return new Set<string>();
@@ -160,13 +188,44 @@ export default function MapView({
 
       {showHeatmap && <HeatLayer points={sppgList} />}
 
-      {sppgList.map((s) => (
+      {/* Benang merah: garis penghubung dapur satu yayasan */}
+      {showYayasan &&
+        groups
+          .filter((g) => !selectedYayasan || g.nama === selectedYayasan)
+          .map((g) => {
+            const active = selectedYayasan === g.nama;
+            const dim = !!selectedYayasan && !active;
+            return (
+              <Polyline
+                key={`yy-${g.nama}`}
+                positions={g.items.map((s) => [s.lat, s.lng] as [number, number])}
+                pathOptions={{
+                  color: g.color,
+                  weight: active ? 4 : 2.5,
+                  opacity: dim ? 0.15 : active ? 0.9 : 0.55,
+                  dashArray: active ? undefined : "6 6",
+                }}
+                eventHandlers={{
+                  click: () =>
+                    onSelectYayasan?.(active ? null : g.nama),
+                }}
+              />
+            );
+          })}
+
+      {sppgList.map((s) => {
+        const yColor = yayasanColorById.get(s.id);
+        const dimByYayasan =
+          !!showYayasan && !!selectedYayasan && s.detail?.yayasan !== selectedYayasan;
+        return (
         <Marker
           key={s.id}
+          opacity={dimByYayasan ? 0.35 : 1}
           position={[s.lat, s.lng]}
           icon={dotIcon(
             STATUS_COLOR[s.status] || "#64748b",
-            highlightIds.has(s.id)
+            highlightIds.has(s.id),
+            yColor
           )}
         >
           <Popup>
@@ -259,10 +318,25 @@ export default function MapView({
                   ⚠ koordinat perkiraan (klik Google Maps untuk titik pasti)
                 </div>
               )}
+              {yColor && (
+                <button
+                  onClick={() => onSelectYayasan?.(s.detail?.yayasan ?? null)}
+                  className="mt-1.5 flex w-full items-center gap-1.5 rounded border border-slate-200 px-1.5 py-1 text-left text-[11px] hover:bg-slate-50"
+                >
+                  <span
+                    className="inline-block h-2 w-2 shrink-0 rounded-full"
+                    style={{ background: yColor }}
+                  />
+                  <span className="text-slate-600">
+                    Jaringan yayasan — sorot dapur sekelompok
+                  </span>
+                </button>
+              )}
             </div>
           </Popup>
         </Marker>
-      ))}
+        );
+      })}
 
       {rukoList.map((r) => (
         <Marker
