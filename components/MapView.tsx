@@ -19,14 +19,15 @@ import {
   skorGrid,
   type LatLng,
 } from "@/lib/geo";
+import { STATUS_META, statusMeta, fmt, fmtTanggal } from "@/lib/sppgMeta";
 
 const PONOROGO_CENTER: [number, number] = [-7.868, 111.462];
 
 const STATUS_COLOR: Record<string, string> = {
-  operasional: "#16a34a",
-  akan: "#f59e0b",
-  berhenti: "#94a3b8",
-  suspend: "#ef4444",
+  operasional: STATUS_META.operasional.color,
+  akan: STATUS_META.akan.color,
+  berhenti: STATUS_META.berhenti.color,
+  suspend: STATUS_META.suspend.color,
 };
 
 function dotIcon(color: string, highlight: boolean): L.DivIcon {
@@ -81,6 +82,14 @@ function HeatLayer({ points }: { points: Sppg[] }) {
   return null;
 }
 
+function FocusHandler({ point }: { point: LatLng | null }) {
+  const map = useMap();
+  useEffect(() => {
+    if (point) map.flyTo([point.lat, point.lng], 15, { duration: 0.8 });
+  }, [map, point]);
+  return null;
+}
+
 function ClickHandler({ onClick }: { onClick?: (p: LatLng) => void }) {
   useMapEvents({
     click(e) {
@@ -97,6 +106,7 @@ interface MapViewProps {
   radiusKm: number;
   showHeatmap: boolean;
   showRekomendasi: boolean;
+  focusPoint?: LatLng | null;
   onMapClick?: (p: LatLng) => void;
   onSelectRuko: (id: string) => void;
 }
@@ -108,6 +118,7 @@ export default function MapView({
   radiusKm,
   showHeatmap,
   showRekomendasi,
+  focusPoint,
   onMapClick,
   onSelectRuko,
 }: MapViewProps) {
@@ -145,6 +156,7 @@ export default function MapView({
       />
 
       <ClickHandler onClick={onMapClick} />
+      <FocusHandler point={focusPoint ?? null} />
 
       {showHeatmap && <HeatLayer points={sppgList} />}
 
@@ -158,24 +170,86 @@ export default function MapView({
           )}
         >
           <Popup>
-            <div className="text-sm">
-              <div className="font-semibold">{s.nama}</div>
-              {s.desa && (
-                <div className="text-xs text-slate-500">
-                  {s.desa}, Kec. {s.kecamatan}
-                </div>
-              )}
-              <div className="text-slate-600">{s.alamat}</div>
-              <div className="mt-1">
-                Status: <span className="font-medium">{s.status}</span>
+            <div className="min-w-[220px] text-sm">
+              <div className="font-semibold leading-snug">{s.nama}</div>
+              <div className="text-xs text-slate-500">
+                {s.desa ? `${s.desa}, ` : ""}Kec. {s.kecamatan}
+                {s.detail?.idSppg && (
+                  <span className="ml-1 font-mono text-slate-400">
+                    · {s.detail.idSppg}
+                  </span>
+                )}
               </div>
-              <div>Penerima manfaat: {s.porsi.toLocaleString("id-ID")}</div>
+
+              <div className="my-1.5 flex flex-wrap items-center gap-1">
+                <span
+                  className="inline-flex items-center gap-1 rounded-full px-1.5 py-0.5 text-[11px] font-medium text-white"
+                  style={{ background: statusMeta(s.status).color }}
+                >
+                  {s.detail?.statusLabel ?? statusMeta(s.status).label}
+                </span>
+                {s.detail?.jenis && (
+                  <span className="rounded-full bg-slate-100 px-1.5 py-0.5 text-[11px] font-medium text-slate-600">
+                    {s.detail.jenis}
+                  </span>
+                )}
+              </div>
+
+              <div className="text-slate-600">{s.alamat}</div>
+
+              <table className="mt-1.5 w-full border-t border-slate-200 text-xs">
+                <tbody>
+                  <tr>
+                    <td className="py-0.5 text-slate-500">Total PM/hari</td>
+                    <td className="py-0.5 text-right font-semibold tabular-nums">
+                      {fmt(s.porsi)}
+                    </td>
+                  </tr>
+                  {s.pm?.pmSatdikTotal != null && (
+                    <tr>
+                      <td className="py-0.5 pl-2 text-slate-500">Satuan pendidikan</td>
+                      <td className="py-0.5 text-right tabular-nums">
+                        {fmt(s.pm.pmSatdikTotal)}
+                      </td>
+                    </tr>
+                  )}
+                  {s.pm?.pm3bTotal != null && (
+                    <tr>
+                      <td className="py-0.5 pl-2 text-slate-500">Kelompok 3B</td>
+                      <td className="py-0.5 text-right tabular-nums">
+                        {fmt(s.pm.pm3bTotal)}
+                      </td>
+                    </tr>
+                  )}
+                  {s.detail?.namaKa && (
+                    <tr>
+                      <td className="py-0.5 text-slate-500">Ka SPPG</td>
+                      <td className="py-0.5 text-right">{s.detail.namaKa}</td>
+                    </tr>
+                  )}
+                  {s.detail?.yayasan && (
+                    <tr>
+                      <td className="py-0.5 text-slate-500">Yayasan</td>
+                      <td className="py-0.5 text-right">{s.detail.yayasan}</td>
+                    </tr>
+                  )}
+                  {fmtTanggal(s.detail?.tglOperasional) && (
+                    <tr>
+                      <td className="py-0.5 text-slate-500">Operasional</td>
+                      <td className="py-0.5 text-right">
+                        {fmtTanggal(s.detail?.tglOperasional)}
+                      </td>
+                    </tr>
+                  )}
+                </tbody>
+              </table>
+
               {s.gmaps && (
                 <a
                   href={s.gmaps}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="mt-1 inline-block font-medium text-blue-600 underline"
+                  className="mt-1.5 inline-block font-medium text-blue-600 underline"
                 >
                   📍 Buka di Google Maps
                 </a>
