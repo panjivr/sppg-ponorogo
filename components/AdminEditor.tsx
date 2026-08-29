@@ -2,8 +2,10 @@
 
 import { useMemo, useState } from "react";
 import dynamic from "next/dynamic";
-import type { Sppg, SppgStatus } from "@/lib/types";
-import { recalcPM, fmt, STATUS_META } from "@/lib/sppgMeta";
+import type { Sppg, SppgStatus, SppgPerijinan } from "@/lib/types";
+import { recalcPM, fmt, STATUS_META, PERIJINAN_ITEMS } from "@/lib/sppgMeta";
+
+const IZIN_OPTS = ["", "SUDAH", "PROSES", "BELUM PENGAJUAN"];
 
 const CoordPicker = dynamic(() => import("@/components/CoordPicker"), {
   ssr: false,
@@ -26,6 +28,15 @@ const numOrU = (v: string) => {
   const n = parseInt(v, 10);
   return Number.isFinite(n) ? n : undefined;
 };
+
+function cleanIzin(p: SppgPerijinan): SppgPerijinan | undefined {
+  const out: SppgPerijinan = {};
+  (Object.keys(p) as (keyof SppgPerijinan)[]).forEach((k) => {
+    const v = p[k];
+    if (v != null && String(v).trim() !== "") out[k] = String(v).trim();
+  });
+  return Object.keys(out).length ? out : undefined;
+}
 
 export default function AdminEditor({
   sppg,
@@ -72,6 +83,10 @@ export default function AdminEditor({
 
   const set = (k: keyof typeof f, v: string | boolean) =>
     setF((s) => ({ ...s, [k]: v }));
+
+  const [izin, setIzin] = useState<SppgPerijinan>(d.perijinan ?? {});
+  const setIz = (k: keyof SppgPerijinan, v: string) =>
+    setIzin((s) => ({ ...s, [k]: v }));
 
   const derived = useMemo(
     () =>
@@ -129,6 +144,7 @@ export default function AdminEditor({
         picNama: f.picNama.trim() || undefined,
         picNomor: f.picNomor.trim() || undefined,
         slhs: f.slhs,
+        perijinan: cleanIzin(izin),
       },
     };
     onSave(out);
@@ -244,6 +260,42 @@ export default function AdminEditor({
           <input type="checkbox" className="h-4 w-4 accent-brand" checked={f.slhs} onChange={(e) => set("slhs", e.target.checked)} />
           SLHS (Sertifikat Laik Higiene Sanitasi) sudah terbit
         </label>
+      </Section>
+
+      {/* Perizinan & sertifikasi */}
+      <Section title="Perizinan & sertifikasi">
+        <div className="space-y-2">
+          {PERIJINAN_ITEMS.map((it) => (
+            <div key={it.key} className="grid grid-cols-12 items-center gap-2">
+              <span className="col-span-5 text-xs text-slate-600 sm:col-span-4">{it.label}</span>
+              <select
+                className={`${inp} col-span-7 sm:col-span-3`}
+                value={(izin[it.key] as string) ?? ""}
+                onChange={(e) => setIz(it.key, e.target.value)}
+              >
+                {IZIN_OPTS.map((o) => (
+                  <option key={o} value={o}>{o || "—"}</option>
+                ))}
+              </select>
+              {it.noKey && (
+                <input
+                  className={`${inp} col-span-12 sm:col-span-5`}
+                  placeholder={`Nomor ${it.label}`}
+                  value={(izin[it.noKey] as string) ?? ""}
+                  onChange={(e) => setIz(it.noKey!, e.target.value)}
+                />
+              )}
+            </div>
+          ))}
+          <div className="grid grid-cols-1 gap-3 pt-1 sm:grid-cols-2">
+            <L label="Link dokumen perizinan">
+              <input className={inp} value={(izin.dokPerijinan as string) ?? ""} onChange={(e) => setIz("dokPerijinan", e.target.value)} placeholder="https://drive.google.com/…" />
+            </L>
+            <L label="Link dokumen kelengkapan">
+              <input className={inp} value={(izin.dokKelengkapan as string) ?? ""} onChange={(e) => setIz("dokKelengkapan", e.target.value)} placeholder="https://drive.google.com/…" />
+            </L>
+          </div>
+        </div>
       </Section>
 
       {/* Aksi */}
