@@ -19,7 +19,7 @@ import {
   resetPasarOverride,
   isPasarOverridden,
 } from "@/lib/storage";
-import { computeStats, fmt, statusMeta, STATUS_META } from "@/lib/sppgMeta";
+import { computeStats, fmt, statusMeta, STATUS_META, parseGmaps } from "@/lib/sppgMeta";
 import AdminEditor from "@/components/AdminEditor";
 import PasarEditor from "@/components/PasarEditor";
 
@@ -67,6 +67,53 @@ export default function AdminPage() {
   const [mode, setMode] = useState<"sppg" | "pasar">("sppg");
   const [pasarList, setPasarList] = useState<Pasar[]>([]);
   const [editingPasar, setEditingPasar] = useState<Pasar | null>(null);
+  const [bulkOpen, setBulkOpen] = useState(false);
+  const [bulkText, setBulkText] = useState("");
+  const [bulkResult, setBulkResult] = useState<string | null>(null);
+
+  function normName(s: string) {
+    return s.toLowerCase().replace(/[^a-z0-9]+/g, " ").trim();
+  }
+
+  function handleBulkPasar() {
+    const lines = bulkText.split("\n").map((l) => l.trim()).filter(Boolean);
+    const current = getAllPasar();
+    const byName = new Map(current.map((p) => [normName(p.nama), p]));
+    let updated = 0;
+    const unmatched: string[] = [];
+    const noCoord: string[] = [];
+    for (const line of lines) {
+      // pisahkan nama dari URL/koordinat: pakai pemisah | atau tab, atau URL/angka pertama
+      let nama = "";
+      let rest = "";
+      const sep = line.match(/\s*[|\t]\s*/);
+      if (sep) {
+        const i = line.indexOf(sep[0]);
+        nama = line.slice(0, i).trim();
+        rest = line.slice(i + sep[0].length).trim();
+      } else {
+        const m = line.match(/(https?:\/\/|-?\d{1,3}\.\d{3,})/);
+        if (m) {
+          nama = line.slice(0, m.index).replace(/[,;]\s*$/, "").trim();
+          rest = line.slice(m.index).trim();
+        } else {
+          nama = line;
+        }
+      }
+      const coord = parseGmaps(rest);
+      const hit = byName.get(normName(nama));
+      if (!hit) { unmatched.push(nama || line); continue; }
+      if (!coord) { noCoord.push(nama); continue; }
+      updatePasar({ ...hit, lat: coord.lat, lng: coord.lng, perkiraan: false });
+      updated++;
+    }
+    refreshPasar();
+    const parts = [`${updated} pasar diperbarui`];
+    if (noCoord.length) parts.push(`${noCoord.length} tanpa koordinat (${noCoord.join(", ")})`);
+    if (unmatched.length) parts.push(`${unmatched.length} nama tak cocok (${unmatched.join(", ")})`);
+    setBulkResult(parts.join(" · "));
+    if (updated) setBulkText("");
+  }
 
   useEffect(() => {
     try {
@@ -305,13 +352,56 @@ export default function AdminPage() {
                   <strong className="text-slate-700">{pasarList.length}</strong> pasar
                   tradisional — untuk peta kebutuhan/kompetitor supplier.
                 </p>
-                <button
-                  onClick={() => setEditingPasar(blankPasar())}
-                  className="rounded-md bg-brand px-3 py-2 text-sm font-semibold text-white hover:bg-brand-dark"
-                >
-                  + Tambah pasar
-                </button>
+                <div className="flex gap-2">
+                  <button
+                    onClick={() => setBulkOpen((v) => !v)}
+                    className="rounded-md border border-slate-300 bg-white px-3 py-2 text-sm hover:bg-slate-50"
+                  >
+                    📋 Impor massal titik
+                  </button>
+                  <button
+                    onClick={() => setEditingPasar(blankPasar())}
+                    className="rounded-md bg-brand px-3 py-2 text-sm font-semibold text-white hover:bg-brand-dark"
+                  >
+                    + Tambah pasar
+                  </button>
+                </div>
               </div>
+
+              {bulkOpen && (
+                <div className="mb-3 rounded-xl border border-slate-200 bg-white p-3 shadow-sm">
+                  <h3 className="text-sm font-semibold text-slate-700">
+                    Impor titik pasar dari Google Maps
+                  </h3>
+                  <p className="mt-1 text-[11px] leading-relaxed text-slate-500">
+                    Tempel satu pasar per baris:{" "}
+                    <code className="font-mono">Nama Pasar | URL-Google-Maps</code> atau{" "}
+                    <code className="font-mono">Nama Pasar | -7.8xxxx, 111.4xxxx</code>.
+                    Nama dicocokkan dengan pasar yang ada. Gunakan{" "}
+                    <strong>URL lengkap</strong> yang memuat <code className="font-mono">@lat,lng</code>{" "}
+                    (buka lokasi di Google Maps → salin URL dari address bar), bukan link pendek{" "}
+                    <code className="font-mono">maps.app.goo.gl</code> (tak memuat koordinat).
+                  </p>
+                  <textarea
+                    value={bulkText}
+                    onChange={(e) => setBulkText(e.target.value)}
+                    rows={6}
+                    placeholder={"Pasar Legi Songgolangit | https://www.google.com/maps/@-7.8677,111.4716,17z\nPasar Babadan | -7.8155, 111.5106"}
+                    className="mt-2 w-full rounded-md border border-slate-300 px-2 py-1.5 font-mono text-xs focus:border-brand focus:outline-none"
+                  />
+                  <div className="mt-2 flex items-center gap-2">
+                    <button
+                      onClick={handleBulkPasar}
+                      className="rounded-md bg-brand px-3 py-1.5 text-sm font-semibold text-white hover:bg-brand-dark"
+                    >
+                      Terapkan
+                    </button>
+                    {bulkResult && (
+                      <span className="text-[11px] text-slate-600">{bulkResult}</span>
+                    )}
+                  </div>
+                </div>
+              )}
               <div className="overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm">
                 <div className="overflow-x-auto">
                   <table className="w-full text-sm">
