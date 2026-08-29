@@ -67,6 +67,23 @@ npm run start
    Tidak ada environment variable yang wajib diisi.
 3. Deploy. Selesai.
 
+### Auto-deploy via GitHub Actions (opsional)
+
+Repo ini punya workflow `.github/workflows/deploy.yml` yang otomatis deploy ke
+Vercel setiap push ke branch produksi (atau dijalankan manual via **Actions →
+Deploy ke Vercel → Run workflow**). Aktifkan dengan menambahkan 3 secret di
+**GitHub → Settings → Secrets and variables → Actions**:
+
+| Secret | Cara dapat |
+|--------|-----------|
+| `VERCEL_TOKEN` | Vercel → Account Settings → Tokens → Create |
+| `VERCEL_ORG_ID` | jalankan `vercel link` lokal → lihat `.vercel/project.json` (`orgId`) |
+| `VERCEL_PROJECT_ID` | idem, `projectId` di `.vercel/project.json` |
+
+Bila secret belum diisi, workflow melewati deploy (tidak gagal). **Catatan:**
+kalau project di Vercel berstatus *Paused*, resume dulu di dashboard — deploy
+apa pun tidak akan tayang selama paused.
+
 ## Struktur
 
 | Path | Isi |
