@@ -15,6 +15,9 @@ ruko supplier yang buka 24 jam di titik ramai punya keunggulan.
 - **Rekomendasi titik terbaik** — hitung titik pusat berbobot (⭐) dan 3 area dengan konsentrasi
   dapur tertinggi (🔴) sebagai kandidat lokasi ruko.
 - **Heatmap kepadatan** permintaan untuk melihat area terpadat.
+- **Benang merah yayasan** — garis penghubung antar dapur yang dikelola yayasan yang sama.
+- **Pasar tradisional** (toggle) — peta pasar se-Ponorogo untuk memetakan kebutuhan &
+  kompetitor supplier. Kelola/koreksi titiknya lewat Admin → tab **Pasar**.
 - **Kelola data SPPG** — tambah/edit titik dapur (koordinat bisa dipilih dengan klik peta).
 - **Halaman Admin** (`/admin`) — kelola seluruh database: edit titik koordinat dengan peta
   presisi (klik/geser 📍), perbarui **jumlah penerima manfaat** (siswa, guru, balita, bumil,

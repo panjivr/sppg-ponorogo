@@ -3,7 +3,7 @@
 import { useEffect, useMemo, useState } from "react";
 import dynamic from "next/dynamic";
 import Link from "next/link";
-import type { Sppg, CandidateRuko } from "@/lib/types";
+import type { Sppg, CandidateRuko, Pasar } from "@/lib/types";
 import type { LatLng } from "@/lib/geo";
 import {
   getAllSppg,
@@ -12,6 +12,7 @@ import {
   deleteSppg,
   getRuko,
   saveRuko,
+  getAllPasar,
 } from "@/lib/storage";
 import ControlPanel from "@/components/ControlPanel";
 import RukoManager from "@/components/RukoManager";
@@ -39,6 +40,8 @@ export default function Home() {
   const [showRekomendasi, setShowRekomendasi] = useState(false);
   const [showYayasan, setShowYayasan] = useState(false);
   const [selectedYayasan, setSelectedYayasan] = useState<string | null>(null);
+  const [pasarList, setPasarList] = useState<Pasar[]>([]);
+  const [showPasar, setShowPasar] = useState(false);
   const [tab, setTab] = useState<Tab>("analisis");
   const [placing, setPlacing] = useState<PlacingMode>("none");
   const [editingSppg, setEditingSppg] = useState<Sppg | null>(null);
@@ -50,6 +53,7 @@ export default function Home() {
   useEffect(() => {
     setSppgList(getAllSppg());
     setRukoList(getRuko());
+    setPasarList(getAllPasar());
   }, []);
 
   function refreshSppg() {
@@ -162,9 +166,12 @@ export default function Home() {
               showRekomendasi={showRekomendasi}
               showYayasan={showYayasan}
               selectedYayasan={selectedYayasan}
+              showPasar={showPasar}
+              pasarCount={pasarList.length}
               onRadiusChange={setRadiusKm}
               onToggleHeatmap={setShowHeatmap}
               onToggleRekomendasi={setShowRekomendasi}
+              onTogglePasar={setShowPasar}
               onToggleYayasan={(v) => {
                 setShowYayasan(v);
                 if (!v) setSelectedYayasan(null);
@@ -268,6 +275,8 @@ export default function Home() {
           showRekomendasi={showRekomendasi}
           showYayasan={showYayasan}
           selectedYayasan={selectedYayasan}
+          pasarList={pasarList}
+          showPasar={showPasar}
           focusPoint={focusPoint}
           onMapClick={handleMapClick}
           onSelectYayasan={(nama) => {

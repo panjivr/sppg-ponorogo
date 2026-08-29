@@ -11,9 +11,12 @@ interface Props {
   showRekomendasi: boolean;
   showYayasan: boolean;
   selectedYayasan: string | null;
+  showPasar: boolean;
+  pasarCount: number;
   onRadiusChange: (v: number) => void;
   onToggleHeatmap: (v: boolean) => void;
   onToggleRekomendasi: (v: boolean) => void;
+  onTogglePasar: (v: boolean) => void;
   onToggleYayasan: (v: boolean) => void;
   onSelectYayasan: (nama: string | null) => void;
 }
@@ -25,9 +28,12 @@ export default function ControlPanel({
   showRekomendasi,
   showYayasan,
   selectedYayasan,
+  showPasar,
+  pasarCount,
   onRadiusChange,
   onToggleHeatmap,
   onToggleRekomendasi,
+  onTogglePasar,
   onToggleYayasan,
   onSelectYayasan,
 }: Props) {
@@ -141,6 +147,20 @@ export default function ControlPanel({
             onChange={onToggleRekomendasi}
             label="Rekomendasi titik ruko terbaik"
           />
+          <label className="flex cursor-pointer items-center gap-2 text-sm">
+            <input
+              type="checkbox"
+              checked={showPasar}
+              onChange={(e) => onTogglePasar(e.target.checked)}
+              className="h-4 w-4 accent-brand"
+            />
+            <span>
+              🛒 Pasar tradisional
+              <span className="ml-1 text-[11px] text-slate-400">
+                ({pasarCount}) — peta kompetitor
+              </span>
+            </span>
+          </label>
         </div>
         {showRekomendasi && (
           <p className="mt-2 rounded bg-amber-50 px-2 py-1.5 text-[11px] text-amber-800">

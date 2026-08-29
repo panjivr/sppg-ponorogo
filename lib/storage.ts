@@ -1,11 +1,15 @@
 import seed from "@/data/sppg.json";
-import type { Sppg, CandidateRuko } from "./types";
+import pasarSeed from "@/data/pasar.json";
+import type { Sppg, CandidateRuko, Pasar } from "./types";
 
 const KEY_SPPG_USER = "sppg-ponorogo:sppg-user";
 const KEY_SPPG_OVERRIDE = "sppg-ponorogo:sppg-override";
 const KEY_RUKO = "sppg-ponorogo:ruko";
+const KEY_PASAR_USER = "sppg-ponorogo:pasar-user";
+const KEY_PASAR_OVERRIDE = "sppg-ponorogo:pasar-override";
 
 const seedData = seed as Sppg[];
+const pasarData = pasarSeed as Pasar[];
 
 function isBrowser(): boolean {
   return typeof window !== "undefined";
@@ -129,4 +133,55 @@ export function getRuko(): CandidateRuko[] {
 
 export function saveRuko(list: CandidateRuko[]): void {
   write(KEY_RUKO, list);
+}
+
+// ── Pasar ───────────────────────────────────────────────────────────────────
+
+type PasarOverrideMap = Record<string, Partial<Pasar>>;
+
+/** Gabungan seed pasar (dengan override) + pasar buatan user. */
+export function getAllPasar(): Pasar[] {
+  const overrides = read<PasarOverrideMap>(KEY_PASAR_OVERRIDE, {});
+  const userAdded = read<Pasar[]>(KEY_PASAR_USER, []);
+  const merged = pasarData.map((p) =>
+    overrides[p.id] ? { ...p, ...overrides[p.id] } : p
+  );
+  return [...merged, ...userAdded];
+}
+
+export function addPasar(p: Pasar): void {
+  const userAdded = read<Pasar[]>(KEY_PASAR_USER, []);
+  userAdded.push({ ...p, buatanUser: true });
+  write(KEY_PASAR_USER, userAdded);
+}
+
+export function updatePasar(p: Pasar): void {
+  if (p.buatanUser) {
+    const userAdded = read<Pasar[]>(KEY_PASAR_USER, []);
+    const idx = userAdded.findIndex((x) => x.id === p.id);
+    if (idx >= 0) userAdded[idx] = p;
+    write(KEY_PASAR_USER, userAdded);
+  } else {
+    const overrides = read<PasarOverrideMap>(KEY_PASAR_OVERRIDE, {});
+    overrides[p.id] = { ...p };
+    write(KEY_PASAR_OVERRIDE, overrides);
+  }
+}
+
+export function deletePasar(id: string): void {
+  const userAdded = read<Pasar[]>(KEY_PASAR_USER, []).filter((x) => x.id !== id);
+  write(KEY_PASAR_USER, userAdded);
+}
+
+export function resetPasarOverride(id: string): void {
+  const overrides = read<PasarOverrideMap>(KEY_PASAR_OVERRIDE, {});
+  if (overrides[id]) {
+    delete overrides[id];
+    write(KEY_PASAR_OVERRIDE, overrides);
+  }
+}
+
+export function isPasarOverridden(id: string): boolean {
+  const overrides = read<PasarOverrideMap>(KEY_PASAR_OVERRIDE, {});
+  return !!overrides[id];
 }

@@ -98,6 +98,24 @@ export interface Sppg {
   buatanUser?: boolean;
 }
 
+/** Pasar tradisional (untuk peta kebutuhan / kompetitor supplier). */
+export interface Pasar {
+  id: string;
+  nama: string;
+  kecamatan: string;
+  /** Kategori/keterangan singkat, mis. "Pasar induk". */
+  kategori?: string;
+  lat: number;
+  lng: number;
+  /** true bila koordinat masih perkiraan. */
+  perkiraan: boolean;
+  gmaps?: string;
+  catatan?: string;
+  sumber?: string;
+  /** true untuk pasar yang ditambahkan user lewat web. */
+  buatanUser?: boolean;
+}
+
 export interface CandidateRuko {
   id: string;
   nama: string;

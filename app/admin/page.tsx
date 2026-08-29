@@ -2,7 +2,7 @@
 
 import { useEffect, useMemo, useRef, useState } from "react";
 import Link from "next/link";
-import type { Sppg } from "@/lib/types";
+import type { Sppg, Pasar } from "@/lib/types";
 import {
   getAllSppg,
   addSppg,
@@ -12,9 +12,28 @@ import {
   resetAll,
   importAll,
   isOverridden,
+  getAllPasar,
+  addPasar,
+  updatePasar,
+  deletePasar,
+  resetPasarOverride,
+  isPasarOverridden,
 } from "@/lib/storage";
 import { computeStats, fmt, statusMeta, STATUS_META } from "@/lib/sppgMeta";
 import AdminEditor from "@/components/AdminEditor";
+import PasarEditor from "@/components/PasarEditor";
+
+function blankPasar(): Pasar {
+  return {
+    id: `pasar-user-${Date.now()}`,
+    nama: "",
+    kecamatan: "",
+    lat: -7.868,
+    lng: 111.462,
+    perkiraan: true,
+    buatanUser: true,
+  };
+}
 
 const ADMIN_PASS = "sppg-admin";
 const AUTH_KEY = "sppg-ponorogo:admin-auth";
@@ -45,6 +64,9 @@ export default function AdminPage() {
   const [kec, setKec] = useState("all");
   const [perkOnly, setPerkOnly] = useState(false);
   const fileRef = useRef<HTMLInputElement>(null);
+  const [mode, setMode] = useState<"sppg" | "pasar">("sppg");
+  const [pasarList, setPasarList] = useState<Pasar[]>([]);
+  const [editingPasar, setEditingPasar] = useState<Pasar | null>(null);
 
   useEffect(() => {
     try {
@@ -53,11 +75,23 @@ export default function AdminPage() {
   }, []);
 
   useEffect(() => {
-    if (authed) setList(getAllSppg());
+    if (authed) {
+      setList(getAllSppg());
+      setPasarList(getAllPasar());
+    }
   }, [authed]);
 
   function refresh() {
     setList(getAllSppg());
+  }
+  function refreshPasar() {
+    setPasarList(getAllPasar());
+  }
+  function handleSavePasar(p: Pasar) {
+    if (pasarList.some((x) => x.id === p.id)) updatePasar(p);
+    else addPasar(p);
+    refreshPasar();
+    setEditingPasar(null);
   }
 
   const stats = useMemo(() => computeStats(list), [list]);
@@ -202,7 +236,141 @@ export default function AdminPage() {
       </header>
 
       <div className="mx-auto max-w-5xl p-4">
-        {editing ? (
+        {/* Mode tabs */}
+        <div className="mb-4 inline-flex rounded-lg border border-slate-200 bg-white p-1 shadow-sm">
+          {([["sppg", "🍚 Data SPPG"], ["pasar", "🛒 Pasar"]] as const).map(
+            ([m, label]) => (
+              <button
+                key={m}
+                onClick={() => {
+                  setMode(m);
+                  setEditing(null);
+                  setEditingPasar(null);
+                }}
+                className={`rounded-md px-4 py-1.5 text-sm font-medium ${
+                  mode === m
+                    ? "bg-brand text-white"
+                    : "text-slate-600 hover:bg-slate-50"
+                }`}
+              >
+                {label}
+              </button>
+            )
+          )}
+        </div>
+
+        {mode === "pasar" ? (
+          editingPasar ? (
+            <div className="rounded-xl border border-slate-200 bg-white p-4 shadow-sm">
+              <div className="mb-3 flex items-center gap-2">
+                <button onClick={() => setEditingPasar(null)} className="text-sm text-brand hover:underline">
+                  ← Kembali ke daftar
+                </button>
+                <h2 className="ml-auto text-sm font-semibold text-slate-500">
+                  {pasarList.some((x) => x.id === editingPasar.id) ? "Edit pasar" : "Tambah pasar"}
+                </h2>
+              </div>
+              <PasarEditor
+                pasar={editingPasar}
+                onSave={handleSavePasar}
+                onCancel={() => setEditingPasar(null)}
+                onResetPoint={
+                  !editingPasar.buatanUser && isPasarOverridden(editingPasar.id)
+                    ? () => {
+                        if (confirm("Kembalikan pasar ini ke data awal?")) {
+                          resetPasarOverride(editingPasar.id);
+                          refreshPasar();
+                          setEditingPasar(null);
+                        }
+                      }
+                    : undefined
+                }
+                onDelete={
+                  editingPasar.buatanUser && pasarList.some((x) => x.id === editingPasar.id)
+                    ? () => {
+                        if (confirm("Hapus pasar ini?")) {
+                          deletePasar(editingPasar.id);
+                          refreshPasar();
+                          setEditingPasar(null);
+                        }
+                      }
+                    : undefined
+                }
+              />
+            </div>
+          ) : (
+            <>
+              <div className="mb-3 flex items-center justify-between gap-2">
+                <p className="text-sm text-slate-500">
+                  <strong className="text-slate-700">{pasarList.length}</strong> pasar
+                  tradisional — untuk peta kebutuhan/kompetitor supplier.
+                </p>
+                <button
+                  onClick={() => setEditingPasar(blankPasar())}
+                  className="rounded-md bg-brand px-3 py-2 text-sm font-semibold text-white hover:bg-brand-dark"
+                >
+                  + Tambah pasar
+                </button>
+              </div>
+              <div className="overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm">
+                <div className="overflow-x-auto">
+                  <table className="w-full text-sm">
+                    <thead className="bg-slate-50 text-left text-[11px] uppercase tracking-wide text-slate-500">
+                      <tr>
+                        <th className="px-3 py-2">Nama / Kategori</th>
+                        <th className="px-3 py-2">Kecamatan</th>
+                        <th className="px-3 py-2">Koordinat</th>
+                        <th className="px-3 py-2"></th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {pasarList
+                        .slice()
+                        .sort((a, b) => a.kecamatan.localeCompare(b.kecamatan, "id") || a.nama.localeCompare(b.nama, "id"))
+                        .map((p) => {
+                          const changed = p.buatanUser || isPasarOverridden(p.id);
+                          return (
+                            <tr key={p.id} className="border-t border-slate-100 hover:bg-slate-50">
+                              <td className="px-3 py-2">
+                                <div className="font-medium text-slate-800">
+                                  🛒 {p.nama || <span className="text-slate-400">(tanpa nama)</span>}
+                                  {changed && (
+                                    <span className="ml-2 rounded bg-amber-100 px-1.5 py-0.5 text-[10px] font-medium text-amber-700">
+                                      {p.buatanUser ? "baru" : "diedit"}
+                                    </span>
+                                  )}
+                                </div>
+                                {p.kategori && <div className="text-[11px] text-slate-500">{p.kategori}</div>}
+                              </td>
+                              <td className="px-3 py-2 text-slate-600">{p.kecamatan || "–"}</td>
+                              <td className="px-3 py-2">
+                                <div className="font-mono text-[11px] text-slate-600">
+                                  {p.lat.toFixed(5)}, {p.lng.toFixed(5)}
+                                </div>
+                                {p.perkiraan && <span className="text-[10px] text-amber-600">⚠ perkiraan</span>}
+                              </td>
+                              <td className="px-3 py-2 text-right">
+                                <button
+                                  onClick={() => setEditingPasar(p)}
+                                  className="rounded-md border border-brand px-2.5 py-1 text-xs font-medium text-brand hover:bg-brand hover:text-white"
+                                >
+                                  ✎ Edit
+                                </button>
+                              </td>
+                            </tr>
+                          );
+                        })}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <p className="mt-3 text-[11px] leading-relaxed text-slate-500">
+                Koordinat awal masih perkiraan (pusat kecamatan). Buka pasar di Google Maps,
+                salin URL, lalu tempel di editor agar titiknya persis.
+              </p>
+            </>
+          )
+        ) : editing ? (
           <div className="rounded-xl border border-slate-200 bg-white p-4 shadow-sm">
             <div className="mb-3 flex items-center gap-2">
               <button onClick={() => setEditing(null)} className="text-sm text-brand hover:underline">
