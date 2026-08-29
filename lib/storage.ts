@@ -63,14 +63,58 @@ export function updateSppg(s: Sppg): void {
       nama: s.nama,
       alamat: s.alamat,
       kecamatan: s.kecamatan,
+      desa: s.desa,
       lat: s.lat,
       lng: s.lng,
       status: s.status,
       porsi: s.porsi,
       perkiraan: s.perkiraan,
+      gmaps: s.gmaps,
+      pm: s.pm,
+      detail: s.detail,
     };
     write(KEY_SPPG_OVERRIDE, overrides);
   }
+}
+
+/** Kembalikan satu titik seed ke nilai awal (hapus override-nya). */
+export function resetSppgOverride(id: string): void {
+  const overrides = read<OverrideMap>(KEY_SPPG_OVERRIDE, {});
+  if (overrides[id]) {
+    delete overrides[id];
+    write(KEY_SPPG_OVERRIDE, overrides);
+  }
+}
+
+/** Hapus semua koreksi & titik buatan user (kembali ke data awal). */
+export function resetAll(): void {
+  write(KEY_SPPG_OVERRIDE, {});
+  write(KEY_SPPG_USER, []);
+}
+
+/** Impor daftar SPPG penuh: seed yang berbeda → override, sisanya → user. */
+export function importAll(list: Sppg[]): void {
+  const seedIds = new Set(seedData.map((s) => s.id));
+  const overrides: OverrideMap = {};
+  const userAdded: Sppg[] = [];
+  for (const s of list) {
+    if (seedIds.has(s.id)) {
+      const base = seedData.find((b) => b.id === s.id)!;
+      if (JSON.stringify(base) !== JSON.stringify(s)) {
+        overrides[s.id] = { ...s };
+      }
+    } else {
+      userAdded.push({ ...s, buatanUser: true });
+    }
+  }
+  write(KEY_SPPG_OVERRIDE, overrides);
+  write(KEY_SPPG_USER, userAdded);
+}
+
+/** Apakah sebuah titik seed sedang dikoreksi (punya override)? */
+export function isOverridden(id: string): boolean {
+  const overrides = read<OverrideMap>(KEY_SPPG_OVERRIDE, {});
+  return !!overrides[id];
 }
 
 /** Hapus SPPG buatan user (titik seed tidak bisa dihapus, hanya dikoreksi). */

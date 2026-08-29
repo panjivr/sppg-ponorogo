@@ -1391,9 +1391,9 @@
     "porsi": 1036,
     "alamat": "Desa Gontor, Kecamatan Mlarak, Kabupaten Ponorogo, Jawa Timur",
     "gmaps": "https://maps.app.goo.gl/xPhDDFtDiSC7Cwth8",
-    "lat": -7.927695,
-    "lng": 111.502492,
-    "perkiraan": true,
+    "lat": -7.925587,
+    "lng": 111.500269,
+    "perkiraan": false,
     "sumber": "Database SPPG Kab. Ponorogo",
     "pm": {
       "pmSatdikTotal": 906,

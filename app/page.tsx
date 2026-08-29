@@ -224,9 +224,17 @@ export default function Home() {
             ))}
         </div>
 
-        <footer className="border-t border-slate-200 px-4 py-2 text-[10px] text-slate-400">
-          Data awal hasil riset sumber publik & sebagian koordinat perkiraan.
-          Peta © OpenStreetMap.
+        <footer className="flex items-center justify-between gap-2 border-t border-slate-200 px-4 py-2 text-[10px] text-slate-400">
+          <span>
+            Data awal database resmi & sebagian koordinat perkiraan. Peta ©
+            OpenStreetMap.
+          </span>
+          <Link
+            href="/admin"
+            className="shrink-0 rounded border border-slate-200 px-2 py-0.5 font-medium text-slate-500 hover:bg-slate-50 hover:text-brand"
+          >
+            🛠️ Admin
+          </Link>
         </footer>
       </aside>
 

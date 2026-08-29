@@ -57,6 +57,25 @@ export function totalPM(s: Sppg): number {
   return s.porsi || 0;
 }
 
+/**
+ * Hitung ulang total turunan dari rincian PM:
+ * SATDIK = siswa + guru/tendik, 3B = balita + bumil + busui, porsi = SATDIK + 3B.
+ * Dipakai admin agar "jumlah data" selalu konsisten saat diedit.
+ */
+export function recalcPM(pm: {
+  pmSiswa?: number;
+  pmGuruTendik?: number;
+  pmSatdikKelompok?: number;
+  pmBalita?: number;
+  pmBumil?: number;
+  pmBusui?: number;
+  pm3bKelompok?: number;
+}): { pmSatdikTotal: number; pm3bTotal: number; porsi: number } {
+  const satdik = (pm.pmSiswa || 0) + (pm.pmGuruTendik || 0);
+  const b3 = (pm.pmBalita || 0) + (pm.pmBumil || 0) + (pm.pmBusui || 0);
+  return { pmSatdikTotal: satdik, pm3bTotal: b3, porsi: satdik + b3 };
+}
+
 /** Ubah nomor telepon jadi tautan wa.me (0812… → 62812…). */
 export function waLink(nomor?: string): string | null {
   if (!nomor) return null;
