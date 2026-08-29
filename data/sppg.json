@@ -34,7 +34,22 @@
       "bankVa": "BANK BNI",
       "picNama": "IDA SETIYANINGSIH",
       "picNomor": "082121405615",
-      "slhs": true
+      "slhs": true,
+      "perijinan": {
+        "suratKesanggupan": "PROSES",
+        "pkkpr": "BELUM PENGAJUAN",
+        "dokLingkungan": "BELUM PENGAJUAN",
+        "pbgSlf": "BELUM PENGAJUAN",
+        "sertifikatStandar": "BELUM PENGAJUAN",
+        "slhs": "SUDAH",
+        "noSlhs": "400.7.11.4/KH/237/405.09/2026",
+        "dokPerijinan": "https://drive.google.com/drive/folders/1QVG1dY8XOkG9UmuUhMv9RWeo42uzIH_V?usp=sharing",
+        "sertiChef": "SUDAH",
+        "halal": "BELUM PENGAJUAN",
+        "haccp": "BELUM PENGAJUAN",
+        "penjamahMakan": "SUDAH",
+        "bpjs": "SUDAH"
+      }
     }
   },
   {
@@ -72,7 +87,23 @@
       "bankVa": "BANK BNI",
       "picNama": "AHMAD BASTHOMI",
       "picNomor": "081333927777",
-      "slhs": true
+      "slhs": true,
+      "perijinan": {
+        "suratKesanggupan": "SUDAH",
+        "pkkpr": "BELUM PENGAJUAN",
+        "dokLingkungan": "BELUM PENGAJUAN",
+        "pbgSlf": "BELUM PENGAJUAN",
+        "sertifikatStandar": "BELUM PENGAJUAN",
+        "slhs": "SUDAH",
+        "noSlhs": "400.7.11.4/KH/258/405.09/2026",
+        "dokPerijinan": "https://drive.google.com/drive/folders/1QVG1dY8XOkG9UmuUhMv9RWeo42uzIH_V?usp=sharing",
+        "sertiChef": "SUDAH",
+        "noSertiChef": "561005120001170662025",
+        "halal": "PROSES",
+        "haccp": "BELUM PENGAJUAN",
+        "penjamahMakan": "SUDAH",
+        "bpjs": "SUDAH"
+      }
     }
   },
   {
@@ -110,7 +141,22 @@
       "bankVa": "BANK BNI",
       "picNama": "DIDIK YOKANAN",
       "picNomor": "085797397001",
-      "slhs": true
+      "slhs": true,
+      "perijinan": {
+        "suratKesanggupan": "BELUM PENGAJUAN",
+        "pkkpr": "BELUM PENGAJUAN",
+        "dokLingkungan": "BELUM PENGAJUAN",
+        "pbgSlf": "BELUM PENGAJUAN",
+        "sertifikatStandar": "BELUM PENGAJUAN",
+        "slhs": "SUDAH",
+        "noSlhs": "400.7.11.4/KH/642/405.09/2026",
+        "dokPerijinan": "https://drive.google.com/drive/folders/1QVG1dY8XOkG9UmuUhMv9RWeo42uzIH_V?usp=sharing",
+        "sertiChef": "SUDAH",
+        "halal": "BELUM PENGAJUAN",
+        "haccp": "BELUM PENGAJUAN",
+        "penjamahMakan": "BELUM PENGAJUAN",
+        "bpjs": "BELUM PENGAJUAN"
+      }
     }
   },
   {
@@ -148,7 +194,24 @@
       "bankVa": "BANK BNI",
       "picNama": "ENI PURYANINGSIH",
       "picNomor": "08111388558",
-      "slhs": true
+      "slhs": true,
+      "perijinan": {
+        "suratKesanggupan": "BELUM PENGAJUAN",
+        "pkkpr": "BELUM PENGAJUAN",
+        "dokLingkungan": "BELUM PENGAJUAN",
+        "pbgSlf": "BELUM PENGAJUAN",
+        "sertifikatStandar": "BELUM PENGAJUAN",
+        "slhs": "SUDAH",
+        "noSlhs": "400.7.11.4/KH/638/405.09/2026",
+        "dokPerijinan": "https://drive.google.com/drive/folders/1QVG1dY8XOkG9UmuUhMv9RWeo42uzIH_V?usp=sharing",
+        "sertiChef": "SUDAH",
+        "noSertiChef": "56210 5120 3 0000270 2026",
+        "halal": "BELUM PENGAJUAN",
+        "haccp": "BELUM PENGAJUAN",
+        "penjamahMakan": "SUDAH",
+        "bpjs": "SUDAH",
+        "dokKelengkapan": "https://drive.google.com/drive/folders/1tE0b3B5L6dTT_MWbhusaK1zClFTEpkcb?usp=drive_link"
+      }
     }
   },
   {
@@ -186,7 +249,22 @@
       "bankVa": "BANK BRI",
       "picNama": "DIAN MARDIANA",
       "picNomor": "081223938881",
-      "slhs": true
+      "slhs": true,
+      "perijinan": {
+        "suratKesanggupan": "BELUM PENGAJUAN",
+        "pkkpr": "BELUM PENGAJUAN",
+        "dokLingkungan": "BELUM PENGAJUAN",
+        "pbgSlf": "BELUM PENGAJUAN",
+        "sertifikatStandar": "BELUM PENGAJUAN",
+        "slhs": "SUDAH",
+        "noSlhs": "400.7.11.4/KH/217/405.09/2026",
+        "dokPerijinan": "https://drive.google.com/drive/folders/1QVG1dY8XOkG9UmuUhMv9RWeo42uzIH_V?usp=sharing",
+        "sertiChef": "SUDAH",
+        "halal": "BELUM PENGAJUAN",
+        "haccp": "BELUM PENGAJUAN",
+        "penjamahMakan": "SUDAH",
+        "bpjs": "SUDAH"
+      }
     }
   },
   {
@@ -224,7 +302,25 @@
       "bankVa": "BANK BRI",
       "picNama": "FRADDA VISCA ALVINI",
       "picNomor": "081331559211",
-      "slhs": true
+      "slhs": true,
+      "perijinan": {
+        "suratKesanggupan": "PROSES",
+        "pkkpr": "BELUM PENGAJUAN",
+        "dokLingkungan": "BELUM PENGAJUAN",
+        "pbgSlf": "BELUM PENGAJUAN",
+        "sertifikatStandar": "BELUM PENGAJUAN",
+        "slhs": "SUDAH",
+        "noSlhs": "400.7.11.4/KH/1384/405.0912025",
+        "dokPerijinan": "https://drive.google.com/drive/folders/1QVG1dY8XOkG9UmuUhMv9RWeo42uzIH_V?usp=sharing",
+        "sertiChef": "SUDAH",
+        "noSertiChef": "560005120000141642025",
+        "halal": "SUDAH",
+        "noSertiHalal": "9890/PH.37/IHB.VII/2026",
+        "haccp": "SUDAH",
+        "noSertiHaccp": "6458/AP-OP2/MA/X-2025",
+        "penjamahMakan": "SUDAH",
+        "bpjs": "SUDAH"
+      }
     }
   },
   {
@@ -262,7 +358,24 @@
       "bankVa": "BANK BNI",
       "picNama": "YUDI SANTOSO",
       "picNomor": "082146915746",
-      "slhs": true
+      "slhs": true,
+      "perijinan": {
+        "suratKesanggupan": "BELUM PENGAJUAN",
+        "pkkpr": "BELUM PENGAJUAN",
+        "dokLingkungan": "BELUM PENGAJUAN",
+        "pbgSlf": "BELUM PENGAJUAN",
+        "sertifikatStandar": "BELUM PENGAJUAN",
+        "slhs": "SUDAH",
+        "noSlhs": "400.7.11.4/KH/680/405.09/2026",
+        "dokPerijinan": "https://drive.google.com/drive/folders/1QVG1dY8XOkG9UmuUhMv9RWeo42uzIH_V?usp=sharing",
+        "sertiChef": "SUDAH",
+        "noSertiChef": "607/S-KET/LSP-PPI/XI/2025",
+        "halal": "BELUM PENGAJUAN",
+        "haccp": "BELUM PENGAJUAN",
+        "penjamahMakan": "SUDAH",
+        "bpjs": "BELUM PENGAJUAN",
+        "dokKelengkapan": "https://drive.google.com/drive/folders/1epwPVE3zl9losR0daHx60OmYdCqJGay-?usp=sharing"
+      }
     }
   },
   {
@@ -301,7 +414,23 @@
       "bankVa": "BANK BRI",
       "picNama": "RIAN PRIYA HANDOKO",
       "picNomor": "085747985222",
-      "slhs": true
+      "slhs": true,
+      "perijinan": {
+        "suratKesanggupan": "SUDAH",
+        "pkkpr": "BELUM PENGAJUAN",
+        "dokLingkungan": "BELUM PENGAJUAN",
+        "pbgSlf": "BELUM PENGAJUAN",
+        "sertifikatStandar": "BELUM PENGAJUAN",
+        "slhs": "SUDAH",
+        "noSlhs": "400.7.11.4/KH/1383/405.09/2025",
+        "dokPerijinan": "https://drive.google.com/drive/folders/1QVG1dY8XOkG9UmuUhMv9RWeo42uzIH_V?usp=sharing",
+        "sertiChef": "SUDAH",
+        "halal": "BELUM PENGAJUAN",
+        "haccp": "BELUM PENGAJUAN",
+        "penjamahMakan": "SUDAH",
+        "bpjs": "SUDAH",
+        "dokKelengkapan": "https://drive.google.com/drive/folders/1sb3stk9YeBYt90XxOS2Bnq7PhYrj7b-x"
+      }
     }
   },
   {
@@ -340,7 +469,24 @@
       "bankVa": "BANK BRI",
       "picNama": "THERESIA ANITA SUSANTI RASONG",
       "picNomor": "081262677733",
-      "slhs": true
+      "slhs": true,
+      "perijinan": {
+        "suratKesanggupan": "BELUM PENGAJUAN",
+        "pkkpr": "BELUM PENGAJUAN",
+        "dokLingkungan": "BELUM PENGAJUAN",
+        "pbgSlf": "BELUM PENGAJUAN",
+        "sertifikatStandar": "BELUM PENGAJUAN",
+        "slhs": "SUDAH",
+        "noSlhs": "400.7.11.4/KH/1318/405.09/2025",
+        "dokPerijinan": "https://drive.google.com/drive/folders/1QVG1dY8XOkG9UmuUhMv9RWeo42uzIH_V?usp=sharing",
+        "sertiChef": "SUDAH",
+        "noSertiChef": "561015120300160502026",
+        "halal": "PROSES",
+        "haccp": "BELUM PENGAJUAN",
+        "penjamahMakan": "SUDAH",
+        "bpjs": "SUDAH",
+        "dokKelengkapan": "https://drive.google.com/drive/folders/1Mjma5-5DRpXYeDsLXiGkmcglU3G_FLmK?usp=sharing"
+      }
     }
   },
   {
@@ -379,7 +525,25 @@
       "bankVa": "BANK BRI",
       "picNama": "RUDIANTO",
       "picNomor": "082338188790",
-      "slhs": true
+      "slhs": true,
+      "perijinan": {
+        "suratKesanggupan": "SUDAH",
+        "pkkpr": "BELUM PENGAJUAN",
+        "dokLingkungan": "BELUM PENGAJUAN",
+        "pbgSlf": "BELUM PENGAJUAN",
+        "sertifikatStandar": "BELUM PENGAJUAN",
+        "slhs": "SUDAH",
+        "noSlhs": "400.7.11.4/KH/1250/405.09/2025",
+        "dokPerijinan": "https://drive.google.com/drive/folders/1QVG1dY8XOkG9UmuUhMv9RWeo42uzIH_V?usp=sharing",
+        "sertiChef": "SUDAH",
+        "noSertiChef": "56100 5120 0 0017061 2025",
+        "halal": "SUDAH",
+        "noSertiHalal": "ID354100251465907255",
+        "haccp": "BELUM PENGAJUAN",
+        "penjamahMakan": "SUDAH",
+        "bpjs": "SUDAH",
+        "dokKelengkapan": "https://drive.google.com/drive/folders/1_i6H6cD5l6eP7r3aA-Tclgjf7VZR716T?usp=drive_link"
+      }
     }
   },
   {
@@ -417,7 +581,23 @@
       "bankVa": "BANK BNI",
       "picNama": "ARDHI FIRMAN PURWIANSYAH",
       "picNomor": "081333348671",
-      "slhs": true
+      "slhs": true,
+      "perijinan": {
+        "suratKesanggupan": "SUDAH",
+        "pkkpr": "BELUM PENGAJUAN",
+        "dokLingkungan": "BELUM PENGAJUAN",
+        "pbgSlf": "BELUM PENGAJUAN",
+        "sertifikatStandar": "BELUM PENGAJUAN",
+        "slhs": "SUDAH",
+        "noSlhs": "400.7.11.4/KH/637/405.09/2026",
+        "dokPerijinan": "https://drive.google.com/drive/folders/1QVG1dY8XOkG9UmuUhMv9RWeo42uzIH_V?usp=sharing",
+        "sertiChef": "BELUM PENGAJUAN",
+        "halal": "BELUM PENGAJUAN",
+        "haccp": "BELUM PENGAJUAN",
+        "penjamahMakan": "SUDAH",
+        "bpjs": "SUDAH",
+        "dokKelengkapan": "https://drive.google.com/drive/folders/1K5GmKo9aGXfRDoov03q_3oAx8ogx7_gA?usp=drive_link"
+      }
     }
   },
   {
@@ -456,7 +636,22 @@
       "bankVa": "BANK BRI",
       "picNama": "ANJAR RETNOWATI, SP",
       "picNomor": "082245034975",
-      "slhs": true
+      "slhs": true,
+      "perijinan": {
+        "suratKesanggupan": "PROSES",
+        "pkkpr": "BELUM PENGAJUAN",
+        "dokLingkungan": "BELUM PENGAJUAN",
+        "pbgSlf": "BELUM PENGAJUAN",
+        "sertifikatStandar": "BELUM PENGAJUAN",
+        "slhs": "SUDAH",
+        "noSlhs": "400.7/KH/3052/405.09/2025",
+        "dokPerijinan": "https://drive.google.com/drive/folders/1QVG1dY8XOkG9UmuUhMv9RWeo42uzIH_V?usp=sharing",
+        "sertiChef": "BELUM PENGAJUAN",
+        "halal": "PROSES",
+        "haccp": "BELUM PENGAJUAN",
+        "penjamahMakan": "SUDAH",
+        "bpjs": "SUDAH"
+      }
     }
   },
   {
@@ -494,7 +689,22 @@
       "bankVa": "BANK BRI",
       "picNama": "MUHAMMAD RIDWAN JAZULI",
       "picNomor": "081775205662",
-      "slhs": true
+      "slhs": true,
+      "perijinan": {
+        "suratKesanggupan": "BELUM PENGAJUAN",
+        "pkkpr": "BELUM PENGAJUAN",
+        "dokLingkungan": "BELUM PENGAJUAN",
+        "pbgSlf": "BELUM PENGAJUAN",
+        "sertifikatStandar": "BELUM PENGAJUAN",
+        "slhs": "SUDAH",
+        "noSlhs": "400.7.11.4/KH/1460/405.09/2025",
+        "dokPerijinan": "https://drive.google.com/drive/folders/1QVG1dY8XOkG9UmuUhMv9RWeo42uzIH_V?usp=sharing",
+        "sertiChef": "BELUM PENGAJUAN",
+        "halal": "BELUM PENGAJUAN",
+        "haccp": "BELUM PENGAJUAN",
+        "penjamahMakan": "BELUM PENGAJUAN",
+        "bpjs": "BELUM PENGAJUAN"
+      }
     }
   },
   {
@@ -533,7 +743,24 @@
       "bankVa": "BANK BRI",
       "picNama": "MERIA LESTARI",
       "picNomor": "081990908989",
-      "slhs": true
+      "slhs": true,
+      "perijinan": {
+        "suratKesanggupan": "PROSES",
+        "pkkpr": "BELUM PENGAJUAN",
+        "dokLingkungan": "BELUM PENGAJUAN",
+        "pbgSlf": "BELUM PENGAJUAN",
+        "sertifikatStandar": "BELUM PENGAJUAN",
+        "slhs": "SUDAH",
+        "noSlhs": "400.7.11.4/KH/1251/405.09/2025",
+        "dokPerijinan": "https://drive.google.com/drive/folders/1QVG1dY8XOkG9UmuUhMv9RWeo42uzIH_V?usp=sharing",
+        "sertiChef": "SUDAH",
+        "noSertiChef": "561015120300140012025",
+        "halal": "PROSES",
+        "haccp": "BELUM PENGAJUAN",
+        "penjamahMakan": "SUDAH",
+        "bpjs": "SUDAH",
+        "dokKelengkapan": "https://drive.google.com/drive/folders/11xWmVgUjQrel3Lw562Ny1e9UweOecRLg"
+      }
     }
   },
   {
@@ -571,7 +798,23 @@
       "bankVa": "BANK BRI",
       "picNama": "AGUNG WIBOWO",
       "picNomor": "082372765272",
-      "slhs": true
+      "slhs": true,
+      "perijinan": {
+        "suratKesanggupan": "SUDAH",
+        "pkkpr": "BELUM PENGAJUAN",
+        "dokLingkungan": "BELUM PENGAJUAN",
+        "pbgSlf": "BELUM PENGAJUAN",
+        "sertifikatStandar": "BELUM PENGAJUAN",
+        "slhs": "SUDAH",
+        "noSlhs": "400.7.11.4/KH/213/405.09/2026",
+        "dokPerijinan": "https://drive.google.com/drive/folders/1QVG1dY8XOkG9UmuUhMv9RWeo42uzIH_V?usp=sharing",
+        "sertiChef": "BELUM PENGAJUAN",
+        "halal": "BELUM PENGAJUAN",
+        "haccp": "BELUM PENGAJUAN",
+        "penjamahMakan": "SUDAH",
+        "bpjs": "SUDAH",
+        "dokKelengkapan": "https://drive.google.com/drive/folders/1V8vhAlaENwnY2vlhimMxwZtJ7fGuDwdp"
+      }
     }
   },
   {
@@ -610,7 +853,23 @@
       "bankVa": "BANK BRI",
       "picNama": "FRIMA HUDAYANA ADI",
       "picNomor": "085259610660",
-      "slhs": true
+      "slhs": true,
+      "perijinan": {
+        "suratKesanggupan": "SUDAH",
+        "pkkpr": "BELUM PENGAJUAN",
+        "dokLingkungan": "BELUM PENGAJUAN",
+        "pbgSlf": "BELUM PENGAJUAN",
+        "sertifikatStandar": "BELUM PENGAJUAN",
+        "slhs": "SUDAH",
+        "noSlhs": "400.7.11.4/KH/1357/405.09/2025",
+        "dokPerijinan": "https://drive.google.com/drive/folders/1QVG1dY8XOkG9UmuUhMv9RWeo42uzIH_V?usp=sharing",
+        "sertiChef": "SUDAH",
+        "noSertiChef": "No. 1017/S-KET/LSP-PPI/V/2026",
+        "halal": "BELUM PENGAJUAN",
+        "haccp": "BELUM PENGAJUAN",
+        "penjamahMakan": "SUDAH",
+        "bpjs": "SUDAH"
+      }
     }
   },
   {
@@ -649,7 +908,21 @@
       "bankVa": "BANK BRI",
       "picNama": "EKA REKNO SETYANI",
       "picNomor": "082237371981",
-      "slhs": true
+      "slhs": true,
+      "perijinan": {
+        "suratKesanggupan": "SUDAH",
+        "pkkpr": "BELUM PENGAJUAN",
+        "dokLingkungan": "BELUM PENGAJUAN",
+        "pbgSlf": "BELUM PENGAJUAN",
+        "sertifikatStandar": "BELUM PENGAJUAN",
+        "slhs": "SUDAH",
+        "dokPerijinan": "https://drive.google.com/drive/folders/1QVG1dY8XOkG9UmuUhMv9RWeo42uzIH_V?usp=sharing",
+        "sertiChef": "BELUM PENGAJUAN",
+        "halal": "BELUM PENGAJUAN",
+        "haccp": "BELUM PENGAJUAN",
+        "penjamahMakan": "SUDAH",
+        "bpjs": "SUDAH"
+      }
     }
   },
   {
@@ -687,7 +960,23 @@
       "bankVa": "BANK BNI",
       "picNama": "SRIYANTI",
       "picNomor": "082231139885",
-      "slhs": true
+      "slhs": true,
+      "perijinan": {
+        "suratKesanggupan": "SUDAH",
+        "pkkpr": "BELUM PENGAJUAN",
+        "dokLingkungan": "BELUM PENGAJUAN",
+        "pbgSlf": "BELUM PENGAJUAN",
+        "sertifikatStandar": "BELUM PENGAJUAN",
+        "slhs": "SUDAH",
+        "noSlhs": "400.7.11.4/KH/155/405.09/2026",
+        "dokPerijinan": "https://drive.google.com/drive/folders/1QVG1dY8XOkG9UmuUhMv9RWeo42uzIH_V?usp=sharing",
+        "sertiChef": "SUDAH",
+        "halal": "BELUM PENGAJUAN",
+        "haccp": "BELUM PENGAJUAN",
+        "penjamahMakan": "SUDAH",
+        "bpjs": "SUDAH",
+        "dokKelengkapan": "https://drive.google.com/drive/folders/1lUzgj-iZ8X6q-gR8WGkJNoihF0W-ENk1"
+      }
     }
   },
   {
@@ -725,7 +1014,24 @@
       "bankVa": "BANK BNI",
       "picNama": "EKASARI SULISTYOWATI",
       "picNomor": "081333506878",
-      "slhs": true
+      "slhs": true,
+      "perijinan": {
+        "suratKesanggupan": "SUDAH",
+        "pkkpr": "BELUM PENGAJUAN",
+        "dokLingkungan": "BELUM PENGAJUAN",
+        "pbgSlf": "BELUM PENGAJUAN",
+        "sertifikatStandar": "BELUM PENGAJUAN",
+        "slhs": "SUDAH",
+        "noSlhs": "400.7.11.4/KH/79/405.09/2026",
+        "dokPerijinan": "https://drive.google.com/drive/folders/1QVG1dY8XOkG9UmuUhMv9RWeo42uzIH_V?usp=sharing",
+        "sertiChef": "SUDAH",
+        "noSertiChef": "No: 56101 5120 3 0015037 2026",
+        "halal": "PROSES",
+        "haccp": "BELUM PENGAJUAN",
+        "penjamahMakan": "SUDAH",
+        "bpjs": "SUDAH",
+        "dokKelengkapan": "https://drive.google.com/drive/folders/1sCNyz-zPIyztxh8bmrp4CCzG7b5o_Dfa?usp=sharing"
+      }
     }
   },
   {
@@ -763,7 +1069,24 @@
       "bankVa": "BANK BNI",
       "picNama": "KHARISMA RIZA AYU PRICILIA",
       "picNomor": "085934997441",
-      "slhs": true
+      "slhs": true,
+      "perijinan": {
+        "suratKesanggupan": "PROSES",
+        "pkkpr": "BELUM PENGAJUAN",
+        "dokLingkungan": "BELUM PENGAJUAN",
+        "pbgSlf": "BELUM PENGAJUAN",
+        "sertifikatStandar": "BELUM PENGAJUAN",
+        "slhs": "SUDAH",
+        "noSlhs": "400.7.11.4/KH/216/405.09/2026",
+        "dokPerijinan": "https://drive.google.com/drive/folders/1QVG1dY8XOkG9UmuUhMv9RWeo42uzIH_V?usp=sharing",
+        "sertiChef": "SUDAH",
+        "noSertiChef": "56290.5120.2.0001643.2023",
+        "halal": "PROSES",
+        "haccp": "BELUM PENGAJUAN",
+        "penjamahMakan": "SUDAH",
+        "bpjs": "SUDAH",
+        "dokKelengkapan": "https://drive.google.com/drive/folders/1alUZnAfW7IW1lYAai8sGZFVGg8oKsI5K?usp=sharing"
+      }
     }
   },
   {
@@ -794,7 +1117,22 @@
       "bankVa": "BANK BRI",
       "picNama": "YUDHA BAGAS PRIAMBODO",
       "picNomor": "082194410639",
-      "slhs": true
+      "slhs": true,
+      "perijinan": {
+        "suratKesanggupan": "BELUM PENGAJUAN",
+        "pkkpr": "BELUM PENGAJUAN",
+        "dokLingkungan": "BELUM PENGAJUAN",
+        "pbgSlf": "BELUM PENGAJUAN",
+        "sertifikatStandar": "BELUM PENGAJUAN",
+        "slhs": "SUDAH",
+        "noSlhs": "400.7.11.4/KH/1461/405.09/2025",
+        "dokPerijinan": "https://drive.google.com/drive/folders/1QVG1dY8XOkG9UmuUhMv9RWeo42uzIH_V?usp=sharing",
+        "sertiChef": "SUDAH",
+        "halal": "BELUM PENGAJUAN",
+        "haccp": "BELUM PENGAJUAN",
+        "penjamahMakan": "BELUM PENGAJUAN",
+        "bpjs": "BELUM PENGAJUAN"
+      }
     }
   },
   {
@@ -825,7 +1163,22 @@
       "bankVa": "BANK BNI",
       "picNama": "SYAUMA SISWA UTAMA",
       "picNomor": "081212335629",
-      "slhs": true
+      "slhs": true,
+      "perijinan": {
+        "suratKesanggupan": "BELUM PENGAJUAN",
+        "pkkpr": "BELUM PENGAJUAN",
+        "dokLingkungan": "BELUM PENGAJUAN",
+        "pbgSlf": "BELUM PENGAJUAN",
+        "sertifikatStandar": "BELUM PENGAJUAN",
+        "slhs": "SUDAH",
+        "noSlhs": "400.7.11.4/KH/674/405.09/2026",
+        "dokPerijinan": "https://drive.google.com/drive/folders/1QVG1dY8XOkG9UmuUhMv9RWeo42uzIH_V?usp=sharing",
+        "sertiChef": "BELUM PENGAJUAN",
+        "halal": "BELUM PENGAJUAN",
+        "haccp": "BELUM PENGAJUAN",
+        "penjamahMakan": "SUDAH",
+        "bpjs": "PROSES"
+      }
     }
   },
   {
@@ -863,7 +1216,23 @@
       "bankVa": "BANK BRI",
       "picNama": "HARIES HERMANSYAH",
       "picNomor": "082333181815",
-      "slhs": true
+      "slhs": true,
+      "perijinan": {
+        "suratKesanggupan": "SUDAH",
+        "pkkpr": "PROSES",
+        "dokLingkungan": "PROSES",
+        "pbgSlf": "PROSES",
+        "sertifikatStandar": "BELUM PENGAJUAN",
+        "slhs": "SUDAH",
+        "noSlhs": "400.7.11.4/KH/13/405.09/2026",
+        "dokPerijinan": "https://drive.google.com/drive/folders/1QVG1dY8XOkG9UmuUhMv9RWeo42uzIH_V?usp=sharing",
+        "sertiChef": "SUDAH",
+        "noSertiChef": "561015120300159882026",
+        "halal": "BELUM PENGAJUAN",
+        "haccp": "BELUM PENGAJUAN",
+        "penjamahMakan": "SUDAH",
+        "bpjs": "SUDAH"
+      }
     }
   },
   {
@@ -901,7 +1270,24 @@
       "bankVa": "BANK BRI",
       "picNama": "TRI APRILIANTO SAPUTRO",
       "picNomor": "082144761196",
-      "slhs": true
+      "slhs": true,
+      "perijinan": {
+        "suratKesanggupan": "SUDAH",
+        "pkkpr": "PROSES",
+        "dokLingkungan": "SUDAH",
+        "pbgSlf": "PROSES",
+        "sertifikatStandar": "SUDAH",
+        "slhs": "SUDAH",
+        "noSlhs": "400.7.11.4/KH/1311/405.09/2025",
+        "dokPerijinan": "https://drive.google.com/drive/folders/1lALsE7YV7laQHE8hN69ZOso6ztnEKJ1U?usp=sharing",
+        "sertiChef": "SUDAH",
+        "noSertiChef": "25349/11.2/31.75.00.000/-1.837/2015",
+        "halal": "SUDAH",
+        "haccp": "PROSES",
+        "penjamahMakan": "SUDAH",
+        "bpjs": "SUDAH",
+        "dokKelengkapan": "https://drive.google.com/drive/folders/1NpolE4oh5am_LPyy5EEEWZWhMtU_hGuR?usp=sharing"
+      }
     }
   },
   {
@@ -939,7 +1325,23 @@
       "bankVa": "BANK BRI",
       "picNama": "SUSILO",
       "picNomor": "085165458553",
-      "slhs": true
+      "slhs": true,
+      "perijinan": {
+        "suratKesanggupan": "SUDAH",
+        "pkkpr": "PROSES",
+        "dokLingkungan": "PROSES",
+        "pbgSlf": "PROSES",
+        "sertifikatStandar": "PROSES",
+        "slhs": "SUDAH",
+        "noSlhs": "800.1.12.8/KH/33/405.09/2026",
+        "dokPerijinan": "https://drive.google.com/drive/folders/1QVG1dY8XOkG9UmuUhMv9RWeo42uzIH_V?usp=sharing",
+        "sertiChef": "SUDAH",
+        "noSertiChef": "10791 5120 0042922 2026",
+        "halal": "PROSES",
+        "haccp": "PROSES",
+        "penjamahMakan": "SUDAH",
+        "bpjs": "SUDAH"
+      }
     }
   },
   {
@@ -967,7 +1369,22 @@
       "statusLabel": "AKAN OPERASIONAL",
       "yayasan": "Yayasan Sosial Mimbar Arbai",
       "bankVa": "BANK BNI",
-      "picNomor": "082223207177"
+      "picNomor": "082223207177",
+      "perijinan": {
+        "suratKesanggupan": "SUDAH",
+        "pkkpr": "PROSES",
+        "dokLingkungan": "PROSES",
+        "pbgSlf": "PROSES",
+        "sertifikatStandar": "BELUM PENGAJUAN",
+        "slhs": "PROSES",
+        "dokPerijinan": "https://drive.google.com/drive/folders/1QVG1dY8XOkG9UmuUhMv9RWeo42uzIH_V?usp=sharing",
+        "sertiChef": "BELUM PENGAJUAN",
+        "halal": "BELUM PENGAJUAN",
+        "haccp": "BELUM PENGAJUAN",
+        "penjamahMakan": "SUDAH",
+        "bpjs": "SUDAH",
+        "dokKelengkapan": "https://drive.google.com/drive/folders/1OCB3gbEdKaW0-kgLR7IDbR-gj3i1MzXv"
+      }
     }
   },
   {
@@ -996,7 +1413,21 @@
       "yayasan": "Yayasan Wening Arta Bakti",
       "bankVa": "BANK BRI",
       "picNama": "Eka Dara Ratmawati",
-      "picNomor": "085877379663"
+      "picNomor": "085877379663",
+      "perijinan": {
+        "suratKesanggupan": "SUDAH",
+        "pkkpr": "PROSES",
+        "dokLingkungan": "PROSES",
+        "pbgSlf": "PROSES",
+        "sertifikatStandar": "BELUM PENGAJUAN",
+        "slhs": "PROSES",
+        "dokPerijinan": "https://drive.google.com/drive/folders/1QVG1dY8XOkG9UmuUhMv9RWeo42uzIH_V?usp=sharing",
+        "sertiChef": "BELUM PENGAJUAN",
+        "halal": "BELUM PENGAJUAN",
+        "haccp": "BELUM PENGAJUAN",
+        "penjamahMakan": "SUDAH",
+        "bpjs": "BELUM PENGAJUAN"
+      }
     }
   },
   {
@@ -1034,7 +1465,24 @@
       "bankVa": "BANK BRI",
       "picNama": "MURTININGSIH",
       "picNomor": "081290620600",
-      "slhs": true
+      "slhs": true,
+      "perijinan": {
+        "suratKesanggupan": "BELUM PENGAJUAN",
+        "pkkpr": "BELUM PENGAJUAN",
+        "dokLingkungan": "BELUM PENGAJUAN",
+        "pbgSlf": "BELUM PENGAJUAN",
+        "sertifikatStandar": "BELUM PENGAJUAN",
+        "slhs": "SUDAH",
+        "noSlhs": "400.7.11.4/KH/1462/405.09/2025",
+        "dokPerijinan": "https://drive.google.com/drive/folders/1QVG1dY8XOkG9UmuUhMv9RWeo42uzIH_V?usp=sharing",
+        "sertiChef": "SUDAH",
+        "noSertiChef": "561015120300140002025",
+        "halal": "BELUM PENGAJUAN",
+        "haccp": "BELUM PENGAJUAN",
+        "penjamahMakan": "SUDAH",
+        "bpjs": "SUDAH",
+        "dokKelengkapan": "https://drive.google.com/drive/folders/1_bD08c1Vw5ivPNEgccKQ6Zo3uf2JU9pl"
+      }
     }
   },
   {
@@ -1073,7 +1521,23 @@
       "bankVa": "BANK BRI",
       "picNama": "FAUZIY DWI BIMASAKTI",
       "picNomor": "0895396647630",
-      "slhs": true
+      "slhs": true,
+      "perijinan": {
+        "suratKesanggupan": "BELUM PENGAJUAN",
+        "pkkpr": "PROSES",
+        "dokLingkungan": "PROSES",
+        "pbgSlf": "PROSES",
+        "sertifikatStandar": "PROSES",
+        "slhs": "SUDAH",
+        "noSlhs": "400.7.11.4/KH/1320/405.09/2025",
+        "dokPerijinan": "https://drive.google.com/drive/folders/1QVG1dY8XOkG9UmuUhMv9RWeo42uzIH_V?usp=sharing",
+        "sertiChef": "SUDAH",
+        "noSertiChef": "561015120000002542026",
+        "halal": "PROSES",
+        "haccp": "BELUM PENGAJUAN",
+        "penjamahMakan": "SUDAH",
+        "bpjs": "SUDAH"
+      }
     }
   },
   {
@@ -1112,7 +1576,23 @@
       "bankVa": "BANK BRI",
       "picNama": "ROOM ROWI AHMADHA NOVIANTO FITRI",
       "picNomor": "082243898135",
-      "slhs": true
+      "slhs": true,
+      "perijinan": {
+        "suratKesanggupan": "PROSES",
+        "pkkpr": "PROSES",
+        "dokLingkungan": "PROSES",
+        "pbgSlf": "PROSES",
+        "sertifikatStandar": "PROSES",
+        "slhs": "SUDAH",
+        "noSlhs": "400.7.11.4/KH/156/405.09/2026",
+        "dokPerijinan": "https://drive.google.com/drive/folders/1QVG1dY8XOkG9UmuUhMv9RWeo42uzIH_V?usp=sharing",
+        "sertiChef": "SUDAH",
+        "halal": "PROSES",
+        "haccp": "SUDAH",
+        "noSertiHaccp": "ICT575800025",
+        "penjamahMakan": "SUDAH",
+        "bpjs": "SUDAH"
+      }
     }
   },
   {
@@ -1150,7 +1630,24 @@
       "bankVa": "BANK BNI",
       "picNama": "FERLIAN DWI NUGROHO",
       "picNomor": "083812753569",
-      "slhs": true
+      "slhs": true,
+      "perijinan": {
+        "suratKesanggupan": "BELUM PENGAJUAN",
+        "pkkpr": "BELUM PENGAJUAN",
+        "dokLingkungan": "BELUM PENGAJUAN",
+        "pbgSlf": "BELUM PENGAJUAN",
+        "sertifikatStandar": "BELUM PENGAJUAN",
+        "slhs": "SUDAH",
+        "noSlhs": "400.7.11.4/KH/1489/405.09/2025",
+        "dokPerijinan": "https://drive.google.com/drive/folders/1QVG1dY8XOkG9UmuUhMv9RWeo42uzIH_V?usp=sharing",
+        "sertiChef": "SUDAH",
+        "noSertiChef": "055115120000061032026",
+        "halal": "PROSES",
+        "haccp": "PROSES",
+        "penjamahMakan": "SUDAH",
+        "bpjs": "SUDAH",
+        "dokKelengkapan": "https://drive.google.com/drive/folders/1u7yT0qIHwtNsq4NCV454vId1xx4Y3AfT"
+      }
     }
   },
   {
@@ -1189,7 +1686,25 @@
       "bankVa": "BANK BRI",
       "picNama": "MOH. SAIIN",
       "picNomor": "081222678678",
-      "slhs": true
+      "slhs": true,
+      "perijinan": {
+        "suratKesanggupan": "BELUM PENGAJUAN",
+        "pkkpr": "BELUM PENGAJUAN",
+        "dokLingkungan": "BELUM PENGAJUAN",
+        "pbgSlf": "BELUM PENGAJUAN",
+        "sertifikatStandar": "BELUM PENGAJUAN",
+        "slhs": "SUDAH",
+        "noSlhs": "400.7.11.4/KH/1321/405.09/2025",
+        "dokPerijinan": "https://drive.google.com/drive/folders/1QVG1dY8XOkG9UmuUhMv9RWeo42uzIH_V?usp=sharing",
+        "sertiChef": "SUDAH",
+        "noSertiChef": "561015120300153542026",
+        "halal": "SUDAH",
+        "noSertiHalal": "ID351100422811810226",
+        "haccp": "BELUM PENGAJUAN",
+        "penjamahMakan": "SUDAH",
+        "bpjs": "SUDAH",
+        "dokKelengkapan": "https://drive.google.com/drive/folders/1sLNeI92yxZoRHdZe5t5M59WgsZsFknfc?usp=drive_link"
+      }
     }
   },
   {
@@ -1228,7 +1743,23 @@
       "bankVa": "BANK BRI",
       "picNama": "DRAJAD RIZQI ANGGUN PERDANA",
       "picNomor": "082332693773",
-      "slhs": true
+      "slhs": true,
+      "perijinan": {
+        "suratKesanggupan": "BELUM PENGAJUAN",
+        "pkkpr": "BELUM PENGAJUAN",
+        "dokLingkungan": "BELUM PENGAJUAN",
+        "pbgSlf": "BELUM PENGAJUAN",
+        "sertifikatStandar": "BELUM PENGAJUAN",
+        "slhs": "SUDAH",
+        "noSlhs": "400.7.11.4/KH/1310/405.09/2025",
+        "dokPerijinan": "https://drive.google.com/drive/folders/1QVG1dY8XOkG9UmuUhMv9RWeo42uzIH_V?usp=sharing",
+        "sertiChef": "SUDAH",
+        "noSertiChef": "85498.5120.2.0021773.2025",
+        "halal": "BELUM PENGAJUAN",
+        "haccp": "BELUM PENGAJUAN",
+        "penjamahMakan": "SUDAH",
+        "bpjs": "SUDAH"
+      }
     }
   },
   {
@@ -1266,7 +1797,23 @@
       "bankVa": "BANK BNI",
       "picNama": "JENNY PUTRI",
       "picNomor": "082233790421",
-      "slhs": true
+      "slhs": true,
+      "perijinan": {
+        "suratKesanggupan": "SUDAH",
+        "pkkpr": "BELUM PENGAJUAN",
+        "dokLingkungan": "BELUM PENGAJUAN",
+        "pbgSlf": "BELUM PENGAJUAN",
+        "sertifikatStandar": "BELUM PENGAJUAN",
+        "slhs": "SUDAH",
+        "noSlhs": "400.7.11.4/KH/645/405.09/2026",
+        "dokPerijinan": "https://drive.google.com/drive/folders/1QVG1dY8XOkG9UmuUhMv9RWeo42uzIH_V?usp=sharing",
+        "sertiChef": "PROSES",
+        "halal": "PROSES",
+        "haccp": "BELUM PENGAJUAN",
+        "penjamahMakan": "SUDAH",
+        "bpjs": "PROSES",
+        "dokKelengkapan": "https://drive.google.com/drive/folders/10KWjBfHA9-c-oB_ZWZuY-gjV6d6ZRLN9?usp=sharing"
+      }
     }
   },
   {
@@ -1303,7 +1850,23 @@
       "yayasan": "Yayasan Hidayatul Mubtadiin Gonggang",
       "bankVa": "BANK BNI",
       "picNama": "WITANTO",
-      "picNomor": "081363755777"
+      "picNomor": "081363755777",
+      "perijinan": {
+        "suratKesanggupan": "PROSES",
+        "pkkpr": "BELUM PENGAJUAN",
+        "dokLingkungan": "BELUM PENGAJUAN",
+        "pbgSlf": "BELUM PENGAJUAN",
+        "sertifikatStandar": "BELUM PENGAJUAN",
+        "slhs": "SUDAH",
+        "noSlhs": "400.7.11.4/KH/643/405.09/2026",
+        "dokPerijinan": "https://drive.google.com/drive/folders/1QVG1dY8XOkG9UmuUhMv9RWeo42uzIH_V?usp=sharing",
+        "sertiChef": "SUDAH",
+        "noSertiChef": "10791512000429042026",
+        "halal": "BELUM PENGAJUAN",
+        "haccp": "BELUM PENGAJUAN",
+        "penjamahMakan": "SUDAH",
+        "bpjs": "PROSES"
+      }
     }
   },
   {
@@ -1341,7 +1904,23 @@
       "bankVa": "BANK BNI",
       "picNama": "MOH.SAIN",
       "picNomor": "081222678678",
-      "slhs": true
+      "slhs": true,
+      "perijinan": {
+        "suratKesanggupan": "SUDAH",
+        "pkkpr": "PROSES",
+        "dokLingkungan": "PROSES",
+        "pbgSlf": "PROSES",
+        "sertifikatStandar": "PROSES",
+        "slhs": "SUDAH",
+        "noSlhs": "400.7.11.4/KH/634/405.09/2026",
+        "dokPerijinan": "https://drive.google.com/file/d/14T_c7-WxklOj9T3LKMQ5-cd6mejyttRl/view?usp=drive_link",
+        "sertiChef": "PROSES",
+        "halal": "PROSES",
+        "haccp": "PROSES",
+        "penjamahMakan": "SUDAH",
+        "bpjs": "SUDAH",
+        "dokKelengkapan": "https://drive.google.com/drive/folders/10s5LDeDZ11MfCAHsUnJyzlUns3ekJL2_?usp=drive_link"
+      }
     }
   },
   {
@@ -1379,7 +1958,22 @@
       "bankVa": "BANK BNI",
       "picNama": "TATIK",
       "picNomor": "082138885702",
-      "slhs": true
+      "slhs": true,
+      "perijinan": {
+        "suratKesanggupan": "BELUM PENGAJUAN",
+        "pkkpr": "BELUM PENGAJUAN",
+        "dokLingkungan": "BELUM PENGAJUAN",
+        "pbgSlf": "BELUM PENGAJUAN",
+        "sertifikatStandar": "BELUM PENGAJUAN",
+        "slhs": "SUDAH",
+        "noSlhs": "400.7.11.4/KH/112/405.09/2026",
+        "dokPerijinan": "https://drive.google.com/drive/folders/1QVG1dY8XOkG9UmuUhMv9RWeo42uzIH_V?usp=sharing",
+        "sertiChef": "SUDAH",
+        "halal": "BELUM PENGAJUAN",
+        "haccp": "BELUM PENGAJUAN",
+        "penjamahMakan": "BELUM PENGAJUAN",
+        "bpjs": "BELUM PENGAJUAN"
+      }
     }
   },
   {
@@ -1417,7 +2011,24 @@
       "bankVa": "BANK BRI",
       "picNama": "ALWAN AKHSAN NUGROHO",
       "picNomor": "081335533924",
-      "slhs": true
+      "slhs": true,
+      "perijinan": {
+        "suratKesanggupan": "SUDAH",
+        "pkkpr": "BELUM PENGAJUAN",
+        "dokLingkungan": "BELUM PENGAJUAN",
+        "pbgSlf": "BELUM PENGAJUAN",
+        "sertifikatStandar": "BELUM PENGAJUAN",
+        "slhs": "SUDAH",
+        "noSlhs": "400.7.11.4/KH/259/405.09/2026",
+        "dokPerijinan": "https://drive.google.com/drive/folders/1QVG1dY8XOkG9UmuUhMv9RWeo42uzIH_V?usp=sharing",
+        "sertiChef": "SUDAH",
+        "noSertiChef": "561015120300140032025",
+        "halal": "BELUM PENGAJUAN",
+        "haccp": "BELUM PENGAJUAN",
+        "penjamahMakan": "SUDAH",
+        "bpjs": "SUDAH",
+        "dokKelengkapan": "https://drive.google.com/drive/folders/1QVG1dY8XOkG9UmuUhMv9RWeo42uzIH_V?usp=sharing"
+      }
     }
   },
   {
@@ -1455,7 +2066,24 @@
       "bankVa": "BANK BRI",
       "picNama": "SLAMET WIDODO",
       "picNomor": "085236607971",
-      "slhs": true
+      "slhs": true,
+      "perijinan": {
+        "suratKesanggupan": "BELUM PENGAJUAN",
+        "pkkpr": "BELUM PENGAJUAN",
+        "dokLingkungan": "BELUM PENGAJUAN",
+        "pbgSlf": "BELUM PENGAJUAN",
+        "sertifikatStandar": "BELUM PENGAJUAN",
+        "slhs": "SUDAH",
+        "noSlhs": "400.7.11.4/KH/220/405.09/2026",
+        "dokPerijinan": "https://drive.google.com/drive/folders/1QVG1dY8XOkG9UmuUhMv9RWeo42uzIH_V?usp=sharing",
+        "sertiChef": "SUDAH",
+        "noSertiChef": "561015120300138842025",
+        "halal": "BELUM PENGAJUAN",
+        "haccp": "BELUM PENGAJUAN",
+        "penjamahMakan": "SUDAH",
+        "bpjs": "SUDAH",
+        "dokKelengkapan": "https://drive.google.com/drive/folders/1xClTb_blHeTdTWXy20RFjIZhUpiL4tBx?usp=drive_link"
+      }
     }
   },
   {
@@ -1493,7 +2121,24 @@
       "bankVa": "BANK BRI",
       "picNama": "SIDI",
       "picNomor": "085293385409",
-      "slhs": true
+      "slhs": true,
+      "perijinan": {
+        "suratKesanggupan": "SUDAH",
+        "pkkpr": "BELUM PENGAJUAN",
+        "dokLingkungan": "BELUM PENGAJUAN",
+        "pbgSlf": "BELUM PENGAJUAN",
+        "sertifikatStandar": "BELUM PENGAJUAN",
+        "slhs": "SUDAH",
+        "noSlhs": "400.7.11.4/KH/1406/405.09/2025",
+        "dokPerijinan": "https://drive.google.com/drive/folders/1QVG1dY8XOkG9UmuUhMv9RWeo42uzIH_V?usp=sharing",
+        "sertiChef": "SUDAH",
+        "noSertiChef": "561015120300128542025",
+        "halal": "PROSES",
+        "haccp": "BELUM PENGAJUAN",
+        "penjamahMakan": "SUDAH",
+        "bpjs": "SUDAH",
+        "dokKelengkapan": "https://drive.google.com/drive/folders/1s1RK6Db7hlHte-kxhLiPwpBLIb2hbC8R?usp=sharing"
+      }
     }
   },
   {
@@ -1531,7 +2176,22 @@
       "yayasan": "Yayasan Drijaya Wahana Perkasa",
       "bankVa": "BANK BRI",
       "picNama": "Yolla Febri Prasetyaningsih",
-      "picNomor": "895339059068.0"
+      "picNomor": "895339059068.0",
+      "perijinan": {
+        "suratKesanggupan": "PROSES",
+        "pkkpr": "BELUM PENGAJUAN",
+        "dokLingkungan": "BELUM PENGAJUAN",
+        "pbgSlf": "BELUM PENGAJUAN",
+        "sertifikatStandar": "BELUM PENGAJUAN",
+        "slhs": "PROSES",
+        "noSlhs": "DOR",
+        "dokPerijinan": "https://drive.google.com/drive/folders/1QVG1dY8XOkG9UmuUhMv9RWeo42uzIH_V?usp=sharing",
+        "sertiChef": "PROSES",
+        "halal": "BELUM PENGAJUAN",
+        "haccp": "BELUM PENGAJUAN",
+        "penjamahMakan": "SUDAH",
+        "bpjs": "PROSES"
+      }
     }
   },
   {
@@ -1560,7 +2220,22 @@
       "yayasan": "Yayasan Hidayatul Mubtadiin Gonggang",
       "bankVa": "BANK BNI",
       "picNama": "Rahma Balqis Mukarrohmah",
-      "picNomor": "085129601172"
+      "picNomor": "085129601172",
+      "perijinan": {
+        "suratKesanggupan": "BELUM PENGAJUAN",
+        "pkkpr": "BELUM PENGAJUAN",
+        "dokLingkungan": "BELUM PENGAJUAN",
+        "pbgSlf": "BELUM PENGAJUAN",
+        "sertifikatStandar": "BELUM PENGAJUAN",
+        "slhs": "SUDAH",
+        "noSlhs": "400.7.11.4/KH/643/405.09/2026",
+        "dokPerijinan": "https://drive.google.com/drive/folders/1QVG1dY8XOkG9UmuUhMv9RWeo42uzIH_V?usp=sharing",
+        "sertiChef": "BELUM PENGAJUAN",
+        "halal": "BELUM PENGAJUAN",
+        "haccp": "BELUM PENGAJUAN",
+        "penjamahMakan": "BELUM PENGAJUAN",
+        "bpjs": "BELUM PENGAJUAN"
+      }
     }
   },
   {
@@ -1598,7 +2273,23 @@
       "bankVa": "BANK BNI",
       "picNama": "TARSO",
       "picNomor": "082242611777",
-      "slhs": true
+      "slhs": true,
+      "perijinan": {
+        "suratKesanggupan": "SUDAH",
+        "pkkpr": "BELUM PENGAJUAN",
+        "dokLingkungan": "BELUM PENGAJUAN",
+        "pbgSlf": "BELUM PENGAJUAN",
+        "sertifikatStandar": "BELUM PENGAJUAN",
+        "slhs": "SUDAH",
+        "noSlhs": "400.7.11.4/KH/280/405.09/2026",
+        "dokPerijinan": "https://drive.google.com/drive/folders/1QVG1dY8XOkG9UmuUhMv9RWeo42uzIH_V?usp=sharing",
+        "sertiChef": "SUDAH",
+        "halal": "BELUM PENGAJUAN",
+        "haccp": "BELUM PENGAJUAN",
+        "penjamahMakan": "SUDAH",
+        "bpjs": "PROSES",
+        "dokKelengkapan": "https://drive.google.com/drive/folders/14HO2LtBJ1WK1_dockaKz_6TZvTbz-0vq"
+      }
     }
   },
   {
@@ -1636,7 +2327,22 @@
       "bankVa": "BANK BNI",
       "picNama": "NYAMIN",
       "picNomor": "082331203895",
-      "slhs": true
+      "slhs": true,
+      "perijinan": {
+        "suratKesanggupan": "SUDAH",
+        "pkkpr": "BELUM PENGAJUAN",
+        "dokLingkungan": "BELUM PENGAJUAN",
+        "pbgSlf": "BELUM PENGAJUAN",
+        "sertifikatStandar": "BELUM PENGAJUAN",
+        "slhs": "SUDAH",
+        "noSlhs": "400.7.11.4/KH/61/405.09/2026",
+        "dokPerijinan": "https://drive.google.com/drive/folders/1QVG1dY8XOkG9UmuUhMv9RWeo42uzIH_V?usp=sharing",
+        "sertiChef": "PROSES",
+        "halal": "BELUM PENGAJUAN",
+        "haccp": "BELUM PENGAJUAN",
+        "penjamahMakan": "SUDAH",
+        "bpjs": "BELUM PENGAJUAN"
+      }
     }
   },
   {
@@ -1674,7 +2380,23 @@
       "bankVa": "BANK BNI",
       "picNama": "RESTU AGUS BUDIARTO",
       "picNomor": "085336222666",
-      "slhs": true
+      "slhs": true,
+      "perijinan": {
+        "suratKesanggupan": "SUDAH",
+        "pkkpr": "BELUM PENGAJUAN",
+        "dokLingkungan": "BELUM PENGAJUAN",
+        "pbgSlf": "BELUM PENGAJUAN",
+        "sertifikatStandar": "BELUM PENGAJUAN",
+        "slhs": "SUDAH",
+        "noSlhs": "400.7.11.4/KH/111/405.09/2026",
+        "dokPerijinan": "https://drive.google.com/drive/folders/1QVG1dY8XOkG9UmuUhMv9RWeo42uzIH_V?usp=sharing",
+        "sertiChef": "PROSES",
+        "halal": "BELUM PENGAJUAN",
+        "haccp": "BELUM PENGAJUAN",
+        "penjamahMakan": "SUDAH",
+        "bpjs": "SUDAH",
+        "dokKelengkapan": "https://drive.google.com/drive/folders/1QVG1dY8XOkG9UmuUhMv9RWeo42uzIH_V?usp=sharing"
+      }
     }
   },
   {
@@ -1711,7 +2433,21 @@
       "yayasan": "Yayasan Laskar Peduli Sesama",
       "bankVa": "BANK BNI",
       "picNama": "KUKUH ARDIAN",
-      "picNomor": "082298148101"
+      "picNomor": "082298148101",
+      "perijinan": {
+        "suratKesanggupan": "BELUM PENGAJUAN",
+        "pkkpr": "BELUM PENGAJUAN",
+        "dokLingkungan": "BELUM PENGAJUAN",
+        "pbgSlf": "BELUM PENGAJUAN",
+        "sertifikatStandar": "BELUM PENGAJUAN",
+        "slhs": "BELUM PENGAJUAN",
+        "dokPerijinan": "https://drive.google.com/drive/folders/1QVG1dY8XOkG9UmuUhMv9RWeo42uzIH_V?usp=sharing",
+        "sertiChef": "BELUM PENGAJUAN",
+        "halal": "BELUM PENGAJUAN",
+        "haccp": "BELUM PENGAJUAN",
+        "penjamahMakan": "BELUM PENGAJUAN",
+        "bpjs": "BELUM PENGAJUAN"
+      }
     }
   },
   {
@@ -1748,7 +2484,23 @@
       "yayasan": "Yayasan Mandiri Persada Sejahtera",
       "bankVa": "BANK BNI",
       "picNama": "DWI RETNO WIDYMYARSIH",
-      "picNomor": "081335844410"
+      "picNomor": "081335844410",
+      "perijinan": {
+        "suratKesanggupan": "SUDAH",
+        "pkkpr": "BELUM PENGAJUAN",
+        "dokLingkungan": "BELUM PENGAJUAN",
+        "pbgSlf": "BELUM PENGAJUAN",
+        "sertifikatStandar": "BELUM PENGAJUAN",
+        "slhs": "SUDAH",
+        "noSlhs": "400.7.11.41KH/633/405.09/2026",
+        "dokPerijinan": "https://drive.google.com/drive/folders/1QVG1dY8XOkG9UmuUhMv9RWeo42uzIH_V?usp=sharing",
+        "sertiChef": "SUDAH",
+        "noSertiChef": "05511 512000006361 2026",
+        "halal": "BELUM PENGAJUAN",
+        "haccp": "BELUM PENGAJUAN",
+        "penjamahMakan": "SUDAH",
+        "bpjs": "SUDAH"
+      }
     }
   },
   {
@@ -1787,7 +2539,24 @@
       "bankVa": "BANK BNI",
       "picNama": "NUR FAUZAN ROZALI",
       "picNomor": "081333792345",
-      "slhs": true
+      "slhs": true,
+      "perijinan": {
+        "suratKesanggupan": "SUDAH",
+        "pkkpr": "BELUM PENGAJUAN",
+        "dokLingkungan": "BELUM PENGAJUAN",
+        "pbgSlf": "BELUM PENGAJUAN",
+        "sertifikatStandar": "BELUM PENGAJUAN",
+        "slhs": "SUDAH",
+        "noSlhs": "400.7.11.4/KH/237/405.09/2026",
+        "dokPerijinan": "https://drive.google.com/drive/folders/1QVG1dY8XOkG9UmuUhMv9RWeo42uzIH_V?usp=sharing",
+        "sertiChef": "SUDAH",
+        "noSertiChef": "055115120000063542026",
+        "halal": "SUDAH",
+        "noSertiHalal": "ID35110078613120726",
+        "haccp": "BELUM PENGAJUAN",
+        "penjamahMakan": "SUDAH",
+        "bpjs": "SUDAH"
+      }
     }
   },
   {
@@ -1826,7 +2595,23 @@
       "bankVa": "BANK BNI",
       "picNama": "DANNU MAHARDIKA",
       "picNomor": "081234379996",
-      "slhs": true
+      "slhs": true,
+      "perijinan": {
+        "suratKesanggupan": "BELUM PENGAJUAN",
+        "pkkpr": "BELUM PENGAJUAN",
+        "dokLingkungan": "BELUM PENGAJUAN",
+        "pbgSlf": "BELUM PENGAJUAN",
+        "sertifikatStandar": "BELUM PENGAJUAN",
+        "slhs": "SUDAH",
+        "noSlhs": "400.7.11.4/KH/218/405.09/2026",
+        "dokPerijinan": "https://drive.google.com/drive/folders/1QVG1dY8XOkG9UmuUhMv9RWeo42uzIH_V?usp=sharing",
+        "sertiChef": "SUDAH",
+        "noSertiChef": "06042200483170002",
+        "halal": "BELUM PENGAJUAN",
+        "haccp": "BELUM PENGAJUAN",
+        "penjamahMakan": "SUDAH",
+        "bpjs": "SUDAH"
+      }
     }
   },
   {
@@ -1864,7 +2649,24 @@
       "bankVa": "BANK BNI",
       "picNama": "SEGORO LUHUR KUSUMO DARU",
       "picNomor": "082136724435",
-      "slhs": true
+      "slhs": true,
+      "perijinan": {
+        "suratKesanggupan": "SUDAH",
+        "pkkpr": "PROSES",
+        "dokLingkungan": "PROSES",
+        "pbgSlf": "PROSES",
+        "sertifikatStandar": "PROSES",
+        "slhs": "SUDAH",
+        "noSlhs": "400.7.11/KH/74/405.09/2026",
+        "dokPerijinan": "https://drive.google.com/drive/folders/1QVG1dY8XOkG9UmuUhMv9RWeo42uzIH_V?usp=sharing",
+        "sertiChef": "SUDAH",
+        "noSertiChef": "055115120000063602026",
+        "halal": "PROSES",
+        "haccp": "PROSES",
+        "penjamahMakan": "SUDAH",
+        "bpjs": "SUDAH",
+        "dokKelengkapan": "https://drive.google.com/drive/folders/1C35T1GO-eygv-jN-7tZRR-CBHGnn5DHl?usp=sharing"
+      }
     }
   },
   {
@@ -1902,7 +2704,24 @@
       "bankVa": "BANK BRI",
       "picNama": "NABILA PUTRI OCKTAVIA",
       "picNomor": "082359163125",
-      "slhs": true
+      "slhs": true,
+      "perijinan": {
+        "suratKesanggupan": "SUDAH",
+        "pkkpr": "BELUM PENGAJUAN",
+        "dokLingkungan": "BELUM PENGAJUAN",
+        "pbgSlf": "BELUM PENGAJUAN",
+        "sertifikatStandar": "BELUM PENGAJUAN",
+        "slhs": "SUDAH",
+        "noSlhs": "400.7.11.4/KH/14/405.09/2026",
+        "dokPerijinan": "https://drive.google.com/drive/folders/1QVG1dY8XOkG9UmuUhMv9RWeo42uzIH_V?usp=sharing",
+        "sertiChef": "SUDAH",
+        "noSertiChef": "561015120300160532026",
+        "halal": "BELUM PENGAJUAN",
+        "haccp": "BELUM PENGAJUAN",
+        "penjamahMakan": "SUDAH",
+        "bpjs": "SUDAH",
+        "dokKelengkapan": "https://drive.google.com/drive/folders/1l8pR96iXa9X3KvErDBNGjYCu2ERldUSm?usp=sharing"
+      }
     }
   },
   {
@@ -1940,7 +2759,23 @@
       "bankVa": "BANK BRI",
       "picNama": "SRI WURYANINGSIH",
       "picNomor": "081231585985",
-      "slhs": true
+      "slhs": true,
+      "perijinan": {
+        "suratKesanggupan": "BELUM PENGAJUAN",
+        "pkkpr": "BELUM PENGAJUAN",
+        "dokLingkungan": "BELUM PENGAJUAN",
+        "pbgSlf": "BELUM PENGAJUAN",
+        "sertifikatStandar": "BELUM PENGAJUAN",
+        "slhs": "SUDAH",
+        "noSlhs": "400.7.11.4/KH/221/405.09/2026",
+        "dokPerijinan": "https://drive.google.com/drive/folders/1QVG1dY8XOkG9UmuUhMv9RWeo42uzIH_V?usp=sharing",
+        "sertiChef": "SUDAH",
+        "noSertiChef": "56101 5120 3 0006027 2026",
+        "halal": "BELUM PENGAJUAN",
+        "haccp": "BELUM PENGAJUAN",
+        "penjamahMakan": "SUDAH",
+        "bpjs": "SUDAH"
+      }
     }
   },
   {
@@ -1979,7 +2814,24 @@
       "bankVa": "BANK BRI",
       "picNama": "ZULFA SYATHARI",
       "picNomor": "081325663310",
-      "slhs": true
+      "slhs": true,
+      "perijinan": {
+        "suratKesanggupan": "SUDAH",
+        "pkkpr": "PROSES",
+        "dokLingkungan": "PROSES",
+        "pbgSlf": "PROSES",
+        "sertifikatStandar": "PROSES",
+        "slhs": "SUDAH",
+        "noSlhs": "400.7.11.4/KH/641/405.09/2026",
+        "dokPerijinan": "https://drive.google.com/drive/folders/1QVG1dY8XOkG9UmuUhMv9RWeo42uzIH_V?usp=sharing",
+        "sertiChef": "SUDAH",
+        "noSertiChef": "85498.5120.2.0021774.2025",
+        "halal": "PROSES",
+        "haccp": "BELUM PENGAJUAN",
+        "penjamahMakan": "SUDAH",
+        "bpjs": "SUDAH",
+        "dokKelengkapan": "https://drive.google.com/drive/folders/1QVG1dY8XOkG9UmuUhMv9RWeo42uzIH_V?usp=sharing"
+      }
     }
   },
   {
@@ -2018,7 +2870,24 @@
       "bankVa": "BANK BRI",
       "picNama": "MUHAMMAD SYAMSI HASAN., SE",
       "picNomor": "082264678595",
-      "slhs": true
+      "slhs": true,
+      "perijinan": {
+        "suratKesanggupan": "SUDAH",
+        "pkkpr": "BELUM PENGAJUAN",
+        "dokLingkungan": "BELUM PENGAJUAN",
+        "pbgSlf": "BELUM PENGAJUAN",
+        "sertifikatStandar": "BELUM PENGAJUAN",
+        "slhs": "SUDAH",
+        "noSlhs": "400.7.11.4/KH/1488/405.09/2025",
+        "dokPerijinan": "https://drive.google.com/drive/folders/1QVG1dY8XOkG9UmuUhMv9RWeo42uzIH_V?usp=sharing",
+        "sertiChef": "SUDAH",
+        "noSertiChef": "10792 5120 0042905 2026",
+        "halal": "PROSES",
+        "haccp": "BELUM PENGAJUAN",
+        "penjamahMakan": "SUDAH",
+        "bpjs": "SUDAH",
+        "dokKelengkapan": "https://drive.google.com/drive/folders/1njUY-xTl8A9gbrbUAo4-2_VazXAZIsse?usp=drive_link"
+      }
     }
   },
   {
@@ -2056,7 +2925,23 @@
       "bankVa": "BANK BRI",
       "picNama": "AGUS SETYOBUDI",
       "picNomor": "081779955901",
-      "slhs": true
+      "slhs": true,
+      "perijinan": {
+        "suratKesanggupan": "SUDAH",
+        "pkkpr": "PROSES",
+        "dokLingkungan": "PROSES",
+        "pbgSlf": "PROSES",
+        "sertifikatStandar": "PROSES",
+        "slhs": "SUDAH",
+        "noSlhs": "400.7.11.4/KH/1316/405.09/2025",
+        "dokPerijinan": "https://drive.google.com/drive/folders/1QVG1dY8XOkG9UmuUhMv9RWeo42uzIH_V?usp=sharing",
+        "sertiChef": "SUDAH",
+        "noSertiChef": "56101 5120 0 0000641 2025",
+        "halal": "PROSES",
+        "haccp": "BELUM PENGAJUAN",
+        "penjamahMakan": "SUDAH",
+        "bpjs": "SUDAH"
+      }
     }
   },
   {
@@ -2095,7 +2980,24 @@
       "bankVa": "BANK BRI",
       "picNama": "RAHMA BALQIS MUKARROHMAH",
       "picNomor": "085148411635",
-      "slhs": true
+      "slhs": true,
+      "perijinan": {
+        "suratKesanggupan": "BELUM PENGAJUAN",
+        "pkkpr": "BELUM PENGAJUAN",
+        "dokLingkungan": "BELUM PENGAJUAN",
+        "pbgSlf": "BELUM PENGAJUAN",
+        "sertifikatStandar": "BELUM PENGAJUAN",
+        "slhs": "SUDAH",
+        "noSlhs": "400.7.11.4/KH/1271/405.09/2025",
+        "dokPerijinan": "https://drive.google.com/drive/folders/1QVG1dY8XOkG9UmuUhMv9RWeo42uzIH_V?usp=sharing",
+        "sertiChef": "SUDAH",
+        "noSertiChef": "10791 5120 0042923 2026",
+        "halal": "PROSES",
+        "haccp": "BELUM PENGAJUAN",
+        "penjamahMakan": "SUDAH",
+        "bpjs": "SUDAH",
+        "dokKelengkapan": "https://drive.google.com/drive/folders/1QdsxHT8KNbI3rDUIPYbyOWWQYH3K4DFX?usp=sharing"
+      }
     }
   },
   {
@@ -2133,7 +3035,22 @@
       "bankVa": "BANK BRI",
       "picNama": "CANON HIDAYATULLOH",
       "picNomor": "081278042938",
-      "slhs": true
+      "slhs": true,
+      "perijinan": {
+        "suratKesanggupan": "SUDAH",
+        "pkkpr": "BELUM PENGAJUAN",
+        "dokLingkungan": "BELUM PENGAJUAN",
+        "pbgSlf": "BELUM PENGAJUAN",
+        "sertifikatStandar": "BELUM PENGAJUAN",
+        "slhs": "SUDAH",
+        "noSlhs": "400.7.11.4/KH/1463/405.9/2025",
+        "dokPerijinan": "https://drive.google.com/drive/folders/1QVG1dY8XOkG9UmuUhMv9RWeo42uzIH_V?usp=sharing",
+        "sertiChef": "BELUM PENGAJUAN",
+        "halal": "BELUM PENGAJUAN",
+        "haccp": "BELUM PENGAJUAN",
+        "penjamahMakan": "SUDAH",
+        "bpjs": "PROSES"
+      }
     }
   },
   {
@@ -2172,7 +3089,23 @@
       "bankVa": "BANK BRI",
       "picNama": "NOFIYATI",
       "picNomor": "087738857295",
-      "slhs": true
+      "slhs": true,
+      "perijinan": {
+        "suratKesanggupan": "SUDAH",
+        "pkkpr": "PROSES",
+        "dokLingkungan": "PROSES",
+        "pbgSlf": "BELUM PENGAJUAN",
+        "sertifikatStandar": "BELUM PENGAJUAN",
+        "slhs": "SUDAH",
+        "noSlhs": "400.7.11.4/KH/1247/405.09/2025",
+        "dokPerijinan": "https://drive.google.com/drive/folders/1QVG1dY8XOkG9UmuUhMv9RWeo42uzIH_V?usp=sharing",
+        "sertiChef": "BELUM PENGAJUAN",
+        "halal": "BELUM PENGAJUAN",
+        "haccp": "BELUM PENGAJUAN",
+        "penjamahMakan": "BELUM PENGAJUAN",
+        "bpjs": "BELUM PENGAJUAN",
+        "dokKelengkapan": "https://drive.google.com/file/d/1xgTUIMJ9nN4w4WYcxPiX0PaqLMrNZIBS/view?usp=drive_link"
+      }
     }
   },
   {
@@ -2210,7 +3143,21 @@
       "yayasan": "Yayasan Pundi Amal Nusantara",
       "bankVa": "BANK BRI",
       "picNama": "DICKY HARU PRIANKA",
-      "picNomor": "082185255949"
+      "picNomor": "082185255949",
+      "perijinan": {
+        "suratKesanggupan": "BELUM PENGAJUAN",
+        "pkkpr": "BELUM PENGAJUAN",
+        "dokLingkungan": "BELUM PENGAJUAN",
+        "pbgSlf": "BELUM PENGAJUAN",
+        "sertifikatStandar": "BELUM PENGAJUAN",
+        "slhs": "BELUM PENGAJUAN",
+        "dokPerijinan": "https://drive.google.com/drive/folders/1QVG1dY8XOkG9UmuUhMv9RWeo42uzIH_V?usp=sharing",
+        "sertiChef": "BELUM PENGAJUAN",
+        "halal": "BELUM PENGAJUAN",
+        "haccp": "BELUM PENGAJUAN",
+        "penjamahMakan": "BELUM PENGAJUAN",
+        "bpjs": "BELUM PENGAJUAN"
+      }
     }
   },
   {
@@ -2248,7 +3195,23 @@
       "bankVa": "BANK BNI",
       "picNama": "ALDILA SUCI RAHAYU, S.H.",
       "picNomor": "081228740220",
-      "slhs": true
+      "slhs": true,
+      "perijinan": {
+        "suratKesanggupan": "SUDAH",
+        "pkkpr": "PROSES",
+        "dokLingkungan": "PROSES",
+        "pbgSlf": "PROSES",
+        "sertifikatStandar": "BELUM PENGAJUAN",
+        "slhs": "SUDAH",
+        "noSlhs": "400.7.11.4/KH/48/405.09/2026",
+        "dokPerijinan": "https://drive.google.com/drive/folders/199Mhna5tB_n7AA5XANLCK-kOy6S5XJly",
+        "sertiChef": "PROSES",
+        "halal": "BELUM PENGAJUAN",
+        "haccp": "BELUM PENGAJUAN",
+        "penjamahMakan": "SUDAH",
+        "bpjs": "SUDAH",
+        "dokKelengkapan": "https://drive.google.com/drive/folders/1aKXLtcqMFyNrX45TZw5MmbKzZNbvkzRj"
+      }
     }
   },
   {
@@ -2280,7 +3243,21 @@
       "yayasan": "Yayasan Mandiri Persada Sejahtera",
       "bankVa": "BANK BNI",
       "picNama": "AYURA FARADIVA",
-      "picNomor": "089683300100"
+      "picNomor": "089683300100",
+      "perijinan": {
+        "suratKesanggupan": "SUDAH",
+        "pkkpr": "BELUM PENGAJUAN",
+        "dokLingkungan": "BELUM PENGAJUAN",
+        "pbgSlf": "BELUM PENGAJUAN",
+        "sertifikatStandar": "BELUM PENGAJUAN",
+        "slhs": "PROSES",
+        "dokPerijinan": "https://drive.google.com/drive/folders/1QVG1dY8XOkG9UmuUhMv9RWeo42uzIH_V?usp=sharing",
+        "sertiChef": "PROSES",
+        "halal": "PROSES",
+        "haccp": "PROSES",
+        "penjamahMakan": "SUDAH",
+        "bpjs": "SUDAH"
+      }
     }
   },
   {
@@ -2310,7 +3287,21 @@
       "yayasan": "Yayasan Damadika Jawa Timur",
       "bankVa": "BANK BNI",
       "picNama": "INDRA WAHYU SETYANTO",
-      "picNomor": "081335844481"
+      "picNomor": "081335844481",
+      "perijinan": {
+        "suratKesanggupan": "BELUM PENGAJUAN",
+        "pkkpr": "BELUM PENGAJUAN",
+        "dokLingkungan": "BELUM PENGAJUAN",
+        "pbgSlf": "BELUM PENGAJUAN",
+        "sertifikatStandar": "BELUM PENGAJUAN",
+        "slhs": "BELUM PENGAJUAN",
+        "dokPerijinan": "https://drive.google.com/drive/folders/1QVG1dY8XOkG9UmuUhMv9RWeo42uzIH_V?usp=sharing",
+        "sertiChef": "BELUM PENGAJUAN",
+        "halal": "BELUM PENGAJUAN",
+        "haccp": "BELUM PENGAJUAN",
+        "penjamahMakan": "BELUM PENGAJUAN",
+        "bpjs": "BELUM PENGAJUAN"
+      }
     }
   },
   {
@@ -2348,7 +3339,25 @@
       "bankVa": "BANK BNI",
       "picNama": "ERFANSA WIDI NUR PRASETYO",
       "picNomor": "085258860511",
-      "slhs": true
+      "slhs": true,
+      "perijinan": {
+        "suratKesanggupan": "BELUM PENGAJUAN",
+        "pkkpr": "BELUM PENGAJUAN",
+        "dokLingkungan": "SUDAH",
+        "pbgSlf": "BELUM PENGAJUAN",
+        "sertifikatStandar": "BELUM PENGAJUAN",
+        "slhs": "SUDAH",
+        "noSlhs": "400.7.11.4/KH/240/405.09/2026",
+        "dokPerijinan": "https://drive.google.com/drive/folders/1GgWJ4LTBbygYTRPdM1yo3iV0IxbZgIDU?usp=sharing",
+        "sertiChef": "SUDAH",
+        "noSertiChef": "55100 5120 0017092 2025",
+        "halal": "SUDAH",
+        "noSertiHalal": "ID35110078981080726",
+        "haccp": "BELUM PENGAJUAN",
+        "penjamahMakan": "SUDAH",
+        "bpjs": "PROSES",
+        "dokKelengkapan": "https://drive.google.com/drive/folders/1GgWJ4LTBbygYTRPdM1yo3iV0IxbZgIDU?usp=sharing"
+      }
     }
   },
   {
@@ -2377,7 +3386,21 @@
       "yayasan": "Yayasan Maju Muda Berdikari",
       "bankVa": "BANK BRI",
       "picNama": "MAKHRUF EFENDI",
-      "picNomor": "085331211439"
+      "picNomor": "085331211439",
+      "perijinan": {
+        "suratKesanggupan": "SUDAH",
+        "pkkpr": "PROSES",
+        "dokLingkungan": "PROSES",
+        "pbgSlf": "PROSES",
+        "sertifikatStandar": "PROSES",
+        "slhs": "PROSES",
+        "dokPerijinan": "https://drive.google.com/drive/folders/1hLGWehsXpJHIpryczSw70t1E23HmDCD8",
+        "sertiChef": "BELUM PENGAJUAN",
+        "halal": "BELUM PENGAJUAN",
+        "haccp": "BELUM PENGAJUAN",
+        "penjamahMakan": "BELUM PENGAJUAN",
+        "bpjs": "BELUM PENGAJUAN"
+      }
     }
   },
   {
@@ -2416,7 +3439,25 @@
       "bankVa": "BNAK BRI",
       "picNama": "ANAS BUDIHARJO",
       "picNomor": "081218152632",
-      "slhs": true
+      "slhs": true,
+      "perijinan": {
+        "suratKesanggupan": "SUDAH",
+        "pkkpr": "PROSES",
+        "dokLingkungan": "PROSES",
+        "pbgSlf": "PROSES",
+        "sertifikatStandar": "PROSES",
+        "slhs": "SUDAH",
+        "noSlhs": "400.7.11.4/KH/1382/405.09/2025",
+        "dokPerijinan": "https://drive.google.com/drive/folders/1QVG1dY8XOkG9UmuUhMv9RWeo42uzIH_V?usp=sharing",
+        "sertiChef": "SUDAH",
+        "noSertiChef": "56101 5120 3 0015714 2026",
+        "halal": "SUDAH",
+        "noSertiHalal": "ID35110068275330526",
+        "haccp": "BELUM PENGAJUAN",
+        "penjamahMakan": "SUDAH",
+        "bpjs": "SUDAH",
+        "dokKelengkapan": "https://drive.google.com/drive/folders/1BAFrSaHbfOVscMjX2NqmmtEQELqa_ZJN"
+      }
     }
   },
   {
@@ -2455,7 +3496,24 @@
       "bankVa": "BANK MANDIRI",
       "picNama": "SITI ZULAIKAH",
       "picNomor": "081355599770",
-      "slhs": true
+      "slhs": true,
+      "perijinan": {
+        "suratKesanggupan": "SUDAH",
+        "pkkpr": "BELUM PENGAJUAN",
+        "dokLingkungan": "BELUM PENGAJUAN",
+        "pbgSlf": "SUDAH",
+        "sertifikatStandar": "BELUM PENGAJUAN",
+        "slhs": "SUDAH",
+        "noSlhs": "400.7.11.4/KH/1268/405.09/2025",
+        "dokPerijinan": "https://drive.google.com/drive/folders/1QVG1dY8XOkG9UmuUhMv9RWeo42uzIH_V?usp=sharing",
+        "sertiChef": "SUDAH",
+        "noSertiChef": "56101 5120 3 0006028 2026",
+        "halal": "PROSES",
+        "haccp": "PROSES",
+        "penjamahMakan": "SUDAH",
+        "bpjs": "SUDAH",
+        "dokKelengkapan": "https://drive.google.com/drive/folders/1pq38V1sNXcwL_2w5r_G6B3nEQ7BqBDLT?usp=sharing"
+      }
     }
   },
   {
@@ -2494,7 +3552,26 @@
       "bankVa": "BANK BRI",
       "picNama": "DIDIK HARYADI",
       "picNomor": "081298697257",
-      "slhs": true
+      "slhs": true,
+      "perijinan": {
+        "suratKesanggupan": "SUDAH",
+        "pkkpr": "BELUM PENGAJUAN",
+        "dokLingkungan": "BELUM PENGAJUAN",
+        "pbgSlf": "BELUM PENGAJUAN",
+        "sertifikatStandar": "BELUM PENGAJUAN",
+        "slhs": "SUDAH",
+        "noSlhs": "400.7.11.4/KH/1314/405.09/2025",
+        "dokPerijinan": "https://drive.google.com/drive/folders/1QVG1dY8XOkG9UmuUhMv9RWeo42uzIH_V?usp=sharing",
+        "sertiChef": "SUDAH",
+        "noSertiChef": "56000 5120 0 0013803 2025",
+        "halal": "SUDAH",
+        "noSertiHalal": "ID35110078732980726",
+        "haccp": "SUDAH",
+        "noSertiHaccp": "YAA579H",
+        "penjamahMakan": "SUDAH",
+        "bpjs": "SUDAH",
+        "dokKelengkapan": "https://drive.google.com/drive/folders/1eXqxVVe49LqdCmF2OvxOp0PCLXYmPx9Q?hl=ID"
+      }
     }
   },
   {
@@ -2532,7 +3609,23 @@
       "bankVa": "BANK BNI",
       "picNama": "WITANTO",
       "picNomor": "085165837428",
-      "slhs": true
+      "slhs": true,
+      "perijinan": {
+        "suratKesanggupan": "SUDAH",
+        "pkkpr": "BELUM PENGAJUAN",
+        "dokLingkungan": "BELUM PENGAJUAN",
+        "pbgSlf": "BELUM PENGAJUAN",
+        "sertifikatStandar": "BELUM PENGAJUAN",
+        "slhs": "SUDAH",
+        "noSlhs": "400.7.11.4/KH/137/405.09/2026",
+        "dokPerijinan": "https://drive.google.com/drive/folders/1QVG1dY8XOkG9UmuUhMv9RWeo42uzIH_V?usp=sharing",
+        "sertiChef": "SUDAH",
+        "halal": "PROSES",
+        "haccp": "BELUM PENGAJUAN",
+        "penjamahMakan": "SUDAH",
+        "bpjs": "SUDAH",
+        "dokKelengkapan": "https://drive.google.com/file/d/1keaIADHfUC69EQT36nRZA9Mcjedxmtq0/view?usp=sharing"
+      }
     }
   },
   {
@@ -2570,7 +3663,23 @@
       "bankVa": "BANK BNI",
       "picNama": "BANGUN JIHAD SABILIT",
       "picNomor": "089620042959",
-      "slhs": true
+      "slhs": true,
+      "perijinan": {
+        "suratKesanggupan": "SUDAH",
+        "pkkpr": "BELUM PENGAJUAN",
+        "dokLingkungan": "BELUM PENGAJUAN",
+        "pbgSlf": "BELUM PENGAJUAN",
+        "sertifikatStandar": "BELUM PENGAJUAN",
+        "slhs": "SUDAH",
+        "noSlhs": "400.7.11.4/KH/238/405.09/2026",
+        "dokPerijinan": "https://drive.google.com/drive/folders/1AoAKEu4B1NE6zSKCt1Q4EmlzgZlFPUPa?usp=drive_link",
+        "sertiChef": "BELUM PENGAJUAN",
+        "halal": "BELUM PENGAJUAN",
+        "haccp": "BELUM PENGAJUAN",
+        "penjamahMakan": "SUDAH",
+        "bpjs": "SUDAH",
+        "dokKelengkapan": "https://drive.google.com/drive/folders/1AoAKEu4B1NE6zSKCt1Q4EmlzgZlFPUPa?usp=drive_link"
+      }
     }
   },
   {
@@ -2608,7 +3717,23 @@
       "bankVa": "BANK BNI",
       "picNama": "OKTAVIYAN BAYU SAPUTRA",
       "picNomor": "083845336368",
-      "slhs": true
+      "slhs": true,
+      "perijinan": {
+        "suratKesanggupan": "SUDAH",
+        "pkkpr": "BELUM PENGAJUAN",
+        "dokLingkungan": "BELUM PENGAJUAN",
+        "pbgSlf": "BELUM PENGAJUAN",
+        "sertifikatStandar": "BELUM PENGAJUAN",
+        "slhs": "SUDAH",
+        "noSlhs": "400.7.11.4/KH/239/405.09/2026",
+        "dokPerijinan": "DOKUMENTASI PERIJINAN",
+        "sertiChef": "BELUM PENGAJUAN",
+        "halal": "PROSES",
+        "haccp": "BELUM PENGAJUAN",
+        "penjamahMakan": "SUDAH",
+        "bpjs": "SUDAH",
+        "dokKelengkapan": "https://drive.google.com/drive/folders/1406b6iHonX4GuLmoa9QBZ9x14TVQ3nqW?usp=sharing"
+      }
     }
   },
   {
@@ -2646,7 +3771,26 @@
       "bankVa": "BANK BNI",
       "picNama": "LIA RACHMAWATI",
       "picNomor": "082141064522",
-      "slhs": true
+      "slhs": true,
+      "perijinan": {
+        "suratKesanggupan": "SUDAH",
+        "pkkpr": "BELUM PENGAJUAN",
+        "dokLingkungan": "BELUM PENGAJUAN",
+        "pbgSlf": "BELUM PENGAJUAN",
+        "sertifikatStandar": "BELUM PENGAJUAN",
+        "slhs": "SUDAH",
+        "noSlhs": "400.7.11.4/KH/640/405.09/2026",
+        "dokPerijinan": "https://drive.google.com/drive/folders/1QVG1dY8XOkG9UmuUhMv9RWeo42uzIH_V?usp=sharing",
+        "sertiChef": "SUDAH",
+        "noSertiChef": "56101 5120 0 0000658 2025",
+        "halal": "SUDAH",
+        "noSertiHalal": "ID35110078978730921",
+        "haccp": "SUDAH",
+        "noSertiHaccp": "CHS15054",
+        "penjamahMakan": "SUDAH",
+        "bpjs": "SUDAH",
+        "dokKelengkapan": "https://drive.google.com/drive/folders/1FDbWlQANgu4Y15ZC-atWB4H9jfZKbM4k?usp=sharing"
+      }
     }
   },
   {
@@ -2684,7 +3828,24 @@
       "bankVa": "BANK BNI",
       "picNama": "ANATA KUMALA WARDHANI, ST",
       "picNomor": "085887021608",
-      "slhs": true
+      "slhs": true,
+      "perijinan": {
+        "suratKesanggupan": "SUDAH",
+        "pkkpr": "BELUM PENGAJUAN",
+        "dokLingkungan": "BELUM PENGAJUAN",
+        "pbgSlf": "BELUM PENGAJUAN",
+        "sertifikatStandar": "BELUM PENGAJUAN",
+        "slhs": "SUDAH",
+        "noSlhs": "400.7.11.4/KH/136/405.09/2026",
+        "dokPerijinan": "https://drive.google.com/drive/folders/1QVG1dY8XOkG9UmuUhMv9RWeo42uzIH_V?usp=sharing",
+        "sertiChef": "BELUM PENGAJUAN",
+        "halal": "SUDAH",
+        "noSertiHalal": "ID35110077722490726",
+        "haccp": "BELUM PENGAJUAN",
+        "penjamahMakan": "SUDAH",
+        "bpjs": "SUDAH",
+        "dokKelengkapan": "https://drive.google.com/drive/folders/12zbvQDH0sEe6S9VYngXX47caD0FzgP-e?usp=drive_link"
+      }
     }
   },
   {
@@ -2722,7 +3883,24 @@
       "bankVa": "BANK BRI",
       "picNama": "ENIK WIDAYATI",
       "picNomor": "082140765218",
-      "slhs": true
+      "slhs": true,
+      "perijinan": {
+        "suratKesanggupan": "SUDAH",
+        "pkkpr": "BELUM PENGAJUAN",
+        "dokLingkungan": "BELUM PENGAJUAN",
+        "pbgSlf": "BELUM PENGAJUAN",
+        "sertifikatStandar": "BELUM PENGAJUAN",
+        "slhs": "SUDAH",
+        "noSlhs": "400.7.11.4/KH/80/405.09/2026",
+        "dokPerijinan": "https://drive.google.com/drive/folders/1QVG1dY8XOkG9UmuUhMv9RWeo42uzIH_V?usp=sharing",
+        "sertiChef": "SUDAH",
+        "noSertiChef": "56101 5120 3 0006029 2026",
+        "halal": "BELUM PENGAJUAN",
+        "haccp": "BELUM PENGAJUAN",
+        "penjamahMakan": "SUDAH",
+        "bpjs": "SUDAH",
+        "dokKelengkapan": "https://drive.google.com/drive/folders/1Vy6mLRo201R17CyO3VMFU26v1s069J-4"
+      }
     }
   },
   {
@@ -2761,7 +3939,23 @@
       "bankVa": "BANK BRI",
       "picNama": "ERLINA MAYASARI",
       "picNomor": "082337336967",
-      "slhs": true
+      "slhs": true,
+      "perijinan": {
+        "suratKesanggupan": "SUDAH",
+        "pkkpr": "PROSES",
+        "dokLingkungan": "PROSES",
+        "pbgSlf": "PROSES",
+        "sertifikatStandar": "PROSES",
+        "slhs": "SUDAH",
+        "noSlhs": "400.7.11.4/KH/1249/405.09/2025",
+        "dokPerijinan": "https://drive.google.com/drive/folders/1QVG1dY8XOkG9UmuUhMv9RWeo42uzIH_V?usp=sharing",
+        "sertiChef": "SUDAH",
+        "halal": "PROSES",
+        "haccp": "BELUM PENGAJUAN",
+        "penjamahMakan": "SUDAH",
+        "bpjs": "SUDAH",
+        "dokKelengkapan": "https://drive.google.com/drive/folders/1YE95As6u9i8vbp__Q_wzPdhq1Y62Pjyc?usp=sharing"
+      }
     }
   },
   {
@@ -2799,7 +3993,23 @@
       "bankVa": "BANK BRI",
       "picNama": "ANGGA FIRDA TAMARA",
       "picNomor": "0895412371407",
-      "slhs": true
+      "slhs": true,
+      "perijinan": {
+        "suratKesanggupan": "PROSES",
+        "pkkpr": "PROSES",
+        "dokLingkungan": "PROSES",
+        "pbgSlf": "PROSES",
+        "sertifikatStandar": "PROSES",
+        "slhs": "SUDAH",
+        "noSlhs": "400.7.11.4/KH/1508/405.09/2025",
+        "dokPerijinan": "https://drive.google.com/drive/folders/1QVG1dY8XOkG9UmuUhMv9RWeo42uzIH_V?usp=sharing",
+        "sertiChef": "SUDAH",
+        "noSertiChef": "56000 5120 0 0014176 2025",
+        "halal": "PROSES",
+        "haccp": "BELUM PENGAJUAN",
+        "penjamahMakan": "SUDAH",
+        "bpjs": "SUDAH"
+      }
     }
   },
   {
@@ -2837,7 +4047,23 @@
       "bankVa": "BANK BNI",
       "picNama": "WAHYU NUGROHO",
       "picNomor": "081216402173",
-      "slhs": true
+      "slhs": true,
+      "perijinan": {
+        "suratKesanggupan": "SUDAH",
+        "pkkpr": "BELUM PENGAJUAN",
+        "dokLingkungan": "BELUM PENGAJUAN",
+        "pbgSlf": "BELUM PENGAJUAN",
+        "sertifikatStandar": "BELUM PENGAJUAN",
+        "slhs": "SUDAH",
+        "noSlhs": "400.7.11.4/KH/639/405.09/2026",
+        "dokPerijinan": "https://drive.google.com/drive/folders/1QVG1dY8XOkG9UmuUhMv9RWeo42uzIH_V?usp=sharing",
+        "sertiChef": "SUDAH",
+        "halal": "BELUM PENGAJUAN",
+        "haccp": "BELUM PENGAJUAN",
+        "penjamahMakan": "BELUM PENGAJUAN",
+        "bpjs": "SUDAH",
+        "dokKelengkapan": "https://drive.google.com/drive/folders/1ymDH9y4JIL0AbNaokVkY97qxNmJ-vjjf"
+      }
     }
   },
   {
@@ -2875,7 +4101,24 @@
       "bankVa": "BANK BRI",
       "picNama": "RIAN PRIYA HANDOKO",
       "picNomor": "085272350085",
-      "slhs": true
+      "slhs": true,
+      "perijinan": {
+        "suratKesanggupan": "SUDAH",
+        "pkkpr": "PROSES",
+        "dokLingkungan": "PROSES",
+        "pbgSlf": "PROSES",
+        "sertifikatStandar": "PROSES",
+        "slhs": "SUDAH",
+        "noSlhs": "400.7.11.4/KH/222/405.09/2026",
+        "dokPerijinan": "https://drive.google.com/drive/folders/1QVG1dY8XOkG9UmuUhMv9RWeo42uzIH_V?usp=sharing",
+        "sertiChef": "SUDAH",
+        "noSertiChef": "56100 5120 0 0017242 2026",
+        "halal": "PROSES",
+        "haccp": "PROSES",
+        "penjamahMakan": "SUDAH",
+        "bpjs": "SUDAH",
+        "dokKelengkapan": "https://drive.google.com/drive/folders/1ftDl_vZQcNA-1IHCCCSM2j2oCjUOhLaW"
+      }
     }
   },
   {
@@ -2913,7 +4156,23 @@
       "bankVa": "BANK BRI",
       "picNama": "DAMI KEMIATI",
       "picNomor": "082128611797",
-      "slhs": true
+      "slhs": true,
+      "perijinan": {
+        "suratKesanggupan": "SUDAH",
+        "pkkpr": "BELUM PENGAJUAN",
+        "dokLingkungan": "BELUM PENGAJUAN",
+        "pbgSlf": "BELUM PENGAJUAN",
+        "sertifikatStandar": "BELUM PENGAJUAN",
+        "slhs": "SUDAH",
+        "noSlhs": "400.7.11.4/KH/1263/405.9/2025",
+        "dokPerijinan": "https://drive.google.com/drive/folders/1QVG1dY8XOkG9UmuUhMv9RWeo42uzIH_V?usp=sharing",
+        "sertiChef": "SUDAH",
+        "noSertiChef": "56000 5120 0 0014177 2025",
+        "halal": "PROSES",
+        "haccp": "BELUM PENGAJUAN",
+        "penjamahMakan": "SUDAH",
+        "bpjs": "SUDAH"
+      }
     }
   },
   {
@@ -2951,7 +4210,24 @@
       "bankVa": "BANK BNI",
       "picNama": "AYU DWI SUKMAWATI",
       "picNomor": "087831691434",
-      "slhs": true
+      "slhs": true,
+      "perijinan": {
+        "suratKesanggupan": "SUDAH",
+        "pkkpr": "PROSES",
+        "dokLingkungan": "PROSES",
+        "pbgSlf": "BELUM PENGAJUAN",
+        "sertifikatStandar": "BELUM PENGAJUAN",
+        "slhs": "SUDAH",
+        "noSlhs": "400.7.11.4/KH/215/405.09/2026",
+        "dokPerijinan": "https://drive.google.com/file/d/1VeFvCqUItEB0xzBbYPhrMF7fZ3wj_xKg/view?usp=sharing",
+        "sertiChef": "SUDAH",
+        "noSertiChef": "56100 5120 0 0017065 2025",
+        "halal": "BELUM PENGAJUAN",
+        "haccp": "BELUM PENGAJUAN",
+        "penjamahMakan": "SUDAH",
+        "bpjs": "SUDAH",
+        "dokKelengkapan": "https://drive.google.com/drive/folders/1oP986ktLSl8_-sDLXaDUP6fhkFqXXGfh"
+      }
     }
   },
   {
@@ -2989,7 +4265,24 @@
       "bankVa": "BANK BNI",
       "picNama": "YAHYA ABDUL MATIEN",
       "picNomor": "081215755787",
-      "slhs": true
+      "slhs": true,
+      "perijinan": {
+        "suratKesanggupan": "SUDAH",
+        "pkkpr": "BELUM PENGAJUAN",
+        "dokLingkungan": "SUDAH",
+        "pbgSlf": "PROSES",
+        "sertifikatStandar": "BELUM PENGAJUAN",
+        "slhs": "SUDAH",
+        "noSlhs": "400.7.11.4/KH/157/405.09/2026",
+        "dokPerijinan": "https://drive.google.com/drive/folders/1QVG1dY8XOkG9UmuUhMv9RWeo42uzIH_V?usp=sharing",
+        "sertiChef": "SUDAH",
+        "noSertiChef": "56100 5120 0 0017064 2025",
+        "halal": "BELUM PENGAJUAN",
+        "haccp": "BELUM PENGAJUAN",
+        "penjamahMakan": "SUDAH",
+        "bpjs": "SUDAH",
+        "dokKelengkapan": "https://drive.google.com/drive/folders/1vtTcbltbW-TAdy-g4zmSA-PgJgWDtPqt"
+      }
     }
   },
   {
@@ -3028,7 +4321,24 @@
       "bankVa": "BANK BRI",
       "picNama": "YUSUF IQBAL FIRDAUS",
       "picNomor": "082135160501",
-      "slhs": true
+      "slhs": true,
+      "perijinan": {
+        "suratKesanggupan": "SUDAH",
+        "pkkpr": "BELUM PENGAJUAN",
+        "dokLingkungan": "BELUM PENGAJUAN",
+        "pbgSlf": "BELUM PENGAJUAN",
+        "sertifikatStandar": "BELUM PENGAJUAN",
+        "slhs": "SUDAH",
+        "noSlhs": "400.7.11.41KH/1365/405.09/2025",
+        "dokPerijinan": "https://drive.google.com/drive/folders/1QVG1dY8XOkG9UmuUhMv9RWeo42uzIH_V?usp=sharing",
+        "sertiChef": "SUDAH",
+        "noSertiChef": "10791 5120 0042910 2026",
+        "halal": "BELUM PENGAJUAN",
+        "haccp": "BELUM PENGAJUAN",
+        "penjamahMakan": "SUDAH",
+        "bpjs": "SUDAH",
+        "dokKelengkapan": "https://drive.google.com/drive/folders/101e0i1fuHvalydb8B0ETEcTYKwy7T1lI?usp=sharing"
+      }
     }
   },
   {
@@ -3067,7 +4377,24 @@
       "bankVa": "BANK BRI",
       "picNama": "BAGUS BUDI SANTOSO",
       "picNomor": "081227879111",
-      "slhs": true
+      "slhs": true,
+      "perijinan": {
+        "suratKesanggupan": "SUDAH",
+        "pkkpr": "PROSES",
+        "dokLingkungan": "PROSES",
+        "pbgSlf": "PROSES",
+        "sertifikatStandar": "PROSES",
+        "slhs": "SUDAH",
+        "noSlhs": "400.7.11.4/KH/34/405.09/2026",
+        "dokPerijinan": "https://drive.google.com/drive/folders/1QVG1dY8XOkG9UmuUhMv9RWeo42uzIH_V?usp=sharing",
+        "sertiChef": "SUDAH",
+        "noSertiChef": "055115120000063532026",
+        "halal": "PROSES",
+        "haccp": "PROSES",
+        "penjamahMakan": "SUDAH",
+        "bpjs": "SUDAH",
+        "dokKelengkapan": "https://drive.google.com/drive/folders/1wpA1Tz2J-KRbhearI4VsL2-OxIYhsiGV"
+      }
     }
   },
   {
@@ -3106,7 +4433,22 @@
       "bankVa": "BANK BRI",
       "picNama": "RIZKY DWI PRASETYO",
       "picNomor": "0895386101835",
-      "slhs": true
+      "slhs": true,
+      "perijinan": {
+        "suratKesanggupan": "SUDAH",
+        "pkkpr": "BELUM PENGAJUAN",
+        "dokLingkungan": "SUDAH",
+        "pbgSlf": "BELUM PENGAJUAN",
+        "sertifikatStandar": "BELUM PENGAJUAN",
+        "slhs": "SUDAH",
+        "noSlhs": "400.7.11.4/675/405.09/2026",
+        "dokPerijinan": "https://drive.google.com/drive/folders/1QVG1dY8XOkG9UmuUhMv9RWeo42uzIH_V?usp=sharing",
+        "sertiChef": "SUDAH",
+        "halal": "BELUM PENGAJUAN",
+        "haccp": "BELUM PENGAJUAN",
+        "penjamahMakan": "SUDAH",
+        "bpjs": "SUDAH"
+      }
     }
   },
   {
@@ -3142,7 +4484,21 @@
       "yayasan": "Yayasan Hikmah Mitra Mandiri",
       "bankVa": "BANK BTN",
       "picNama": "DILLION ALANSYAH RAFID",
-      "picNomor": "08225796597"
+      "picNomor": "08225796597",
+      "perijinan": {
+        "suratKesanggupan": "BELUM PENGAJUAN",
+        "pkkpr": "BELUM PENGAJUAN",
+        "dokLingkungan": "BELUM PENGAJUAN",
+        "pbgSlf": "BELUM PENGAJUAN",
+        "sertifikatStandar": "BELUM PENGAJUAN",
+        "slhs": "PROSES",
+        "dokPerijinan": "https://drive.google.com/drive/folders/1QVG1dY8XOkG9UmuUhMv9RWeo42uzIH_V?usp=sharing",
+        "sertiChef": "BELUM PENGAJUAN",
+        "halal": "BELUM PENGAJUAN",
+        "haccp": "BELUM PENGAJUAN",
+        "penjamahMakan": "BELUM PENGAJUAN",
+        "bpjs": "BELUM PENGAJUAN"
+      }
     }
   },
   {
@@ -3178,7 +4534,21 @@
       "yayasan": "Yayasan Hikmah Mitra Mandiri",
       "bankVa": "BANK BTN",
       "picNama": "M ROIKAN AJHURI ASYAROFI",
-      "picNomor": "081229431976"
+      "picNomor": "081229431976",
+      "perijinan": {
+        "suratKesanggupan": "SUDAH",
+        "pkkpr": "BELUM PENGAJUAN",
+        "dokLingkungan": "BELUM PENGAJUAN",
+        "pbgSlf": "BELUM PENGAJUAN",
+        "sertifikatStandar": "BELUM PENGAJUAN",
+        "slhs": "PROSES",
+        "dokPerijinan": "https://drive.google.com/drive/folders/1QVG1dY8XOkG9UmuUhMv9RWeo42uzIH_V?usp=sharing",
+        "sertiChef": "BELUM PENGAJUAN",
+        "halal": "BELUM PENGAJUAN",
+        "haccp": "BELUM PENGAJUAN",
+        "penjamahMakan": "SUDAH",
+        "bpjs": "BELUM PENGAJUAN"
+      }
     }
   }
 ]

@@ -1,4 +1,4 @@
-import type { Sppg, SppgStatus } from "./types";
+import type { Sppg, SppgStatus, SppgPerijinan } from "./types";
 
 export interface StatusMeta {
   label: string;
@@ -138,4 +138,58 @@ export function computeStats(list: Sppg[]): SppgStats {
     }
   }
   return s;
+}
+
+// ── Perizinan / sertifikasi ────────────────────────────────────────────────
+
+export interface IzinItem {
+  /** kunci status di SppgPerijinan */
+  key: keyof SppgPerijinan;
+  label: string;
+  /** kunci nomor sertifikat (opsional) */
+  noKey?: keyof SppgPerijinan;
+}
+
+/** Daftar item perizinan yang ditampilkan, berurutan. */
+export const PERIJINAN_ITEMS: IzinItem[] = [
+  { key: "suratKesanggupan", label: "Surat Kesanggupan" },
+  { key: "pkkpr", label: "PKKPR" },
+  { key: "dokLingkungan", label: "Dokumen Lingkungan" },
+  { key: "pbgSlf", label: "PBG / SLF" },
+  { key: "sertifikatStandar", label: "Sertifikat Standar" },
+  { key: "slhs", label: "SLHS", noKey: "noSlhs" },
+  { key: "sertiChef", label: "Sertifikat Chef", noKey: "noSertiChef" },
+  { key: "halal", label: "Sertifikat Halal", noKey: "noSertiHalal" },
+  { key: "haccp", label: "HACCP", noKey: "noSertiHaccp" },
+  { key: "penjamahMakan", label: "Penjamah Makanan" },
+  { key: "bpjs", label: "BPJS Ketenagakerjaan" },
+];
+
+export interface IzinStatusMeta {
+  label: string;
+  badge: string;
+  dot: string;
+  done: boolean;
+}
+
+/** Petakan teks status izin (SUDAH/PROSES/BELUM…) ke tampilan. */
+export function statusIzin(v?: string): IzinStatusMeta {
+  const t = (v ?? "").trim().toUpperCase();
+  if (t === "SUDAH" || t === "ADA" || t === "SELESAI")
+    return { label: "Sudah", badge: "bg-green-100 text-green-800", dot: "#16a34a", done: true };
+  if (t === "PROSES" || t === "PENGAJUAN")
+    return { label: "Proses", badge: "bg-amber-100 text-amber-800", dot: "#f59e0b", done: false };
+  if (!t)
+    return { label: "–", badge: "bg-slate-100 text-slate-400", dot: "#cbd5e1", done: false };
+  return { label: "Belum", badge: "bg-slate-100 text-slate-500", dot: "#94a3b8", done: false };
+}
+
+/** Progres kelengkapan izin: jumlah "Sudah" dari total item yang punya data. */
+export function perijinanProgress(p?: SppgPerijinan): { done: number; total: number } {
+  if (!p) return { done: 0, total: PERIJINAN_ITEMS.length };
+  let done = 0;
+  for (const it of PERIJINAN_ITEMS) {
+    if (statusIzin(p[it.key] as string | undefined).done) done++;
+  }
+  return { done, total: PERIJINAN_ITEMS.length };
 }

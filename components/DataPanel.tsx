@@ -2,7 +2,7 @@
 
 import { useMemo, useState } from "react";
 import type { Sppg, SppgStatus } from "@/lib/types";
-import { statusMeta, fmt, STATUS_META } from "@/lib/sppgMeta";
+import { statusMeta, fmt, STATUS_META, perijinanProgress } from "@/lib/sppgMeta";
 import SppgDetailCard from "@/components/SppgDetailCard";
 
 interface Props {
@@ -138,9 +138,17 @@ export default function DataPanel({ sppgList, onAdd, onEdit, onFocus }: Props) {
                   <div className="truncate text-sm font-medium text-slate-800">
                     {s.nama}
                   </div>
-                  <div className="truncate text-[11px] text-slate-500">
-                    {s.desa ? `${s.desa} · ` : ""}
-                    {s.kecamatan} · {fmt(s.porsi)} PM/hari
+                  <div className="flex flex-wrap items-center gap-x-1.5 text-[11px] text-slate-500">
+                    <span className="truncate">
+                      {s.desa ? `${s.desa} · ` : ""}
+                      {s.kecamatan} · {fmt(s.porsi)} PM/hari
+                    </span>
+                    {s.detail?.perijinan && (
+                      <span className="rounded bg-slate-100 px-1 py-px text-[10px] font-medium text-slate-500">
+                        izin {perijinanProgress(s.detail.perijinan).done}/
+                        {perijinanProgress(s.detail.perijinan).total}
+                      </span>
+                    )}
                   </div>
                 </div>
                 <span className="shrink-0 text-slate-400">{open ? "▾" : "▸"}</span>

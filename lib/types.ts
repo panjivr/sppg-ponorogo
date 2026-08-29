@@ -22,6 +22,27 @@ export interface SppgPM {
   pm3bKelompok?: number;
 }
 
+/** Status & nomor perizinan/sertifikasi dapur (dari DATA PERIJINAN). */
+export interface SppgPerijinan {
+  suratKesanggupan?: string;
+  pkkpr?: string;
+  dokLingkungan?: string;
+  pbgSlf?: string;
+  sertifikatStandar?: string;
+  slhs?: string;
+  noSlhs?: string;
+  dokPerijinan?: string;
+  sertiChef?: string;
+  noSertiChef?: string;
+  halal?: string;
+  noSertiHalal?: string;
+  haccp?: string;
+  noSertiHaccp?: string;
+  penjamahMakan?: string;
+  bpjs?: string;
+  dokKelengkapan?: string;
+}
+
 /** Rincian administratif/kontak dapur, dari database resmi SPPG Ponorogo. */
 export interface SppgDetail {
   /** ID resmi SPPG (kode SIBRD). */
@@ -48,6 +69,8 @@ export interface SppgDetail {
   picNomor?: string;
   /** true bila SLHS (Sertifikat Laik Higiene Sanitasi) sudah terbit. */
   slhs?: boolean;
+  /** Status & nomor perizinan/sertifikasi lengkap. */
+  perijinan?: SppgPerijinan;
 }
 
 export interface Sppg {
