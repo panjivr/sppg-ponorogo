@@ -43,6 +43,7 @@ export default function AdminPage() {
   const [editing, setEditing] = useState<Sppg | null>(null);
   const [q, setQ] = useState("");
   const [kec, setKec] = useState("all");
+  const [perkOnly, setPerkOnly] = useState(false);
   const fileRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
@@ -71,6 +72,7 @@ export default function AdminPage() {
     const n = q.trim().toLowerCase();
     return list
       .filter((s) => (kec === "all" || s.kecamatan === kec))
+      .filter((s) => (!perkOnly || s.perkiraan))
       .filter(
         (s) =>
           !n ||
@@ -83,7 +85,11 @@ export default function AdminPage() {
           a.kecamatan.localeCompare(b.kecamatan, "id") ||
           a.nama.localeCompare(b.nama, "id")
       );
-  }, [list, q, kec]);
+  }, [list, q, kec, perkOnly]);
+  const perkiraanCount = useMemo(
+    () => list.filter((s) => s.perkiraan).length,
+    [list]
+  );
 
   function handleSave(s: Sppg) {
     if (list.some((x) => x.id === s.id)) updateSppg(s);
@@ -295,6 +301,17 @@ export default function AdminPage() {
                 <option value="all">Semua kecamatan</option>
                 {kecamatanList.map((k) => <option key={k} value={k}>{k}</option>)}
               </select>
+              <button
+                onClick={() => setPerkOnly((v) => !v)}
+                className={`rounded-md border px-3 py-2 text-sm font-medium ${
+                  perkOnly
+                    ? "border-amber-400 bg-amber-50 text-amber-700"
+                    : "border-slate-300 bg-white text-slate-600 hover:bg-slate-50"
+                }`}
+                title="Tampilkan hanya titik yang koordinatnya masih perkiraan"
+              >
+                ⚠ Perlu koreksi ({perkiraanCount})
+              </button>
             </div>
 
             {/* Tabel data */}
