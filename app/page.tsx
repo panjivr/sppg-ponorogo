@@ -127,12 +127,20 @@ export default function Home() {
               </p>
             </div>
           </div>
-          <Link
-            href="/supplier"
-            className="shrink-0 rounded-full border border-white/40 px-3 py-1.5 text-xs font-medium transition hover:bg-white/15"
-          >
-            🏪 Katalog
-          </Link>
+          <div className="flex shrink-0 items-center gap-1.5">
+            <Link
+              href="/blast"
+              className="rounded-full border border-white/40 px-3 py-1.5 text-xs font-medium transition hover:bg-white/15"
+            >
+              💬 Blast WA
+            </Link>
+            <Link
+              href="/supplier"
+              className="rounded-full border border-white/40 px-3 py-1.5 text-xs font-medium transition hover:bg-white/15"
+            >
+              🏪 Katalog
+            </Link>
+          </div>
         </header>
 
         <nav className="flex border-b border-slate-200 text-sm">
