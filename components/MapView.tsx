@@ -13,7 +13,7 @@ import {
 } from "react-leaflet";
 import L from "leaflet";
 import "leaflet.heat";
-import type { Sppg, CandidateRuko } from "@/lib/types";
+import type { Sppg, CandidateRuko, Pasar } from "@/lib/types";
 import {
   haversineKm,
   centroidBerbobot,
@@ -61,6 +61,15 @@ function rukoIcon(selected: boolean): L.DivIcon {
     html: `<div style="font-size:22px;line-height:22px;filter:drop-shadow(0 1px 2px rgba(0,0,0,.5));color:${c}">🏪</div>`,
     iconSize: [22, 22],
     iconAnchor: [11, 20],
+  });
+}
+
+function pasarIcon(): L.DivIcon {
+  return L.divIcon({
+    className: "pasar-icon",
+    html: `<div style="display:flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:6px;background:#7c2d12;border:2px solid #fff;box-shadow:0 1px 2px rgba(0,0,0,.4);font-size:12px;line-height:1">🛒</div>`,
+    iconSize: [22, 22],
+    iconAnchor: [11, 11],
   });
 }
 
@@ -121,6 +130,8 @@ interface MapViewProps {
   showRekomendasi: boolean;
   showYayasan?: boolean;
   selectedYayasan?: string | null;
+  pasarList?: Pasar[];
+  showPasar?: boolean;
   focusPoint?: LatLng | null;
   onMapClick?: (p: LatLng) => void;
   onSelectRuko: (id: string) => void;
@@ -136,6 +147,8 @@ export default function MapView({
   showRekomendasi,
   showYayasan,
   selectedYayasan,
+  pasarList,
+  showPasar,
   focusPoint,
   onMapClick,
   onSelectRuko,
@@ -337,6 +350,37 @@ export default function MapView({
         </Marker>
         );
       })}
+
+      {showPasar &&
+        pasarList?.map((p) => (
+          <Marker key={p.id} position={[p.lat, p.lng]} icon={pasarIcon()}>
+            <Popup>
+              <div className="min-w-[180px] text-sm">
+                <div className="font-semibold">🛒 {p.nama}</div>
+                <div className="text-xs text-slate-500">Kec. {p.kecamatan}</div>
+                {p.kategori && (
+                  <div className="mt-0.5 text-slate-600">{p.kategori}</div>
+                )}
+                {p.catatan && (
+                  <div className="mt-0.5 text-slate-600">{p.catatan}</div>
+                )}
+                {p.gmaps && (
+                  <a
+                    href={p.gmaps}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-1 inline-block font-medium text-blue-600 underline"
+                  >
+                    📍 Google Maps
+                  </a>
+                )}
+                {p.perkiraan && (
+                  <div className="mt-1 text-amber-600">⚠ lokasi perkiraan</div>
+                )}
+              </div>
+            </Popup>
+          </Marker>
+        ))}
 
       {rukoList.map((r) => (
         <Marker
