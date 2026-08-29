@@ -5,7 +5,7 @@
     "kecamatan": "Babadan",
     "desa": "Pondok",
     "status": "operasional",
-    "porsi": 2423,
+    "porsi": 2485,
     "alamat": "Jl. Pertanian Desa Pondok Rt 1 Rw 2, Kec. Babadan, Kab. Ponorogo, Jawa Timur",
     "gmaps": "https://maps.app.goo.gl/7Y4sK5gZwtCHjdWH8",
     "lat": -7.835433,
@@ -13,14 +13,14 @@
     "perkiraan": true,
     "sumber": "Database SPPG Kab. Ponorogo",
     "pm": {
-      "pmSatdikTotal": 2120,
-      "pmSiswa": 1899,
-      "pmGuruTendik": 221,
+      "pmSatdikTotal": 2109,
+      "pmSiswa": 1867,
+      "pmGuruTendik": 242,
       "pmSatdikKelompok": 22,
-      "pm3bTotal": 303,
-      "pmBusui": 35,
-      "pmBumil": 33,
-      "pmBalita": 235,
+      "pm3bTotal": 376,
+      "pmBusui": 32,
+      "pmBumil": 31,
+      "pmBalita": 313,
       "pm3bKelompok": 7
     },
     "detail": {
@@ -49,7 +49,8 @@
         "haccp": "BELUM PENGAJUAN",
         "penjamahMakan": "SUDAH",
         "bpjs": "SUDAH"
-      }
+      },
+      "pmAsOf": "Laporan harian 28 Agustus 2026"
     }
   },
   {
@@ -103,7 +104,8 @@
         "haccp": "BELUM PENGAJUAN",
         "penjamahMakan": "SUDAH",
         "bpjs": "SUDAH"
-      }
+      },
+      "pmAsOf": "Laporan harian 20 Agustus 2026"
     }
   },
   {
@@ -112,7 +114,7 @@
     "kecamatan": "Babadan",
     "desa": "Kadipaten",
     "status": "operasional",
-    "porsi": 2491,
+    "porsi": 2486,
     "alamat": "Desa Kadipaten, Kec. Babadan, Kab. Ponorogo, Jawa Timur",
     "gmaps": "https://maps.app.goo.gl/Ebju1GndQqmMo5Ev7",
     "lat": -7.849944,
@@ -120,14 +122,14 @@
     "perkiraan": false,
     "sumber": "Database SPPG Kab. Ponorogo",
     "pm": {
-      "pmSatdikTotal": 2371,
+      "pmSatdikTotal": 2369,
       "pmSiswa": 2071,
-      "pmGuruTendik": 300,
+      "pmGuruTendik": 298,
       "pmSatdikKelompok": 21,
-      "pm3bTotal": 120,
-      "pmBusui": 24,
+      "pm3bTotal": 117,
+      "pmBusui": 26,
       "pmBumil": 16,
-      "pmBalita": 80,
+      "pmBalita": 75,
       "pm3bKelompok": 3
     },
     "detail": {
@@ -156,7 +158,8 @@
         "haccp": "BELUM PENGAJUAN",
         "penjamahMakan": "BELUM PENGAJUAN",
         "bpjs": "BELUM PENGAJUAN"
-      }
+      },
+      "pmAsOf": "Laporan harian 3 Agustus 2026"
     }
   },
   {
@@ -165,7 +168,7 @@
     "kecamatan": "Babadan",
     "desa": "Kertosari",
     "status": "operasional",
-    "porsi": 1430,
+    "porsi": 1885,
     "alamat": "Jl. Parang Klitik, No. 14, Rt 003, Rw 002",
     "gmaps": "https://maps.app.goo.gl/cifuNY5Rj3TcLViD7",
     "lat": -7.852491,
@@ -173,14 +176,14 @@
     "perkiraan": false,
     "sumber": "Database SPPG Kab. Ponorogo",
     "pm": {
-      "pmSatdikTotal": 979,
-      "pmSiswa": 864,
-      "pmGuruTendik": 115,
+      "pmSatdikTotal": 1295,
+      "pmSiswa": 1117,
+      "pmGuruTendik": 178,
       "pmSatdikKelompok": 11,
-      "pm3bTotal": 451,
-      "pmBusui": 72,
-      "pmBumil": 28,
-      "pmBalita": 351,
+      "pm3bTotal": 590,
+      "pmBusui": 117,
+      "pmBumil": 53,
+      "pmBalita": 420,
       "pm3bKelompok": 10
     },
     "detail": {
@@ -211,7 +214,8 @@
         "penjamahMakan": "SUDAH",
         "bpjs": "SUDAH",
         "dokKelengkapan": "https://drive.google.com/drive/folders/1tE0b3B5L6dTT_MWbhusaK1zClFTEpkcb?usp=drive_link"
-      }
+      },
+      "pmAsOf": "Laporan harian 20 Agustus 2026"
     }
   },
   {
@@ -219,8 +223,8 @@
     "nama": "SPPG Ponorogo Babadan Ngunut",
     "kecamatan": "Babadan",
     "desa": "Ngunut",
-    "status": "operasional",
-    "porsi": 2739,
+    "status": "berhenti",
+    "porsi": 2730,
     "alamat": "Ngunut 3, Desa Ngunut, Kec. Babadan, Kab. Ponorogo, Jawa Timur",
     "gmaps": "https://maps.app.goo.gl/RXZFG4momhbTb11d9?g_st=aw",
     "lat": -7.830672,
@@ -228,14 +232,14 @@
     "perkiraan": false,
     "sumber": "Database SPPG Kab. Ponorogo",
     "pm": {
-      "pmSatdikTotal": 2484,
-      "pmSiswa": 2198,
-      "pmGuruTendik": 286,
+      "pmSatdikTotal": 2474,
+      "pmSiswa": 2189,
+      "pmGuruTendik": 285,
       "pmSatdikKelompok": 30,
-      "pm3bTotal": 255,
-      "pmBusui": 58,
-      "pmBumil": 20,
-      "pmBalita": 177,
+      "pm3bTotal": 256,
+      "pmBusui": 59,
+      "pmBumil": 22,
+      "pmBalita": 175,
       "pm3bKelompok": 6
     },
     "detail": {
@@ -243,7 +247,7 @@
       "jenis": "SPPG MITRA",
       "namaKa": "IBNU UMAR",
       "nomorKa": "081233870855",
-      "statusLabel": "OPERASIONAL",
+      "statusLabel": "BERHENTI OPS SEMENTARA",
       "tglOperasional": "2 Februari 2026",
       "yayasan": "Yayasan Pelita Bangsa Jatim",
       "bankVa": "BANK BRI",
@@ -264,7 +268,8 @@
         "haccp": "BELUM PENGAJUAN",
         "penjamahMakan": "SUDAH",
         "bpjs": "SUDAH"
-      }
+      },
+      "pmAsOf": "Laporan harian 6 Agustus 2026"
     }
   },
   {
@@ -273,7 +278,7 @@
     "kecamatan": "Babadan",
     "desa": "Polorejo",
     "status": "operasional",
-    "porsi": 2590,
+    "porsi": 2663,
     "alamat": "Jl. Cempaka No. 80, Tamanan, Desa Polorejo, Kecamatan Babada, Kabupaten Ponorogo, Jawa Timur",
     "gmaps": "https://maps.app.goo.gl/h7mbrUyn2TVnPpNA6?g_st=ic",
     "lat": -7.838886,
@@ -281,14 +286,14 @@
     "perkiraan": true,
     "sumber": "Database SPPG Kab. Ponorogo",
     "pm": {
-      "pmSatdikTotal": 2276,
-      "pmSiswa": 1930,
-      "pmGuruTendik": 346,
+      "pmSatdikTotal": 2426,
+      "pmSiswa": 2176,
+      "pmGuruTendik": 250,
       "pmSatdikKelompok": 18,
-      "pm3bTotal": 314,
-      "pmBusui": 66,
-      "pmBumil": 32,
-      "pmBalita": 216,
+      "pm3bTotal": 237,
+      "pmBusui": 59,
+      "pmBumil": 21,
+      "pmBalita": 157,
       "pm3bKelompok": 7
     },
     "detail": {
@@ -320,7 +325,8 @@
         "noSertiHaccp": "6458/AP-OP2/MA/X-2025",
         "penjamahMakan": "SUDAH",
         "bpjs": "SUDAH"
-      }
+      },
+      "pmAsOf": "Laporan harian 14 Agustus 2026"
     }
   },
   {
@@ -328,7 +334,7 @@
     "nama": "SPPG Ponorogo Babadan Kertosari 4",
     "kecamatan": "Babadan",
     "desa": "Kertosari 4",
-    "status": "operasional",
+    "status": "akan",
     "porsi": 2631,
     "alamat": "Jl. Cindewilis No 2 A Rt 01 Rw 01, Kertosari, Kec. Babadan, Kab. Ponorogo, Jawa Timur",
     "gmaps": "https://maps.app.goo.gl/MZJNQikAX9RDgxBUA",
@@ -337,14 +343,14 @@
     "perkiraan": true,
     "sumber": "Database SPPG Kab. Ponorogo",
     "pm": {
-      "pmSatdikTotal": 2392,
-      "pmSiswa": 2146,
-      "pmGuruTendik": 246,
+      "pmSatdikTotal": 2383,
+      "pmSiswa": 2161,
+      "pmGuruTendik": 222,
       "pmSatdikKelompok": 6,
-      "pm3bTotal": 239,
-      "pmBusui": 51,
-      "pmBumil": 16,
-      "pmBalita": 172,
+      "pm3bTotal": 248,
+      "pmBusui": 50,
+      "pmBumil": 17,
+      "pmBalita": 181,
       "pm3bKelompok": 5
     },
     "detail": {
@@ -352,7 +358,7 @@
       "jenis": "SPPG MITRA",
       "namaKa": "NURUL HAFIDZAH",
       "nomorKa": "082311692325",
-      "statusLabel": "OPERASIONAL",
+      "statusLabel": "AKAN OPERASIONAL",
       "tglOperasional": "30 Juli 2026",
       "yayasan": "YPPSDP",
       "bankVa": "BANK BNI",
@@ -375,7 +381,8 @@
         "penjamahMakan": "SUDAH",
         "bpjs": "BELUM PENGAJUAN",
         "dokKelengkapan": "https://drive.google.com/drive/folders/1epwPVE3zl9losR0daHx60OmYdCqJGay-?usp=sharing"
-      }
+      },
+      "pmAsOf": "Laporan harian 10 Agustus 2026"
     }
   },
   {
@@ -384,7 +391,7 @@
     "kecamatan": "Badegan",
     "desa": "Watubonang",
     "status": "operasional",
-    "porsi": 2600,
+    "porsi": 2776,
     "alamat": "Jl. Badegan Dayakan, Watubonang, Kec. Badegan, Kab. Ponorogo, Jawa Timur",
     "gmaps": "https://maps.app.goo.gl/vrXVbKWcHQS1wSPSA",
     "lat": -7.874655,
@@ -392,14 +399,14 @@
     "perkiraan": true,
     "sumber": "Database SPPG Kab. Ponorogo",
     "pm": {
-      "pmSatdikTotal": 2112,
-      "pmSiswa": 1809,
-      "pmGuruTendik": 303,
+      "pmSatdikTotal": 2259,
+      "pmSiswa": 1972,
+      "pmGuruTendik": 287,
       "pmSatdikKelompok": 31,
-      "pm3bTotal": 488,
-      "pmBusui": 72,
-      "pmBumil": 40,
-      "pmBalita": 376,
+      "pm3bTotal": 517,
+      "pmBusui": 85,
+      "pmBumil": 45,
+      "pmBalita": 387,
       "pm3bKelompok": 10
     },
     "detail": {
@@ -430,7 +437,8 @@
         "penjamahMakan": "SUDAH",
         "bpjs": "SUDAH",
         "dokKelengkapan": "https://drive.google.com/drive/folders/1sb3stk9YeBYt90XxOS2Bnq7PhYrj7b-x"
-      }
+      },
+      "pmAsOf": "Laporan harian 3 Agustus 2026"
     }
   },
   {
@@ -439,7 +447,7 @@
     "kecamatan": "Badegan",
     "desa": "Karangjoho",
     "status": "operasional",
-    "porsi": 2719,
+    "porsi": 2706,
     "alamat": "Desa Karangjoho, Kecamatan Badegan, Kabupaten Ponorogo, Jawa Tengah",
     "gmaps": "https://maps.app.goo.gl/DeK26bPHWLhERiP19?g_st=aw",
     "lat": -7.883207,
@@ -447,14 +455,14 @@
     "perkiraan": false,
     "sumber": "Database SPPG Kab. Ponorogo",
     "pm": {
-      "pmSatdikTotal": 2279,
-      "pmSiswa": 2017,
-      "pmGuruTendik": 262,
+      "pmSatdikTotal": 2280,
+      "pmSiswa": 1989,
+      "pmGuruTendik": 291,
       "pmSatdikKelompok": 33,
-      "pm3bTotal": 440,
-      "pmBusui": 82,
-      "pmBumil": 53,
-      "pmBalita": 305,
+      "pm3bTotal": 426,
+      "pmBusui": 84,
+      "pmBumil": 60,
+      "pmBalita": 282,
       "pm3bKelompok": 13
     },
     "detail": {
@@ -486,7 +494,8 @@
         "penjamahMakan": "SUDAH",
         "bpjs": "SUDAH",
         "dokKelengkapan": "https://drive.google.com/drive/folders/1Mjma5-5DRpXYeDsLXiGkmcglU3G_FLmK?usp=sharing"
-      }
+      },
+      "pmAsOf": "Laporan harian 28 Agustus 2026"
     }
   },
   {
@@ -495,7 +504,7 @@
     "kecamatan": "Badegan",
     "desa": "Badegan",
     "status": "operasional",
-    "porsi": 2242,
+    "porsi": 2191,
     "alamat": "Rt. 002/ Rw. 002 Dukuh Badegan Kecamatan Badegan, Kabupaten Ponorogo, Badegan Jawa Timur",
     "gmaps": "https://share.google/7xVJR3BV08u7ygkl8",
     "lat": -7.874103,
@@ -503,14 +512,14 @@
     "perkiraan": false,
     "sumber": "Database SPPG Kab. Ponorogo",
     "pm": {
-      "pmSatdikTotal": 1638,
-      "pmSiswa": 1498,
-      "pmGuruTendik": 140,
+      "pmSatdikTotal": 1643,
+      "pmSiswa": 1502,
+      "pmGuruTendik": 141,
       "pmSatdikKelompok": 5,
-      "pm3bTotal": 604,
-      "pmBusui": 107,
+      "pm3bTotal": 548,
+      "pmBusui": 116,
       "pmBumil": 49,
-      "pmBalita": 448,
+      "pmBalita": 383,
       "pm3bKelompok": 16
     },
     "detail": {
@@ -543,7 +552,8 @@
         "penjamahMakan": "SUDAH",
         "bpjs": "SUDAH",
         "dokKelengkapan": "https://drive.google.com/drive/folders/1_i6H6cD5l6eP7r3aA-Tclgjf7VZR716T?usp=drive_link"
-      }
+      },
+      "pmAsOf": "Laporan harian 20 Agustus 2026"
     }
   },
   {
@@ -552,7 +562,7 @@
     "kecamatan": "Balong",
     "desa": "Ngraket",
     "status": "operasional",
-    "porsi": 2596,
+    "porsi": 2437,
     "alamat": "Jl. Raya Ngumpul Balong, Ngraket, Kec. Balong, Kab. Ponorogo, Jawa Timur",
     "gmaps": "https://maps.app.goo.gl/2va1FF8UkSWRdSKL7",
     "lat": -7.955451,
@@ -560,8 +570,8 @@
     "perkiraan": false,
     "sumber": "Database SPPG Kab. Ponorogo",
     "pm": {
-      "pmSatdikTotal": 2045,
-      "pmSiswa": 1839,
+      "pmSatdikTotal": 1886,
+      "pmSiswa": 1680,
       "pmGuruTendik": 206,
       "pmSatdikKelompok": 21,
       "pm3bTotal": 551,
@@ -597,7 +607,8 @@
         "penjamahMakan": "SUDAH",
         "bpjs": "SUDAH",
         "dokKelengkapan": "https://drive.google.com/drive/folders/1K5GmKo9aGXfRDoov03q_3oAx8ogx7_gA?usp=drive_link"
-      }
+      },
+      "pmAsOf": "Laporan harian 3 Agustus 2026"
     }
   },
   {
@@ -769,7 +780,7 @@
     "kecamatan": "Bungkal",
     "desa": "Belang",
     "status": "operasional",
-    "porsi": 2285,
+    "porsi": 2612,
     "alamat": "Dukuh Lorokan Rt.02/Rw.02 Desa Belang, Kec. Bungkal, Kab. Ponorogo, Jawa Timur",
     "gmaps": "https://maps.app.goo.gl/rDng4F65w1dpFR428",
     "lat": -8.004707,
@@ -777,14 +788,14 @@
     "perkiraan": false,
     "sumber": "Database SPPG Kab. Ponorogo",
     "pm": {
-      "pmSatdikTotal": 1973,
-      "pmSiswa": 1670,
-      "pmGuruTendik": 303,
+      "pmSatdikTotal": 2164,
+      "pmSiswa": 1855,
+      "pmGuruTendik": 309,
       "pmSatdikKelompok": 36,
-      "pm3bTotal": 312,
-      "pmBusui": 77,
-      "pmBumil": 30,
-      "pmBalita": 205,
+      "pm3bTotal": 448,
+      "pmBusui": 102,
+      "pmBumil": 39,
+      "pmBalita": 307,
       "pm3bKelompok": 18
     },
     "detail": {
@@ -814,7 +825,8 @@
         "penjamahMakan": "SUDAH",
         "bpjs": "SUDAH",
         "dokKelengkapan": "https://drive.google.com/drive/folders/1V8vhAlaENwnY2vlhimMxwZtJ7fGuDwdp"
-      }
+      },
+      "pmAsOf": "Laporan harian 5 Agustus 2026"
     }
   },
   {
@@ -823,7 +835,7 @@
     "kecamatan": "Bungkal",
     "desa": "Kunti",
     "status": "operasional",
-    "porsi": 2231,
+    "porsi": 2309,
     "alamat": "Jl Raya Bancar-Bungkal RT02/RW01, Dukuh Tlogo, Desa Kunti, Kecamatan Bungkal, Kabupaten Ponorogo, Jawa Timur",
     "gmaps": "https://maps.app.goo.gl/6Ti4LcPGcfeNJUzo8",
     "lat": -7.989585,
@@ -831,14 +843,14 @@
     "perkiraan": false,
     "sumber": "Database SPPG Kab. Ponorogo",
     "pm": {
-      "pmSatdikTotal": 1672,
-      "pmSiswa": 1467,
-      "pmGuruTendik": 205,
+      "pmSatdikTotal": 1807,
+      "pmSiswa": 1583,
+      "pmGuruTendik": 224,
       "pmSatdikKelompok": 49,
-      "pm3bTotal": 559,
-      "pmBusui": 57,
-      "pmBumil": 51,
-      "pmBalita": 451,
+      "pm3bTotal": 502,
+      "pmBusui": 55,
+      "pmBumil": 49,
+      "pmBalita": 398,
       "pm3bKelompok": 21
     },
     "detail": {
@@ -869,7 +881,8 @@
         "haccp": "BELUM PENGAJUAN",
         "penjamahMakan": "SUDAH",
         "bpjs": "SUDAH"
-      }
+      },
+      "pmAsOf": "Laporan harian 10 Agustus 2026"
     }
   },
   {
@@ -878,7 +891,7 @@
     "kecamatan": "Bungkal",
     "desa": "Kalisat",
     "status": "operasional",
-    "porsi": 2601,
+    "porsi": 2215,
     "alamat": "Penanggungan, Koripan, Kecamatan Bungkal, Kabupaten Ponorogo, Jawa Timur 63462",
     "gmaps": "https://maps.app.goo.gl/7ftuVHrUQHz8jtj28",
     "lat": -8.034581,
@@ -886,14 +899,14 @@
     "perkiraan": false,
     "sumber": "Database SPPG Kab. Ponorogo",
     "pm": {
-      "pmSatdikTotal": 2045,
-      "pmSiswa": 1766,
-      "pmGuruTendik": 279,
+      "pmSatdikTotal": 1656,
+      "pmSiswa": 1426,
+      "pmGuruTendik": 230,
       "pmSatdikKelompok": 28,
-      "pm3bTotal": 556,
-      "pmBusui": 87,
-      "pmBumil": 38,
-      "pmBalita": 431,
+      "pm3bTotal": 559,
+      "pmBusui": 57,
+      "pmBumil": 51,
+      "pmBalita": 451,
       "pm3bKelompok": 22
     },
     "detail": {
@@ -922,7 +935,8 @@
         "haccp": "BELUM PENGAJUAN",
         "penjamahMakan": "SUDAH",
         "bpjs": "SUDAH"
-      }
+      },
+      "pmAsOf": "Laporan harian 5 Agustus 2026"
     }
   },
   {
@@ -931,7 +945,7 @@
     "kecamatan": "Jambon",
     "desa": "Jambon 2",
     "status": "operasional",
-    "porsi": 2495,
+    "porsi": 2514,
     "alamat": "Jl. Sidowayah No. 1 Desa Sidoharjo, Kec. Jambon, Kab. Ponorogo, Jawa Timur",
     "gmaps": "https://maps.app.goo.gl/3ApG86FhVfuipX946",
     "lat": -7.91531,
@@ -939,14 +953,14 @@
     "perkiraan": false,
     "sumber": "Database SPPG Kab. Ponorogo",
     "pm": {
-      "pmSatdikTotal": 1832,
-      "pmSiswa": 1595,
-      "pmGuruTendik": 237,
+      "pmSatdikTotal": 1870,
+      "pmSiswa": 1628,
+      "pmGuruTendik": 242,
       "pmSatdikKelompok": 27,
-      "pm3bTotal": 663,
-      "pmBusui": 138,
-      "pmBumil": 50,
-      "pmBalita": 475,
+      "pm3bTotal": 644,
+      "pmBusui": 139,
+      "pmBumil": 55,
+      "pmBalita": 450,
       "pm3bKelompok": 15
     },
     "detail": {
@@ -976,7 +990,8 @@
         "penjamahMakan": "SUDAH",
         "bpjs": "SUDAH",
         "dokKelengkapan": "https://drive.google.com/drive/folders/1lUzgj-iZ8X6q-gR8WGkJNoihF0W-ENk1"
-      }
+      },
+      "pmAsOf": "Laporan harian 3 Agustus 2026"
     }
   },
   {
@@ -1031,7 +1046,8 @@
         "penjamahMakan": "SUDAH",
         "bpjs": "SUDAH",
         "dokKelengkapan": "https://drive.google.com/drive/folders/1sCNyz-zPIyztxh8bmrp4CCzG7b5o_Dfa?usp=sharing"
-      }
+      },
+      "pmAsOf": "Laporan harian 19 Agustus 2026"
     }
   },
   {
@@ -1040,7 +1056,7 @@
     "kecamatan": "Jambon",
     "desa": "Menang",
     "status": "operasional",
-    "porsi": 2742,
+    "porsi": 2696,
     "alamat": "Jl. Ponorogo Wonogiri, Rt.1/Rw.1, Genting, Menang, Kec. Jambon, Kab. Ponorogo, Jawa Timur",
     "gmaps": "https://maps.app.goo.gl/6EzWsqZD6ZjfYWAC7",
     "lat": -7.868156,
@@ -1048,14 +1064,14 @@
     "perkiraan": false,
     "sumber": "Database SPPG Kab. Ponorogo",
     "pm": {
-      "pmSatdikTotal": 2151,
-      "pmSiswa": 1925,
-      "pmGuruTendik": 226,
+      "pmSatdikTotal": 2140,
+      "pmSiswa": 1913,
+      "pmGuruTendik": 227,
       "pmSatdikKelompok": 16,
-      "pm3bTotal": 591,
-      "pmBusui": 89,
-      "pmBumil": 53,
-      "pmBalita": 449,
+      "pm3bTotal": 556,
+      "pmBusui": 98,
+      "pmBumil": 51,
+      "pmBalita": 407,
       "pm3bKelompok": 13
     },
     "detail": {
@@ -1086,7 +1102,8 @@
         "penjamahMakan": "SUDAH",
         "bpjs": "SUDAH",
         "dokKelengkapan": "https://drive.google.com/drive/folders/1alUZnAfW7IW1lYAai8sGZFVGg8oKsI5K?usp=sharing"
-      }
+      },
+      "pmAsOf": "Laporan harian 6 Agustus 2026"
     }
   },
   {
@@ -1094,7 +1111,7 @@
     "nama": "SPPG Ponorogo Jambon Krebet",
     "kecamatan": "Jambon",
     "desa": "Krebet",
-    "status": "berhenti",
+    "status": "suspend",
     "porsi": 0,
     "alamat": "Jl. Raya Timur Ps. Jambon, Pakis, Krebet, Kec. Jambon, Kabupaten Ponorogo, Jawa Timur 63456",
     "gmaps": "https://maps.app.goo.gl/Fw4r13YPJ9iES4CB6",
@@ -1111,7 +1128,7 @@
       "jenis": "SPPG MITRA",
       "namaKa": "MOCH. SYAFI`I MISBACHUL MUFID",
       "nomorKa": "085878924911",
-      "statusLabel": "BERHENTI OPS SEMENTARA",
+      "statusLabel": "SUSPEND",
       "tglTarget": "20 Oktober 2025",
       "yayasan": "Yayasan Bhakti Bhojana Nusantara",
       "bankVa": "BANK BRI",
@@ -1187,7 +1204,7 @@
     "kecamatan": "Jenangan",
     "desa": "Ngrupit 2",
     "status": "operasional",
-    "porsi": 2844,
+    "porsi": 2851,
     "alamat": "Jl. Ponorogo Ngebel No. 280 Rt 002 Rw 003 Dukuh Tenggang, Ngrupit, Kec. Jenangan, Kab. Ponorogo, Jawa Timur",
     "gmaps": "https://maps.app.goo.gl/KXmmttbXhzdjkp7JA",
     "lat": -7.800827,
@@ -1195,14 +1212,14 @@
     "perkiraan": false,
     "sumber": "Database SPPG Kab. Ponorogo",
     "pm": {
-      "pmSatdikTotal": 2541,
-      "pmSiswa": 2306,
-      "pmGuruTendik": 235,
+      "pmSatdikTotal": 2550,
+      "pmSiswa": 2210,
+      "pmGuruTendik": 340,
       "pmSatdikKelompok": 28,
-      "pm3bTotal": 303,
+      "pm3bTotal": 301,
       "pmBusui": 93,
-      "pmBumil": 28,
-      "pmBalita": 182,
+      "pmBumil": 29,
+      "pmBalita": 179,
       "pm3bKelompok": 3
     },
     "detail": {
@@ -1232,7 +1249,8 @@
         "haccp": "BELUM PENGAJUAN",
         "penjamahMakan": "SUDAH",
         "bpjs": "SUDAH"
-      }
+      },
+      "pmAsOf": "Laporan harian 3 Agustus 2026"
     }
   },
   {
@@ -1287,7 +1305,8 @@
         "penjamahMakan": "SUDAH",
         "bpjs": "SUDAH",
         "dokKelengkapan": "https://drive.google.com/drive/folders/1NpolE4oh5am_LPyy5EEEWZWhMtU_hGuR?usp=sharing"
-      }
+      },
+      "pmAsOf": "Laporan harian 10 Agustus 2026"
     }
   },
   {
@@ -1601,7 +1620,7 @@
     "kecamatan": "Kauman",
     "desa": "Gabel",
     "status": "operasional",
-    "porsi": 2692,
+    "porsi": 3280,
     "alamat": "Jl. Diponegoro Desa Gabel, Kecamatan Kauman, Kabupaten Ponorogo, Jawa Timur",
     "gmaps": "https://maps.app.goo.gl/phufRYGKUh5wEZpz9",
     "lat": -7.870571,
@@ -1609,14 +1628,14 @@
     "perkiraan": false,
     "sumber": "Database SPPG Kab. Ponorogo",
     "pm": {
-      "pmSatdikTotal": 2352,
-      "pmSiswa": 2052,
-      "pmGuruTendik": 300,
+      "pmSatdikTotal": 2954,
+      "pmSiswa": 2640,
+      "pmGuruTendik": 314,
       "pmSatdikKelompok": 39,
-      "pm3bTotal": 340,
-      "pmBusui": 59,
-      "pmBumil": 25,
-      "pmBalita": 256,
+      "pm3bTotal": 326,
+      "pmBusui": 63,
+      "pmBumil": 23,
+      "pmBalita": 240,
       "pm3bKelompok": 10
     },
     "detail": {
@@ -1647,7 +1666,8 @@
         "penjamahMakan": "SUDAH",
         "bpjs": "SUDAH",
         "dokKelengkapan": "https://drive.google.com/drive/folders/1u7yT0qIHwtNsq4NCV454vId1xx4Y3AfT"
-      }
+      },
+      "pmAsOf": "Laporan harian 14 Agustus 2026"
     }
   },
   {
@@ -1656,7 +1676,7 @@
     "kecamatan": "Kauman",
     "desa": "Tegalombo",
     "status": "operasional",
-    "porsi": 2854,
+    "porsi": 2855,
     "alamat": "Desa Tegalombo, Kec. Kauman, Kab. Ponorogo, Jawa Timur",
     "gmaps": "https://maps.app.goo.gl/2EYquLqJ7APbfRQ28?g_st=iw",
     "lat": -7.902444,
@@ -1664,9 +1684,9 @@
     "perkiraan": false,
     "sumber": "Database SPPG Kab. Ponorogo",
     "pm": {
-      "pmSatdikTotal": 2390,
+      "pmSatdikTotal": 2391,
       "pmSiswa": 2113,
-      "pmGuruTendik": 277,
+      "pmGuruTendik": 278,
       "pmSatdikKelompok": 38,
       "pm3bTotal": 464,
       "pmBusui": 79,
@@ -1704,7 +1724,8 @@
         "penjamahMakan": "SUDAH",
         "bpjs": "SUDAH",
         "dokKelengkapan": "https://drive.google.com/drive/folders/1sLNeI92yxZoRHdZe5t5M59WgsZsFknfc?usp=drive_link"
-      }
+      },
+      "pmAsOf": "Laporan harian 13 Agustus 2026"
     }
   },
   {
@@ -1712,7 +1733,7 @@
     "nama": "SPPG Ponorogo Kauman Somoroto",
     "kecamatan": "Kauman",
     "desa": "Somoroto",
-    "status": "operasional",
+    "status": "suspend",
     "porsi": 2644,
     "alamat": "Jl. Sabuk Janur, Niten, Somoroto, Kec. Kauman, Kabupaten Ponorogo, Jawa Timur 63451",
     "gmaps": "https://maps.app.goo.gl/viGq3XXomLwLvm3A6",
@@ -1736,7 +1757,7 @@
       "jenis": "SPPG MITRA",
       "namaKa": "RIZAL ZULFIKAR FIKRI",
       "nomorKa": "085232389984",
-      "statusLabel": "OPERASIONAL",
+      "statusLabel": "SUSPEND",
       "tglOperasional": "9 Januari 2026",
       "tglTarget": "20 Oktober 2025",
       "yayasan": "Yayasan Bhakti Bhojana Nusantara",
@@ -1768,7 +1789,7 @@
     "kecamatan": "Mlarak",
     "desa": "Joresan",
     "status": "operasional",
-    "porsi": 858,
+    "porsi": 1036,
     "alamat": "Jl. Raya Mlarak Sambit (Ruko Syarifah 3), Desa Joresan, Kec. Mlarak, Kab. Ponorogo, Jawa Timur",
     "gmaps": "https://maps.app.goo.gl/JZBRSzCd1b18byCX9?g_st=ac",
     "lat": -7.934486,
@@ -1776,14 +1797,14 @@
     "perkiraan": false,
     "sumber": "Database SPPG Kab. Ponorogo",
     "pm": {
-      "pmSatdikTotal": 631,
-      "pmSiswa": 559,
-      "pmGuruTendik": 72,
+      "pmSatdikTotal": 585,
+      "pmSiswa": 517,
+      "pmGuruTendik": 68,
       "pmSatdikKelompok": 12,
-      "pm3bTotal": 227,
-      "pmBusui": 52,
-      "pmBumil": 20,
-      "pmBalita": 155,
+      "pm3bTotal": 451,
+      "pmBusui": 88,
+      "pmBumil": 41,
+      "pmBalita": 322,
       "pm3bKelompok": 2
     },
     "detail": {
@@ -1813,7 +1834,8 @@
         "penjamahMakan": "SUDAH",
         "bpjs": "PROSES",
         "dokKelengkapan": "https://drive.google.com/drive/folders/10KWjBfHA9-c-oB_ZWZuY-gjV6d6ZRLN9?usp=sharing"
-      }
+      },
+      "pmAsOf": "Laporan harian 3 Agustus 2026"
     }
   },
   {
@@ -1866,7 +1888,8 @@
         "haccp": "BELUM PENGAJUAN",
         "penjamahMakan": "SUDAH",
         "bpjs": "PROSES"
-      }
+      },
+      "pmAsOf": "Laporan harian 10 Agustus 2026"
     }
   },
   {
@@ -1875,7 +1898,7 @@
     "kecamatan": "Mlarak",
     "desa": "Ngrukem",
     "status": "operasional",
-    "porsi": 1097,
+    "porsi": 1458,
     "alamat": "Ngrukem, Kecamatan Mlarak, Kabupaten Ponorogo, Jawa Timur",
     "gmaps": "https://maps.app.goo.gl/Z9itGuq7TPqghJrU8",
     "lat": -7.930305,
@@ -1883,14 +1906,14 @@
     "perkiraan": false,
     "sumber": "Database SPPG Kab. Ponorogo",
     "pm": {
-      "pmSatdikTotal": 869,
-      "pmSiswa": 778,
-      "pmGuruTendik": 91,
+      "pmSatdikTotal": 1242,
+      "pmSiswa": 1173,
+      "pmGuruTendik": 69,
       "pmSatdikKelompok": 9,
-      "pm3bTotal": 228,
-      "pmBusui": 46,
-      "pmBumil": 21,
-      "pmBalita": 161,
+      "pm3bTotal": 216,
+      "pmBusui": 48,
+      "pmBumil": 23,
+      "pmBalita": 145,
       "pm3bKelompok": 7
     },
     "detail": {
@@ -1920,7 +1943,8 @@
         "penjamahMakan": "SUDAH",
         "bpjs": "SUDAH",
         "dokKelengkapan": "https://drive.google.com/drive/folders/10s5LDeDZ11MfCAHsUnJyzlUns3ekJL2_?usp=drive_link"
-      }
+      },
+      "pmAsOf": "Laporan harian 18 Agustus 2026"
     }
   },
   {
@@ -1982,7 +2006,7 @@
     "kecamatan": "Mlarak",
     "desa": "Gontor",
     "status": "operasional",
-    "porsi": 1036,
+    "porsi": 990,
     "alamat": "Desa Gontor, Kecamatan Mlarak, Kabupaten Ponorogo, Jawa Timur",
     "gmaps": "https://maps.app.goo.gl/xPhDDFtDiSC7Cwth8",
     "lat": -7.925587,
@@ -1990,14 +2014,14 @@
     "perkiraan": false,
     "sumber": "Database SPPG Kab. Ponorogo",
     "pm": {
-      "pmSatdikTotal": 906,
-      "pmSiswa": 774,
-      "pmGuruTendik": 132,
+      "pmSatdikTotal": 889,
+      "pmSiswa": 756,
+      "pmGuruTendik": 133,
       "pmSatdikKelompok": 13,
-      "pm3bTotal": 130,
-      "pmBusui": 23,
-      "pmBumil": 11,
-      "pmBalita": 96,
+      "pm3bTotal": 101,
+      "pmBusui": 20,
+      "pmBumil": 9,
+      "pmBalita": 72,
       "pm3bKelompok": 1
     },
     "detail": {
@@ -2028,7 +2052,8 @@
         "penjamahMakan": "SUDAH",
         "bpjs": "SUDAH",
         "dokKelengkapan": "https://drive.google.com/drive/folders/1QVG1dY8XOkG9UmuUhMv9RWeo42uzIH_V?usp=sharing"
-      }
+      },
+      "pmAsOf": "Laporan harian 3 Agustus 2026"
     }
   },
   {
@@ -2092,7 +2117,7 @@
     "kecamatan": "Mlarak",
     "desa": "Jabung",
     "status": "operasional",
-    "porsi": 1119,
+    "porsi": 1101,
     "alamat": "Jl. Parikesit, Dusun 1, Jabung, Kecamatan Mlarak, Kabupaten Ponorogo, Jawa Timur",
     "gmaps": "https://maps.app.goo.gl/458qGaAPX6p8zHvZ8",
     "lat": -7.919935,
@@ -2104,10 +2129,10 @@
       "pmSiswa": 884,
       "pmGuruTendik": 105,
       "pmSatdikKelompok": 9,
-      "pm3bTotal": 130,
+      "pm3bTotal": 112,
       "pmBusui": 23,
-      "pmBumil": 19,
-      "pmBalita": 88,
+      "pmBumil": 20,
+      "pmBalita": 69,
       "pm3bKelompok": 1
     },
     "detail": {
@@ -2138,7 +2163,8 @@
         "penjamahMakan": "SUDAH",
         "bpjs": "SUDAH",
         "dokKelengkapan": "https://drive.google.com/drive/folders/1s1RK6Db7hlHte-kxhLiPwpBLIb2hbC8R?usp=sharing"
-      }
+      },
+      "pmAsOf": "Laporan harian 3 Agustus 2026"
     }
   },
   {
@@ -2146,8 +2172,8 @@
     "nama": "SPPG Ponorogo Mlarak Siwalan",
     "kecamatan": "Mlarak",
     "desa": "Siwalan",
-    "status": "operasional",
-    "porsi": 726,
+    "status": "akan",
+    "porsi": 752,
     "alamat": "Desa Siwalan, Kecamatan Mlarak, Kabupaten Ponorogo, Jawa Timur",
     "gmaps": "https://maps.app.goo.gl/a1HVbynfvoc7uNcm6",
     "lat": -7.936913,
@@ -2155,13 +2181,13 @@
     "perkiraan": true,
     "sumber": "Database SPPG Kab. Ponorogo",
     "pm": {
-      "pmSatdikTotal": 474,
+      "pmSatdikTotal": 494,
       "pmSiswa": 413,
-      "pmGuruTendik": 61,
+      "pmGuruTendik": 81,
       "pmSatdikKelompok": 10,
-      "pm3bTotal": 252,
-      "pmBusui": 21,
-      "pmBumil": 65,
+      "pm3bTotal": 258,
+      "pmBusui": 71,
+      "pmBumil": 21,
       "pmBalita": 166,
       "pm3bKelompok": 2
     },
@@ -2170,7 +2196,7 @@
       "jenis": "SPPG MITRA",
       "namaKa": "RIDHA HARI PAHLAWAN",
       "nomorKa": "0895706395750",
-      "statusLabel": "OPERASIONAL",
+      "statusLabel": "AKAN OPERASIONAL",
       "tglOperasional": "3 Agustus 2026",
       "tglTarget": "2026-03-08",
       "yayasan": "Yayasan Drijaya Wahana Perkasa",
@@ -2191,7 +2217,8 @@
         "haccp": "BELUM PENGAJUAN",
         "penjamahMakan": "SUDAH",
         "bpjs": "PROSES"
-      }
+      },
+      "pmAsOf": "Laporan harian 10 Agustus 2026"
     }
   },
   {
@@ -2244,7 +2271,7 @@
     "kecamatan": "Ngebel",
     "desa": "Wagir Lor",
     "status": "operasional",
-    "porsi": 2148,
+    "porsi": 2222,
     "alamat": "Bentis, Wagirlor, Kecamatan Ngebel, Kabupaten Ponorogo, Jawa Timur",
     "gmaps": "https://maps.app.goo.gl/hnGRPc6LzGzhkD7f8?g_st=ac",
     "lat": -7.804595,
@@ -2252,14 +2279,14 @@
     "perkiraan": false,
     "sumber": "Database SPPG Kab. Ponorogo",
     "pm": {
-      "pmSatdikTotal": 1733,
-      "pmSiswa": 1491,
-      "pmGuruTendik": 242,
+      "pmSatdikTotal": 1544,
+      "pmSiswa": 1361,
+      "pmGuruTendik": 183,
       "pmSatdikKelompok": 52,
-      "pm3bTotal": 415,
-      "pmBusui": 95,
-      "pmBumil": 15,
-      "pmBalita": 305,
+      "pm3bTotal": 678,
+      "pmBusui": 94,
+      "pmBumil": 292,
+      "pmBalita": 292,
       "pm3bKelompok": 6
     },
     "detail": {
@@ -2289,7 +2316,8 @@
         "penjamahMakan": "SUDAH",
         "bpjs": "PROSES",
         "dokKelengkapan": "https://drive.google.com/drive/folders/14HO2LtBJ1WK1_dockaKz_6TZvTbz-0vq"
-      }
+      },
+      "pmAsOf": "Laporan harian 3 Agustus 2026"
     }
   },
   {
@@ -2351,7 +2379,7 @@
     "kecamatan": "Ngrayun",
     "desa": "Ngrayun",
     "status": "operasional",
-    "porsi": 2733,
+    "porsi": 2714,
     "alamat": "Dukuh Krajan Rt 001 Rw 004, Blok Purak, Desa Ngrayun, Kecamatan Ngrayun, Kabupaten Ponorogo, Jawa Timur",
     "gmaps": "https://maps.app.goo.gl/Zmq4F2Y2EMfrwVJs8",
     "lat": -8.079713,
@@ -2359,14 +2387,14 @@
     "perkiraan": false,
     "sumber": "Database SPPG Kab. Ponorogo",
     "pm": {
-      "pmSatdikTotal": 2358,
-      "pmSiswa": 2065,
-      "pmGuruTendik": 293,
+      "pmSatdikTotal": 2359,
+      "pmSiswa": 2063,
+      "pmGuruTendik": 296,
       "pmSatdikKelompok": 33,
-      "pm3bTotal": 375,
-      "pmBusui": 67,
+      "pm3bTotal": 355,
+      "pmBusui": 69,
       "pmBumil": 27,
-      "pmBalita": 281,
+      "pmBalita": 259,
       "pm3bKelompok": 10
     },
     "detail": {
@@ -2396,7 +2424,8 @@
         "penjamahMakan": "SUDAH",
         "bpjs": "SUDAH",
         "dokKelengkapan": "https://drive.google.com/drive/folders/1QVG1dY8XOkG9UmuUhMv9RWeo42uzIH_V?usp=sharing"
-      }
+      },
+      "pmAsOf": "Laporan harian 21 Agustus 2026"
     }
   },
   {
@@ -2405,7 +2434,7 @@
     "kecamatan": "Ngrayun",
     "desa": "Ngrayun 2",
     "status": "operasional",
-    "porsi": 1551,
+    "porsi": 1580,
     "alamat": "Desa Ngrayun, Kecamatan Ngrayun, Kabupaten Ponorogo, Jawa Timur",
     "gmaps": "https://maps.app.goo.gl/TXgsuBC1ZcycPL3Q9",
     "lat": -8.113799,
@@ -2413,13 +2442,13 @@
     "perkiraan": false,
     "sumber": "Database SPPG Kab. Ponorogo",
     "pm": {
-      "pmSatdikTotal": 1185,
-      "pmSiswa": 1013,
-      "pmGuruTendik": 172,
-      "pm3bTotal": 366,
-      "pmBusui": 74,
-      "pmBumil": 22,
-      "pmBalita": 270,
+      "pmSatdikTotal": 1580,
+      "pmSiswa": 1500,
+      "pmGuruTendik": 80,
+      "pm3bTotal": 0,
+      "pmBusui": 0,
+      "pmBumil": 0,
+      "pmBalita": 0,
       "pm3bKelompok": 7
     },
     "detail": {
@@ -2447,7 +2476,8 @@
         "haccp": "BELUM PENGAJUAN",
         "penjamahMakan": "BELUM PENGAJUAN",
         "bpjs": "BELUM PENGAJUAN"
-      }
+      },
+      "pmAsOf": "Laporan harian 2 Agustus 2026"
     }
   },
   {
@@ -2456,7 +2486,7 @@
     "kecamatan": "Ponorogo",
     "desa": "Brotonegaran 2",
     "status": "operasional",
-    "porsi": 2640,
+    "porsi": 2741,
     "alamat": "Jl. Yos Sudarso Kavling 02, Brotonegaran, Kec. Ponorogo, Kab. Ponorogo, Jawa Timur",
     "gmaps": "https://maps.app.goo.gl/WB23YQDFe3r2YN2c7",
     "lat": -7.864363,
@@ -2464,9 +2494,9 @@
     "perkiraan": true,
     "sumber": "Database SPPG Kab. Ponorogo",
     "pm": {
-      "pmSatdikTotal": 2443,
-      "pmSiswa": 2259,
-      "pmGuruTendik": 184,
+      "pmSatdikTotal": 2544,
+      "pmSiswa": 2261,
+      "pmGuruTendik": 283,
       "pmSatdikKelompok": 19,
       "pm3bTotal": 197,
       "pmBusui": 40,
@@ -2500,7 +2530,8 @@
         "haccp": "BELUM PENGAJUAN",
         "penjamahMakan": "SUDAH",
         "bpjs": "SUDAH"
-      }
+      },
+      "pmAsOf": "Laporan harian 31 Agustus 2026"
     }
   },
   {
@@ -2509,7 +2540,7 @@
     "kecamatan": "Ponorogo",
     "desa": "Keniten 2",
     "status": "operasional",
-    "porsi": 2557,
+    "porsi": 2813,
     "alamat": "Jl. Pepaya No.1, Dusun Poleng, Keniten, Kec. Ponorogo, Kab. Ponorogo, Jawa Timur",
     "gmaps": "https://maps.app.goo.gl/mqGkTvci6Frwrwyu5",
     "lat": -7.846795,
@@ -2517,14 +2548,14 @@
     "perkiraan": false,
     "sumber": "Database SPPG Kab. Ponorogo",
     "pm": {
-      "pmSatdikTotal": 2362,
-      "pmSiswa": 2062,
-      "pmGuruTendik": 300,
+      "pmSatdikTotal": 2794,
+      "pmSiswa": 2515,
+      "pmGuruTendik": 279,
       "pmSatdikKelompok": 25,
-      "pm3bTotal": 195,
-      "pmBusui": 37,
-      "pmBumil": 9,
-      "pmBalita": 149,
+      "pm3bTotal": 19,
+      "pmBusui": 0,
+      "pmBumil": 0,
+      "pmBalita": 19,
       "pm3bKelompok": 16
     },
     "detail": {
@@ -2556,7 +2587,8 @@
         "haccp": "BELUM PENGAJUAN",
         "penjamahMakan": "SUDAH",
         "bpjs": "SUDAH"
-      }
+      },
+      "pmAsOf": "Laporan harian 28 Agustus 2026"
     }
   },
   {
@@ -2565,7 +2597,7 @@
     "kecamatan": "Ponorogo",
     "desa": "Nologaten",
     "status": "operasional",
-    "porsi": 3076,
+    "porsi": 3177,
     "alamat": "Jl. Melati No. 9, Nologaten, Kec. Ponorogo, Kab. Ponorogo, Jawa Timur",
     "gmaps": "https://maps.app.goo.gl/wAEErzdDanQpDr5P8",
     "lat": -7.866929,
@@ -2573,9 +2605,9 @@
     "perkiraan": false,
     "sumber": "Database SPPG Kab. Ponorogo",
     "pm": {
-      "pmSatdikTotal": 2896,
-      "pmSiswa": 2580,
-      "pmGuruTendik": 316,
+      "pmSatdikTotal": 2997,
+      "pmSiswa": 2708,
+      "pmGuruTendik": 289,
       "pmSatdikKelompok": 15,
       "pm3bTotal": 180,
       "pmBusui": 33,
@@ -2611,7 +2643,8 @@
         "haccp": "BELUM PENGAJUAN",
         "penjamahMakan": "SUDAH",
         "bpjs": "SUDAH"
-      }
+      },
+      "pmAsOf": "Laporan harian 18 Agustus 2026"
     }
   },
   {
@@ -2620,7 +2653,7 @@
     "kecamatan": "Ponorogo",
     "desa": "Brotonegaran",
     "status": "operasional",
-    "porsi": 2523,
+    "porsi": 3072,
     "alamat": "Jl. Yos Sudarso Kavling 01, Kelurahan Brotonegaran, Kec. Ponorogo, Kab. Ponorogo, Jawa Timur",
     "gmaps": "https://maps.app.goo.gl/7sNDhd99YTpa4EjW9",
     "lat": -7.885952,
@@ -2628,9 +2661,9 @@
     "perkiraan": false,
     "sumber": "Database SPPG Kab. Ponorogo",
     "pm": {
-      "pmSatdikTotal": 2357,
-      "pmSiswa": 2095,
-      "pmGuruTendik": 262,
+      "pmSatdikTotal": 2906,
+      "pmSiswa": 2620,
+      "pmGuruTendik": 286,
       "pmSatdikKelompok": 10,
       "pm3bTotal": 166,
       "pmBusui": 29,
@@ -2666,7 +2699,8 @@
         "penjamahMakan": "SUDAH",
         "bpjs": "SUDAH",
         "dokKelengkapan": "https://drive.google.com/drive/folders/1C35T1GO-eygv-jN-7tZRR-CBHGnn5DHl?usp=sharing"
-      }
+      },
+      "pmAsOf": "Laporan harian 26 Agustus 2026"
     }
   },
   {
@@ -2675,7 +2709,7 @@
     "kecamatan": "Ponorogo",
     "desa": "Banyudono",
     "status": "berhenti",
-    "porsi": 2869,
+    "porsi": 2984,
     "alamat": "Jl. Urip Sumoharjo No. 122, Kelurahan Banyudono, Kecamatan Ponorogo, Kabupaten Ponorogo, Jawa Timur",
     "gmaps": "https://goo.gl/maps/Dhhuw1g45NJyqKqQ7",
     "lat": -7.865139,
@@ -2683,14 +2717,14 @@
     "perkiraan": false,
     "sumber": "Database SPPG Kab. Ponorogo",
     "pm": {
-      "pmSatdikTotal": 2746,
-      "pmSiswa": 2473,
-      "pmGuruTendik": 273,
+      "pmSatdikTotal": 2757,
+      "pmSiswa": 2526,
+      "pmGuruTendik": 231,
       "pmSatdikKelompok": 13,
-      "pm3bTotal": 123,
-      "pmBusui": 14,
-      "pmBumil": 12,
-      "pmBalita": 97,
+      "pm3bTotal": 227,
+      "pmBusui": 0,
+      "pmBumil": 30,
+      "pmBalita": 197,
       "pm3bKelompok": 4
     },
     "detail": {
@@ -2721,7 +2755,8 @@
         "penjamahMakan": "SUDAH",
         "bpjs": "SUDAH",
         "dokKelengkapan": "https://drive.google.com/drive/folders/1l8pR96iXa9X3KvErDBNGjYCu2ERldUSm?usp=sharing"
-      }
+      },
+      "pmAsOf": "Laporan harian 5 Agustus 2026"
     }
   },
   {
@@ -2730,7 +2765,7 @@
     "kecamatan": "Ponorogo",
     "desa": "Purbosuman",
     "status": "operasional",
-    "porsi": 3108,
+    "porsi": 2984,
     "alamat": "Jl. D.I Panjaitan, Wetan Talang, Purbosuman, Kecamatan Ponorogo, Kabupaten Ponorogo, Jawa Timur",
     "gmaps": "https://maps.app.goo.gl/YnPubY8eGg43KCz87",
     "lat": -7.877754,
@@ -2738,14 +2773,14 @@
     "perkiraan": false,
     "sumber": "Database SPPG Kab. Ponorogo",
     "pm": {
-      "pmSatdikTotal": 2852,
-      "pmSiswa": 2621,
+      "pmSatdikTotal": 2757,
+      "pmSiswa": 2526,
       "pmGuruTendik": 231,
       "pmSatdikKelompok": 8,
-      "pm3bTotal": 256,
-      "pmBusui": 27,
+      "pm3bTotal": 227,
+      "pmBusui": 0,
       "pmBumil": 30,
-      "pmBalita": 199,
+      "pmBalita": 197,
       "pm3bKelompok": 5
     },
     "detail": {
@@ -2775,7 +2810,8 @@
         "haccp": "BELUM PENGAJUAN",
         "penjamahMakan": "SUDAH",
         "bpjs": "SUDAH"
-      }
+      },
+      "pmAsOf": "Laporan harian 3 Agustus 2026"
     }
   },
   {
@@ -2784,7 +2820,7 @@
     "kecamatan": "Ponorogo",
     "desa": "Keniten",
     "status": "operasional",
-    "porsi": 2918,
+    "porsi": 2813,
     "alamat": "Jl. Letjen. S. Parman, Rt 02/ Rw 02, Kelurahan Keniten, Kecamatan Ponorogo, Kabupaten Ponorogo, Jawa Timur",
     "gmaps": "https://maps.app.goo.gl/UeFumXPbvGPRKdPw5",
     "lat": -7.848462,
@@ -2792,14 +2828,14 @@
     "perkiraan": false,
     "sumber": "Database SPPG Kab. Ponorogo",
     "pm": {
-      "pmSatdikTotal": 2576,
-      "pmSiswa": 2330,
-      "pmGuruTendik": 246,
+      "pmSatdikTotal": 2464,
+      "pmSiswa": 2215,
+      "pmGuruTendik": 249,
       "pmSatdikKelompok": 6,
-      "pm3bTotal": 342,
-      "pmBusui": 29,
-      "pmBumil": 43,
-      "pmBalita": 270,
+      "pm3bTotal": 349,
+      "pmBusui": 57,
+      "pmBumil": 38,
+      "pmBalita": 254,
       "pm3bKelompok": 7
     },
     "detail": {
@@ -2831,7 +2867,8 @@
         "penjamahMakan": "SUDAH",
         "bpjs": "SUDAH",
         "dokKelengkapan": "https://drive.google.com/drive/folders/1QVG1dY8XOkG9UmuUhMv9RWeo42uzIH_V?usp=sharing"
-      }
+      },
+      "pmAsOf": "Laporan harian 3 Agustus 2026"
     }
   },
   {
@@ -2840,7 +2877,7 @@
     "kecamatan": "Ponorogo",
     "desa": "Tonatan 2",
     "status": "operasional",
-    "porsi": 3509,
+    "porsi": 3697,
     "alamat": "Jl. Ir. H. Juanda Gang VI No.38, Mayak, Tonatan, Kec. Ponorogo, Kab. Ponorogo, Jawa Timur 63418",
     "gmaps": "https://maps.app.goo.gl/PNyZND36oj9UF9A97",
     "lat": -7.867388,
@@ -2848,8 +2885,8 @@
     "perkiraan": false,
     "sumber": "Database SPPG Kab. Ponorogo",
     "pm": {
-      "pmSatdikTotal": 3292,
-      "pmSiswa": 3104,
+      "pmSatdikTotal": 3480,
+      "pmSiswa": 3292,
       "pmGuruTendik": 188,
       "pmSatdikKelompok": 1,
       "pm3bTotal": 217,
@@ -2887,7 +2924,8 @@
         "penjamahMakan": "SUDAH",
         "bpjs": "SUDAH",
         "dokKelengkapan": "https://drive.google.com/drive/folders/1njUY-xTl8A9gbrbUAo4-2_VazXAZIsse?usp=drive_link"
-      }
+      },
+      "pmAsOf": "Laporan harian 20 Agustus 2026"
     }
   },
   {
@@ -2896,7 +2934,7 @@
     "kecamatan": "Ponorogo",
     "desa": "SPPG Ponorogo Siman Tajug",
     "status": "operasional",
-    "porsi": 3058,
+    "porsi": 3001,
     "alamat": "Jl. Kenongo, Desa Bangunsari, Kecamatan Ponorogo,Kabupaten Ponorogo",
     "gmaps": "https://maps.app.goo.gl/YoegUsJULai8Sob59",
     "lat": -7.869828,
@@ -2904,14 +2942,15 @@
     "perkiraan": false,
     "sumber": "Database SPPG Kab. Ponorogo",
     "pm": {
-      "pmSatdikTotal": 2645,
-      "pmSiswa": 2645,
+      "pmSatdikTotal": 2609,
+      "pmSiswa": 2609,
       "pmSatdikKelompok": 7,
-      "pm3bTotal": 413,
-      "pmBusui": 125,
-      "pmBumil": 32,
-      "pmBalita": 256,
-      "pm3bKelompok": 4
+      "pm3bTotal": 392,
+      "pmBusui": 128,
+      "pmBumil": 34,
+      "pmBalita": 230,
+      "pm3bKelompok": 4,
+      "pmGuruTendik": 0
     },
     "detail": {
       "idSppg": "BHLZOCSD",
@@ -2941,7 +2980,8 @@
         "haccp": "BELUM PENGAJUAN",
         "penjamahMakan": "SUDAH",
         "bpjs": "SUDAH"
-      }
+      },
+      "pmAsOf": "Laporan harian 4 Agustus 2026"
     }
   },
   {
@@ -3059,7 +3099,7 @@
     "kecamatan": "Ponorogo",
     "desa": "Tonatan",
     "status": "operasional",
-    "porsi": 1667,
+    "porsi": 2942,
     "alamat": "Jl. Halim Perdana Kusuma No. 11B ,Tonatan, Kec. Ponorogo, Kab. Ponorogo, Jawa Timur",
     "gmaps": "https://maps.app.goo.gl/rJdL5eobWrNAzaVU7",
     "lat": -7.870251,
@@ -3067,14 +3107,14 @@
     "perkiraan": false,
     "sumber": "Database SPPG Kab. Ponorogo",
     "pm": {
-      "pmSatdikTotal": 1465,
-      "pmSiswa": 1260,
-      "pmGuruTendik": 205,
+      "pmSatdikTotal": 2772,
+      "pmSiswa": 2436,
+      "pmGuruTendik": 336,
       "pmSatdikKelompok": 5,
-      "pm3bTotal": 202,
-      "pmBusui": 37,
-      "pmBumil": 13,
-      "pmBalita": 152,
+      "pm3bTotal": 170,
+      "pmBusui": 29,
+      "pmBumil": 10,
+      "pmBalita": 131,
       "pm3bKelompok": 1
     },
     "detail": {
@@ -3105,7 +3145,8 @@
         "penjamahMakan": "BELUM PENGAJUAN",
         "bpjs": "BELUM PENGAJUAN",
         "dokKelengkapan": "https://drive.google.com/file/d/1xgTUIMJ9nN4w4WYcxPiX0PaqLMrNZIBS/view?usp=drive_link"
-      }
+      },
+      "pmAsOf": "Laporan harian 18 Agustus 2026"
     }
   },
   {
@@ -3166,7 +3207,7 @@
     "kecamatan": "Ponorogo",
     "desa": "SPPG Ponorogo Kauman Kauman",
     "status": "operasional",
-    "porsi": 2538,
+    "porsi": 2837,
     "alamat": "Jl. Imam Bonjol No. 103 Ponorogo, Kauman, Kec. Kauman, Kab. Ponorogo, Jawa Timur",
     "gmaps": "https://maps.app.goo.gl/RWGHD6fbJcjg1b2b9",
     "lat": -7.872167,
@@ -3174,14 +3215,14 @@
     "perkiraan": false,
     "sumber": "Database SPPG Kab. Ponorogo",
     "pm": {
-      "pmSatdikTotal": 2272,
-      "pmSiswa": 2029,
-      "pmGuruTendik": 243,
+      "pmSatdikTotal": 2589,
+      "pmSiswa": 2276,
+      "pmGuruTendik": 313,
       "pmSatdikKelompok": 16,
-      "pm3bTotal": 266,
-      "pmBusui": 77,
-      "pmBumil": 16,
-      "pmBalita": 173,
+      "pm3bTotal": 248,
+      "pmBusui": 76,
+      "pmBumil": 15,
+      "pmBalita": 157,
       "pm3bKelompok": 2
     },
     "detail": {
@@ -3211,7 +3252,8 @@
         "penjamahMakan": "SUDAH",
         "bpjs": "SUDAH",
         "dokKelengkapan": "https://drive.google.com/drive/folders/1aKXLtcqMFyNrX45TZw5MmbKzZNbvkzRj"
-      }
+      },
+      "pmAsOf": "Laporan harian 26 Agustus 2026"
     }
   },
   {
@@ -3310,7 +3352,7 @@
     "kecamatan": "Pulung",
     "desa": "Singgahan",
     "status": "operasional",
-    "porsi": 2850,
+    "porsi": 2852,
     "alamat": "Putuk Suren, Singgahan, Kecamatan Pulung, Kabupaten Ponorogo, Jawa Timur",
     "gmaps": "https://maps.app.goo.gl/2DXqzmGyE8kpcV6y8",
     "lat": -7.874517,
@@ -3318,9 +3360,9 @@
     "perkiraan": false,
     "sumber": "Database SPPG Kab. Ponorogo",
     "pm": {
-      "pmSatdikTotal": 2265,
-      "pmSiswa": 2015,
-      "pmGuruTendik": 250,
+      "pmSatdikTotal": 2267,
+      "pmSiswa": 2016,
+      "pmGuruTendik": 251,
       "pmSatdikKelompok": 35,
       "pm3bTotal": 585,
       "pmBusui": 158,
@@ -3357,7 +3399,8 @@
         "penjamahMakan": "SUDAH",
         "bpjs": "PROSES",
         "dokKelengkapan": "https://drive.google.com/drive/folders/1GgWJ4LTBbygYTRPdM1yo3iV0IxbZgIDU?usp=sharing"
-      }
+      },
+      "pmAsOf": "Laporan harian 12 Agustus 2026"
     }
   },
   {
@@ -3409,7 +3452,7 @@
     "kecamatan": "Sambit",
     "desa": "Bulu",
     "status": "operasional",
-    "porsi": 3478,
+    "porsi": 3105,
     "alamat": "Dukuh Bulu II, Rt. 002, Rw. 002, Bulu, Kec. Sambit, Kab. Ponorogo, Jawa Timur",
     "gmaps": "https://maps.app.goo.gl/4w2iuozMTFqGdqiY6?g_st=ic",
     "lat": -7.960624,
@@ -3417,14 +3460,14 @@
     "perkiraan": false,
     "sumber": "Database SPPG Kab. Ponorogo",
     "pm": {
-      "pmSatdikTotal": 2751,
-      "pmSiswa": 2426,
+      "pmSatdikTotal": 2447,
+      "pmSiswa": 2122,
       "pmGuruTendik": 325,
       "pmSatdikKelompok": 38,
-      "pm3bTotal": 727,
-      "pmBusui": 120,
-      "pmBumil": 64,
-      "pmBalita": 543,
+      "pm3bTotal": 658,
+      "pmBusui": 104,
+      "pmBumil": 68,
+      "pmBalita": 486,
       "pm3bKelompok": 8
     },
     "detail": {
@@ -3457,7 +3500,8 @@
         "penjamahMakan": "SUDAH",
         "bpjs": "SUDAH",
         "dokKelengkapan": "https://drive.google.com/drive/folders/1BAFrSaHbfOVscMjX2NqmmtEQELqa_ZJN"
-      }
+      },
+      "pmAsOf": "Laporan harian 21 Agustus 2026"
     }
   },
   {
@@ -3466,7 +3510,7 @@
     "kecamatan": "Sampung",
     "desa": "Gelangkulon",
     "status": "operasional",
-    "porsi": 2460,
+    "porsi": 2465,
     "alamat": "DUKUH  KROYO, RT/RW 03/03 DESA GELANGKULON KECAMATAN SAMPUNG KABUPATEN PONOROGO, Jawa Timur",
     "gmaps": "https://maps.app.goo.gl/U86LSCtfsrJR3ZWk8",
     "lat": -7.87345,
@@ -3474,14 +3518,14 @@
     "perkiraan": false,
     "sumber": "Database SPPG Kab. Ponorogo",
     "pm": {
-      "pmSatdikTotal": 2007,
-      "pmSiswa": 1769,
+      "pmSatdikTotal": 2009,
+      "pmSiswa": 1771,
       "pmGuruTendik": 238,
       "pmSatdikKelompok": 30,
-      "pm3bTotal": 453,
-      "pmBusui": 81,
-      "pmBumil": 36,
-      "pmBalita": 336,
+      "pm3bTotal": 456,
+      "pmBusui": 82,
+      "pmBumil": 37,
+      "pmBalita": 337,
       "pm3bKelompok": 5
     },
     "detail": {
@@ -3513,7 +3557,8 @@
         "penjamahMakan": "SUDAH",
         "bpjs": "SUDAH",
         "dokKelengkapan": "https://drive.google.com/drive/folders/1pq38V1sNXcwL_2w5r_G6B3nEQ7BqBDLT?usp=sharing"
-      }
+      },
+      "pmAsOf": "Laporan harian 26 Agustus 2026"
     }
   },
   {
@@ -3530,14 +3575,14 @@
     "perkiraan": false,
     "sumber": "Database SPPG Kab. Ponorogo",
     "pm": {
-      "pmSatdikTotal": 2096,
-      "pmSiswa": 1901,
-      "pmGuruTendik": 195,
+      "pmSatdikTotal": 2117,
+      "pmSiswa": 1914,
+      "pmGuruTendik": 203,
       "pmSatdikKelompok": 13,
-      "pm3bTotal": 311,
-      "pmBusui": 66,
-      "pmBumil": 31,
-      "pmBalita": 214,
+      "pm3bTotal": 290,
+      "pmBusui": 57,
+      "pmBumil": 33,
+      "pmBalita": 200,
       "pm3bKelompok": 3
     },
     "detail": {
@@ -3571,7 +3616,8 @@
         "penjamahMakan": "SUDAH",
         "bpjs": "SUDAH",
         "dokKelengkapan": "https://drive.google.com/drive/folders/1eXqxVVe49LqdCmF2OvxOp0PCLXYmPx9Q?hl=ID"
-      }
+      },
+      "pmAsOf": "Laporan harian 3 Agustus 2026"
     }
   },
   {
@@ -3580,7 +3626,7 @@
     "kecamatan": "Sampung",
     "desa": "Kunti",
     "status": "operasional",
-    "porsi": 2216,
+    "porsi": 2282,
     "alamat": "Kunti, Kecamatan Sampung, Kabupaten Ponorogo, Jawa Timur",
     "gmaps": "https://maps.app.goo.gl/hbkyNACeQTzv8bC6A",
     "lat": -7.84298,
@@ -3588,14 +3634,14 @@
     "perkiraan": false,
     "sumber": "Database SPPG Kab. Ponorogo",
     "pm": {
-      "pmSatdikTotal": 1888,
-      "pmSiswa": 1626,
-      "pmGuruTendik": 262,
+      "pmSatdikTotal": 1964,
+      "pmSiswa": 1698,
+      "pmGuruTendik": 266,
       "pmSatdikKelompok": 30,
-      "pm3bTotal": 328,
-      "pmBusui": 95,
-      "pmBumil": 30,
-      "pmBalita": 203,
+      "pm3bTotal": 318,
+      "pmBusui": 93,
+      "pmBumil": 34,
+      "pmBalita": 191,
       "pm3bKelompok": 12
     },
     "detail": {
@@ -3625,7 +3671,8 @@
         "penjamahMakan": "SUDAH",
         "bpjs": "SUDAH",
         "dokKelengkapan": "https://drive.google.com/file/d/1keaIADHfUC69EQT36nRZA9Mcjedxmtq0/view?usp=sharing"
-      }
+      },
+      "pmAsOf": "Laporan harian 27 Agustus 2026"
     }
   },
   {
@@ -3634,7 +3681,7 @@
     "kecamatan": "Sawoo",
     "desa": "Grogol",
     "status": "operasional",
-    "porsi": 2208,
+    "porsi": 2205,
     "alamat": "Desa Grogol, Kecamatan Sawoo, Kabupaten Ponorogo, Jawa Timur",
     "gmaps": "https://maps.app.goo.gl/kE6s8VC5wctRKRU87",
     "lat": -7.969103,
@@ -3642,14 +3689,14 @@
     "perkiraan": false,
     "sumber": "Database SPPG Kab. Ponorogo",
     "pm": {
-      "pmSatdikTotal": 1863,
-      "pmSiswa": 1664,
-      "pmGuruTendik": 199,
+      "pmSatdikTotal": 1872,
+      "pmSiswa": 1670,
+      "pmGuruTendik": 202,
       "pmSatdikKelompok": 21,
-      "pm3bTotal": 345,
-      "pmBusui": 66,
-      "pmBumil": 36,
-      "pmBalita": 243,
+      "pm3bTotal": 333,
+      "pmBusui": 63,
+      "pmBumil": 45,
+      "pmBalita": 225,
       "pm3bKelompok": 8
     },
     "detail": {
@@ -3679,7 +3726,8 @@
         "penjamahMakan": "SUDAH",
         "bpjs": "SUDAH",
         "dokKelengkapan": "https://drive.google.com/drive/folders/1AoAKEu4B1NE6zSKCt1Q4EmlzgZlFPUPa?usp=drive_link"
-      }
+      },
+      "pmAsOf": "Laporan harian 26 Agustus 2026"
     }
   },
   {
@@ -3688,7 +3736,7 @@
     "kecamatan": "Sawoo",
     "desa": "Ketro",
     "status": "operasional",
-    "porsi": 1902,
+    "porsi": 2133,
     "alamat": "Jl. Tanggul Asri, Rt 001/Rw 001 Ngrenak, Ketro, Kecamatan Sawoo, Kabupaten Ponorogo, Jawa Timur",
     "gmaps": "https://maps.app.goo.gl/oitXAxEmK3QPbQwr9",
     "lat": -7.955811,
@@ -3696,14 +3744,14 @@
     "perkiraan": false,
     "sumber": "Database SPPG Kab. Ponorogo",
     "pm": {
-      "pmSatdikTotal": 1615,
-      "pmSiswa": 1418,
-      "pmGuruTendik": 197,
+      "pmSatdikTotal": 1849,
+      "pmSiswa": 1613,
+      "pmGuruTendik": 236,
       "pmSatdikKelompok": 27,
-      "pm3bTotal": 287,
-      "pmBusui": 45,
-      "pmBumil": 30,
-      "pmBalita": 212,
+      "pm3bTotal": 284,
+      "pmBusui": 0,
+      "pmBumil": 0,
+      "pmBalita": 284,
       "pm3bKelompok": 4
     },
     "detail": {
@@ -3733,7 +3781,8 @@
         "penjamahMakan": "SUDAH",
         "bpjs": "SUDAH",
         "dokKelengkapan": "https://drive.google.com/drive/folders/1406b6iHonX4GuLmoa9QBZ9x14TVQ3nqW?usp=sharing"
-      }
+      },
+      "pmAsOf": "Laporan harian 2 Agustus 2026"
     }
   },
   {
@@ -3854,7 +3903,7 @@
     "kecamatan": "Siman",
     "desa": "Demangan",
     "status": "operasional",
-    "porsi": 2593,
+    "porsi": 2570,
     "alamat": "Jl. Ki Ageng Kutu, Siman (Demangan), Kec. Siman, Kab. Ponorogo, Jawa Timur",
     "gmaps": "https://maps.app.goo.gl/woLjHWLRDHza7Z11A",
     "lat": -7.874642,
@@ -3862,14 +3911,14 @@
     "perkiraan": false,
     "sumber": "Database SPPG Kab. Ponorogo",
     "pm": {
-      "pmSatdikTotal": 2101,
-      "pmSiswa": 1850,
-      "pmGuruTendik": 251,
+      "pmSatdikTotal": 2059,
+      "pmSiswa": 1842,
+      "pmGuruTendik": 217,
       "pmSatdikKelompok": 17,
-      "pm3bTotal": 492,
-      "pmBusui": 98,
-      "pmBumil": 37,
-      "pmBalita": 357,
+      "pm3bTotal": 511,
+      "pmBusui": 122,
+      "pmBumil": 45,
+      "pmBalita": 344,
       "pm3bKelompok": 4
     },
     "detail": {
@@ -3900,7 +3949,8 @@
         "penjamahMakan": "SUDAH",
         "bpjs": "SUDAH",
         "dokKelengkapan": "https://drive.google.com/drive/folders/1Vy6mLRo201R17CyO3VMFU26v1s069J-4"
-      }
+      },
+      "pmAsOf": "Laporan harian 3 Agustus 2026"
     }
   },
   {
@@ -3909,7 +3959,7 @@
     "kecamatan": "Siman",
     "desa": "Patihan Kidul",
     "status": "operasional",
-    "porsi": 2543,
+    "porsi": 2548,
     "alamat": "Jl. Godang 43 Godang, Patihan Kidul, Kecamatan Siman, Kab. Ponorogo, Jawa Timur",
     "gmaps": "https://maps.app.goo.gl/8YSKkX7d9Q3Tgzs6A",
     "lat": -7.873619,
@@ -3917,14 +3967,14 @@
     "perkiraan": false,
     "sumber": "Database SPPG Kab. Ponorogo",
     "pm": {
-      "pmSatdikTotal": 2277,
-      "pmSiswa": 2048,
-      "pmGuruTendik": 229,
+      "pmSatdikTotal": 2285,
+      "pmSiswa": 2055,
+      "pmGuruTendik": 230,
       "pmSatdikKelompok": 30,
-      "pm3bTotal": 266,
-      "pmBusui": 60,
+      "pm3bTotal": 263,
+      "pmBusui": 59,
       "pmBumil": 19,
-      "pmBalita": 187,
+      "pmBalita": 185,
       "pm3bKelompok": 3
     },
     "detail": {
@@ -3955,7 +4005,8 @@
         "penjamahMakan": "SUDAH",
         "bpjs": "SUDAH",
         "dokKelengkapan": "https://drive.google.com/drive/folders/1YE95As6u9i8vbp__Q_wzPdhq1Y62Pjyc?usp=sharing"
-      }
+      },
+      "pmAsOf": "Laporan harian 18 Agustus 2026"
     }
   },
   {
@@ -4009,7 +4060,8 @@
         "haccp": "BELUM PENGAJUAN",
         "penjamahMakan": "SUDAH",
         "bpjs": "SUDAH"
-      }
+      },
+      "pmAsOf": "Laporan harian 9 Agustus 2026"
     }
   },
   {
@@ -4127,7 +4179,7 @@
     "kecamatan": "Slahung",
     "desa": "Slahung",
     "status": "operasional",
-    "porsi": 3989,
+    "porsi": 2670,
     "alamat": "Ds. Slahung, Kec. Slahung, Kab. Ponorogo, Jawa Timur",
     "gmaps": "https://maps.app.goo.gl/SgMd4nLvFQLAyzeM6",
     "lat": -7.990972,
@@ -4135,14 +4187,14 @@
     "perkiraan": true,
     "sumber": "Database SPPG Kab. Ponorogo",
     "pm": {
-      "pmSatdikTotal": 3688,
-      "pmSiswa": 3306,
-      "pmGuruTendik": 382,
+      "pmSatdikTotal": 2398,
+      "pmSiswa": 2107,
+      "pmGuruTendik": 291,
       "pmSatdikKelompok": 36,
-      "pm3bTotal": 301,
-      "pmBusui": 58,
-      "pmBumil": 26,
-      "pmBalita": 217,
+      "pm3bTotal": 272,
+      "pmBusui": 25,
+      "pmBumil": 62,
+      "pmBalita": 185,
       "pm3bKelompok": 6
     },
     "detail": {
@@ -4172,7 +4224,8 @@
         "haccp": "BELUM PENGAJUAN",
         "penjamahMakan": "SUDAH",
         "bpjs": "SUDAH"
-      }
+      },
+      "pmAsOf": "Laporan harian 3 Agustus 2026"
     }
   },
   {
@@ -4236,7 +4289,7 @@
     "kecamatan": "Sooko",
     "desa": "Sooko",
     "status": "operasional",
-    "porsi": 2668,
+    "porsi": 2469,
     "alamat": "Jl. Sooko Pulung, Kec. Sooko Ponorogo, Kab. Ponorogo, Jawa Timur",
     "gmaps": "https://maps.app.goo.gl/yCBec2pbWUX1QCwP9",
     "lat": -7.908488,
@@ -4244,14 +4297,14 @@
     "perkiraan": false,
     "sumber": "Database SPPG Kab. Ponorogo",
     "pm": {
-      "pmSatdikTotal": 2342,
-      "pmSiswa": 2157,
-      "pmGuruTendik": 185,
+      "pmSatdikTotal": 2160,
+      "pmSiswa": 1899,
+      "pmGuruTendik": 261,
       "pmSatdikKelompok": 29,
-      "pm3bTotal": 326,
-      "pmBusui": 65,
+      "pm3bTotal": 309,
+      "pmBusui": 69,
       "pmBumil": 0,
-      "pmBalita": 261,
+      "pmBalita": 240,
       "pm3bKelompok": 66
     },
     "detail": {
@@ -4282,7 +4335,8 @@
         "penjamahMakan": "SUDAH",
         "bpjs": "SUDAH",
         "dokKelengkapan": "https://drive.google.com/drive/folders/1vtTcbltbW-TAdy-g4zmSA-PgJgWDtPqt"
-      }
+      },
+      "pmAsOf": "Laporan harian 11 Agustus 2026"
     }
   },
   {
@@ -4291,7 +4345,7 @@
     "kecamatan": "Sukorejo",
     "desa": "Gelanglor",
     "status": "operasional",
-    "porsi": 2972,
+    "porsi": 3023,
     "alamat": "Gelang Lor, Kec. Sukorejo, Kab. Ponorogo,  Jawa Timur",
     "gmaps": "https://maps.app.goo.gl/cyYaQqh8nsFHocez6",
     "lat": -7.81803,
@@ -4299,14 +4353,14 @@
     "perkiraan": false,
     "sumber": "Database SPPG Kab. Ponorogo",
     "pm": {
-      "pmSatdikTotal": 2795,
-      "pmSiswa": 2458,
-      "pmGuruTendik": 337,
+      "pmSatdikTotal": 2843,
+      "pmSiswa": 2462,
+      "pmGuruTendik": 381,
       "pmSatdikKelompok": 29,
-      "pm3bTotal": 177,
-      "pmBusui": 38,
-      "pmBumil": 14,
-      "pmBalita": 125,
+      "pm3bTotal": 180,
+      "pmBusui": 43,
+      "pmBumil": 17,
+      "pmBalita": 120,
       "pm3bKelompok": 5
     },
     "detail": {
@@ -4338,7 +4392,8 @@
         "penjamahMakan": "SUDAH",
         "bpjs": "SUDAH",
         "dokKelengkapan": "https://drive.google.com/drive/folders/101e0i1fuHvalydb8B0ETEcTYKwy7T1lI?usp=sharing"
-      }
+      },
+      "pmAsOf": "Laporan harian 28 Agustus 2026"
     }
   },
   {
@@ -4403,7 +4458,7 @@
     "kecamatan": "Sukorejo",
     "desa": "Serangan",
     "status": "operasional",
-    "porsi": 2770,
+    "porsi": 2769,
     "alamat": "Jl. Danyang, Serangan, Kec. Sukorejo, Kab. Ponorogo, Jawa Timur",
     "gmaps": "https://maps.app.goo.gl/19ptTMteBKyZ7gtm7",
     "lat": -7.792881,
@@ -4411,8 +4466,8 @@
     "perkiraan": false,
     "sumber": "Database SPPG Kab. Ponorogo",
     "pm": {
-      "pmSatdikTotal": 2651,
-      "pmSiswa": 2318,
+      "pmSatdikTotal": 2650,
+      "pmSiswa": 2317,
       "pmGuruTendik": 333,
       "pmSatdikKelompok": 43,
       "pm3bTotal": 119,
@@ -4448,7 +4503,8 @@
         "haccp": "BELUM PENGAJUAN",
         "penjamahMakan": "SUDAH",
         "bpjs": "SUDAH"
-      }
+      },
+      "pmAsOf": "Laporan harian 3 Agustus 2026"
     }
   },
   {

@@ -91,8 +91,15 @@ export default function SppgDetailCard({
 
       {/* Rincian penerima manfaat */}
       <div className="overflow-hidden rounded-lg border border-slate-200">
-        <div className="bg-slate-50 px-3 py-1.5 text-xs font-semibold text-slate-600">
-          Penerima manfaat (PM)
+        <div className="flex items-center justify-between gap-2 bg-slate-50 px-3 py-1.5">
+          <span className="text-xs font-semibold text-slate-600">
+            Penerima manfaat (PM)
+          </span>
+          {d.pmAsOf && (
+            <span className="rounded-full bg-emerald-50 px-2 py-0.5 text-[10px] font-medium text-emerald-700">
+              {d.pmAsOf}
+            </span>
+          )}
         </div>
         <table className="w-full text-xs">
           <tbody>

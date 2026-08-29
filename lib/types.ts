@@ -71,6 +71,8 @@ export interface SppgDetail {
   slhs?: boolean;
   /** Status & nomor perizinan/sertifikasi lengkap. */
   perijinan?: SppgPerijinan;
+  /** Sumber/tanggal angka PM, mis. "Laporan harian 31 Agustus 2026". */
+  pmAsOf?: string;
 }
 
 export interface Sppg {
