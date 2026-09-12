@@ -73,6 +73,12 @@ export interface SppgDetail {
   perijinan?: SppgPerijinan;
   /** Sumber/tanggal angka PM, mis. "Laporan harian 31 Agustus 2026". */
   pmAsOf?: string;
+  /** Tautan akun Instagram SPPG. */
+  instagram?: string;
+  /** Tautan akun TikTok SPPG. */
+  tiktok?: string;
+  /** Rincian penerima per jenjang sekolah/instansi (nama jenjang → jumlah). */
+  jenjang?: Record<string, number>;
 }
 
 export interface Sppg {
