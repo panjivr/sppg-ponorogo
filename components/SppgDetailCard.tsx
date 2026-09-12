@@ -137,6 +137,28 @@ export default function SppgDetailCard({
         </table>
       </div>
 
+      {/* Jenjang penerima (sekolah/instansi) */}
+      {d.jenjang && Object.keys(d.jenjang).length > 0 && (
+        <div className="rounded-lg border border-slate-200 p-2.5">
+          <div className="mb-1.5 text-xs font-semibold text-slate-600">
+            Jenjang sekolah/instansi penerima
+          </div>
+          <div className="flex flex-wrap gap-1">
+            {Object.entries(d.jenjang)
+              .sort((a, b) => b[1] - a[1])
+              .map(([k, v]) => (
+                <span
+                  key={k}
+                  className="inline-flex items-center gap-1 rounded-full bg-slate-100 px-2 py-0.5 text-[11px] text-slate-700"
+                >
+                  {k}
+                  <span className="font-semibold text-brand">{fmt(v)}</span>
+                </span>
+              ))}
+          </div>
+        </div>
+      )}
+
       {/* Kontak & pengelola */}
       <div className="space-y-1.5">
         <Contact
@@ -253,6 +275,26 @@ export default function SppgDetailCard({
             className="inline-flex items-center gap-1 rounded-md bg-green-50 px-2.5 py-1 text-xs font-medium text-green-700 hover:bg-green-100"
           >
             💬 WhatsApp Ka SPPG
+          </a>
+        )}
+        {d.instagram && (
+          <a
+            href={d.instagram}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-1 rounded-md bg-pink-50 px-2.5 py-1 text-xs font-medium text-pink-700 hover:bg-pink-100"
+          >
+            📸 Instagram
+          </a>
+        )}
+        {d.tiktok && (
+          <a
+            href={d.tiktok}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-1 rounded-md bg-slate-100 px-2.5 py-1 text-xs font-medium text-slate-800 hover:bg-slate-200"
+          >
+            🎵 TikTok
           </a>
         )}
       </div>
