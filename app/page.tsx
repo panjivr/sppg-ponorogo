@@ -1,272 +1,287 @@
-"use client";
-
-import { useEffect, useMemo, useState } from "react";
-import dynamic from "next/dynamic";
 import Link from "next/link";
-import type { Sppg, CandidateRuko } from "@/lib/types";
-import type { LatLng } from "@/lib/geo";
+import { NavSpacer } from "@/components/Nav";
+import { Card, Stat, StatusBreakdown } from "@/components/ui";
 import {
-  getAllSppg,
-  addSppg,
-  updateSppg,
-  deleteSppg,
-  getRuko,
-  saveRuko,
-} from "@/lib/storage";
-import ControlPanel from "@/components/ControlPanel";
-import RukoManager from "@/components/RukoManager";
-import SppgForm from "@/components/SppgForm";
+  SPPG_SEED,
+  daftarKecamatan,
+  hitungPasar,
+  ringkasKecamatan,
+  ringkasStatus,
+} from "@/lib/data";
+import { ASUMSI, BISNIS, waLink } from "@/lib/config";
+import { num, persen, rupiahRingkas } from "@/lib/format";
 
-const MapView = dynamic(() => import("@/components/MapView"), {
-  ssr: false,
-  loading: () => (
-    <div className="flex h-full items-center justify-center bg-slate-200 text-slate-500">
-      Memuat peta…
-    </div>
-  ),
-});
+export const metadata = {
+  title:
+    "Peta SPPG Ponorogo — 85 Dapur MBG, Analisis Lokasi Ruko Supplier",
+  description:
+    "Basis data 85 dapur SPPG (Makan Bergizi Gratis) di 21 kecamatan Kabupaten Ponorogo: status, penerima manfaat, koordinat. Lengkap dengan analisis lokasi ruko supplier & ukuran pasar.",
+};
 
-type Tab = "analisis" | "ruko" | "data";
-type PlacingMode = "none" | "ruko" | "sppg";
-
-export default function Home() {
-  const [sppgList, setSppgList] = useState<Sppg[]>([]);
-  const [rukoList, setRukoList] = useState<CandidateRuko[]>([]);
-  const [selectedRukoId, setSelectedRukoId] = useState<string | null>(null);
-  const [radiusKm, setRadiusKm] = useState(3);
-  const [showHeatmap, setShowHeatmap] = useState(false);
-  const [showRekomendasi, setShowRekomendasi] = useState(false);
-  const [tab, setTab] = useState<Tab>("analisis");
-  const [placing, setPlacing] = useState<PlacingMode>("none");
-  const [editingSppg, setEditingSppg] = useState<Sppg | null>(null);
-  const [showForm, setShowForm] = useState(false);
-  const [pickedCoord, setPickedCoord] = useState<LatLng | null>(null);
-
-  // muat data dari localStorage + seed setelah mount (hindari mismatch SSR)
-  useEffect(() => {
-    setSppgList(getAllSppg());
-    setRukoList(getRuko());
-  }, []);
-
-  function refreshSppg() {
-    setSppgList(getAllSppg());
-  }
-
-  function persistRuko(list: CandidateRuko[]) {
-    setRukoList(list);
-    saveRuko(list);
-  }
-
-  function handleMapClick(p: LatLng) {
-    if (placing === "ruko") {
-      const r: CandidateRuko = {
-        id: `ruko-${Date.now()}`,
-        nama: `Calon ruko ${rukoList.length + 1}`,
-        lat: p.lat,
-        lng: p.lng,
-        catatan: "",
-        radiusKm,
-        buka24Jam: true,
-        createdAt: Date.now(),
-      };
-      persistRuko([...rukoList, r]);
-      setSelectedRukoId(r.id);
-      setPlacing("none");
-      setTab("ruko");
-    } else if (placing === "sppg") {
-      setPickedCoord(p);
-      setPlacing("none");
-    }
-  }
-
-  function handleSaveSppg(s: Sppg) {
-    if (editingSppg) updateSppg(s);
-    else addSppg(s);
-    refreshSppg();
-    setShowForm(false);
-    setEditingSppg(null);
-    setPickedCoord(null);
-  }
-
-  function handleDeleteSppg(id: string) {
-    deleteSppg(id);
-    refreshSppg();
-    setShowForm(false);
-    setEditingSppg(null);
-  }
-
-  const placingHint = useMemo(() => {
-    if (placing === "ruko") return "Mode: klik peta untuk menaruh calon ruko";
-    if (placing === "sppg") return "Mode: klik peta untuk memilih koordinat SPPG";
-    return null;
-  }, [placing]);
+export default function Beranda() {
+  const list = SPPG_SEED;
+  const pasar = hitungPasar(list);
+  const status = ringkasStatus(list);
+  const kec = ringkasKecamatan(list);
+  const jumlahKec = daftarKecamatan(list).length;
+  const operasional = status.find((s) => s.status === "operasional")!;
+  const koordinatPasti = list.filter((s) => !s.perkiraan).length;
 
   return (
-    <main className="flex h-screen flex-col md:flex-row">
-      {/* Sidebar */}
-      <aside className="flex w-full flex-col border-b border-slate-200 bg-white md:h-full md:w-96 md:border-b-0 md:border-r">
-        <header className="flex items-center justify-between gap-2 bg-brand px-4 py-3 text-white">
-          <div>
-            <h1 className="text-base font-bold leading-tight">
-              Peta SPPG Ponorogo
-            </h1>
-            <p className="text-xs text-brand-light">
-              Analisis lokasi ruko supplier dapur MBG
-            </p>
-          </div>
-          <Link
-            href="/supplier"
-            className="shrink-0 rounded-full border border-white/40 px-3 py-1.5 text-xs font-medium hover:bg-white/10"
-          >
-            🏪 Katalog
-          </Link>
-        </header>
+    <>
+      {/* ---------------- Hero ---------------- */}
+      <section className="safe-x border-b border-hairline bg-surface">
+        <div className="mx-auto max-w-content px-4 py-10 sm:py-14 lg:py-20">
+          <p className="inline-flex items-center gap-2 rounded-full bg-brand-soft px-3 py-1 text-xs font-semibold text-brand">
+            <span aria-hidden="true">📍</span> Kabupaten Ponorogo · 21 kecamatan
+          </p>
 
-        <nav className="flex border-b border-slate-200 text-sm">
-          {(
-            [
-              ["analisis", "Analisis"],
-              ["ruko", "Calon Ruko"],
-              ["data", "Data SPPG"],
-            ] as [Tab, string][]
-          ).map(([id, label]) => (
-            <button
-              key={id}
-              onClick={() => setTab(id)}
-              className={`flex-1 px-2 py-2 ${
-                tab === id
-                  ? "border-b-2 border-brand font-semibold text-brand"
-                  : "text-slate-500"
-              }`}
+          <h1 className="mt-4 max-w-3xl text-3xl font-bold leading-tight tracking-tight sm:text-4xl lg:text-5xl">
+            {num(pasar.porsiHarian)} porsi makan dimasak tiap hari di Ponorogo.
+            <span className="block text-brand">
+              Siapa yang memasok bahannya?
+            </span>
+          </h1>
+
+          <p className="mt-4 max-w-2xl text-base leading-relaxed text-ink2 sm:text-lg">
+            Program Makan Bergizi Gratis menjalankan{" "}
+            <strong className="text-ink">{operasional.jumlah} dapur SPPG</strong>{" "}
+            yang beroperasi di Ponorogo. Web ini memetakan seluruhnya,
+            menghitung ukuran pasarnya, dan membantu Anda menentukan{" "}
+            <strong className="text-ink">titik ruko supplier</strong> yang
+            paling strategis — termasuk keunggulan buka 24 jam, karena dapur MBG
+            bekerja pada malam hari.
+          </p>
+
+          <div className="mt-6 flex flex-wrap gap-3">
+            <Link
+              href="/peta"
+              className="tap inline-flex items-center gap-2 rounded-lg bg-brand px-5 py-3 text-sm font-semibold text-white hover:opacity-90"
             >
-              {label}
-            </button>
-          ))}
-        </nav>
-
-        <div className="flex-1 overflow-y-auto p-4">
-          {tab === "analisis" && (
-            <ControlPanel
-              sppgList={sppgList}
-              radiusKm={radiusKm}
-              showHeatmap={showHeatmap}
-              showRekomendasi={showRekomendasi}
-              onRadiusChange={setRadiusKm}
-              onToggleHeatmap={setShowHeatmap}
-              onToggleRekomendasi={setShowRekomendasi}
-            />
-          )}
-
-          {tab === "ruko" && (
-            <RukoManager
-              rukoList={rukoList}
-              sppgList={sppgList}
-              selectedRukoId={selectedRukoId}
-              placingRuko={placing === "ruko"}
-              onStartPlacing={() => setPlacing("ruko")}
-              onSelect={(id) =>
-                setSelectedRukoId((cur) => (cur === id ? null : id))
-              }
-              onUpdate={(r) =>
-                persistRuko(rukoList.map((x) => (x.id === r.id ? r : x)))
-              }
-              onDelete={(id) => {
-                persistRuko(rukoList.filter((x) => x.id !== id));
-                if (selectedRukoId === id) setSelectedRukoId(null);
-              }}
-            />
-          )}
-
-          {tab === "data" && (
-            <div className="space-y-3">
-              {!showForm && (
-                <button
-                  onClick={() => {
-                    setEditingSppg(null);
-                    setPickedCoord(null);
-                    setShowForm(true);
-                  }}
-                  className="w-full rounded bg-brand px-2 py-1.5 text-sm font-semibold text-white hover:bg-brand-dark"
-                >
-                  + Tambah SPPG baru
-                </button>
-              )}
-
-              {showForm && (
-                <div className="rounded border border-slate-200 p-2">
-                  <SppgForm
-                    editing={editingSppg}
-                    pickedCoord={pickedCoord}
-                    onRequestPick={() => setPlacing("sppg")}
-                    onSave={handleSaveSppg}
-                    onDelete={handleDeleteSppg}
-                    onCancel={() => {
-                      setShowForm(false);
-                      setEditingSppg(null);
-                      setPickedCoord(null);
-                      setPlacing("none");
-                    }}
-                  />
-                </div>
-              )}
-
-              <ul className="space-y-1 text-sm">
-                {sppgList.map((s) => (
-                  <li
-                    key={s.id}
-                    className="flex items-center justify-between gap-2 rounded border border-slate-100 px-2 py-1"
-                  >
-                    <div className="min-w-0">
-                      <div className="truncate font-medium">{s.nama}</div>
-                      <div className="truncate text-xs text-slate-500">
-                        {s.kecamatan} · {s.status}
-                        {s.perkiraan && " · perkiraan"}
-                      </div>
-                    </div>
-                    <button
-                      onClick={() => {
-                        setEditingSppg(s);
-                        setPickedCoord(null);
-                        setShowForm(true);
-                      }}
-                      className="shrink-0 text-xs text-brand hover:underline"
-                    >
-                      edit
-                    </button>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          )}
-        </div>
-
-        <footer className="border-t border-slate-200 px-4 py-2 text-[10px] text-slate-400">
-          Data awal hasil riset sumber publik & sebagian koordinat perkiraan.
-          Peta © OpenStreetMap.
-        </footer>
-      </aside>
-
-      {/* Peta */}
-      <section className="relative h-72 flex-1 md:h-full">
-        {placingHint && (
-          <div className="pointer-events-none absolute left-1/2 top-3 z-[1000] -translate-x-1/2 rounded-full bg-blue-600 px-4 py-1.5 text-xs font-medium text-white shadow-lg">
-            {placingHint}
+              🗺️ Buka peta &amp; cari lokasi ruko
+            </Link>
+            <Link
+              href="/dashboard"
+              className="tap inline-flex items-center gap-2 rounded-lg border border-hairline px-5 py-3 text-sm font-semibold hover:bg-surface2"
+            >
+              📊 Lihat ukuran pasar
+            </Link>
           </div>
-        )}
-        <MapView
-          sppgList={sppgList}
-          rukoList={rukoList}
-          selectedRukoId={selectedRukoId}
-          radiusKm={radiusKm}
-          showHeatmap={showHeatmap}
-          showRekomendasi={showRekomendasi}
-          onMapClick={handleMapClick}
-          onSelectRuko={(id) => {
-            setSelectedRukoId(id);
-            setTab("ruko");
-          }}
-        />
+        </div>
       </section>
-    </main>
+
+      {/* ---------------- Angka kunci ---------------- */}
+      <section className="safe-x mx-auto max-w-content px-4 py-8 sm:py-10">
+        <h2 className="sr-only">Angka kunci</h2>
+        <div className="grid grid-cols-2 gap-3 lg:grid-cols-4">
+          <Stat
+            label="Dapur SPPG"
+            value={num(list.length)}
+            hint={`${operasional.jumlah} operasional · ${jumlahKec} kecamatan`}
+            tone="brand"
+          />
+          <Stat
+            label="Penerima manfaat"
+            value={num(pasar.porsiHarian)}
+            hint="porsi per hari dari dapur operasional"
+            tone="seqA"
+          />
+          <Stat
+            label="Belanja pangan"
+            value={rupiahRingkas(pasar.belanjaHarian)}
+            hint="per hari, asumsi Rp 10.000/porsi"
+            tone="seqB"
+          />
+          <Stat
+            label="Pasar bahan / tahun"
+            value={rupiahRingkas(pasar.pasarBahanTahunan)}
+            hint={`${persen(ASUMSI.porsiBelanjaBahan)} dari belanja, ${ASUMSI.hariPerTahun} hari`}
+          />
+        </div>
+        <p className="mt-3 text-xs leading-relaxed text-muted">
+          Semua angka dihitung dari data resmi dan asumsi yang terbuka — rumus
+          lengkapnya ada di{" "}
+          <Link href="/tentang" className="underline hover:text-ink2">
+            halaman metodologi
+          </Link>
+          . Angka ini perkiraan perencanaan, bukan jaminan pendapatan.
+        </p>
+      </section>
+
+      {/* ---------------- Peluang ---------------- */}
+      <section className="safe-x mx-auto max-w-content px-4 pb-8">
+        <Card className="border-brand/30 bg-brand-soft">
+          <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+            <div>
+              <h2 className="text-lg font-semibold">
+                Kalau Anda merebut {persen(ASUMSI.targetPangsaPasar)} pasar ini
+              </h2>
+              <p className="mt-1 text-sm text-ink2">
+                Potensi omzet ≈{" "}
+                <strong className="text-ink">
+                  {rupiahRingkas(pasar.proyeksiOmzet)}
+                </strong>{" "}
+                per tahun. Itu setara{" "}
+                {rupiahRingkas(pasar.proyeksiOmzet / 12)} per bulan.
+              </p>
+            </div>
+            <a
+              href={waLink(
+                `Halo ${BISNIS.nama}, saya ingin diskusi kerja sama pasokan bahan untuk dapur MBG di Ponorogo.`
+              )}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="tap inline-flex shrink-0 items-center justify-center gap-2 rounded-lg bg-brand px-5 py-3 text-sm font-semibold text-white hover:opacity-90"
+            >
+              💬 Diskusi via WhatsApp
+            </a>
+          </div>
+        </Card>
+      </section>
+
+      {/* ---------------- Status + kecamatan teratas ---------------- */}
+      <section className="safe-x mx-auto max-w-content px-4 pb-8">
+        <div className="grid gap-4 lg:grid-cols-2">
+          <Card>
+            <h2 className="text-base font-semibold">Status {list.length} dapur</h2>
+            <p className="mb-4 mt-1 text-sm text-ink2">
+              Hanya dapur operasional yang menghasilkan order hari ini.
+            </p>
+            <StatusBreakdown rows={status} total={list.length} />
+          </Card>
+
+          <Card>
+            <h2 className="text-base font-semibold">
+              5 kecamatan permintaan terbesar
+            </h2>
+            <p className="mb-4 mt-1 text-sm text-ink2">
+              Diurutkan dari jumlah penerima manfaat per hari.
+            </p>
+            <ol className="space-y-2.5">
+              {kec.slice(0, 5).map((k, i) => (
+                <li
+                  key={k.kecamatan}
+                  className="flex items-baseline justify-between gap-3 border-b border-hairline pb-2 last:border-0 last:pb-0"
+                >
+                  <span className="flex min-w-0 items-baseline gap-2">
+                    <span className="tabular-nums text-xs text-muted">
+                      {i + 1}.
+                    </span>
+                    <span className="truncate font-medium">{k.kecamatan}</span>
+                  </span>
+                  <span className="shrink-0 text-right text-sm">
+                    <span className="font-semibold tabular-nums">
+                      {num(k.porsi)}
+                    </span>
+                    <span className="block text-xs text-muted">
+                      {k.jumlah} dapur
+                    </span>
+                  </span>
+                </li>
+              ))}
+            </ol>
+            <Link
+              href="/dashboard"
+              className="mt-4 inline-block text-sm font-semibold text-brand hover:underline"
+            >
+              Lihat semua {jumlahKec} kecamatan →
+            </Link>
+          </Card>
+        </div>
+      </section>
+
+      {/* ---------------- Fitur ---------------- */}
+      <section className="safe-x mx-auto max-w-content px-4 pb-10">
+        <h2 className="mb-4 text-lg font-semibold">Isi web ini</h2>
+        <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+          {[
+            {
+              href: "/peta",
+              icon: "🗺️",
+              judul: "Peta interaktif",
+              teks: "85 titik berwarna per status, pencarian, filter kecamatan, heatmap permintaan, dan tautan Google Maps ke titik pasti.",
+            },
+            {
+              href: "/peta",
+              icon: "🏪",
+              judul: "Simulasi calon ruko",
+              teks: "Taruh titik ruko di peta, atur radius antar, langsung lihat berapa dapur terjangkau dan nilai belanjanya per tahun.",
+            },
+            {
+              href: "/dashboard",
+              icon: "📊",
+              judul: "Analisis pasar",
+              teks: "Ukuran pasar, sebaran per kecamatan, peringkat peluang, dan kandidat lokasi terbaik hasil skoring kisi.",
+            },
+            {
+              href: "/direktori",
+              icon: "📋",
+              judul: "Direktori & ekspor",
+              teks: "Tabel lengkap yang bisa dicari dan diurutkan, plus ekspor CSV dan GeoJSON untuk diolah di Excel atau QGIS.",
+            },
+          ].map((f) => (
+            <Link
+              key={f.judul}
+              href={f.href}
+              className="group rounded-xl border border-hairline bg-surface p-4 transition hover:border-brand/40 hover:bg-surface2"
+            >
+              <div aria-hidden="true" className="text-2xl">
+                {f.icon}
+              </div>
+              <h3 className="mt-2 font-semibold group-hover:text-brand">
+                {f.judul}
+              </h3>
+              <p className="mt-1 text-sm leading-relaxed text-ink2">{f.teks}</p>
+            </Link>
+          ))}
+        </div>
+      </section>
+
+      {/* ---------------- Kredibilitas data ---------------- */}
+      <section className="safe-x border-t border-hairline bg-surface">
+        <div className="mx-auto max-w-content px-4 py-8">
+          <h2 className="text-lg font-semibold">Dari mana datanya?</h2>
+          <p className="mt-2 max-w-3xl text-sm leading-relaxed text-ink2">
+            Sumber utama adalah <strong>Database SPPG Kabupaten Ponorogo</strong>{" "}
+            (data resmi pengelola program), dilengkapi penelusuran sumber publik
+            Pemkab Ponorogo, Polres, dan direktori SPPG.{" "}
+            <strong className="text-ink">{koordinatPasti} dari {list.length}</strong>{" "}
+            titik memakai koordinat GPS asli dari database; sisanya perkiraan
+            pusat wilayah dan ditandai jelas di peta.
+          </p>
+          <p className="mt-3 max-w-3xl text-sm leading-relaxed text-ink2">
+            Data pribadi pengelola (nomor telepon kepala SPPG, PIC yayasan,
+            rekening) <strong>tidak dipublikasikan</strong> di web ini.
+          </p>
+          <Link
+            href="/tentang"
+            className="mt-4 inline-block text-sm font-semibold text-brand hover:underline"
+          >
+            Baca metodologi &amp; batasan data →
+          </Link>
+        </div>
+      </section>
+
+      <footer className="safe-x safe-b mx-auto max-w-content px-4 py-8 text-xs leading-relaxed text-muted">
+        <p>
+          {BISNIS.nama} · Data SPPG Kab. Ponorogo · Peta ©{" "}
+          <a
+            href="https://www.openstreetmap.org/copyright"
+            className="underline"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            kontributor OpenStreetMap
+          </a>
+          .
+        </p>
+        <p className="mt-1">
+          Web ini alat bantu perencanaan independen, tidak berafiliasi dengan
+          Badan Gizi Nasional maupun Pemerintah Kabupaten Ponorogo.
+        </p>
+      </footer>
+
+      <NavSpacer />
+    </>
   );
 }

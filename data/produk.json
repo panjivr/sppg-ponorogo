@@ -3,47 +3,55 @@
     "kategori": "Sayur",
     "emoji": "🥬",
     "items": [
-      { "nama": "Bayam", "satuan": "ikat", "harga": "Rp 3.000" },
-      { "nama": "Kangkung", "satuan": "ikat", "harga": "Rp 3.000" },
-      { "nama": "Wortel", "satuan": "kg", "harga": "Rp 12.000" },
-      { "nama": "Kentang", "satuan": "kg", "harga": "Rp 14.000" },
-      { "nama": "Kol / Kubis", "satuan": "kg", "harga": "Rp 8.000" },
-      { "nama": "Tomat", "satuan": "kg", "harga": "Rp 10.000" },
-      { "nama": "Cabai rawit", "satuan": "kg", "harga": "Rp 45.000" },
-      { "nama": "Bawang merah", "satuan": "kg", "harga": "Rp 30.000" }
+      { "nama": "Bayam", "satuan": "ikat", "harga": 3000 },
+      { "nama": "Kangkung", "satuan": "ikat", "harga": 3000 },
+      { "nama": "Wortel", "satuan": "kg", "harga": 12000 },
+      { "nama": "Kentang", "satuan": "kg", "harga": 14000 },
+      { "nama": "Kol / Kubis", "satuan": "kg", "harga": 8000 },
+      { "nama": "Tomat", "satuan": "kg", "harga": 10000 },
+      { "nama": "Buncis", "satuan": "kg", "harga": 13000 },
+      { "nama": "Sawi hijau", "satuan": "kg", "harga": 9000 },
+      { "nama": "Cabai rawit", "satuan": "kg", "harga": 45000 },
+      { "nama": "Bawang merah", "satuan": "kg", "harga": 30000 },
+      { "nama": "Bawang putih", "satuan": "kg", "harga": 38000 }
     ]
   },
   {
     "kategori": "Buah",
     "emoji": "🍎",
     "items": [
-      { "nama": "Pisang", "satuan": "sisir", "harga": "Rp 18.000" },
-      { "nama": "Jeruk", "satuan": "kg", "harga": "Rp 20.000" },
-      { "nama": "Semangka", "satuan": "kg", "harga": "Rp 8.000" },
-      { "nama": "Pepaya", "satuan": "kg", "harga": "Rp 7.000" },
-      { "nama": "Melon", "satuan": "kg", "harga": "Rp 12.000" }
+      { "nama": "Pisang", "satuan": "sisir", "harga": 18000 },
+      { "nama": "Jeruk", "satuan": "kg", "harga": 20000 },
+      { "nama": "Semangka", "satuan": "kg", "harga": 8000 },
+      { "nama": "Pepaya", "satuan": "kg", "harga": 7000 },
+      { "nama": "Melon", "satuan": "kg", "harga": 12000 },
+      { "nama": "Apel", "satuan": "kg", "harga": 28000 }
     ]
   },
   {
     "kategori": "Protein",
     "emoji": "🍗",
     "items": [
-      { "nama": "Ayam potong", "satuan": "kg", "harga": "Rp 36.000" },
-      { "nama": "Telur ayam", "satuan": "kg", "harga": "Rp 28.000" },
-      { "nama": "Ikan lele", "satuan": "kg", "harga": "Rp 25.000" },
-      { "nama": "Tahu", "satuan": "papan", "harga": "Rp 8.000" },
-      { "nama": "Tempe", "satuan": "papan", "harga": "Rp 6.000" }
+      { "nama": "Ayam potong", "satuan": "kg", "harga": 36000 },
+      { "nama": "Telur ayam", "satuan": "kg", "harga": 28000 },
+      { "nama": "Ikan lele", "satuan": "kg", "harga": 25000 },
+      { "nama": "Ikan tongkol", "satuan": "kg", "harga": 32000 },
+      { "nama": "Daging sapi", "satuan": "kg", "harga": 135000 },
+      { "nama": "Tahu", "satuan": "papan", "harga": 8000 },
+      { "nama": "Tempe", "satuan": "papan", "harga": 6000 }
     ]
   },
   {
-    "kategori": "Sembako",
+    "kategori": "Sembako & bumbu",
     "emoji": "🍚",
     "items": [
-      { "nama": "Beras", "satuan": "kg", "harga": "Rp 13.000" },
-      { "nama": "Minyak goreng", "satuan": "liter", "harga": "Rp 17.000" },
-      { "nama": "Gula pasir", "satuan": "kg", "harga": "Rp 16.000" },
-      { "nama": "Garam", "satuan": "bungkus", "harga": "Rp 5.000" },
-      { "nama": "Bumbu dapur lengkap", "satuan": "paket", "harga": "Rp 25.000" }
+      { "nama": "Beras premium", "satuan": "kg", "harga": 13000 },
+      { "nama": "Minyak goreng", "satuan": "liter", "harga": 17000 },
+      { "nama": "Gula pasir", "satuan": "kg", "harga": 16000 },
+      { "nama": "Garam", "satuan": "bungkus", "harga": 5000 },
+      { "nama": "Tepung terigu", "satuan": "kg", "harga": 11000 },
+      { "nama": "Kecap manis", "satuan": "liter", "harga": 22000 },
+      { "nama": "Bumbu dapur lengkap", "satuan": "paket", "harga": 25000 }
     ]
   }
 ]
