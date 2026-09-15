@@ -14,12 +14,8 @@ import {
   type Filter,
 } from "@/lib/data";
 import { num } from "@/lib/format";
-import {
-  STATUS_META,
-  STATUS_ORDER,
-  type Sppg,
-  type SppgStatus,
-} from "@/lib/types";
+import { type Sppg, type SppgStatus } from "@/lib/types";
+import { STATUS_META, STATUS_ORDER } from "@/lib/sppgMeta";
 
 type SortKey = "nama" | "kecamatan" | "porsi" | "status";
 

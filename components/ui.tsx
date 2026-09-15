@@ -1,5 +1,6 @@
 import type { ReactNode } from "react";
-import { STATUS_META, type SppgStatus } from "@/lib/types";
+import type { SppgStatus } from "@/lib/types";
+import { STATUS_META } from "@/lib/sppgMeta";
 import { num } from "@/lib/format";
 
 /* ---------------- Wadah ---------------- */

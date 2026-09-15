@@ -1,51 +1,31 @@
-import { SPPG_SEED } from "./data";
+import {
+  getAllSppg,
+  addSppg,
+  updateSppg,
+  deleteSppg,
+  resetAll,
+  getRuko,
+  saveRuko,
+} from "./storage";
 import type { CandidateRuko, Sppg } from "./types";
 
 /**
  * ============================================================
- * LAPISAN PENYIMPANAN
+ * LAPISAN REPOSITORY
  * ============================================================
- * Semua akses data melewati antarmuka `SppgRepo` / `RukoRepo` di
- * bawah. Implementasi saat ini memakai localStorage browser
- * (data tersimpan per-perangkat, tidak dibagi antar pengguna).
+ * Pembungkus tipis di atas `lib/storage.ts` (localStorage), dengan
+ * antarmuka async agar halaman baru tidak terikat ke mekanisme
+ * penyimpanan. Halaman lama tetap boleh memakai `lib/storage.ts`
+ * secara langsung — keduanya membaca sumber yang sama.
  *
  * CARA PINDAH KE DATABASE (multi-pengguna):
  *   1. Buat API route, mis. `app/api/sppg/route.ts`, yang membaca/
  *      menulis ke Postgres/Supabase.
- *   2. Tulis adapter baru dengan bentuk yang sama seperti
- *      `localRepo` di bawah (fungsi async boleh — pemanggil sudah
- *      memakai await).
- *   3. Tukar nilai ekspor `sppgRepo` / `rukoRepo`.
- * Tidak ada komponen UI yang perlu diubah.
+ *   2. Ganti isi fungsi di `sppgRepo`/`rukoRepo` di bawah dengan
+ *      panggilan fetch ke route tersebut.
+ *   3. Selesai — pemanggil sudah memakai await, jadi tidak ada
+ *      komponen yang perlu diubah.
  */
-
-const K_USER = "sppg-ponorogo:sppg-user";
-const K_OVERRIDE = "sppg-ponorogo:sppg-override";
-const K_RUKO = "sppg-ponorogo:ruko";
-const K_THEME = "sppg-ponorogo:theme";
-
-const isBrowser = () => typeof window !== "undefined";
-
-function read<T>(key: string, fallback: T): T {
-  if (!isBrowser()) return fallback;
-  try {
-    const raw = window.localStorage.getItem(key);
-    return raw ? (JSON.parse(raw) as T) : fallback;
-  } catch {
-    return fallback;
-  }
-}
-
-function write<T>(key: string, value: T): void {
-  if (!isBrowser()) return;
-  try {
-    window.localStorage.setItem(key, JSON.stringify(value));
-  } catch {
-    /* kuota penuh / mode privat — diabaikan, aplikasi tetap jalan */
-  }
-}
-
-type OverrideMap = Record<string, Partial<Sppg>>;
 
 export interface SppgRepo {
   all(): Promise<Sppg[]>;
@@ -62,84 +42,57 @@ export interface RukoRepo {
 
 export const sppgRepo: SppgRepo = {
   async all() {
-    const over = read<OverrideMap>(K_OVERRIDE, {});
-    const extra = read<Sppg[]>(K_USER, []);
-    const base = SPPG_SEED.map((s) =>
-      over[s.id] ? { ...s, ...over[s.id] } : s
-    );
-    return [...base, ...extra];
+    return getAllSppg();
   },
-
   async add(s) {
-    const extra = read<Sppg[]>(K_USER, []);
-    extra.push({ ...s, buatanUser: true });
-    write(K_USER, extra);
+    addSppg(s);
   },
-
   async update(s) {
-    if (s.buatanUser) {
-      const extra = read<Sppg[]>(K_USER, []);
-      const i = extra.findIndex((x) => x.id === s.id);
-      if (i >= 0) extra[i] = s;
-      write(K_USER, extra);
-      return;
-    }
-    // Titik dari database resmi tidak ditimpa — koreksi disimpan terpisah
-    // sebagai "override", sehingga data asli selalu bisa dipulihkan.
-    const over = read<OverrideMap>(K_OVERRIDE, {});
-    over[s.id] = {
-      nama: s.nama,
-      alamat: s.alamat,
-      kecamatan: s.kecamatan,
-      desa: s.desa,
-      lat: s.lat,
-      lng: s.lng,
-      status: s.status,
-      porsi: s.porsi,
-      perkiraan: s.perkiraan,
-    };
-    write(K_OVERRIDE, over);
+    updateSppg(s);
   },
-
   async remove(id) {
-    write(
-      K_USER,
-      read<Sppg[]>(K_USER, []).filter((x) => x.id !== id)
-    );
+    deleteSppg(id);
   },
-
-  /** Buang semua koreksi & tambahan lokal, kembali ke data resmi. */
   async reset() {
-    if (!isBrowser()) return;
-    window.localStorage.removeItem(K_USER);
-    window.localStorage.removeItem(K_OVERRIDE);
+    resetAll();
   },
 };
 
 export const rukoRepo: RukoRepo = {
   async all() {
-    return read<CandidateRuko[]>(K_RUKO, []);
+    return getRuko();
   },
   async saveAll(list) {
-    write(K_RUKO, list);
+    saveRuko(list);
   },
 };
 
 /* ---------------- Tema ---------------- */
 
+const K_THEME = "sppg-ponorogo:theme";
 export type Theme = "light" | "dark" | "system";
 
 export function getTheme(): Theme {
-  return read<Theme>(K_THEME, "system");
+  if (typeof window === "undefined") return "system";
+  try {
+    const raw = window.localStorage.getItem(K_THEME);
+    return raw ? (JSON.parse(raw) as Theme) : "system";
+  } catch {
+    return "system";
+  }
 }
 
 export function setTheme(t: Theme): void {
-  write(K_THEME, t);
+  try {
+    window.localStorage.setItem(K_THEME, JSON.stringify(t));
+  } catch {
+    /* mode privat — abaikan */
+  }
   applyTheme(t);
 }
 
 export function applyTheme(t: Theme): void {
-  if (!isBrowser()) return;
+  if (typeof document === "undefined") return;
   const el = document.documentElement;
   if (t === "system") el.removeAttribute("data-theme");
   else el.setAttribute("data-theme", t);

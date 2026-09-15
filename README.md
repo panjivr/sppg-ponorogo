@@ -37,6 +37,8 @@ dijelaskan di halaman `/tentang`.
 | `/direktori` | Tabel lengkap + ekspor **CSV** & **GeoJSON** |
 | `/supplier` | Katalog bahan + keranjang → checkout WhatsApp terperinci |
 | `/tentang` | Metodologi, sumber data, asumsi, batasan, privasi |
+| `/admin` | Editor data SPPG & pasar (koreksi, impor massal) |
+| `/blast` | Penyusun pesan WhatsApp massal untuk prospek dapur |
 
 Plus `/sitemap.xml`, `/robots.txt`, `/manifest.webmanifest`.
 
@@ -62,14 +64,15 @@ Plus `/sitemap.xml`, `/robots.txt`, `/manifest.webmanifest`.
 iPhone (390×844), Android (412×915), iPad (820×1180), desktop (1440×900).
 Nol overflow horizontal di seluruh halaman.
 
-- Layout mobile-first: peta layar penuh + **bottom sheet** yang bisa ditarik
-  (3 posisi kunci); sidebar pada tablet & desktop.
+- Layout mobile-first: di HP peta tampil lebih dulu dengan tinggi lega
+  (`48dvh`, sebelumnya dipatok 288 px) lalu panel mengalir di bawahnya;
+  sidebar tetap di samping pada tablet & desktop.
 - **Safe-area iOS** (`env(safe-area-inset-*)` + `viewport-fit=cover`) sehingga
   aman dari notch dan home indicator.
 - `100dvh` agar tinggi layar tidak salah saat toolbar Safari muncul/hilang.
 - Target sentuh ≥ 44px (WCAG 2.5.5). Zoom pengguna **tidak** dikunci.
-- Bottom sheet melaporkan tinggi tertutupnya ke peta, sehingga `fitBounds`
-  tidak menyembunyikan marker di balik panel.
+- Peta otomatis merapat ke seluruh titik saat dibuka (`fitBounds`), jadi
+  85 dapur langsung terlihat tanpa zoom manual.
 
 **Aksesibilitas** — HTML semantik, `aria-current`/`aria-sort`/`role="tab"`,
 skip-link, fokus keyboard terlihat, `prefers-reduced-motion` dihormati.
@@ -99,26 +102,40 @@ Leaflet dimuat dinamis (`ssr: false`) hanya di halaman peta.
 app/
   layout.tsx          metadata, tema, nav, JSON-LD
   page.tsx            landing (server, statis)
-  peta/               PetaClient.tsx — peta + panel
+  peta/               PetaApp.tsx — peta + panel (analisis/ruko/data)
+  admin/              editor data SPPG & pasar
+  blast/              blast WhatsApp
   dashboard/          analisis pasar (server, statis)
   direktori/          DirektoriClient.tsx — tabel + ekspor
   supplier/           SupplierClient.tsx — katalog + keranjang
   tentang/            metodologi
   sitemap.ts robots.ts manifest.ts icon.svg apple-icon.svg
 components/
-  MapView.tsx         Leaflet: marker, radius, heatmap, rekomendasi
-  Sheet.tsx           bottom sheet mobile (drag + snap)
+  MapView.tsx         Leaflet: marker, radius, heatmap, rekomendasi,
+                      lapisan pasar, pewarnaan yayasan, auto-fit
+  ControlPanel.tsx    filter, lapisan, pencarian
+  DataPanel.tsx       ringkasan data per kecamatan/status
+  SppgDetailCard.tsx  kartu rincian penerima manfaat & perizinan
+  AdminEditor.tsx     form koreksi data
+  PasarEditor.tsx     kelola titik pasar
+  CoordPicker.tsx     ambil koordinat dari klik peta
+  RukoManager.tsx     kelola calon ruko
+  SppgForm.tsx        tambah/ubah dapur
   Nav.tsx             top bar desktop / bottom tab bar mobile
   ui.tsx              Card, Stat, StatusBadge, BarList, StatusBreakdown, Btn
 lib/
-  types.ts            tipe + STATUS_META (label, warna, ikon)
+  types.ts            tipe Sppg/Pasar/CandidateRuko + rincian PM & perizinan
+  sppgMeta.ts         STATUS_META (label, warna, ikon), format, grup yayasan
+  marketing.ts        templat pesan & pemilihan target blast
+  storage.ts          localStorage: SPPG, pasar, override, impor/reset
   data.ts             agregasi, ukuran pasar, filter, ekspor CSV/GeoJSON
   geo.ts              haversine, centroid berbobot, skoring kisi
-  store.ts            repository (localStorage → siap tukar ke database)
+  store.ts            repository async di atas storage.ts (siap tukar ke DB)
   config.ts           konfigurasi bisnis + asumsi ekonomi
   format.ts           format angka & rupiah Indonesia
 data/
-  sppg.json           85 dapur SPPG
+  sppg.json           85 dapur SPPG (+ rincian PM & perizinan)
+  pasar.json          titik pasar tradisional
   produk.json         katalog bahan (harga numerik)
 ```
 
@@ -161,6 +178,31 @@ Harga & produk katalog: `data/produk.json`.
 - **Belum ada data pesaing & harga riil** — web ini memetakan permintaan, belum
   memetakan siapa yang sudah memasok dan pada harga berapa.
 - **Jarak adalah garis lurus** × faktor belok 1,35, bukan rute jalan sebenarnya.
+
+---
+
+## Halaman operasional (data & pemasaran)
+
+| Rute | Isi |
+|---|---|
+| `/admin` | Editor data: koreksi koordinat & atribut SPPG, impor massal titik pasar, kelola pasar tradisional. Perubahan disimpan sebagai *override* sehingga data resmi selalu bisa dipulihkan. |
+| `/blast` | Penyusun pesan WhatsApp massal untuk prospek dapur — pilih target per kecamatan/status, susun templat, salin daftar nomor. |
+
+### Lapisan peta tambahan
+
+- **Pasar tradisional** (`data/pasar.json`) — memetakan sumber pasokan /
+  pesaing di sekitar dapur.
+- **Pewarnaan per yayasan** — dapur yang dikelola yayasan yang sama diberi
+  warna dan dihubungkan garis, untuk melihat kelompok pengelola sekaligus.
+- **Rincian penerima manfaat** — kartu detail per dapur: siswa, guru & tendik,
+  balita, ibu hamil, ibu menyusui, jenjang sekolah, status perizinan (SLHS,
+  halal, HACCP, BPJS), dan tanggal operasional.
+
+### Penyebaran otomatis
+
+`.github/workflows/deploy.yml` men-deploy production ke Vercel pada setiap push
+ke branch produksi (atau manual via *workflow_dispatch*). Aman bila secret
+belum diisi — langkah deploy dilewati, bukan gagal.
 
 ---
 

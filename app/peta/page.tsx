@@ -1,12 +1,12 @@
-import PetaClient from "./PetaClient";
+import PetaApp from "./PetaApp";
 
 export const metadata = {
   title: "Peta Interaktif 85 Dapur SPPG",
   description:
-    "Peta interaktif seluruh dapur SPPG (MBG) Kabupaten Ponorogo. Cari, filter per kecamatan dan status, lihat heatmap permintaan, dan simulasikan lokasi ruko supplier beserta radius antarnya.",
+    "Peta interaktif seluruh dapur SPPG (MBG) Kabupaten Ponorogo. Filter per kecamatan dan status, lihat rincian penerima manfaat, layer pasar, heatmap permintaan, dan simulasikan lokasi ruko supplier.",
   alternates: { canonical: "/peta" },
 };
 
 export default function PetaPage() {
-  return <PetaClient />;
+  return <PetaApp />;
 }

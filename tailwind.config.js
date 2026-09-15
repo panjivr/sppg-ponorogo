@@ -17,6 +17,9 @@ module.exports = {
           DEFAULT: "var(--brand)",
           ink: "var(--brand-ink)",
           soft: "var(--brand-soft)",
+          // Dipakai komponen peta/panel yang sudah ada — jangan dihapus.
+          light: "#22c55e",
+          dark: "#14532d",
         },
         seqA: "var(--seq-a)",
         seqB: "var(--seq-b)",

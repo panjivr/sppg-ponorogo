@@ -1,77 +1,132 @@
 "use client";
 
-import { useEffect, useMemo } from "react";
+import { useEffect, useMemo, useRef } from "react";
 import {
-  Circle,
   MapContainer,
-  Marker,
-  Popup,
   TileLayer,
+  Marker,
+  Circle,
+  Polyline,
+  Popup,
   useMap,
   useMapEvents,
 } from "react-leaflet";
 import L from "leaflet";
 import "leaflet.heat";
-import { STATUS_META, type CandidateRuko, type Sppg } from "@/lib/types";
+import type { Sppg, CandidateRuko, Pasar } from "@/lib/types";
 import {
-  centroidBerbobot,
   haversineKm,
-  kandidatTersebar,
+  centroidBerbobot,
   skorGrid,
-  type GridCell,
+  kandidatTersebar,
   type LatLng,
 } from "@/lib/geo";
-import { num } from "@/lib/format";
+import {
+  STATUS_META,
+  statusMeta,
+  fmt,
+  fmtTanggal,
+  yayasanGroups,
+} from "@/lib/sppgMeta";
 
-const PONOROGO: [number, number] = [-7.93, 111.49];
+const PONOROGO_CENTER: [number, number] = [-7.868, 111.462];
 
-/* ---------------- Ikon ---------------- */
+const STATUS_COLOR: Record<string, string> = {
+  operasional: STATUS_META.operasional.color,
+  akan: STATUS_META.akan.color,
+  berhenti: STATUS_META.berhenti.color,
+  suspend: STATUS_META.suspend.color,
+};
 
-function dotIcon(color: string, aktif: boolean, pilih: boolean): L.DivIcon {
-  const size = pilih ? 22 : aktif ? 15 : 12;
-  const ring = pilih
-    ? "box-shadow:0 0 0 4px rgba(42,120,214,.35);"
-    : "box-shadow:0 1px 3px rgba(0,0,0,.35);";
+function dotIcon(
+  color: string,
+  highlight: boolean,
+  ringColor?: string
+): L.DivIcon {
+  const size = highlight ? 22 : 16;
+  const border = ringColor ? ringColor : "#fff";
+  const bw = ringColor ? 3 : 2;
+  const glow = highlight ? "box-shadow:0 0 0 4px rgba(37,99,235,0.35);" : "";
   return L.divIcon({
     className: "sppg-icon",
-    html: `<span style="display:block;width:${size}px;height:${size}px;border-radius:50%;background:${color};border:2px solid #fff;${ring}"></span>`,
+    html: `<div style="width:${size}px;height:${size}px;border-radius:50%;background:${color};border:${bw}px solid ${border};${glow}"></div>`,
     iconSize: [size, size],
     iconAnchor: [size / 2, size / 2],
   });
 }
 
-const rukoIcon = (sel: boolean) =>
-  L.divIcon({
+function rukoIcon(selected: boolean): L.DivIcon {
+  const c = selected ? "#2563eb" : "#7c3aed";
+  return L.divIcon({
     className: "ruko-icon",
-    html: `<span style="font-size:${sel ? 28 : 22}px;line-height:1;filter:drop-shadow(0 1px 2px rgba(0,0,0,.5))">🏪</span>`,
-    iconSize: [28, 28],
-    iconAnchor: [14, 24],
+    html: `<div style="font-size:22px;line-height:22px;filter:drop-shadow(0 1px 2px rgba(0,0,0,.5));color:${c}">🏪</div>`,
+    iconSize: [22, 22],
+    iconAnchor: [11, 20],
   });
+}
+
+function pasarIcon(): L.DivIcon {
+  return L.divIcon({
+    className: "pasar-icon",
+    html: `<div style="display:flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:6px;background:#7c2d12;border:2px solid #fff;box-shadow:0 1px 2px rgba(0,0,0,.4);font-size:12px;line-height:1">🛒</div>`,
+    iconSize: [22, 22],
+    iconAnchor: [11, 11],
+  });
+}
 
 const starIcon = L.divIcon({
   className: "rekomendasi-icon",
-  html: `<span style="font-size:26px;line-height:1;filter:drop-shadow(0 1px 2px rgba(0,0,0,.6))">⭐</span>`,
-  iconSize: [26, 26],
-  iconAnchor: [13, 13],
+  html: `<div style="font-size:28px;line-height:28px;filter:drop-shadow(0 1px 2px rgba(0,0,0,.6))">⭐</div>`,
+  iconSize: [28, 28],
+  iconAnchor: [14, 14],
 });
-
-/* ---------------- Lapisan pembantu ---------------- */
 
 function HeatLayer({ points }: { points: Sppg[] }) {
   const map = useMap();
   useEffect(() => {
-    const pts = points.map(
-      (s) =>
-        [s.lat, s.lng, Math.max(0.25, (s.porsi || 1000) / 3500)] as [
-          number,
-          number,
-          number,
-        ]
+    const heatPts = points.map(
+      (s) => [s.lat, s.lng, Math.max(0.3, (s.porsi || 1000) / 3000)] as [
+        number,
+        number,
+        number
+      ]
     );
-    // @ts-expect-error leaflet.heat menambahkan L.heatLayer saat runtime
-    const layer = L.heatLayer(pts, { radius: 32, blur: 22, maxZoom: 13 });
+    // @ts-expect-error leaflet.heat menambah L.heatLayer secara runtime
+    const layer = L.heatLayer(heatPts, {
+      radius: 35,
+      blur: 25,
+      maxZoom: 14,
+    });
     layer.addTo(map);
-    return () => void map.removeLayer(layer);
+    return () => {
+      map.removeLayer(layer);
+    };
+  }, [map, points]);
+  return null;
+}
+
+function FocusHandler({ point }: { point: LatLng | null }) {
+  const map = useMap();
+  useEffect(() => {
+    if (point) map.flyTo([point.lat, point.lng], 15, { duration: 0.8 });
+  }, [map, point]);
+  return null;
+}
+
+/**
+ * Sekali saat data siap: rapatkan peta ke seluruh titik, supaya semua
+ * dapur terlihat tanpa pengguna harus zoom-out manual.
+ */
+function FitToData({ points }: { points: Sppg[] }) {
+  const map = useMap();
+  const sudah = useRef(false);
+  useEffect(() => {
+    if (sudah.current || points.length < 2) return;
+    sudah.current = true;
+    map.fitBounds(
+      L.latLngBounds(points.map((s) => [s.lat, s.lng] as [number, number])),
+      { padding: [28, 28] }
+    );
   }, [map, points]);
   return null;
 }
@@ -79,186 +134,277 @@ function HeatLayer({ points }: { points: Sppg[] }) {
 function ClickHandler({ onClick }: { onClick?: (p: LatLng) => void }) {
   useMapEvents({
     click(e) {
-      onClick?.({ lat: e.latlng.lat, lng: e.latlng.lng });
+      if (onClick) onClick({ lat: e.latlng.lat, lng: e.latlng.lng });
     },
   });
   return null;
 }
 
-/**
- * Sekali saat data siap: rapatkan peta ke seluruh titik.
- * `bottomInset` = tinggi area yang tertutup bottom sheet di HP, supaya
- * titik tidak tersembunyi di balik panel.
- */
-function FitToData({
-  points,
-  bottomInset,
-}: {
-  points: Sppg[];
-  bottomInset: number;
-}) {
-  const map = useMap();
-  useEffect(() => {
-    if (points.length < 2) return;
-    const b = L.latLngBounds(points.map((s) => [s.lat, s.lng]));
-    map.fitBounds(b, {
-      paddingTopLeft: [28, 28],
-      paddingBottomRight: [28, 28 + bottomInset],
-    });
-    // sengaja hanya sekali (saat data pertama kali tersedia)
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [map, points.length === 0, bottomInset]);
-  return null;
-}
-
-/**
- * Terbang ke titik yang dipilih. Pusat peta digeser ke selatan sejauh
- * setengah `bottomInset` supaya markernya muncul DI ATAS bottom sheet,
- * bukan tertutup olehnya.
- */
-function FlyTo({
-  target,
-  bottomInset,
-}: {
-  target: LatLng | null;
-  bottomInset: number;
-}) {
-  const map = useMap();
-  useEffect(() => {
-    if (!target) return;
-    const zoom = 15;
-    const geser = map
-      .project([target.lat, target.lng], zoom)
-      .add([0, bottomInset / 2]);
-    map.flyTo(map.unproject(geser, zoom), zoom, { duration: 0.7 });
-  }, [map, target, bottomInset]);
-  return null;
-}
-
-/* ---------------- Komponen utama ---------------- */
-
-export interface MapViewProps {
+interface MapViewProps {
   sppgList: Sppg[];
   rukoList: CandidateRuko[];
   selectedRukoId: string | null;
-  selectedSppgId: string | null;
-  flyTarget: LatLng | null;
   radiusKm: number;
   showHeatmap: boolean;
   showRekomendasi: boolean;
-  /** Tinggi piksel area peta yang tertutup panel (bottom sheet di HP). */
-  bottomInset?: number;
+  showYayasan?: boolean;
+  selectedYayasan?: string | null;
+  pasarList?: Pasar[];
+  showPasar?: boolean;
+  focusPoint?: LatLng | null;
   onMapClick?: (p: LatLng) => void;
   onSelectRuko: (id: string) => void;
-  onSelectSppg: (id: string) => void;
+  onSelectYayasan?: (nama: string | null) => void;
 }
 
 export default function MapView({
   sppgList,
   rukoList,
   selectedRukoId,
-  selectedSppgId,
-  flyTarget,
   radiusKm,
   showHeatmap,
   showRekomendasi,
-  bottomInset = 0,
+  showYayasan,
+  selectedYayasan,
+  pasarList,
+  showPasar,
+  focusPoint,
   onMapClick,
   onSelectRuko,
-  onSelectSppg,
+  onSelectYayasan,
 }: MapViewProps) {
-  const ruko = rukoList.find((r) => r.id === selectedRukoId) ?? null;
+  const selectedRuko = rukoList.find((r) => r.id === selectedRukoId) || null;
 
-  const dalamRadius = useMemo(() => {
-    if (!ruko) return new Set<string>();
+  const groups = useMemo(() => yayasanGroups(sppgList), [sppgList]);
+  const yayasanColorById = useMemo(() => {
+    const m = new Map<string, string>();
+    if (showYayasan) {
+      for (const g of groups) for (const s of g.items) m.set(s.id, g.color);
+    }
+    return m;
+  }, [groups, showYayasan]);
+
+  const highlightIds = useMemo(() => {
+    if (!selectedRuko) return new Set<string>();
     const ids = new Set<string>();
-    for (const s of sppgList)
-      if (haversineKm(ruko, s) <= ruko.radiusKm) ids.add(s.id);
+    for (const s of sppgList) {
+      if (haversineKm(selectedRuko, s) <= selectedRuko.radiusKm) ids.add(s.id);
+    }
     return ids;
-  }, [ruko, sppgList]);
+  }, [selectedRuko, sppgList]);
 
   const centroid = useMemo(
     () => (showRekomendasi ? centroidBerbobot(sppgList) : null),
     [showRekomendasi, sppgList]
   );
 
-  const kandidat: GridCell[] = useMemo(() => {
-    if (!showRekomendasi) return [];
-    // sebar minimal 4 km supaya kandidat tidak menumpuk di satu tempat
-    return kandidatTersebar(skorGrid(sppgList, radiusKm), 3, 4);
-  }, [showRekomendasi, sppgList, radiusKm]);
+  const topCells = useMemo(
+    () =>
+      showRekomendasi
+        ? kandidatTersebar(skorGrid(sppgList, radiusKm), 3, 4)
+        : [],
+    [showRekomendasi, sppgList, radiusKm]
+  );
 
   return (
     <MapContainer
-      center={PONOROGO}
-      zoom={10}
+      center={PONOROGO_CENTER}
+      zoom={12}
       scrollWheelZoom
-      zoomControl
       className="h-full w-full"
     >
       <TileLayer
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-        maxZoom={19}
       />
 
-      <FitToData points={sppgList} bottomInset={bottomInset} />
-      <FlyTo target={flyTarget} bottomInset={bottomInset} />
+      <FitToData points={sppgList} />
       <ClickHandler onClick={onMapClick} />
+      <FocusHandler point={focusPoint ?? null} />
+
       {showHeatmap && <HeatLayer points={sppgList} />}
 
-      {/* ---- Dapur SPPG ---- */}
+      {/* Benang merah: garis penghubung dapur satu yayasan */}
+      {showYayasan &&
+        groups
+          .filter((g) => !selectedYayasan || g.nama === selectedYayasan)
+          .map((g) => {
+            const active = selectedYayasan === g.nama;
+            const dim = !!selectedYayasan && !active;
+            return (
+              <Polyline
+                key={`yy-${g.nama}`}
+                positions={g.items.map((s) => [s.lat, s.lng] as [number, number])}
+                pathOptions={{
+                  color: g.color,
+                  weight: active ? 4 : 2.5,
+                  opacity: dim ? 0.15 : active ? 0.9 : 0.55,
+                  dashArray: active ? undefined : "6 6",
+                }}
+                eventHandlers={{
+                  click: () =>
+                    onSelectYayasan?.(active ? null : g.nama),
+                }}
+              />
+            );
+          })}
+
       {sppgList.map((s) => {
-        const m = STATUS_META[s.status];
+        const yColor = yayasanColorById.get(s.id);
+        const dimByYayasan =
+          !!showYayasan && !!selectedYayasan && s.detail?.yayasan !== selectedYayasan;
         return (
-          <Marker
-            key={s.id}
-            position={[s.lat, s.lng]}
-            icon={dotIcon(
-              m.color,
-              m.aktif,
-              s.id === selectedSppgId || dalamRadius.has(s.id)
-            )}
-            eventHandlers={{ click: () => onSelectSppg(s.id) }}
-          >
-            <Popup>
-              <div className="text-sm">
-                <div className="font-semibold">{s.nama}</div>
-                {s.desa && (
-                  <div className="text-xs text-ink2">
-                    {s.desa}, Kec. {s.kecamatan}
-                  </div>
-                )}
-                <div className="mt-1 text-ink2">{s.alamat}</div>
-                <div className="mt-1.5 flex items-center gap-1.5">
-                  <span aria-hidden="true" style={{ color: m.color }}>
-                    {m.icon}
+        <Marker
+          key={s.id}
+          opacity={dimByYayasan ? 0.35 : 1}
+          position={[s.lat, s.lng]}
+          icon={dotIcon(
+            STATUS_COLOR[s.status] || "#64748b",
+            highlightIds.has(s.id),
+            yColor
+          )}
+        >
+          <Popup>
+            <div className="min-w-[220px] text-sm">
+              <div className="font-semibold leading-snug">{s.nama}</div>
+              <div className="text-xs text-slate-500">
+                {s.desa ? `${s.desa}, ` : ""}Kec. {s.kecamatan}
+                {s.detail?.idSppg && (
+                  <span className="ml-1 font-mono text-slate-400">
+                    · {s.detail.idSppg}
                   </span>
-                  <span className="font-medium">{m.label}</span>
+                )}
+              </div>
+
+              <div className="my-1.5 flex flex-wrap items-center gap-1">
+                <span
+                  className="inline-flex items-center gap-1 rounded-full px-1.5 py-0.5 text-[11px] font-medium text-white"
+                  style={{ background: statusMeta(s.status).color }}
+                >
+                  {s.detail?.statusLabel ?? statusMeta(s.status).label}
+                </span>
+                {s.detail?.jenis && (
+                  <span className="rounded-full bg-slate-100 px-1.5 py-0.5 text-[11px] font-medium text-slate-600">
+                    {s.detail.jenis}
+                  </span>
+                )}
+              </div>
+
+              <div className="text-slate-600">{s.alamat}</div>
+
+              <table className="mt-1.5 w-full border-t border-slate-200 text-xs">
+                <tbody>
+                  <tr>
+                    <td className="py-0.5 text-slate-500">Total PM/hari</td>
+                    <td className="py-0.5 text-right font-semibold tabular-nums">
+                      {fmt(s.porsi)}
+                    </td>
+                  </tr>
+                  {s.pm?.pmSatdikTotal != null && (
+                    <tr>
+                      <td className="py-0.5 pl-2 text-slate-500">Satuan pendidikan</td>
+                      <td className="py-0.5 text-right tabular-nums">
+                        {fmt(s.pm.pmSatdikTotal)}
+                      </td>
+                    </tr>
+                  )}
+                  {s.pm?.pm3bTotal != null && (
+                    <tr>
+                      <td className="py-0.5 pl-2 text-slate-500">Kelompok 3B</td>
+                      <td className="py-0.5 text-right tabular-nums">
+                        {fmt(s.pm.pm3bTotal)}
+                      </td>
+                    </tr>
+                  )}
+                  {s.detail?.namaKa && (
+                    <tr>
+                      <td className="py-0.5 text-slate-500">Ka SPPG</td>
+                      <td className="py-0.5 text-right">{s.detail.namaKa}</td>
+                    </tr>
+                  )}
+                  {s.detail?.yayasan && (
+                    <tr>
+                      <td className="py-0.5 text-slate-500">Yayasan</td>
+                      <td className="py-0.5 text-right">{s.detail.yayasan}</td>
+                    </tr>
+                  )}
+                  {fmtTanggal(s.detail?.tglOperasional) && (
+                    <tr>
+                      <td className="py-0.5 text-slate-500">Operasional</td>
+                      <td className="py-0.5 text-right">
+                        {fmtTanggal(s.detail?.tglOperasional)}
+                      </td>
+                    </tr>
+                  )}
+                </tbody>
+              </table>
+
+              {s.gmaps && (
+                <a
+                  href={s.gmaps}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-1.5 inline-block font-medium text-blue-600 underline"
+                >
+                  📍 Buka di Google Maps
+                </a>
+              )}
+              {s.perkiraan && (
+                <div className="mt-1 text-amber-600">
+                  ⚠ koordinat perkiraan (klik Google Maps untuk titik pasti)
                 </div>
-                <div>Penerima manfaat: {num(s.porsi)}/hari</div>
-                {s.gmaps && (
+              )}
+              {yColor && (
+                <button
+                  onClick={() => onSelectYayasan?.(s.detail?.yayasan ?? null)}
+                  className="mt-1.5 flex w-full items-center gap-1.5 rounded border border-slate-200 px-1.5 py-1 text-left text-[11px] hover:bg-slate-50"
+                >
+                  <span
+                    className="inline-block h-2 w-2 shrink-0 rounded-full"
+                    style={{ background: yColor }}
+                  />
+                  <span className="text-slate-600">
+                    Jaringan yayasan — sorot dapur sekelompok
+                  </span>
+                </button>
+              )}
+            </div>
+          </Popup>
+        </Marker>
+        );
+      })}
+
+      {showPasar &&
+        pasarList?.map((p) => (
+          <Marker key={p.id} position={[p.lat, p.lng]} icon={pasarIcon()}>
+            <Popup>
+              <div className="min-w-[180px] text-sm">
+                <div className="font-semibold">🛒 {p.nama}</div>
+                <div className="text-xs text-slate-500">Kec. {p.kecamatan}</div>
+                {p.kategori && (
+                  <div className="mt-0.5 text-slate-600">{p.kategori}</div>
+                )}
+                {p.catatan && (
+                  <div className="mt-0.5 text-slate-600">{p.catatan}</div>
+                )}
+                {p.gmaps && (
                   <a
-                    href={s.gmaps}
+                    href={p.gmaps}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="mt-1.5 inline-block font-medium text-seqA underline"
+                    className="mt-1 inline-block font-medium text-blue-600 underline"
                   >
-                    📍 Buka di Google Maps
+                    📍 Google Maps
                   </a>
                 )}
-                {s.perkiraan && (
-                  <div className="mt-1 text-xs text-serious">
-                    ⚠ Koordinat perkiraan — pakai tautan Maps untuk titik pasti.
-                  </div>
+                {p.perkiraan && (
+                  <div className="mt-1 text-amber-600">⚠ lokasi perkiraan</div>
                 )}
               </div>
             </Popup>
           </Marker>
-        );
-      })}
+        ))}
 
-      {/* ---- Calon ruko + radius layanan ---- */}
       {rukoList.map((r) => (
         <Marker
           key={r.id}
@@ -269,62 +415,52 @@ export default function MapView({
           <Popup>
             <div className="text-sm">
               <div className="font-semibold">🏪 {r.nama}</div>
-              {r.buka24Jam && (
-                <div className="text-brand">Rencana buka 24 jam</div>
-              )}
-              {r.catatan && <div className="text-ink2">{r.catatan}</div>}
-              <div className="mt-1">Radius antar: {r.radiusKm} km</div>
+              {r.buka24Jam && <div className="text-brand">Buka 24 jam</div>}
+              {r.catatan && <div className="text-slate-600">{r.catatan}</div>}
+              <div className="mt-1">Radius: {r.radiusKm} km</div>
             </div>
           </Popup>
         </Marker>
       ))}
 
-      {ruko && (
+      {selectedRuko && (
         <Circle
-          center={[ruko.lat, ruko.lng]}
-          radius={ruko.radiusKm * 1000}
-          pathOptions={{
-            color: "var(--seq-a)",
-            weight: 2,
-            fillColor: "var(--seq-a)",
-            fillOpacity: 0.08,
-          }}
+          center={[selectedRuko.lat, selectedRuko.lng]}
+          radius={selectedRuko.radiusKm * 1000}
+          pathOptions={{ color: "#2563eb", fillColor: "#3b82f6", fillOpacity: 0.1 }}
         />
       )}
 
-      {/* ---- Kandidat lokasi terbaik ---- */}
-      {kandidat.map((c, i) => (
-        <Circle
-          key={`k-${i}`}
-          center={[c.lat, c.lng]}
-          radius={700}
-          pathOptions={{
-            color: "var(--seq-b)",
-            weight: 2,
-            fillColor: "var(--seq-b)",
-            fillOpacity: 0.22,
-          }}
-        >
-          <Popup>
-            <div className="text-sm">
-              <div className="font-semibold">Kandidat lokasi #{i + 1}</div>
-              <div>
-                {c.jumlah} dapur dalam radius {radiusKm} km
+      {showRekomendasi &&
+        topCells.map((c, i) => (
+          <Circle
+            key={`cell-${i}`}
+            center={[c.lat, c.lng]}
+            radius={600}
+            pathOptions={{
+              color: "#dc2626",
+              fillColor: "#ef4444",
+              fillOpacity: 0.25,
+            }}
+          >
+            <Popup>
+              <div className="text-sm">
+                <div className="font-semibold">Kandidat titik #{i + 1}</div>
+                <div>{c.jumlah} dapur dalam {radiusKm} km</div>
+                <div>Total est. porsi: {c.totalPorsi.toLocaleString("id-ID")}</div>
               </div>
-              <div>Total {num(c.totalPorsi)} penerima manfaat/hari</div>
-            </div>
-          </Popup>
-        </Circle>
-      ))}
+            </Popup>
+          </Circle>
+        ))}
 
       {centroid && (
         <Marker position={[centroid.lat, centroid.lng]} icon={starIcon}>
           <Popup>
             <div className="text-sm">
-              <div className="font-semibold">Pusat gravitasi permintaan</div>
-              <div className="text-ink2">
-                Titik tengah seluruh dapur, dibobot status &amp; jumlah
-                penerima manfaat.
+              <div className="font-semibold">Titik pusat berbobot</div>
+              <div className="text-slate-600">
+                Perkiraan pusat gravitasi seluruh dapur (bobot: status &amp;
+                porsi).
               </div>
             </div>
           </Popup>

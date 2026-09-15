@@ -1,0 +1,222 @@
+[
+  {
+    "id": "pasar-pasar-legi-songgolangit",
+    "nama": "Pasar Legi Songgolangit",
+    "kecamatan": "Ponorogo",
+    "kategori": "Pasar induk / terbesar di Ponorogo",
+    "lat": -7.867994,
+    "lng": 111.471604,
+    "perkiraan": true,
+    "sumber": "Perkiraan awal (pusat kecamatan) — koreksi via Admin"
+  },
+  {
+    "id": "pasar-pasar-songgolangit",
+    "nama": "Pasar Songgolangit",
+    "kecamatan": "Ponorogo",
+    "kategori": "Pasar tradisional pusat kota",
+    "lat": -7.863994,
+    "lng": 111.475604,
+    "perkiraan": true,
+    "sumber": "Perkiraan awal (pusat kecamatan) — koreksi via Admin"
+  },
+  {
+    "id": "pasar-pasar-babadan",
+    "nama": "Pasar Babadan",
+    "kecamatan": "Babadan",
+    "kategori": "Pasar tradisional Babadan",
+    "lat": -7.836869,
+    "lng": 111.494836,
+    "perkiraan": true,
+    "sumber": "Perkiraan awal (pusat kecamatan) — koreksi via Admin"
+  },
+  {
+    "id": "pasar-pasar-jetis",
+    "nama": "Pasar Jetis",
+    "kecamatan": "Jetis",
+    "kategori": "Pasar tradisional Jetis",
+    "lat": -7.94972,
+    "lng": 111.469124,
+    "perkiraan": true,
+    "sumber": "Perkiraan awal (pusat kecamatan) — koreksi via Admin"
+  },
+  {
+    "id": "pasar-pasar-balong",
+    "nama": "Pasar Balong",
+    "kecamatan": "Balong",
+    "kategori": "Pasar tradisional Balong",
+    "lat": -7.954518,
+    "lng": 111.419499,
+    "perkiraan": true,
+    "sumber": "Perkiraan awal (pusat kecamatan) — koreksi via Admin"
+  },
+  {
+    "id": "pasar-pasar-sumoroto",
+    "nama": "Pasar Sumoroto",
+    "kecamatan": "Kauman",
+    "kategori": "Pasar tradisional Sumoroto",
+    "lat": -7.882554,
+    "lng": 111.403896,
+    "perkiraan": true,
+    "sumber": "Perkiraan awal (pusat kecamatan) — koreksi via Admin"
+  },
+  {
+    "id": "pasar-pasar-sambit",
+    "nama": "Pasar Sambit",
+    "kecamatan": "Sambit",
+    "kategori": "Pasar tradisional Sambit",
+    "lat": -7.960624,
+    "lng": 111.508616,
+    "perkiraan": true,
+    "sumber": "Perkiraan awal (pusat kecamatan) — koreksi via Admin"
+  },
+  {
+    "id": "pasar-pasar-pulung",
+    "nama": "Pasar Pulung",
+    "kecamatan": "Pulung",
+    "kategori": "Pasar tradisional Pulung",
+    "lat": -7.858919,
+    "lng": 111.628382,
+    "perkiraan": true,
+    "sumber": "Perkiraan awal (pusat kecamatan) — koreksi via Admin"
+  },
+  {
+    "id": "pasar-pasar-slahung",
+    "nama": "Pasar Slahung",
+    "kecamatan": "Slahung",
+    "kategori": "Pasar tradisional Slahung",
+    "lat": -7.993638,
+    "lng": 111.425256,
+    "perkiraan": true,
+    "sumber": "Perkiraan awal (pusat kecamatan) — koreksi via Admin"
+  },
+  {
+    "id": "pasar-pasar-bungkal",
+    "nama": "Pasar Bungkal",
+    "kecamatan": "Bungkal",
+    "kategori": "Pasar tradisional Bungkal",
+    "lat": -8.009624,
+    "lng": 111.458067,
+    "perkiraan": true,
+    "sumber": "Perkiraan awal (pusat kecamatan) — koreksi via Admin"
+  },
+  {
+    "id": "pasar-pasar-ngrayun",
+    "nama": "Pasar Ngrayun",
+    "kecamatan": "Ngrayun",
+    "kategori": "Pasar tradisional Ngrayun",
+    "lat": -8.08739,
+    "lng": 111.456662,
+    "perkiraan": true,
+    "sumber": "Perkiraan awal (pusat kecamatan) — koreksi via Admin"
+  },
+  {
+    "id": "pasar-pasar-jenangan",
+    "nama": "Pasar Jenangan",
+    "kecamatan": "Jenangan",
+    "kategori": "Pasar tradisional Jenangan",
+    "lat": -7.820691,
+    "lng": 111.525052,
+    "perkiraan": true,
+    "sumber": "Perkiraan awal (pusat kecamatan) — koreksi via Admin"
+  },
+  {
+    "id": "pasar-pasar-sukorejo",
+    "nama": "Pasar Sukorejo",
+    "kecamatan": "Sukorejo",
+    "kategori": "Pasar tradisional Sukorejo",
+    "lat": -7.825457,
+    "lng": 111.436225,
+    "perkiraan": true,
+    "sumber": "Perkiraan awal (pusat kecamatan) — koreksi via Admin"
+  },
+  {
+    "id": "pasar-pasar-sawoo",
+    "nama": "Pasar Sawoo",
+    "kecamatan": "Sawoo",
+    "kategori": "Pasar tradisional Sawoo",
+    "lat": -7.96199,
+    "lng": 111.547523,
+    "perkiraan": true,
+    "sumber": "Perkiraan awal (pusat kecamatan) — koreksi via Admin"
+  },
+  {
+    "id": "pasar-pasar-mlarak",
+    "nama": "Pasar Mlarak",
+    "kecamatan": "Mlarak",
+    "kategori": "Pasar tradisional Mlarak",
+    "lat": -7.925944,
+    "lng": 111.509527,
+    "perkiraan": true,
+    "sumber": "Perkiraan awal (pusat kecamatan) — koreksi via Admin"
+  },
+  {
+    "id": "pasar-pasar-badegan",
+    "nama": "Pasar Badegan",
+    "kecamatan": "Badegan",
+    "kategori": "Pasar tradisional Badegan",
+    "lat": -7.877322,
+    "lng": 111.332134,
+    "perkiraan": true,
+    "sumber": "Perkiraan awal (pusat kecamatan) — koreksi via Admin"
+  },
+  {
+    "id": "pasar-pasar-sampung",
+    "nama": "Pasar Sampung",
+    "kecamatan": "Sampung",
+    "kategori": "Pasar tradisional Sampung",
+    "lat": -7.862694,
+    "lng": 111.349053,
+    "perkiraan": true,
+    "sumber": "Perkiraan awal (pusat kecamatan) — koreksi via Admin"
+  },
+  {
+    "id": "pasar-pasar-jambon",
+    "nama": "Pasar Jambon",
+    "kecamatan": "Jambon",
+    "kategori": "Pasar tradisional Jambon",
+    "lat": -7.893758,
+    "lng": 111.37286,
+    "perkiraan": true,
+    "sumber": "Perkiraan awal (pusat kecamatan) — koreksi via Admin"
+  },
+  {
+    "id": "pasar-pasar-ngebel",
+    "nama": "Pasar Ngebel",
+    "kecamatan": "Ngebel",
+    "kategori": "Pasar tradisional Ngebel (dekat Telaga Ngebel)",
+    "lat": -7.804595,
+    "lng": 111.634866,
+    "perkiraan": true,
+    "sumber": "Perkiraan awal (pusat kecamatan) — koreksi via Admin"
+  },
+  {
+    "id": "pasar-pasar-pudak",
+    "nama": "Pasar Pudak",
+    "kecamatan": "Pudak",
+    "kategori": "Pasar tradisional Pudak",
+    "lat": -7.87095,
+    "lng": 111.700804,
+    "perkiraan": true,
+    "sumber": "Perkiraan awal (pusat kecamatan) — koreksi via Admin"
+  },
+  {
+    "id": "pasar-pasar-sooko",
+    "nama": "Pasar Sooko",
+    "kecamatan": "Sooko",
+    "kategori": "Pasar tradisional Sooko",
+    "lat": -7.908488,
+    "lng": 111.673719,
+    "perkiraan": true,
+    "sumber": "Perkiraan awal (pusat kecamatan) — koreksi via Admin"
+  },
+  {
+    "id": "pasar-pasar-siman",
+    "nama": "Pasar Siman",
+    "kecamatan": "Siman",
+    "kategori": "Pasar tradisional Siman",
+    "lat": -7.87462,
+    "lng": 111.495818,
+    "perkiraan": true,
+    "sumber": "Perkiraan awal (pusat kecamatan) — koreksi via Admin"
+  }
+]

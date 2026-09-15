@@ -11,6 +11,7 @@ const LINKS = [
   { href: "/dashboard", label: "Analisis", icon: "📊" },
   { href: "/direktori", label: "Direktori", icon: "📋" },
   { href: "/supplier", label: "Katalog", icon: "🏪" },
+  { href: "/blast", label: "Blast WA", icon: "💬" },
 ];
 
 function ThemeToggle() {
