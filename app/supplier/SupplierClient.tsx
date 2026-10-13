@@ -1,305 +1,405 @@
 "use client";
-
-import { useEffect, useMemo, useState } from "react";
+import { Suspense, useEffect, useMemo, useState } from "react";
 import Link from "next/link";
-import { NavSpacer } from "@/components/Nav";
-import { Btn, Card } from "@/components/ui";
-import produkRaw from "@/data/produk.json";
+import Icon from "@/components/Icon";
+import ProductPhoto from "@/components/ProductPhoto";
+import CategoryQuerySync from "@/components/CategoryQuerySync";
+import { KATALOG, PRODUK, normalisasiCari } from "@/lib/catalog";
 import { BISNIS, waLink } from "@/lib/config";
-import { num, rupiah } from "@/lib/format";
-import type { Produk, ProdukItem } from "@/lib/types";
 
-const KATALOG = produkRaw as Produk[];
-const K_CART = "sppg-ponorogo:cart";
-
-type Cart = Record<string, number>; // nama -> qty
-
-function bacaCart(): Cart {
-  try {
-    const raw = localStorage.getItem(K_CART);
-    return raw ? (JSON.parse(raw) as Cart) : {};
-  } catch {
-    return {};
-  }
+const STORAGE_KEY = "bumbu-pawon:request:v1";
+type Cart = Record<string, number>;
+function validCart(value: unknown): Cart {
+  const result: Cart = {};
+  if (value && typeof value === "object" && !Array.isArray(value))
+    for (const p of PRODUK) {
+      const qty = (value as Record<string, unknown>)[p.id];
+      if (
+        typeof qty === "number" &&
+        Number.isInteger(qty) &&
+        qty > 0 &&
+        qty <= 999
+      )
+        result[p.id] = qty;
+    }
+  return result;
 }
-
+function Quantity({
+  id,
+  nama,
+  qty,
+  onChange,
+}: {
+  id: string;
+  nama: string;
+  qty: number;
+  onChange: (n: number) => void;
+}) {
+  return (
+    <div className="quantity-control">
+      <button
+        onClick={() => onChange(qty - 1)}
+        aria-label={`Kurangi ${nama}`}
+        className="icon-button"
+      >
+        <Icon name="minus" />
+      </button>
+      <label className="sr-only" htmlFor={`qty-${id}`}>
+        Jumlah {nama}
+      </label>
+      <input
+        id={`qty-${id}`}
+        type="number"
+        inputMode="numeric"
+        min="1"
+        max="999"
+        step="1"
+        value={qty}
+        onChange={(e) => {
+          const n = Number(e.target.value);
+          if (Number.isInteger(n) && n >= 1 && n <= 999) onChange(n);
+        }}
+      />
+      <button
+        onClick={() => onChange(Math.min(999, qty + 1))}
+        disabled={qty >= 999}
+        aria-label={`Tambah ${nama}`}
+        className="icon-button"
+      >
+        <Icon name="plus" />
+      </button>
+    </div>
+  );
+}
 export default function SupplierClient() {
   const [cart, setCart] = useState<Cart>({});
-  const [kategori, setKategori] = useState<string>("semua");
-  const [siap, setSiap] = useState(false);
-
+  const [ready, setReady] = useState(false);
+  const [storageUnavailable, setStorageUnavailable] = useState(false);
+  const [category, setCategory] = useState("semua");
+  const [query, setQuery] = useState("");
+  const [focusProduct, setFocusProduct] = useState<string | null>(null);
+  const [cartStatus, setCartStatus] = useState("");
   useEffect(() => {
-    setCart(bacaCart());
-    setSiap(true);
-  }, []);
-
-  useEffect(() => {
-    if (!siap) return;
-    try {
-      localStorage.setItem(K_CART, JSON.stringify(cart));
-    } catch {
-      /* mode privat — abaikan */
+    if (focusProduct) {
+      document.getElementById(`qty-${focusProduct}`)?.focus();
+      setFocusProduct(null);
     }
-  }, [cart, siap]);
-
-  const semuaItem = useMemo(
-    () => KATALOG.flatMap((k) => k.items.map((i) => ({ ...i, kategori: k.kategori }))),
-    []
-  );
-
-  const isi = useMemo(
-    () =>
-      semuaItem
-        .filter((i) => (cart[i.nama] ?? 0) > 0)
-        .map((i) => ({ ...i, qty: cart[i.nama] })),
-    [cart, semuaItem]
-  );
-
-  const total = isi.reduce((a, i) => a + i.harga * i.qty, 0);
-  const jumlahBaris = isi.length;
-
-  function set(nama: string, qty: number) {
+  }, [cart, focusProduct]);
+  useEffect(() => {
+    try {
+      setCart(validCart(JSON.parse(localStorage.getItem(STORAGE_KEY) || "{}")));
+    } catch {
+      setStorageUnavailable(true);
+    }
+    setReady(true);
+  }, []);
+  useEffect(() => {
+    if (ready)
+      try {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(cart));
+      } catch {
+        setStorageUnavailable(true);
+      }
+  }, [cart, ready]);
+  function chooseCategory(id: string) {
+    setCategory(id);
+    const url = new URL(location.href);
+    if (id === "semua") url.searchParams.delete("kategori");
+    else url.searchParams.set("kategori", id);
+    history.pushState({}, "", url.pathname + url.search);
+  }
+  function change(id: string, qty: number) {
+    const product = PRODUK.find((p) => p.id === id);
+    if (product) {
+      setCartStatus(
+        qty <= 0
+          ? `${product.nama} dihapus dari daftar.`
+          : `${product.nama}: ${Math.min(999, qty)} ${product.satuan} dalam daftar kebutuhan.`,
+      );
+    }
     setCart((c) => {
       const next = { ...c };
-      if (qty <= 0) delete next[nama];
-      else next[nama] = qty;
+      if (qty <= 0) delete next[id];
+      else next[id] = Math.min(999, qty);
       return next;
     });
   }
-
-  const pesanWa = useMemo(() => {
-    if (!isi.length) {
-      return `Halo ${BISNIS.nama}, saya mau tanya ketersediaan & harga bahan untuk dapur MBG. Terima kasih.`;
-    }
-    const baris = isi
-      .map(
-        (i) =>
-          `• ${i.nama} — ${i.qty} ${i.satuan} × ${rupiah(i.harga)} = ${rupiah(
-            i.harga * i.qty
-          )}`
-      )
-      .join("\n");
-    return `Halo ${BISNIS.nama}, saya mau pesan:\n\n${baris}\n\nEstimasi total: ${rupiah(
-      total
-    )}\n\nMohon konfirmasi stok, harga grosir, dan waktu antar. Terima kasih.`;
-  }, [isi, total]);
-
-  const tampil =
-    kategori === "semua"
-      ? KATALOG
-      : KATALOG.filter((k) => k.kategori === kategori);
-
+  const filtered = useMemo(() => {
+    const q = normalisasiCari(query);
+    return PRODUK.filter(
+      (p) =>
+        (category === "semua" || p.kategoriId === category) &&
+        (!q ||
+          normalisasiCari(
+            [p.nama, p.kategori, ...(p.alias || [])].join(" "),
+          ).includes(q)),
+    );
+  }, [category, query]);
+  const selected = PRODUK.filter((p) => cart[p.id] > 0).map((p) => ({
+    ...p,
+    qty: cart[p.id],
+  }));
+  const message = `Halo ${BISNIS.nama}, saya ingin meminta penawaran untuk:\n\n${selected.map((p) => `• ${p.nama}: ${p.qty} ${p.satuan}`).join("\n")}\n\nMohon konfirmasi stok, varian/ukuran kemasan, harga, dan total pesanan.\nLokasi pengiriman: \nJadwal yang diinginkan: \nTerima kasih.`;
   return (
     <>
-      {/* ---------------- Hero ---------------- */}
-      <section className="safe-x border-b border-hairline bg-surface">
-        <div className="mx-auto max-w-content px-4 py-8 sm:py-10">
-          <span className="inline-flex items-center gap-1.5 rounded-full bg-warning/15 px-3 py-1 text-xs font-bold text-ink">
-            <span aria-hidden="true">⏰</span> BUKA 24 JAM
-          </span>
-          <h1 className="mt-3 text-2xl font-bold tracking-tight sm:text-4xl">
-            {BISNIS.nama}
+      <Suspense fallback={null}>
+        <CategoryQuerySync onChange={setCategory} />
+      </Suspense>
+      <p className="sr-only" role="status" aria-live="polite">
+        {cartStatus}
+      </p>
+      <section className="catalog-hero">
+        <div className="site-container">
+          <nav className="breadcrumb" aria-label="Breadcrumb">
+            <Link href="/">Beranda</Link>
+            <Icon name="chevron" />
+            <span aria-current="page">Katalog</span>
+          </nav>
+          <p className="eyebrow">KATALOG BUMBU PAWON MAS DHOO</p>
+          <h1>
+            Daftar belanja dapur,
+            <br />
+            <em>lebih mudah disiapkan.</em>
           </h1>
-          <p className="mt-2 max-w-2xl text-sm leading-relaxed text-ink2 sm:text-base">
-            {BISNIS.tagline} Melayani {BISNIS.areaLayanan}. Dapur MBG memasak
-            pada malam hari — kami siap kirim saat supplier lain tutup.
+          <p>
+            Pilih bahan dan jumlah yang Anda butuhkan. Kirim daftarnya lewat
+            WhatsApp untuk konfirmasi stok, harga, dan pengiriman.
           </p>
-          <div className="mt-5 grid gap-3 sm:grid-cols-3">
-            {[
-              ["⏰", "Buka 24 jam", "Pesan tengah malam pun dilayani."],
-              ["🚚", "Antar cepat", "Rute kami dihitung dari sebaran dapur."],
-              ["🥕", "Segar & lengkap", "Sayur, buah, protein, sembako."],
-            ].map(([ic, t, d]) => (
-              <div
-                key={t}
-                className="rounded-xl border border-hairline bg-page p-3"
-              >
-                <div aria-hidden="true" className="text-xl">
-                  {ic}
-                </div>
-                <div className="mt-1 text-sm font-semibold">{t}</div>
-                <div className="text-xs leading-relaxed text-ink2">{d}</div>
-              </div>
-            ))}
+          <div className="catalog-facts">
+            <span>{PRODUK.length} pilihan produk</span>
+            <span>{KATALOG.length} kategori</span>
+            <span>Grosir & eceran</span>
           </div>
         </div>
       </section>
-
-      {/* ---------------- Katalog ---------------- */}
-      <div className="safe-x mx-auto max-w-content px-4 py-6">
-        <div className="mb-4 flex items-end justify-between gap-3">
-          <div>
-            <h2 className="text-lg font-semibold sm:text-xl">Katalog bahan</h2>
-            <p className="mt-1 text-sm text-ink2">
-              Atur jumlah, lalu kirim daftarnya lewat WhatsApp. Harga di bawah
-              adalah acuan ritel — harga grosir dikonfirmasi saat pemesanan.
-            </p>
+      <div className="site-container catalog-body">
+        <div className="catalog-tools">
+          <div className="catalog-search">
+            <label htmlFor="product-search">Cari bahan dapur</label>
+            <div>
+              <Icon name="search" />
+              <input
+                id="product-search"
+                type="search"
+                placeholder="Coba: wortel, beras, santan…"
+                value={query}
+                onChange={(e) => setQuery(e.target.value)}
+              />
+              {query && (
+                <button
+                  className="icon-button"
+                  aria-label="Hapus pencarian"
+                  onClick={() => setQuery("")}
+                >
+                  <Icon name="close" />
+                </button>
+              )}
+            </div>
           </div>
+          <a href="#daftar-pesanan" className="request-summary">
+            <Icon name="bag" />
+            <span>
+              Daftar kebutuhan<strong>{selected.length} produk dipilih</strong>
+            </span>
+            <Icon name="arrow" />
+          </a>
         </div>
-
-        {/* Filter kategori */}
         <div
-          className="mb-4 flex snap-x gap-2 overflow-x-auto pb-1"
-          role="tablist"
-          aria-label="Kategori produk"
+          className="category-filters"
+          role="group"
+          aria-label="Filter kategori"
         >
-          {[{ kategori: "semua", emoji: "🧺" }, ...KATALOG].map((k) => (
+          <button
+            aria-pressed={category === "semua"}
+            onClick={() => chooseCategory("semua")}
+          >
+            Semua produk
+          </button>
+          {KATALOG.map((k) => (
             <button
-              key={k.kategori}
-              role="tab"
-              aria-selected={kategori === k.kategori}
-              onClick={() => setKategori(k.kategori)}
-              className={`tap shrink-0 snap-start rounded-full border px-3.5 py-1.5 text-sm font-medium transition ${
-                kategori === k.kategori
-                  ? "border-brand bg-brand text-white"
-                  : "border-hairline text-ink2 hover:bg-surface2"
-              }`}
+              key={k.id}
+              aria-pressed={category === k.id}
+              onClick={() => chooseCategory(k.id)}
             >
-              <span aria-hidden="true">{k.emoji}</span>{" "}
-              {k.kategori === "semua" ? "Semua" : k.kategori}
+              {k.kategori}
             </button>
           ))}
         </div>
-
-        {tampil.map((kat) => (
-          <section key={kat.kategori} className="mb-7">
-            <h3 className="mb-3 flex items-center gap-2 text-base font-semibold">
-              <span aria-hidden="true">{kat.emoji}</span> {kat.kategori}
-            </h3>
-            <ul className="grid grid-cols-2 gap-2.5 sm:grid-cols-3 lg:grid-cols-4">
-              {kat.items.map((item) => (
-                <ProdukKartu
-                  key={item.nama}
-                  item={item}
-                  qty={cart[item.nama] ?? 0}
-                  onChange={(q) => set(item.nama, q)}
-                />
-              ))}
-            </ul>
-          </section>
-        ))}
-
-        {/* ---------------- Kerja sama ---------------- */}
-        <Card className="border-brand/30 bg-brand-soft">
-          <h2 className="text-lg font-semibold">
-            Butuh pasokan rutin untuk dapur Anda?
-          </h2>
-          <p className="mt-1.5 text-sm leading-relaxed text-ink2">
-            Kami siap jadi supplier tetap: harga grosir, pengiriman terjadwal
-            sebelum jam masak, dan penagihan bulanan. Lihat juga{" "}
-            <Link href="/dashboard" className="font-semibold underline">
-              analisis pasar
-            </Link>{" "}
-            kami untuk memahami kapasitas layanan.
+        <div className="catalog-results">
+          <p role="status" aria-live="polite">
+            Menampilkan <strong>{filtered.length}</strong> produk
+            {query && <> untuk “{query}”</>}
           </p>
-          <a
-            href={waLink(
-              `Halo ${BISNIS.nama}, dapur kami butuh supplier bahan rutin. Boleh diskusi kerja sama & harga grosir?`
-            )}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="tap mt-4 inline-flex items-center gap-2 rounded-lg bg-brand px-5 py-3 text-sm font-semibold text-white hover:opacity-90"
-          >
-            💬 Hubungi untuk kerja sama
-          </a>
-        </Card>
-
-        <p className="mt-6 text-xs leading-relaxed text-muted">
-          Keranjang tersimpan di perangkat Anda sendiri dan tidak dikirim ke
-          mana pun sampai Anda menekan tombol WhatsApp.
-        </p>
-
-        <div className="h-24" aria-hidden="true" />
-      </div>
-
-      {/* ---------------- Bar keranjang (sticky) ---------------- */}
-      {jumlahBaris > 0 && (
-        <div className="safe-b fixed bottom-14 left-0 right-0 z-[1090] border-t border-hairline bg-surface/95 backdrop-blur md:bottom-0">
-          <div className="mx-auto flex max-w-content items-center gap-3 px-4 py-2.5">
-            <div className="min-w-0 flex-1">
-              <div className="text-xs text-muted">
-                {jumlahBaris} jenis · {num(isi.reduce((a, i) => a + i.qty, 0))}{" "}
-                satuan
-              </div>
-              <div className="truncate text-base font-bold">
-                {rupiah(total)}
-              </div>
-            </div>
-            <Btn variant="ghost" onClick={() => setCart({})} className="!px-2">
-              Kosongkan
-            </Btn>
-            <a
-              href={waLink(pesanWa)}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="tap inline-flex shrink-0 items-center gap-1.5 rounded-lg bg-brand px-4 py-2.5 text-sm font-bold text-white hover:opacity-90"
+          <span>Foto ilustrasi · stok dan harga dikonfirmasi</span>
+        </div>
+        {filtered.length === 0 ? (
+          <section className="empty-state">
+            <Icon name="search" />
+            <h2>Bahan belum ditemukan.</h2>
+            <p>
+              Coba kata lain atau tanyakan kebutuhan Anda langsung kepada kami.
+            </p>
+            <button
+              className="button button-secondary"
+              onClick={() => {
+                setQuery("");
+                chooseCategory("semua");
+              }}
             >
-              💬 Pesan
+              Tampilkan semua produk
+            </button>
+          </section>
+        ) : (
+          <div className="product-grid">
+            {filtered.map((p, i) => (
+              <article className="product-card" key={p.id}>
+                <Link
+                  href={`/supplier/${p.id}`}
+                  aria-label={`Lihat rincian ${p.nama}`}
+                >
+                  <ProductPhoto nama={p.nama} src={p.gambar} priority={i < 4} />
+                </Link>
+                <div className="product-card-content">
+                  <p className="product-category">{p.kategori}</p>
+                  <h2>
+                    <Link href={`/supplier/${p.id}`}>{p.nama}</Link>
+                  </h2>
+                  <p className="product-description">{p.deskripsi}</p>
+                  <div className="product-card-order">
+                    <span>
+                      Per {p.satuan}
+                      <small>Minta harga</small>
+                    </span>
+                    {cart[p.id] > 0 ? (
+                      <Quantity
+                        id={p.id}
+                        nama={p.nama}
+                        qty={cart[p.id]}
+                        onChange={(n) => change(p.id, n)}
+                      />
+                    ) : (
+                      <button
+                        className="add-button"
+                        onClick={(event) => {
+                          change(p.id, 1);
+                          if (event.detail === 0) setFocusProduct(p.id);
+                        }}
+                        disabled={!ready}
+                        aria-label={`Tambahkan ${p.nama} ke daftar kebutuhan`}
+                      >
+                        <Icon name="plus" />
+                        Pilih
+                      </button>
+                    )}
+                  </div>
+                  {p.fotoCatatan && (
+                    <p className="photo-caption">{p.fotoCatatan}</p>
+                  )}
+                </div>
+              </article>
+            ))}
+          </div>
+        )}
+        <section className="request-panel" id="daftar-pesanan" tabIndex={-1}>
+          <div className="request-heading">
+            <div>
+              <p className="eyebrow">LANJUTKAN LEWAT WHATSAPP</p>
+              <h2>Daftar kebutuhan Anda.</h2>
+              <p>
+                Jumlah di bawah adalah permintaan awal. Stok, harga, kemasan,
+                dan biaya kirim dikonfirmasi sebelum pembelian.
+              </p>
+            </div>
+            <Icon name="bag" />
+          </div>
+          {selected.length ? (
+            <>
+              <ul className="request-items">
+                {selected.map((p) => (
+                  <li key={p.id}>
+                    <div>
+                      <strong>{p.nama}</strong>
+                      <span>
+                        {p.qty} {p.satuan}
+                      </span>
+                    </div>
+                    <div className="request-item-actions">
+                      <Quantity
+                        id={`pesanan-${p.id}`}
+                        nama={p.nama}
+                        qty={p.qty}
+                        onChange={(n) => change(p.id, n)}
+                      />
+                      <button
+                        className="icon-button"
+                        aria-label={`Hapus ${p.nama} dari daftar`}
+                        onClick={() => change(p.id, 0)}
+                      >
+                        <Icon name="close" />
+                      </button>
+                    </div>
+                  </li>
+                ))}
+              </ul>
+              <div className="request-bottom">
+                <p>
+                  {selected.length} jenis bahan ·{" "}
+                  {storageUnavailable
+                    ? "Penyimpanan perangkat tidak tersedia; daftar tetap dapat dikirim selama halaman terbuka."
+                    : "Daftar tersimpan di perangkat ini."}
+                </p>
+                <a
+                  href={waLink(message)}
+                  className="button button-primary"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Icon name="chat" />
+                  Minta penawaran ({selected.length})<Icon name="arrow" />
+                </a>
+              </div>
+            </>
+          ) : (
+            <div className="request-empty">
+              <p>
+                Belum ada bahan yang dipilih. Tambahkan produk dari katalog
+                untuk menyusun daftar kebutuhan.
+              </p>
+              <a
+                href={waLink(
+                  `Halo ${BISNIS.nama}, saya ingin bertanya tentang stok dan harga bahan dapur.`,
+                )}
+                className="button button-secondary"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Icon name="chat" />
+                Tanyakan kebutuhan lain
+              </a>
+            </div>
+          )}
+        </section>
+        <aside className="catalog-special">
+          <Icon name="info" />
+          <p>
+            <strong>Mencari bahan lainnya?</strong> Kami menerima pertanyaan
+            untuk segala jenis jamur, buah, cabai, polo pendem, dan bahan toko.
+            Jenis produk serta ketersediaannya dikonfirmasi saat pemesanan.
+          </p>
+        </aside>
+      </div>
+      {selected.length > 0 && (
+        <div className="request-bar">
+          <div className="site-container">
+            <span>
+              <strong>{selected.length} produk</strong> dalam daftar kebutuhan
+            </span>
+            <a href="#daftar-pesanan" className="button button-primary">
+              Periksa daftar <Icon name="arrow" />
             </a>
           </div>
         </div>
       )}
-
-      <NavSpacer />
     </>
-  );
-}
-
-/* ---------------- Kartu produk dengan stepper ---------------- */
-
-function ProdukKartu({
-  item,
-  qty,
-  onChange,
-}: {
-  item: ProdukItem;
-  qty: number;
-  onChange: (q: number) => void;
-}) {
-  return (
-    <li className="flex flex-col justify-between rounded-xl border border-hairline bg-surface p-3">
-      <div>
-        <div className="text-sm font-medium leading-snug">{item.nama}</div>
-        <div className="mt-0.5 text-sm font-semibold text-brand">
-          {rupiah(item.harga)}
-          <span className="font-normal text-muted"> /{item.satuan}</span>
-        </div>
-      </div>
-
-      {qty === 0 ? (
-        <Btn
-          variant="outline"
-          className="mt-3 w-full !py-1.5 !text-xs"
-          onClick={() => onChange(1)}
-          ariaLabel={`Tambah ${item.nama} ke keranjang`}
-        >
-          + Tambah
-        </Btn>
-      ) : (
-        <div className="mt-3 flex items-center justify-between rounded-lg border border-brand">
-          <button
-            onClick={() => onChange(qty - 1)}
-            className="tap px-3 text-lg font-bold text-brand"
-            aria-label={`Kurangi ${item.nama}`}
-          >
-            −
-          </button>
-          <span
-            className="tabular-nums text-sm font-bold"
-            aria-live="polite"
-            aria-label={`${qty} ${item.satuan} ${item.nama}`}
-          >
-            {qty}
-          </span>
-          <button
-            onClick={() => onChange(qty + 1)}
-            className="tap px-3 text-lg font-bold text-brand"
-            aria-label={`Tambah ${item.nama}`}
-          >
-            +
-          </button>
-        </div>
-      )}
-    </li>
   );
 }

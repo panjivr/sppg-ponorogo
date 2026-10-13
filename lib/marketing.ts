@@ -1,4 +1,5 @@
 import type { Sppg } from "./types";
+import { BISNIS } from "./config";
 
 export type Peran = "Ka SPPG" | "PIC Yayasan";
 
@@ -32,7 +33,7 @@ export function normalizePhone(raw?: string): string | null {
 /** Susun daftar penerima dari data SPPG, dedup per nomor. */
 export function buildRecipients(
   list: Sppg[],
-  opts: { includeKa: boolean; includePic: boolean }
+  opts: { includeKa: boolean; includePic: boolean },
 ): Recipient[] {
   const out: Recipient[] = [];
   const seen = new Set<string>();
@@ -88,17 +89,30 @@ export function waSendLink(r: Recipient, tpl: string): string {
   return `https://wa.me/${r.nomor}?text=${encodeURIComponent(renderTemplate(tpl, r))}`;
 }
 
-export const DEFAULT_TEMPLATE =
-  "Halo {contact} 🙏\n\nSaya dari [Nama Toko/Supplier Anda] — penyedia kebutuhan dapur (sayur, buah, telur, bumbu, sembako) untuk dapur SPPG/MBG.\n\nUntuk {nama} di Kec. {kecamatan} yang melayani ±{porsi} porsi/hari, kami siap suplai harian dengan harga bersaing, kualitas terjaga, dan bisa antar. Boleh saya kirimkan katalog & daftar harga?\n\nTerima kasih.";
+export const DEFAULT_TEMPLATE = `Halo {contact},\n\nSaya dari ${BISNIS.nama}, supplier kebutuhan dapur di Ponorogo.\n\nBoleh saya bantu menyusun penawaran untuk kebutuhan {nama} di Kec. {kecamatan}? Kirim daftar bahan, jumlah, dan jadwal yang dibutuhkan; stok, harga, serta pengiriman akan dikonfirmasi terlebih dahulu.\n\nTerima kasih.`;
 
 /** Ekspor penerima ke CSV. */
 export function toCsv(rows: Recipient[]): string {
-  const head = ["nama_kontak", "peran", "nomor", "sppg", "kecamatan", "yayasan"];
+  const head = [
+    "nama_kontak",
+    "peran",
+    "nomor",
+    "sppg",
+    "kecamatan",
+    "yayasan",
+  ];
   const esc = (v: string) => `"${(v ?? "").replace(/"/g, '""')}"`;
   const lines = rows.map((r) =>
-    [r.contact, r.peran, r.nomor, r.sppg.nama, r.sppg.kecamatan, r.sppg.detail?.yayasan ?? ""]
+    [
+      r.contact,
+      r.peran,
+      r.nomor,
+      r.sppg.nama,
+      r.sppg.kecamatan,
+      r.sppg.detail?.yayasan ?? "",
+    ]
       .map((x) => esc(String(x)))
-      .join(",")
+      .join(","),
   );
   return [head.join(","), ...lines].join("\n");
 }
@@ -115,7 +129,7 @@ export function toVcard(rows: Recipient[]): string {
         `TEL;TYPE=CELL:+${r.nomor}`,
         `NOTE:${r.peran} — ${r.sppg.kecamatan}`,
         "END:VCARD",
-      ].join("\n")
+      ].join("\n"),
     )
     .join("\n");
 }

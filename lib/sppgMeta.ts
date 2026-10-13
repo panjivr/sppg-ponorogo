@@ -31,7 +31,7 @@ export const STATUS_META: Record<SppgStatus, StatusMeta> = {
     aktif: false,
     label: "Berhenti sementara",
     color: "#94a3b8",
-    badge: "bg-slate-200 text-slate-700 ring-slate-500/20",
+    badge: "bg-surface2 text-ink2 ring-hairline",
   },
   suspend: {
     icon: "◼",

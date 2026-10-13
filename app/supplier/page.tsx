@@ -1,13 +1,38 @@
 import SupplierClient from "./SupplierClient";
-import { BISNIS } from "@/lib/config";
-
+import { PRODUK } from "@/lib/catalog";
+import { SITE } from "@/lib/config";
 export const metadata = {
-  title: `${BISNIS.nama} — Supplier Bahan Dapur MBG 24 Jam`,
+  title: "Katalog Sayur, Bumbu & Sembako Ponorogo",
   description:
-    "Katalog sayur, buah, protein, dan sembako untuk dapur SPPG / MBG di Kabupaten Ponorogo. Buka 24 jam, pesan langsung via WhatsApp dengan rincian dan estimasi total.",
+    "Katalog Bumbu Pawon Mas Dhoo: sayuran segar, jamur, polo pendem, buah, bumbu, tepung, beras, telur, dan kelapa. Pilih kebutuhan lalu minta penawaran WhatsApp.",
   alternates: { canonical: "/supplier" },
 };
-
 export default function SupplierPage() {
-  return <SupplierClient />;
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    name: "Katalog Bumbu Pawon Mas Dhoo",
+    url: `${SITE.url}/supplier`,
+    mainEntity: {
+      "@type": "ItemList",
+      numberOfItems: PRODUK.length,
+      itemListElement: PRODUK.map((p, i) => ({
+        "@type": "ListItem",
+        position: i + 1,
+        name: p.nama,
+        url: `${SITE.url}/supplier/${p.id}`,
+      })),
+    },
+  };
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c"),
+        }}
+      />
+      <SupplierClient />
+    </>
+  );
 }

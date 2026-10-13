@@ -1,4 +1,43 @@
-# Peta SPPG Ponorogo — Intelijen Pasar Supplier MBG
+# Bumbu Pawon Mas Dhoo — Katalog Supplier Ponorogo
+
+Website publik untuk katalog sayuran, jamur, polo pendem, buah, bumbu, dan sembako; dilengkapi alat pengelola data SPPG Ponorogo.
+
+## Website publik
+
+- `/`: landing bisnis, kategori, layanan, cara pesan, kontak, dan FAQ.
+- `/supplier`: 61 produk dalam 7 kategori, pencarian nama/alias, filter, dan daftar kebutuhan yang tersimpan di perangkat.
+- `/supplier/[slug]`: 61 halaman rincian produk statis dengan canonical, metadata, dan breadcrumb.
+- `/kredit-foto`: sumber, pembuat, lisensi, dan keterangan pemakaian gambar.
+- Pemesanan adalah **permintaan penawaran** WhatsApp ke **0878-9261-4999**; harga, stok, varian, kemasan, dan pengiriman dikonfirmasi. Tidak menampilkan harga atau jam buka yang belum diberikan.
+- Lokasi: **Lor Prapatan Jetis, Ponorogo, Jawa Timur**.
+- Seluruh 61 produk memiliki foto dari sumber yang diperiksa. Ada 57 berkas sumber berbeda: merek beras menggunakan foto bahan yang diberi keterangan, dan kacang sambel memakai ilustrasi bahan kacang. Foto tidak menyatakan stok aktual toko.
+- Foto lokal dioptimalkan ke WebP dari 115,36 MiB menjadi 4,86 MiB (95,8% lebih kecil), tanpa retouching, pemotongan objek, atau penghapusan watermark. Font juga di-host lokal dengan lisensi OFL.
+- Sitemap memuat 64 URL publik. Tujuh halaman pengelola memakai metadata dan header `noindex`.
+
+Nama, nomor WhatsApp, area layanan, dan alamat ada di `lib/config.ts`; katalog di `data/produk.json`; atribusi dan checksum foto di `data/photo-sources.json`.
+
+**Logo asli masih menunggu berkas PNG yang dapat diakses workspace.** Tanda daun yang tampil adalah penanda antarmuka sementara, bukan reproduksi logo pengguna.
+
+Laporan audit: [docs/ui-ux-audit.md](docs/ui-ux-audit.md). Panduan desain mengacu pada [UI UX Pro Max](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill).
+
+## Menjalankan
+
+```bash
+npm ci
+npm run dev
+```
+
+Untuk produksi:
+
+```bash
+npm run build
+npm run start
+```
+
+Hentikan server pengembangan sebelum build produksi; kedua mode memakai direktori `.next`. Browser lokal dapat memerlukan akses OpenStreetMap untuk basemap internal. Foto produk dan font tidak memerlukan koneksi luar saat ditampilkan.
+
+## Alat internal — SPPG Ponorogo
+
 
 Basis data dan alat analisis **85 dapur SPPG** (Satuan Pelayanan Pemenuhan Gizi,
 program Makan Bergizi Gratis) di **21 kecamatan Kabupaten Ponorogo**, dibangun
@@ -16,11 +55,11 @@ yang paling strategis, dan mengukur besarnya pasar yang diperebutkan.
 |---|---|
 | Dapur terdata | **85** |
 | Kecamatan tercakup | **21** (seluruh kabupaten) |
-| Dapur operasional | **72** |
-| Penerima manfaat/hari | **173.506** porsi |
-| Koordinat GPS asli | **63 / 85** (sisanya perkiraan, ditandai) |
-| Belanja pangan/tahun | **± Rp 451 M** |
-| Pasar bahan/tahun (60%) | **± Rp 271 M** |
+| Dapur operasional | **68** |
+| Penerima manfaat/hari (operasional) | **165.888** porsi |
+| Koordinat GPS asli | **71 / 85** (sisanya perkiraan, ditandai) |
+| Belanja pangan/tahun | **± Rp 431 M** |
+| Pasar bahan/tahun (60%) | **± Rp 259 M** |
 
 Semua angka rupiah diturunkan dari asumsi terbuka di `lib/config.ts` dan
 dijelaskan di halaman `/tentang`.
@@ -35,7 +74,7 @@ dijelaskan di halaman `/tentang`.
 | `/peta` | Peta interaktif: cari, filter, heatmap, simulasi calon ruko |
 | `/dashboard` | Analisis pasar: TAM, sebaran per kecamatan, peringkat peluang |
 | `/direktori` | Tabel lengkap + ekspor **CSV** & **GeoJSON** |
-| `/supplier` | Katalog bahan + keranjang → checkout WhatsApp terperinci |
+| `/supplier` | Katalog 61 bahan + daftar kebutuhan → permintaan penawaran WhatsApp |
 | `/tentang` | Metodologi, sumber data, asumsi, batasan, privasi |
 | `/admin` | Editor data SPPG & pasar (koreksi, impor massal) |
 | `/blast` | Penyusun pesan WhatsApp massal untuk prospek dapur |
@@ -91,7 +130,7 @@ hanya berjarak ΔE 13,6 — terlalu dekat untuk bersebelahan.
 **SEO** — metadata per halaman, canonical, Open Graph, sitemap, robots, dan
 JSON-LD `Dataset`.
 
-**Performa** — seluruh 6 halaman **statis** (SSG); bundle bersama 87 KB;
+**Performa** — halaman publik dan 61 rincian produk **statis** (SSG); bundle bersama 87 KB;
 Leaflet dimuat dinamis (`ssr: false`) hanya di halaman peta.
 
 ---
@@ -136,7 +175,7 @@ lib/
 data/
   sppg.json           85 dapur SPPG (+ rincian PM & perizinan)
   pasar.json          titik pasar tradisional
-  produk.json         katalog bahan (harga numerik)
+  produk.json         katalog bahan (nama, satuan, deskripsi, foto)
 ```
 
 ### Menjalankan
@@ -161,7 +200,7 @@ ASUMSI.marginKotor   // margin distribusi
 SITE.url             // domain untuk SEO
 ```
 
-Harga & produk katalog: `data/produk.json`.
+Produk katalog: `data/produk.json`. Harga dan stok dikonfirmasi lewat penawaran WhatsApp.
 
 ---
 
@@ -173,7 +212,7 @@ Harga & produk katalog: `data/produk.json`.
   `SppgRepo` / `RukoRepo` di `lib/store.ts`. Untuk multi-pengguna, buat API
   route + Postgres/Supabase, tulis adapter dengan bentuk yang sama, lalu tukar
   nilai ekspor `sppgRepo`/`rukoRepo`. **Tidak ada komponen UI yang perlu diubah.**
-- **22 titik koordinatnya perkiraan** pusat wilayah, ditandai jelas; tautan
+- **14 titik koordinatnya perkiraan** pusat wilayah, ditandai jelas; tautan
   Google Maps resmi tetap tersimpan per titik.
 - **Belum ada data pesaing & harga riil** — web ini memetakan permintaan, belum
   memetakan siapa yang sudah memasok dan pada harga berapa.

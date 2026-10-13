@@ -38,7 +38,7 @@ export default function RukoManager({
       </button>
 
       {rukoList.length === 0 && (
-        <p className="text-xs text-slate-500">
+        <p className="text-xs text-ink2">
           Belum ada calon ruko. Tambahkan lalu lihat berapa dapur yang masuk
           jangkauannya.
         </p>
@@ -52,7 +52,7 @@ export default function RukoManager({
           <div
             key={r.id}
             className={`rounded border p-2 text-sm ${
-              selected ? "border-blue-500 bg-blue-50" : "border-slate-200"
+              selected ? "border-blue-500 bg-blue-50" : "border-hairline"
             }`}
           >
             <div className="flex items-center justify-between gap-2">
@@ -70,7 +70,7 @@ export default function RukoManager({
             </div>
 
             <div className="mt-1 flex items-center gap-2 text-xs">
-              <label className="text-slate-500">Radius</label>
+              <label className="text-ink2">Radius</label>
               <input
                 type="range"
                 min={0.5}
@@ -99,14 +99,14 @@ export default function RukoManager({
             </label>
 
             <textarea
-              className="mt-1 w-full rounded border border-slate-200 px-1 py-0.5 text-xs focus:outline-none"
+              className="mt-1 w-full rounded border border-hairline px-1 py-0.5 text-xs focus:outline-none"
               rows={1}
               placeholder="Catatan (mis. dekat pasar, sewa 2 lantai)"
               value={r.catatan}
               onChange={(e) => onUpdate({ ...r, catatan: e.target.value })}
             />
 
-            <div className="mt-1 rounded bg-slate-100 px-2 py-1 text-xs">
+            <div className="mt-1 rounded bg-page px-2 py-1 text-xs">
               <span className="font-semibold text-brand">
                 {inRange.length} dapur
               </span>{" "}
@@ -119,7 +119,7 @@ export default function RukoManager({
 
             <button
               onClick={() => onDelete(r.id)}
-              className="mt-1 text-xs text-red-600 hover:underline"
+              className="mt-1 text-xs text-danger-readable hover:underline"
             >
               Hapus
             </button>

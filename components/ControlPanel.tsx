@@ -1,5 +1,6 @@
 "use client";
 
+import Icon from "@/components/Icon";
 import { useMemo } from "react";
 import type { Sppg } from "@/lib/types";
 import { computeStats, fmt, STATUS_META, yayasanGroups } from "@/lib/sppgMeta";
@@ -44,7 +45,7 @@ export default function ControlPanel({
     <div className="space-y-4">
       {/* Ringkasan utama */}
       <section>
-        <h2 className="mb-2 text-xs font-semibold uppercase tracking-wide text-slate-400">
+        <h2 className="mb-2 text-xs font-semibold uppercase tracking-wide text-muted">
           Ringkasan
         </h2>
         <div className="grid grid-cols-2 gap-2">
@@ -65,7 +66,7 @@ export default function ControlPanel({
 
       {/* Status dapur */}
       <section>
-        <h2 className="mb-2 text-xs font-semibold uppercase tracking-wide text-slate-400">
+        <h2 className="mb-2 text-xs font-semibold uppercase tracking-wide text-muted">
           Status operasional
         </h2>
         <div className="grid grid-cols-2 gap-2">
@@ -94,10 +95,10 @@ export default function ControlPanel({
 
       {/* Rincian penerima manfaat */}
       <section>
-        <h2 className="mb-2 text-xs font-semibold uppercase tracking-wide text-slate-400">
+        <h2 className="mb-2 text-xs font-semibold uppercase tracking-wide text-muted">
           Rincian penerima manfaat
         </h2>
-        <div className="overflow-hidden rounded-lg border border-slate-200">
+        <div className="overflow-hidden rounded-lg border border-hairline">
           <PMRow label="Satuan pendidikan" value={s.satdik} bold />
           <PMRow label="— Siswa" value={s.siswa} indent />
           <PMRow label="— Guru & tendik" value={s.guruTendik} indent />
@@ -113,8 +114,8 @@ export default function ControlPanel({
       </section>
 
       {/* Analisis lokasi ruko */}
-      <section className="rounded-lg border border-slate-200 p-3">
-        <h2 className="mb-2 text-xs font-semibold uppercase tracking-wide text-slate-400">
+      <section className="rounded-lg border border-hairline p-3">
+        <h2 className="mb-2 text-xs font-semibold uppercase tracking-wide text-muted">
           Analisis lokasi ruko
         </h2>
         <div className="flex items-center justify-between text-xs">
@@ -125,6 +126,7 @@ export default function ControlPanel({
         </div>
         <input
           type="range"
+          aria-label="Radius jangkauan supplier dalam kilometer"
           min={1}
           max={15}
           step={0.5}
@@ -132,8 +134,9 @@ export default function ControlPanel({
           onChange={(e) => onRadiusChange(parseFloat(e.target.value))}
           className="mt-1 w-full accent-brand"
         />
-        <p className="text-[11px] text-slate-500">
-          Dipakai untuk menghitung kandidat titik ruko terbaik (jangkauan supplier).
+        <p className="text-xs text-ink2">
+          Dipakai untuk menghitung kandidat titik ruko terbaik (jangkauan
+          supplier).
         </p>
 
         <div className="mt-3 space-y-2">
@@ -155,29 +158,31 @@ export default function ControlPanel({
               className="h-4 w-4 accent-brand"
             />
             <span>
-              🛒 Pasar tradisional
-              <span className="ml-1 text-[11px] text-slate-400">
+              <Icon name="bag" className="mr-1 inline" /> Pasar tradisional
+              <span className="ml-1 text-xs text-muted">
                 ({pasarCount}) — peta kompetitor
               </span>
             </span>
           </label>
         </div>
         {showRekomendasi && (
-          <p className="mt-2 rounded bg-amber-50 px-2 py-1.5 text-[11px] text-amber-800">
-            ⭐ titik pusat berbobot · 🔴 3 area dengan dapur terbanyak dalam radius{" "}
-            {radiusKm} km. Perkiraan berdasarkan sebaran &amp; status dapur.
+          <p className="mt-2 rounded bg-amber-50 px-2 py-1.5 text-xs text-amber-800">
+            ⭐ titik pusat berbobot · 🔴 3 area dengan dapur terbanyak dalam
+            radius {radiusKm} km. Perkiraan berdasarkan sebaran &amp; status
+            dapur.
           </p>
         )}
       </section>
 
       {/* Jaringan yayasan — benang merah */}
-      <section className="rounded-lg border border-slate-200 p-3">
+      <section className="rounded-lg border border-hairline p-3">
         <div className="flex items-center justify-between">
-          <h2 className="text-xs font-semibold uppercase tracking-wide text-slate-400">
+          <h2 className="text-xs font-semibold uppercase tracking-wide text-muted">
             Jaringan yayasan
           </h2>
-          <span className="text-[11px] text-slate-400">
-            {groups.length} yayasan · {groups.reduce((a, g) => a + g.items.length, 0)} dapur
+          <span className="text-xs text-muted">
+            {groups.length} yayasan ·{" "}
+            {groups.reduce((a, g) => a + g.items.length, 0)} dapur
           </span>
         </div>
         <Toggle
@@ -185,7 +190,7 @@ export default function ControlPanel({
           onChange={onToggleYayasan}
           label="Tampilkan benang merah antar dapur"
         />
-        <p className="mt-0.5 text-[11px] text-slate-500">
+        <p className="mt-0.5 text-xs text-ink2">
           Garis menghubungkan dapur yang dikelola yayasan yang sama.
         </p>
 
@@ -194,7 +199,7 @@ export default function ControlPanel({
             {selectedYayasan && (
               <button
                 onClick={() => onSelectYayasan(null)}
-                className="mb-1 w-full rounded bg-slate-100 px-2 py-1 text-[11px] font-medium text-slate-600 hover:bg-slate-200"
+                className="mb-1 w-full rounded bg-page px-2 py-1 text-xs font-medium text-ink2 hover:bg-slate-200"
               >
                 ← Tampilkan semua jaringan
               </button>
@@ -206,17 +211,19 @@ export default function ControlPanel({
                   key={g.nama}
                   onClick={() => onSelectYayasan(active ? null : g.nama)}
                   className={`flex w-full items-center gap-2 rounded px-2 py-1 text-left text-xs ${
-                    active ? "bg-slate-100 ring-1 ring-slate-300" : "hover:bg-slate-50"
+                    active
+                      ? "bg-page ring-1 ring-slate-300"
+                      : "hover:bg-surface2"
                   }`}
                 >
                   <span
                     className="inline-block h-3 w-3 shrink-0 rounded-full border border-white shadow-sm"
                     style={{ background: g.color }}
                   />
-                  <span className="min-w-0 flex-1 truncate text-slate-700">
+                  <span className="min-w-0 flex-1 truncate text-ink">
                     {g.nama}
                   </span>
-                  <span className="shrink-0 rounded-full bg-slate-100 px-1.5 text-[10px] font-semibold text-slate-500">
+                  <span className="shrink-0 rounded-full bg-page px-1.5 text-xs font-semibold text-ink2">
                     {g.items.length}
                   </span>
                 </button>
@@ -227,12 +234,15 @@ export default function ControlPanel({
       </section>
 
       {/* Legenda */}
-      <section className="border-t border-slate-200 pt-3 text-xs">
-        <div className="mb-1.5 font-semibold text-slate-500">Keterangan peta</div>
+      <section className="border-t border-hairline pt-3 text-xs">
+        <div className="mb-1.5 font-semibold text-ink2">Keterangan peta</div>
         <div className="grid grid-cols-2 gap-y-1">
           <Legend color={STATUS_META.operasional.color} text="Operasional" />
           <Legend color={STATUS_META.akan.color} text="Akan operasional" />
-          <Legend color={STATUS_META.berhenti.color} text="Berhenti sementara" />
+          <Legend
+            color={STATUS_META.berhenti.color}
+            text="Berhenti sementara"
+          />
           <Legend color={STATUS_META.suspend.color} text="Suspend" />
         </div>
       </section>
@@ -252,12 +262,10 @@ function BigStat({
   accent: string;
 }) {
   return (
-    <div className="rounded-lg border border-slate-200 bg-white p-3">
+    <div className="rounded-lg border border-hairline bg-surface p-3">
       <div className={`text-2xl font-bold tabular-nums ${accent}`}>{value}</div>
-      <div className="text-[11px] font-medium leading-tight text-slate-600">
-        {label}
-      </div>
-      <div className="text-[10px] leading-tight text-slate-400">{sub}</div>
+      <div className="text-xs font-medium leading-tight text-ink2">{label}</div>
+      <div className="text-xs leading-tight text-muted">{sub}</div>
     </div>
   );
 }
@@ -272,18 +280,16 @@ function MiniStat({
   value: number;
 }) {
   return (
-    <div className="flex items-center gap-2 rounded-lg border border-slate-200 px-2.5 py-2">
+    <div className="flex items-center gap-2 rounded-lg border border-hairline px-2.5 py-2">
       <span
         className="inline-block h-2.5 w-2.5 shrink-0 rounded-full"
         style={{ background: dot }}
       />
       <div className="min-w-0">
-        <div className="text-base font-bold leading-none tabular-nums text-slate-800">
+        <div className="text-base font-bold leading-none tabular-nums text-ink">
           {value}
         </div>
-        <div className="truncate text-[10px] leading-tight text-slate-500">
-          {label}
-        </div>
+        <div className="truncate text-xs leading-tight text-ink2">{label}</div>
       </div>
     </div>
   );
@@ -302,8 +308,8 @@ function PMRow({
 }) {
   return (
     <div
-      className={`flex items-center justify-between border-b border-slate-100 px-3 py-1.5 text-xs ${
-        bold ? "font-semibold text-slate-800" : "text-slate-600"
+      className={`flex items-center justify-between border-b border-hairline px-3 py-1.5 text-xs ${
+        bold ? "font-semibold text-ink" : "text-ink2"
       } ${indent ? "pl-5" : ""}`}
     >
       <span>{label}</span>
@@ -336,7 +342,7 @@ function Toggle({
 
 function Legend({ color, text }: { color: string; text: string }) {
   return (
-    <div className="flex items-center gap-2 text-slate-600">
+    <div className="flex items-center gap-2 text-ink2">
       <span
         className="inline-block h-3 w-3 rounded-full border border-white shadow-sm"
         style={{ background: color }}

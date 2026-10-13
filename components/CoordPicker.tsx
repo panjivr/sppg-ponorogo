@@ -10,7 +10,11 @@ const pinIcon = L.divIcon({
   iconAnchor: [13, 24],
 });
 
-function ClickToSet({ onPick }: { onPick: (lat: number, lng: number) => void }) {
+function ClickToSet({
+  onPick,
+}: {
+  onPick: (lat: number, lng: number) => void;
+}) {
   useMapEvents({
     click(e) {
       onPick(e.latlng.lat, e.latlng.lng);
@@ -40,12 +44,13 @@ export default function CoordPicker({
       className="h-56 w-full rounded-md"
     >
       <TileLayer
-        attribution='&copy; OpenStreetMap'
+        attribution="&copy; OpenStreetMap"
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
       />
       <ClickToSet onPick={onPick} />
       {valid && (
         <Marker
+          title="Posisi koordinat yang dipilih"
           position={[lat, lng]}
           icon={pinIcon}
           draggable

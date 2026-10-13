@@ -143,15 +143,20 @@ export interface CandidateRuko {
    ============================================================ */
 
 export interface ProdukItem {
+  id: string;
   nama: string;
   satuan: string;
-  /** Harga satuan dalam Rupiah. Angka, bukan teks, agar total bisa dihitung. */
-  harga: number;
+  deskripsi: string;
+  alias?: string[];
+  /** Hanya foto yang telah diverifikasi; kosong bila belum tersedia. */
+  gambar?: string;
+  fotoCatatan?: string;
 }
 
 export interface Produk {
   kategori: string;
-  emoji: string;
+  id: string;
+  deskripsi: string;
   items: ProdukItem[];
 }
 

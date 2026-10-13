@@ -13,6 +13,7 @@ import { ASUMSI } from "@/lib/config";
 import { num, persen, rupiah, rupiahRingkas } from "@/lib/format";
 
 export const metadata = {
+  robots: { index: false, follow: false },
   title: "Analisis Pasar Supplier MBG Ponorogo",
   description:
     "Ukuran pasar belanja bahan pangan program MBG di Kabupaten Ponorogo, sebaran permintaan per kecamatan, dan peringkat peluang untuk supplier.",
@@ -190,7 +191,7 @@ export default function Dashboard() {
       <section className="mb-8">
         <Card>
           <SectionTitle>Asumsi yang dipakai</SectionTitle>
-          <div className="table-wrap">
+          <div className="table-wrap" tabIndex={0} role="region" aria-label="Tabel asumsi perhitungan pasar">
             <table className="w-full min-w-[30rem] text-sm">
               <caption className="sr-only">
                 Daftar asumsi perhitungan ukuran pasar

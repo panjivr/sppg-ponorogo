@@ -3,20 +3,39 @@
 import { usePathname } from "next/navigation";
 import Nav from "@/components/Nav";
 import AdminGate from "@/components/AdminGate";
+import PublicNav from "@/components/PublicNav";
+import PublicFooter from "@/components/PublicFooter";
 
-/** Rute publik (tanpa Nav & tanpa gate). Selain ini → area admin. */
-const PUBLIC = new Set<string>(["/"]);
+/** Landing dan katalog publik; alat analisis tetap di area pengelola. */
+const INTERNAL = new Set<string>([
+  "/peta",
+  "/dashboard",
+  "/direktori",
+  "/admin",
+  "/blast",
+  "/ringkasan",
+  "/tentang",
+]);
 
 /**
- * Shell aplikasi: landing publik "/" tampil apa adanya; semua rute lain
- * (peta, data, analisis, blast, dsb.) hanya untuk admin — dibungkus gate
- * kata sandi + navigasi internal.
+ * Shell menampilkan navigasi toko untuk landing dan katalog,
+ * serta navigasi pengelola untuk peta, data, dan analisis.
  */
 export default function Shell({ children }: { children: React.ReactNode }) {
   const path = usePathname();
 
-  if (PUBLIC.has(path)) {
-    return <main id="konten">{children}</main>;
+  if (
+    !INTERNAL.has(path) ||
+    path === "/supplier" ||
+    path.startsWith("/supplier/")
+  ) {
+    return (
+      <div className="public-site">
+        <PublicNav />
+        <main id="konten">{children}</main>
+        <PublicFooter />
+      </div>
+    );
   }
 
   return (

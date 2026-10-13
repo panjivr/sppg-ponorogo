@@ -82,13 +82,13 @@ export default function DataPanel({
           value={q}
           onChange={(e) => setQ(e.target.value)}
           placeholder="Cari nama, alamat, kepala SPPG, yayasan, ID…"
-          className="w-full rounded-md border border-slate-300 px-2.5 py-1.5 text-sm focus:border-brand focus:outline-none focus:ring-1 focus:ring-brand"
+          className="w-full rounded-md border border-hairline px-2.5 py-1.5 text-sm focus:border-brand focus:outline-none focus:ring-1 focus:ring-brand"
         />
         <div className="flex gap-2">
           <select
             value={kec}
             onChange={(e) => setKec(e.target.value)}
-            className="min-w-0 flex-1 rounded-md border border-slate-300 px-2 py-1.5 text-xs focus:border-brand focus:outline-none"
+            className="min-w-0 flex-1 rounded-md border border-hairline px-2 py-1.5 text-xs focus:border-brand focus:outline-none"
           >
             <option value="all">Semua kecamatan</option>
             {kecamatanList.map((k) => (
@@ -100,7 +100,7 @@ export default function DataPanel({
           <select
             value={status}
             onChange={(e) => setStatus(e.target.value as StatusFilter)}
-            className="min-w-0 flex-1 rounded-md border border-slate-300 px-2 py-1.5 text-xs focus:border-brand focus:outline-none"
+            className="min-w-0 flex-1 rounded-md border border-hairline px-2 py-1.5 text-xs focus:border-brand focus:outline-none"
           >
             <option value="all">Semua status</option>
             {(Object.keys(STATUS_META) as SppgStatus[]).map((s) => (
@@ -112,9 +112,9 @@ export default function DataPanel({
         </div>
       </div>
 
-      <div className="flex items-center justify-between text-xs text-slate-500">
+      <div className="flex items-center justify-between text-xs text-ink2">
         <span>
-          Menampilkan <strong className="text-slate-700">{filtered.length}</strong>{" "}
+          Menampilkan <strong className="text-ink">{filtered.length}</strong>{" "}
           dari {sppgList.length} dapur
         </span>
         {(q || kec !== "all" || status !== "all") && (
@@ -139,11 +139,11 @@ export default function DataPanel({
           return (
             <li
               key={s.id}
-              className="overflow-hidden rounded-lg border border-slate-200 bg-white"
+              className="overflow-hidden rounded-lg border border-hairline bg-surface"
             >
               <button
                 onClick={() => setOpenId(open ? null : s.id)}
-                className="flex w-full items-center gap-2 px-2.5 py-2 text-left hover:bg-slate-50"
+                className="flex w-full items-center gap-2 px-2.5 py-2 text-left hover:bg-surface2"
               >
                 <span
                   className="mt-0.5 inline-block h-2.5 w-2.5 shrink-0 rounded-full"
@@ -151,27 +151,27 @@ export default function DataPanel({
                   title={meta.label}
                 />
                 <div className="min-w-0 flex-1">
-                  <div className="truncate text-sm font-medium text-slate-800">
+                  <div className="truncate text-sm font-medium text-ink">
                     {s.nama}
                   </div>
-                  <div className="flex flex-wrap items-center gap-x-1.5 text-[11px] text-slate-500">
+                  <div className="flex flex-wrap items-center gap-x-1.5 text-xs text-ink2">
                     <span className="truncate">
                       {s.desa ? `${s.desa} · ` : ""}
                       {s.kecamatan} · {fmt(s.porsi)} PM/hari
                     </span>
                     {s.detail?.perijinan && (
-                      <span className="rounded bg-slate-100 px-1 py-px text-[10px] font-medium text-slate-500">
+                      <span className="rounded bg-page px-1 py-px text-xs font-medium text-ink2">
                         izin {perijinanProgress(s.detail.perijinan).done}/
                         {perijinanProgress(s.detail.perijinan).total}
                       </span>
                     )}
                   </div>
                 </div>
-                <span className="shrink-0 text-slate-400">{open ? "▾" : "▸"}</span>
+                <span className="shrink-0 text-muted">{open ? "▾" : "▸"}</span>
               </button>
 
               {open && (
-                <div className="border-t border-slate-100 bg-slate-50/60 px-3 py-3">
+                <div className="border-t border-hairline bg-surface2/60 px-3 py-3">
                   <SppgDetailCard
                     s={s}
                     yayasanCount={
@@ -183,10 +183,10 @@ export default function DataPanel({
                       s.detail?.yayasan && onShowYayasan(s.detail.yayasan.trim())
                     }
                   />
-                  <div className="mt-3 flex gap-2 border-t border-slate-200 pt-2">
+                  <div className="mt-3 flex gap-2 border-t border-hairline pt-2">
                     <button
                       onClick={() => onFocus(s)}
-                      className="flex-1 rounded-md border border-slate-300 px-2 py-1 text-xs font-medium text-slate-600 hover:bg-white"
+                      className="flex-1 rounded-md border border-hairline px-2 py-1 text-xs font-medium text-ink2 hover:bg-surface"
                     >
                       🗺 Lihat di peta
                     </button>
@@ -203,7 +203,7 @@ export default function DataPanel({
           );
         })}
         {filtered.length === 0 && (
-          <li className="rounded-lg border border-dashed border-slate-300 px-3 py-6 text-center text-sm text-slate-400">
+          <li className="rounded-lg border border-dashed border-hairline px-3 py-6 text-center text-sm text-muted">
             Tidak ada dapur yang cocok dengan filter.
           </li>
         )}

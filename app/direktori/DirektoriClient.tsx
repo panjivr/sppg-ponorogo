@@ -1,5 +1,6 @@
 "use client";
 
+import Icon from "@/components/Icon";
 import { useEffect, useMemo, useState } from "react";
 import { NavSpacer } from "@/components/Nav";
 import { Btn, StatusBadge, StatusDot } from "@/components/ui";
@@ -69,7 +70,7 @@ export default function DirektoriClient() {
         className="inline-flex items-center gap-1 hover:text-ink"
       >
         {label}
-        <span aria-hidden="true" className="text-[10px]">
+        <span aria-hidden="true" className="text-xs">
           {sortKey === k ? (asc ? "▲" : "▼") : "↕"}
         </span>
       </button>
@@ -113,7 +114,9 @@ export default function DirektoriClient() {
             id="kecd"
             className={input}
             value={filter.kecamatan}
-            onChange={(e) => setFilter({ ...filter, kecamatan: e.target.value })}
+            onChange={(e) =>
+              setFilter({ ...filter, kecamatan: e.target.value })
+            }
           >
             <option value="">Semua kecamatan</option>
             {kecamatanList.map((k) => (
@@ -132,7 +135,10 @@ export default function DirektoriClient() {
             className={input}
             value={filter.status}
             onChange={(e) =>
-              setFilter({ ...filter, status: e.target.value as SppgStatus | "" })
+              setFilter({
+                ...filter,
+                status: e.target.value as SppgStatus | "",
+              })
             }
           >
             <option value="">Semua status</option>
@@ -155,11 +161,9 @@ export default function DirektoriClient() {
           <Btn
             variant="outline"
             className="!py-1.5 !text-xs"
-            onClick={() =>
-              unduh("sppg-ponorogo.csv", keCsv(rows), "text/csv")
-            }
+            onClick={() => unduh("sppg-ponorogo.csv", keCsv(rows), "text/csv")}
           >
-            ⬇ CSV
+            <Icon name="download" className="mr-1 inline" /> CSV
           </Btn>
           <Btn
             variant="outline"
@@ -168,11 +172,11 @@ export default function DirektoriClient() {
               unduh(
                 "sppg-ponorogo.geojson",
                 keGeoJson(rows),
-                "application/geo+json"
+                "application/geo+json",
               )
             }
           >
-            ⬇ GeoJSON
+            <Icon name="download" className="mr-1 inline" /> GeoJSON
           </Btn>
         </div>
       </div>
@@ -206,12 +210,12 @@ export default function DirektoriClient() {
                   rel="noopener noreferrer"
                   className="text-xs font-semibold text-seqA underline"
                 >
-                  📍 Maps
+                  <Icon name="location" className="mr-1 inline" /> Maps
                 </a>
               )}
             </div>
             {s.perkiraan && (
-              <p className="mt-1.5 text-[11px] text-serious">
+              <p className="mt-1.5 text-xs text-warning-readable">
                 ⚠ koordinat perkiraan
               </p>
             )}
@@ -268,7 +272,7 @@ export default function DirektoriClient() {
                 <td className="max-w-[20rem] py-2.5 pr-3 text-xs leading-relaxed text-ink2">
                   {s.alamat}
                   {s.perkiraan && (
-                    <span className="ml-1 whitespace-nowrap text-serious">
+                    <span className="ml-1 whitespace-nowrap text-warning-readable">
                       ⚠ perkiraan
                     </span>
                   )}

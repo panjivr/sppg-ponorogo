@@ -8,3 +8,6 @@ npm-debug.log*
 .env*.local
 .vercel
 next-env.d.ts
+
+# Local UI audit screenshots and environment-specific check helpers
+/work/ui-audit/

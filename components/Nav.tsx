@@ -1,129 +1,136 @@
 "use client";
-
 import Link from "next/link";
+import { useEffect, useRef, useState } from "react";
 import { usePathname } from "next/navigation";
-import { useEffect, useState } from "react";
+import Icon, { type IconName } from "@/components/Icon";
 import { applyTheme, getTheme, setTheme, type Theme } from "@/lib/store";
-
-const LINKS = [
-  { href: "/ringkasan", label: "Beranda", icon: "🏠" },
-  { href: "/peta", label: "Peta", icon: "🗺️" },
-  { href: "/dashboard", label: "Analisis", icon: "📊" },
-  { href: "/direktori", label: "Direktori", icon: "📋" },
-  { href: "/supplier", label: "Katalog", icon: "🏪" },
-  { href: "/blast", label: "Blast WA", icon: "💬" },
+const LINKS: { href: string; label: string; icon: IconName }[] = [
+  { href: "/ringkasan", label: "Ringkasan", icon: "grid" },
+  { href: "/peta", label: "Peta", icon: "map" },
+  { href: "/dashboard", label: "Analisis", icon: "chart" },
+  { href: "/direktori", label: "Direktori", icon: "users" },
+  { href: "/admin", label: "Kelola data", icon: "settings" },
+  { href: "/blast", label: "Pesan WA", icon: "chat" },
+  { href: "/tentang", label: "Metodologi", icon: "info" },
+  { href: "/supplier", label: "Katalog publik", icon: "bag" },
 ];
-
 function ThemeToggle() {
   const [theme, setT] = useState<Theme>("system");
-
   useEffect(() => {
     const t = getTheme();
     setT(t);
     applyTheme(t);
   }, []);
-
-  function cycle() {
-    const next: Theme =
-      theme === "system" ? "light" : theme === "light" ? "dark" : "system";
-    setT(next);
-    setTheme(next);
-  }
-
-  const icon = theme === "light" ? "☀️" : theme === "dark" ? "🌙" : "🌓";
   const label =
     theme === "light" ? "Terang" : theme === "dark" ? "Gelap" : "Ikut sistem";
-
   return (
     <button
-      onClick={cycle}
-      className="tap inline-flex items-center justify-center rounded-lg px-2 text-base hover:bg-surface2"
+      onClick={() => {
+        const next: Theme =
+          theme === "system" ? "light" : theme === "light" ? "dark" : "system";
+        setT(next);
+        setTheme(next);
+      }}
+      className="tap inline-flex items-center justify-center rounded-lg p-2 text-ink2 hover:bg-surface2"
       aria-label={`Tema: ${label}. Klik untuk ganti.`}
       title={`Tema: ${label}`}
     >
-      <span aria-hidden="true">{icon}</span>
+      <Icon name={theme === "dark" ? "moon" : "sun"} />
     </button>
   );
 }
-
 export default function Nav() {
   const path = usePathname();
-  const isActive = (href: string) =>
-    href === "/" ? path === "/" : path.startsWith(href);
-
+  const menu = useRef<HTMLDetailsElement>(null);
+  useEffect(() => {
+    if (menu.current) menu.current.open = false;
+  }, [path]);
+  const active = (href: string) => path === href;
   return (
     <>
-      {/* ---------- Top bar: tablet & desktop ---------- */}
-      <header className="safe-t sticky top-0 z-[1100] hidden border-b border-hairline bg-surface/95 backdrop-blur md:block">
-        <nav
-          className="mx-auto flex max-w-content items-center gap-1 px-4 py-2"
-          aria-label="Navigasi utama"
-        >
+      <header className="internal-header safe-t sticky top-0 z-[1100] border-b border-hairline bg-surface">
+        <div className="mx-auto flex max-w-content items-center justify-between gap-3 px-4 py-3">
           <Link
             href="/ringkasan"
-            className="mr-3 flex items-center gap-2 font-bold tracking-tight"
+            className="flex shrink-0 items-center gap-2 text-brand"
           >
-            <span aria-hidden="true">🍚</span>
-            <span>SPPG Ponorogo</span>
+            <Icon name="leaf" />
+            <span className="font-semibold leading-tight">
+              Bumbu Pawon
+              <span className="block text-xs font-normal tracking-wider text-muted">
+                AREA PENGELOLA · SPPG
+              </span>
+            </span>
           </Link>
-          {LINKS.slice(1).map((l) => (
+          <nav
+            className="hidden items-center gap-1 xl:flex"
+            aria-label="Navigasi pengelola"
+          >
+            {LINKS.map((l) => (
+              <Link
+                key={l.href}
+                href={l.href}
+                aria-current={active(l.href) ? "page" : undefined}
+                className={`rounded-lg px-2 py-3 text-xs font-medium ${active(l.href) ? "bg-brand-soft text-brand" : "text-ink2 hover:bg-surface2"}`}
+              >
+                {l.label}
+              </Link>
+            ))}
+          </nav>
+          <div className="flex gap-2">
             <Link
-              key={l.href}
-              href={l.href}
-              aria-current={isActive(l.href) ? "page" : undefined}
-              className={`rounded-lg px-3 py-2 text-sm font-medium transition ${
-                isActive(l.href)
-                  ? "bg-brand-soft text-brand"
-                  : "text-ink2 hover:bg-surface2"
-              }`}
+              href="/"
+              className="tap inline-flex items-center gap-1 rounded-lg px-2 text-xs text-ink2 hover:bg-surface2"
             >
-              {l.label}
+              Toko <Icon name="arrow" />
             </Link>
-          ))}
-          <div className="ml-auto flex items-center gap-1">
             <ThemeToggle />
           </div>
-        </nav>
+        </div>
       </header>
-
-      {/* ---------- Compact header: mobile ---------- */}
-      <header className="safe-t sticky top-0 z-[1100] flex items-center justify-between border-b border-hairline bg-surface/95 px-3 py-2 backdrop-blur md:hidden">
-        <Link href="/ringkasan" className="flex items-center gap-2 font-bold">
-          <span aria-hidden="true">🍚</span>
-          <span className="text-sm">SPPG Ponorogo</span>
-        </Link>
-        <ThemeToggle />
-      </header>
-
-      {/* ---------- Bottom tab bar: mobile (jangkauan jempol) ---------- */}
       <nav
-        className="safe-b fixed bottom-0 left-0 right-0 z-[1100] border-t border-hairline bg-surface/95 backdrop-blur md:hidden"
-        aria-label="Navigasi utama"
+        className="safe-b fixed bottom-0 left-0 right-0 z-[1100] border-t border-hairline bg-surface xl:hidden"
+        aria-label="Navigasi pengelola ponsel"
       >
         <ul className="flex">
-          {LINKS.map((l) => (
-            <li key={l.href} className="flex-1">
+          {LINKS.slice(0, 4).map((l) => (
+            <li key={l.href} className="min-w-0 flex-1">
               <Link
                 href={l.href}
-                aria-current={isActive(l.href) ? "page" : undefined}
-                className={`tap flex flex-col items-center justify-center gap-0.5 py-1.5 text-[10px] font-medium ${
-                  isActive(l.href) ? "text-brand" : "text-ink2"
-                }`}
+                aria-current={active(l.href) ? "page" : undefined}
+                className={`tap flex flex-col items-center justify-center gap-1 py-2 text-xs font-medium ${active(l.href) ? "bg-brand-soft text-brand" : "text-ink2"}`}
               >
-                <span aria-hidden="true" className="text-lg leading-none">
-                  {l.icon}
-                </span>
+                <Icon name={l.icon} />
                 {l.label}
               </Link>
             </li>
           ))}
+          <li className="min-w-0 flex-1">
+            <details ref={menu} className="internal-more">
+              <summary className="tap flex list-none flex-col items-center justify-center gap-1 py-2 text-xs font-medium text-ink2">
+                <Icon name="menu" />
+                Lainnya
+              </summary>
+              <div className="internal-more-links">
+                {LINKS.slice(4).map((l) => (
+                  <Link
+                    key={l.href}
+                    href={l.href}
+                    aria-current={active(l.href) ? "page" : undefined}
+                    className={active(l.href) ? "text-brand" : "text-ink2"}
+                  >
+                    <Icon name={l.icon} />
+                    {l.label}
+                  </Link>
+                ))}
+              </div>
+            </details>
+          </li>
         </ul>
       </nav>
     </>
   );
 }
-
-/** Spacer supaya isi halaman tidak tertutup bottom tab bar di HP. */
 export function NavSpacer() {
-  return <div className="safe-b h-14 md:hidden" aria-hidden="true" />;
+  return <div className="safe-b h-20 xl:hidden" aria-hidden="true" />;
 }

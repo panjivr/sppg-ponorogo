@@ -5,18 +5,20 @@
 // ============================================================
 
 /** Nama bisnis / brand supplier. */
-export const NAMA_BISNIS = "Ruko Sumber Dapur Ponorogo";
+export const NAMA_BISNIS = "Bumbu Pawon Mas Dhoo";
 
 /** Tagline singkat. */
 export const TAGLINE =
-  "Supplier bahan dapur MBG — sayur, buah, protein, sembako. Buka 24 jam.";
+  "Grosir dan supplier sayur, bumbu, buah, dan sembako di Ponorogo.";
 
 /**
  * Nomor WhatsApp untuk order, format internasional tanpa "+" atau "0" di depan.
  * Contoh untuk 0812-3456-7890 -> "6281234567890".
  * GANTI dengan nomor Anda.
  */
-export const WA_NUMBER = "6281234567890";
+export const WA_NUMBER = "6287892614999";
+export const TELEPON = "0878-9261-4999";
+export const ALAMAT = "Lor Prapatan Jetis, Ponorogo, Jawa Timur";
 
 /** Alamat/area layanan singkat untuk ditampilkan. */
 export const AREA_LAYANAN = "Ponorogo & sekitarnya";
@@ -54,7 +56,7 @@ export const ASUMSI = {
 /** Situs — dipakai untuk SEO (sitemap, canonical, Open Graph). */
 export const SITE = {
   url: "https://sppg-ponorogo-web-mr-ps-projects-8da5766a.vercel.app",
-  nama: "Peta SPPG Ponorogo",
+  nama: "Bumbu Pawon",
   deskripsi:
-    "Peta dan basis data 85 dapur SPPG program Makan Bergizi Gratis (MBG) di Kabupaten Ponorogo — untuk analisis lokasi ruko supplier bahan pangan.",
+    "Bumbu Pawon Mas Dhoo, grosir dan supplier sayuran segar, polo pendem, buah, bumbu, dan sembako di Lor Prapatan Jetis, Ponorogo. Minta penawaran melalui WhatsApp.",
 };

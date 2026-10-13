@@ -1,0 +1,14 @@
+{
+  "remaining_product_photos": [],
+  "verified_product_photos": 61,
+  "unique_photo_files": 57,
+  "remaining": [
+    "Original logo file: chat shows the image but file bytes are not accessible to the workspace. Upload a PNG or provide its workspace path."
+  ],
+  "notes": [
+    "Rice brands use an explicitly labelled ingredient photo rather than guessed branded packaging.",
+    "Kacang sambel uses an explicitly labelled peanut photograph; the preparation is confirmed when ordering.",
+    "Photos with camera watermarks or mismatching subjects were rejected, not retouched.",
+    "All selected photos are stored locally; source download rate limits no longer block display."
+  ]
+}

@@ -1,5 +1,6 @@
 "use client";
 
+import Icon from "@/components/Icon";
 import type { Sppg } from "@/lib/types";
 import {
   fmt,
@@ -36,7 +37,7 @@ export default function SppgDetailCard({
       {/* Header identitas */}
       <div className="flex flex-wrap items-center gap-1.5">
         <span
-          className={`inline-flex items-center gap-1 rounded-full px-2 py-0.5 text-[11px] font-medium ring-1 ring-inset ${meta.badge}`}
+          className={`inline-flex items-center gap-1 rounded-full px-2 py-0.5 text-xs font-medium ring-1 ring-inset ${meta.badge}`}
         >
           <span
             className="inline-block h-1.5 w-1.5 rounded-full"
@@ -45,23 +46,21 @@ export default function SppgDetailCard({
           {d.statusLabel ?? meta.label}
         </span>
         {d.jenis && (
-          <span className="rounded-full bg-slate-100 px-2 py-0.5 text-[11px] font-medium text-slate-600">
+          <span className="rounded-full bg-page px-2 py-0.5 text-xs font-medium text-ink2">
             {d.jenis}
           </span>
         )}
         {d.slhs != null && (
           <span
-            className={`rounded-full px-2 py-0.5 text-[11px] font-medium ${
-              d.slhs
-                ? "bg-emerald-100 text-emerald-700"
-                : "bg-slate-100 text-slate-500"
+            className={`rounded-full px-2 py-0.5 text-xs font-medium ${
+              d.slhs ? "bg-emerald-100 text-emerald-700" : "bg-page text-ink2"
             }`}
           >
             {d.slhs ? "✓ SLHS terbit" : "SLHS belum"}
           </span>
         )}
         {s.perkiraan && (
-          <span className="rounded-full bg-amber-100 px-2 py-0.5 text-[11px] font-medium text-amber-700">
+          <span className="rounded-full bg-amber-100 px-2 py-0.5 text-xs font-medium text-amber-700">
             ⚠ koordinat perkiraan
           </span>
         )}
@@ -90,13 +89,13 @@ export default function SppgDetailCard({
       </dl>
 
       {/* Rincian penerima manfaat */}
-      <div className="overflow-hidden rounded-lg border border-slate-200">
-        <div className="flex items-center justify-between gap-2 bg-slate-50 px-3 py-1.5">
-          <span className="text-xs font-semibold text-slate-600">
+      <div className="overflow-hidden rounded-lg border border-hairline">
+        <div className="flex items-center justify-between gap-2 bg-surface2 px-3 py-1.5">
+          <span className="text-xs font-semibold text-ink2">
             Penerima manfaat (PM)
           </span>
           {d.pmAsOf && (
-            <span className="rounded-full bg-emerald-50 px-2 py-0.5 text-[10px] font-medium text-emerald-700">
+            <span className="rounded-full bg-emerald-50 px-2 py-0.5 text-xs font-medium text-emerald-700">
               {d.pmAsOf}
             </span>
           )}
@@ -114,7 +113,11 @@ export default function SppgDetailCard({
               bold
             />
             <Row label="Siswa" value={pm.pmSiswa} indent />
-            <Row label="Guru & tenaga kependidikan" value={pm.pmGuruTendik} indent />
+            <Row
+              label="Guru & tenaga kependidikan"
+              value={pm.pmGuruTendik}
+              indent
+            />
             <Row
               label="Kelompok 3B"
               value={pm.pm3bTotal}
@@ -139,8 +142,8 @@ export default function SppgDetailCard({
 
       {/* Jenjang penerima (sekolah/instansi) */}
       {d.jenjang && Object.keys(d.jenjang).length > 0 && (
-        <div className="rounded-lg border border-slate-200 p-2.5">
-          <div className="mb-1.5 text-xs font-semibold text-slate-600">
+        <div className="rounded-lg border border-hairline p-2.5">
+          <div className="mb-1.5 text-xs font-semibold text-ink2">
             Jenjang sekolah/instansi penerima
           </div>
           <div className="flex flex-wrap gap-1">
@@ -149,7 +152,7 @@ export default function SppgDetailCard({
               .map(([k, v]) => (
                 <span
                   key={k}
-                  className="inline-flex items-center gap-1 rounded-full bg-slate-100 px-2 py-0.5 text-[11px] text-slate-700"
+                  className="inline-flex items-center gap-1 rounded-full bg-page px-2 py-0.5 text-xs text-ink"
                 >
                   {k}
                   <span className="font-semibold text-brand">{fmt(v)}</span>
@@ -177,9 +180,10 @@ export default function SppgDetailCard({
         {d.yayasan && yayasanCount != null && yayasanCount > 0 && (
           <button
             onClick={onShowYayasan}
-            className="flex w-full items-center gap-1.5 rounded-md bg-brand/5 px-2.5 py-1.5 text-left text-[11px] font-medium text-brand hover:bg-brand/10"
+            className="flex w-full items-center gap-1.5 rounded-md bg-brand/5 px-2.5 py-1.5 text-left text-xs font-medium text-brand hover:bg-brand/10"
           >
-            🔗 Yayasan ini mengelola {yayasanCount + 1} dapur — lihat benang merahnya
+            🔗 Yayasan ini mengelola {yayasanCount + 1} dapur — lihat benang
+            merahnya
           </button>
         )}
         <Field label="Bank (Virtual Account)" value={d.bankVa} />
@@ -187,17 +191,17 @@ export default function SppgDetailCard({
 
       {/* Perizinan & sertifikasi */}
       {izin && (
-        <div className="overflow-hidden rounded-lg border border-slate-200">
-          <div className="flex items-center justify-between gap-2 bg-slate-50 px-3 py-1.5">
-            <span className="text-xs font-semibold text-slate-600">
+        <div className="overflow-hidden rounded-lg border border-hairline">
+          <div className="flex items-center justify-between gap-2 bg-surface2 px-3 py-1.5">
+            <span className="text-xs font-semibold text-ink2">
               Perizinan &amp; sertifikasi
             </span>
-            <span className="text-[11px] font-medium text-slate-500">
+            <span className="text-xs font-medium text-ink2">
               {prog.done}/{prog.total} lengkap
             </span>
           </div>
           <div className="px-3 pt-2">
-            <div className="h-1.5 w-full overflow-hidden rounded-full bg-slate-100">
+            <div className="h-1.5 w-full overflow-hidden rounded-full bg-page">
               <div
                 className="h-full rounded-full bg-brand transition-all"
                 style={{ width: `${progPct}%` }}
@@ -207,21 +211,29 @@ export default function SppgDetailCard({
           <ul className="divide-y divide-slate-100 px-3 py-1.5">
             {PERIJINAN_ITEMS.map((it) => {
               const meta = statusIzin(izin[it.key] as string | undefined);
-              const no = it.noKey ? (izin[it.noKey] as string | undefined) : undefined;
+              const no = it.noKey
+                ? (izin[it.noKey] as string | undefined)
+                : undefined;
               return (
-                <li key={it.key} className="flex items-start justify-between gap-2 py-1 text-xs">
+                <li
+                  key={it.key}
+                  className="flex items-start justify-between gap-2 py-1 text-xs"
+                >
                   <div className="min-w-0">
-                    <span className="text-slate-700">{it.label}</span>
+                    <span className="text-ink">{it.label}</span>
                     {no && (
-                      <span className="block truncate font-mono text-[10px] text-slate-400">
+                      <span className="block truncate font-mono text-xs text-muted">
                         No. {no}
                       </span>
                     )}
                   </div>
                   <span
-                    className={`inline-flex shrink-0 items-center gap-1 rounded-full px-1.5 py-0.5 text-[10px] font-medium ${meta.badge}`}
+                    className={`inline-flex shrink-0 items-center gap-1 rounded-full px-1.5 py-0.5 text-xs font-medium ${meta.badge}`}
                   >
-                    <span className="h-1.5 w-1.5 rounded-full" style={{ background: meta.dot }} />
+                    <span
+                      className="h-1.5 w-1.5 rounded-full"
+                      style={{ background: meta.dot }}
+                    />
                     {meta.label}
                   </span>
                 </li>
@@ -229,13 +241,13 @@ export default function SppgDetailCard({
             })}
           </ul>
           {(izin.dokPerijinan || izin.dokKelengkapan) && (
-            <div className="flex flex-wrap gap-2 border-t border-slate-100 px-3 py-2">
+            <div className="flex flex-wrap gap-2 border-t border-hairline px-3 py-2">
               {izin.dokPerijinan && (
                 <a
                   href={izin.dokPerijinan}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1 rounded-md bg-slate-100 px-2 py-1 text-[11px] font-medium text-slate-700 hover:bg-slate-200"
+                  className="inline-flex items-center gap-1 rounded-md bg-page px-2 py-1 text-xs font-medium text-ink hover:bg-slate-200"
                 >
                   📁 Dokumen perizinan
                 </a>
@@ -245,7 +257,7 @@ export default function SppgDetailCard({
                   href={izin.dokKelengkapan}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1 rounded-md bg-slate-100 px-2 py-1 text-[11px] font-medium text-slate-700 hover:bg-slate-200"
+                  className="inline-flex items-center gap-1 rounded-md bg-page px-2 py-1 text-xs font-medium text-ink hover:bg-slate-200"
                 >
                   📁 Dokumen kelengkapan
                 </a>
@@ -264,7 +276,7 @@ export default function SppgDetailCard({
             rel="noopener noreferrer"
             className="inline-flex items-center gap-1 rounded-md bg-blue-50 px-2.5 py-1 text-xs font-medium text-blue-700 hover:bg-blue-100"
           >
-            📍 Google Maps
+            <Icon name="location" className="mr-1 inline" /> Google Maps
           </a>
         )}
         {kaWa && (
@@ -292,7 +304,7 @@ export default function SppgDetailCard({
             href={d.tiktok}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-1 rounded-md bg-slate-100 px-2.5 py-1 text-xs font-medium text-slate-800 hover:bg-slate-200"
+            className="inline-flex items-center gap-1 rounded-md bg-page px-2.5 py-1 text-xs font-medium text-ink hover:bg-slate-200"
           >
             🎵 TikTok
           </a>
@@ -314,10 +326,10 @@ function Field({
   if (!value) return null;
   return (
     <div className="flex gap-2">
-      <dt className="w-32 shrink-0 text-[11px] font-medium uppercase tracking-wide text-slate-400">
+      <dt className="w-32 shrink-0 text-xs font-medium uppercase tracking-wide text-muted">
         {label}
       </dt>
-      <dd className={`min-w-0 flex-1 text-slate-700 ${mono ? "font-mono" : ""}`}>
+      <dd className={`min-w-0 flex-1 text-ink ${mono ? "font-mono" : ""}`}>
         {value}
       </dd>
     </div>
@@ -338,20 +350,20 @@ function Row({
   indent?: boolean;
 }) {
   return (
-    <tr className="border-b border-slate-100 last:border-0">
+    <tr className="border-b border-hairline last:border-0">
       <td
-        className={`px-3 py-1.5 ${bold ? "font-semibold text-slate-800" : "text-slate-600"} ${
+        className={`px-3 py-1.5 ${bold ? "font-semibold text-ink" : "text-ink2"} ${
           indent ? "pl-6" : ""
         }`}
       >
         {label}
         {extra && (
-          <span className="ml-1.5 text-[10px] font-normal text-slate-400">
+          <span className="ml-1.5 text-xs font-normal text-muted">
             ({extra})
           </span>
         )}
       </td>
-      <td className="px-3 py-1.5 text-right tabular-nums text-slate-800">
+      <td className="px-3 py-1.5 text-right tabular-nums text-ink">
         {fmt(value)}
       </td>
       <td className="w-0" />
@@ -372,12 +384,12 @@ function Contact({
 }) {
   if (!nama && !nomor) return null;
   return (
-    <div className="flex items-center justify-between gap-2 rounded-md bg-slate-50 px-2.5 py-1.5">
+    <div className="flex items-center justify-between gap-2 rounded-md bg-surface2 px-2.5 py-1.5">
       <div className="min-w-0">
-        <div className="text-[10px] font-medium uppercase tracking-wide text-slate-400">
+        <div className="text-xs font-medium uppercase tracking-wide text-muted">
           {role}
         </div>
-        <div className="truncate font-medium text-slate-700">{nama ?? "–"}</div>
+        <div className="truncate font-medium text-ink">{nama ?? "–"}</div>
       </div>
       {nomor && (
         <a

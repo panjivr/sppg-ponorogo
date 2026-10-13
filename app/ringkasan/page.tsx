@@ -12,6 +12,7 @@ import { ASUMSI, BISNIS, waLink } from "@/lib/config";
 import { num, persen, rupiahRingkas } from "@/lib/format";
 
 export const metadata = {
+  robots: { index: false, follow: false },
   title:
     "Peta SPPG Ponorogo — 85 Dapur MBG, Analisis Lokasi Ruko Supplier",
   description:

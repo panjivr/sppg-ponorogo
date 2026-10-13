@@ -1,57 +1,540 @@
 [
   {
-    "kategori": "Sayur",
-    "emoji": "🥬",
+    "id": "sayuran-segar",
+    "kategori": "Sayuran segar",
+    "deskripsi": "Sayur harian, bahan menu katering, dan kebutuhan dapur dalam jumlah fleksibel.",
     "items": [
-      { "nama": "Bayam", "satuan": "ikat", "harga": 3000 },
-      { "nama": "Kangkung", "satuan": "ikat", "harga": 3000 },
-      { "nama": "Wortel", "satuan": "kg", "harga": 12000 },
-      { "nama": "Kentang", "satuan": "kg", "harga": 14000 },
-      { "nama": "Kol / Kubis", "satuan": "kg", "harga": 8000 },
-      { "nama": "Tomat", "satuan": "kg", "harga": 10000 },
-      { "nama": "Buncis", "satuan": "kg", "harga": 13000 },
-      { "nama": "Sawi hijau", "satuan": "kg", "harga": 9000 },
-      { "nama": "Cabai rawit", "satuan": "kg", "harga": 45000 },
-      { "nama": "Bawang merah", "satuan": "kg", "harga": 30000 },
-      { "nama": "Bawang putih", "satuan": "kg", "harga": 38000 }
+      {
+        "id": "kubis",
+        "nama": "Kubis",
+        "satuan": "kg",
+        "deskripsi": "Kubis untuk tumisan, sup, dan pelengkap menu.",
+        "alias": [
+          "kol"
+        ],
+        "gambar": "/produk/kubis-20c253aec6.webp"
+      },
+      {
+        "id": "sawi",
+        "nama": "Sawi",
+        "satuan": "kg",
+        "deskripsi": "Jenis sawi disesuaikan dengan kebutuhan saat pemesanan.",
+        "gambar": "/produk/sawi-b5ca5366e4.webp",
+        "fotoCatatan": "Foto sawi putih; jenis sawi dikonfirmasi."
+      },
+      {
+        "id": "sawi-hijau",
+        "nama": "Sawi hijau",
+        "satuan": "kg",
+        "deskripsi": "Sawi hijau untuk tumisan, mi, dan hidangan berkuah.",
+        "gambar": "/produk/sawi-hijau-2290460d00.webp"
+      },
+      {
+        "id": "pakcoy",
+        "nama": "Pakcoy",
+        "satuan": "kg",
+        "deskripsi": "Pakcoy untuk tumisan dan hidangan sayuran.",
+        "alias": [
+          "bok choy"
+        ],
+        "gambar": "/produk/pakcoy-eb2c418183.webp"
+      },
+      {
+        "id": "wortel",
+        "nama": "Wortel",
+        "satuan": "kg",
+        "deskripsi": "Wortel untuk sup, tumisan, dan olahan sayuran.",
+        "gambar": "/produk/wortel-d6c4998b60.webp"
+      },
+      {
+        "id": "buncis",
+        "nama": "Buncis",
+        "satuan": "kg",
+        "deskripsi": "Buncis untuk tumisan dan menu pendamping.",
+        "gambar": "/produk/buncis-520fc660be.webp"
+      },
+      {
+        "id": "kapri",
+        "nama": "Kapri",
+        "satuan": "kg",
+        "deskripsi": "Kapri untuk campuran tumisan dan capcai.",
+        "gambar": "/produk/kapri-c852a4a86c.webp"
+      },
+      {
+        "id": "putren-jagung-muda",
+        "nama": "Putren (jagung muda)",
+        "satuan": "kg",
+        "deskripsi": "Jagung muda untuk capcai dan aneka tumisan.",
+        "alias": [
+          "baby corn"
+        ],
+        "gambar": "/produk/putren-jagung-muda-eb56d317b3.webp"
+      },
+      {
+        "id": "labu-siam-manisa",
+        "nama": "Labu siam (manisa)",
+        "satuan": "kg",
+        "deskripsi": "Labu siam untuk sayur lodeh, tumisan, dan sayur berkuah.",
+        "gambar": "/produk/labu-siam-manisa-e78e80d6b4.webp"
+      },
+      {
+        "id": "brokoli",
+        "nama": "Brokoli",
+        "satuan": "kg",
+        "deskripsi": "Brokoli untuk tumisan, sup, dan menu sayuran.",
+        "gambar": "/produk/brokoli-fa93669717.webp"
+      },
+      {
+        "id": "kembang-kol",
+        "nama": "Kembang kol",
+        "satuan": "kg",
+        "deskripsi": "Kembang kol untuk capcai, sup, dan olahan sayur.",
+        "gambar": "/produk/kembang-kol-37ed8b3ca8.webp"
+      },
+      {
+        "id": "timun",
+        "nama": "Timun",
+        "satuan": "kg",
+        "deskripsi": "Timun untuk lalapan, acar, dan pelengkap hidangan.",
+        "alias": [
+          "mentimun"
+        ],
+        "gambar": "/produk/timun-5447b03d85.webp"
+      },
+      {
+        "id": "terong",
+        "nama": "Terong",
+        "satuan": "kg",
+        "deskripsi": "Jenis terong dikonfirmasi sesuai menu dan kebutuhan.",
+        "gambar": "/produk/terong-847b8c91cf.webp"
+      },
+      {
+        "id": "kentang",
+        "nama": "Kentang",
+        "satuan": "kg",
+        "deskripsi": "Kentang untuk perkedel, sup, dan olahan pendamping.",
+        "gambar": "/produk/kentang-5213af03bf.webp"
+      },
+      {
+        "id": "daun-pre",
+        "nama": "Daun pre",
+        "satuan": "kg",
+        "deskripsi": "Daun bawang pre untuk pelengkap sup dan bumbu masakan.",
+        "alias": [
+          "daun bawang",
+          "leek"
+        ],
+        "gambar": "/produk/daun-pre-04fd824989.webp",
+        "fotoCatatan": "Foto tanaman daun pre; bentuk pasokan dikonfirmasi."
+      },
+      {
+        "id": "seledri",
+        "nama": "Seledri",
+        "satuan": "kg",
+        "deskripsi": "Seledri untuk taburan sup, bakso, dan masakan berkuah.",
+        "gambar": "/produk/seledri-f8cb4932ca.webp"
+      },
+      {
+        "id": "jagung-manis-pipil",
+        "nama": "Jagung manis pipil",
+        "satuan": "kg",
+        "deskripsi": "Jagung manis pipil untuk sup, bakwan, dan aneka olahan.",
+        "gambar": "/produk/jagung-manis-pipil-e9abb4fff6.webp",
+        "fotoCatatan": "Foto jagung manis pipil yang dikukus; kondisi pasokan dikonfirmasi."
+      },
+      {
+        "id": "daun-pisang",
+        "nama": "Daun pisang",
+        "satuan": "ikat",
+        "deskripsi": "Daun pisang untuk pembungkus pepes, nasi, dan jajanan.",
+        "gambar": "/produk/daun-pisang-97601025c2.webp"
+      },
+      {
+        "id": "selada",
+        "nama": "Selada",
+        "satuan": "kg",
+        "deskripsi": "Selada untuk lalapan, salad, dan pelengkap hidangan.",
+        "alias": [
+          "slada"
+        ],
+        "gambar": "/produk/selada-4155d0efa5.webp"
+      }
     ]
   },
   {
-    "kategori": "Buah",
-    "emoji": "🍎",
+    "id": "jamur",
+    "kategori": "Jamur",
+    "deskripsi": "Pilihan jamur untuk sup dan tumisan. Jenis lainnya dapat ditanyakan langsung.",
     "items": [
-      { "nama": "Pisang", "satuan": "sisir", "harga": 18000 },
-      { "nama": "Jeruk", "satuan": "kg", "harga": 20000 },
-      { "nama": "Semangka", "satuan": "kg", "harga": 8000 },
-      { "nama": "Pepaya", "satuan": "kg", "harga": 7000 },
-      { "nama": "Melon", "satuan": "kg", "harga": 12000 },
-      { "nama": "Apel", "satuan": "kg", "harga": 28000 }
+      {
+        "id": "jamur-tiram",
+        "nama": "Jamur tiram",
+        "satuan": "kg",
+        "deskripsi": "Jamur tiram untuk tumisan, pepes, dan olahan goreng.",
+        "gambar": "/produk/jamur-tiram-bf558ed7d3.webp"
+      },
+      {
+        "id": "jamur-kuping",
+        "nama": "Jamur kuping",
+        "satuan": "kg",
+        "deskripsi": "Jamur kuping untuk sup dan capcai; bentuk segar atau kering dikonfirmasi.",
+        "gambar": "/produk/jamur-kuping-38cf36e306.webp",
+        "fotoCatatan": "Foto contoh kemasan jamur kuping kering; merek dikonfirmasi."
+      },
+      {
+        "id": "jamur-salju",
+        "nama": "Jamur salju",
+        "satuan": "bungkus",
+        "deskripsi": "Jamur salju untuk hidangan dan olahan berkuah; ukuran kemasan dikonfirmasi.",
+        "alias": [
+          "white fungus",
+          "tremella"
+        ],
+        "gambar": "/produk/jamur-salju-d25649062a.webp"
+      }
     ]
   },
   {
-    "kategori": "Protein",
-    "emoji": "🍗",
+    "id": "polo-pendem",
+    "kategori": "Polo pendem",
+    "deskripsi": "Umbi-umbian untuk kudapan, olahan tradisional, dan kebutuhan dapur.",
     "items": [
-      { "nama": "Ayam potong", "satuan": "kg", "harga": 36000 },
-      { "nama": "Telur ayam", "satuan": "kg", "harga": 28000 },
-      { "nama": "Ikan lele", "satuan": "kg", "harga": 25000 },
-      { "nama": "Ikan tongkol", "satuan": "kg", "harga": 32000 },
-      { "nama": "Daging sapi", "satuan": "kg", "harga": 135000 },
-      { "nama": "Tahu", "satuan": "papan", "harga": 8000 },
-      { "nama": "Tempe", "satuan": "papan", "harga": 6000 }
+      {
+        "id": "ubi-ungu",
+        "nama": "Ubi ungu",
+        "satuan": "kg",
+        "deskripsi": "Ubi ungu untuk kukusan, kudapan, dan olahan kue.",
+        "gambar": "/produk/ubi-ungu-ebdd5ae90e.webp"
+      },
+      {
+        "id": "ubi-oren",
+        "nama": "Ubi oren",
+        "satuan": "kg",
+        "deskripsi": "Ubi berdaging oranye untuk kukusan dan aneka kudapan.",
+        "alias": [
+          "ubi oranye"
+        ],
+        "gambar": "/produk/ubi-oren-1e54594c26.webp",
+        "fotoCatatan": "Foto ubi jalar sebagai ilustrasi; varietas mengikuti pesanan."
+      },
+      {
+        "id": "ubi-kuning",
+        "nama": "Ubi kuning",
+        "satuan": "kg",
+        "deskripsi": "Ubi kuning untuk kudapan dan olahan tradisional.",
+        "gambar": "/produk/ubi-kuning-9513cc602c.webp"
+      },
+      {
+        "id": "ubi-cilembu",
+        "nama": "Ubi Cilembu",
+        "satuan": "kg",
+        "deskripsi": "Ubi Cilembu; ukuran dan ketersediaan dikonfirmasi saat pemesanan.",
+        "gambar": "/produk/ubi-cilembu-30d09975f5.webp"
+      },
+      {
+        "id": "telo-sepe",
+        "nama": "Telo sepe",
+        "satuan": "kg",
+        "deskripsi": "Umbi lokal telo sepe; jenis dan ukuran dikonfirmasi saat pemesanan.",
+        "gambar": "/produk/telo-sepe-af91acd57a.webp",
+        "fotoCatatan": "Foto singkong; jenis telo sepe dikonfirmasi."
+      },
+      {
+        "id": "mbote",
+        "nama": "Mbote",
+        "satuan": "kg",
+        "deskripsi": "Umbi lokal mbote untuk kukusan dan olahan tradisional.",
+        "alias": [
+          "talas"
+        ],
+        "gambar": "/produk/mbote-4f0ea537cc.webp"
+      },
+      {
+        "id": "mbili",
+        "nama": "Mbili",
+        "satuan": "kg",
+        "deskripsi": "Umbi lokal mbili untuk kukusan dan kudapan.",
+        "alias": [
+          "gembili"
+        ],
+        "gambar": "/produk/mbili-e8e04f1cdb.webp",
+        "fotoCatatan": "Foto contoh gembili yang direbus; bentuk pasokan dikonfirmasi."
+      }
     ]
   },
   {
-    "kategori": "Sembako & bumbu",
-    "emoji": "🍚",
+    "id": "buah-buahan",
+    "kategori": "Buah-buahan",
+    "deskripsi": "Buah untuk konsumsi, minuman, dan pelengkap menu. Jenis lainnya sesuai permintaan.",
     "items": [
-      { "nama": "Beras premium", "satuan": "kg", "harga": 13000 },
-      { "nama": "Minyak goreng", "satuan": "liter", "harga": 17000 },
-      { "nama": "Gula pasir", "satuan": "kg", "harga": 16000 },
-      { "nama": "Garam", "satuan": "bungkus", "harga": 5000 },
-      { "nama": "Tepung terigu", "satuan": "kg", "harga": 11000 },
-      { "nama": "Kecap manis", "satuan": "liter", "harga": 22000 },
-      { "nama": "Bumbu dapur lengkap", "satuan": "paket", "harga": 25000 }
+      {
+        "id": "nanas",
+        "nama": "Nanas",
+        "satuan": "buah",
+        "deskripsi": "Nanas untuk konsumsi, minuman, dan olahan masakan.",
+        "gambar": "/produk/nanas-a6dfcb4763.webp"
+      },
+      {
+        "id": "jeruk-peras",
+        "nama": "Jeruk peras",
+        "satuan": "kg",
+        "deskripsi": "Jeruk untuk diperas menjadi minuman.",
+        "gambar": "/produk/jeruk-peras-1c2a37135f.webp"
+      },
+      {
+        "id": "jeruk-lemon",
+        "nama": "Jeruk lemon",
+        "satuan": "kg",
+        "deskripsi": "Lemon untuk minuman, saus, dan pelengkap masakan.",
+        "gambar": "/produk/jeruk-lemon-fee45ead49.webp"
+      },
+      {
+        "id": "jeruk-limau",
+        "nama": "Jeruk limau",
+        "satuan": "kg",
+        "deskripsi": "Jeruk limau untuk sambal dan pelengkap hidangan.",
+        "gambar": "/produk/jeruk-limau-f86566d4b7.webp"
+      },
+      {
+        "id": "jeruk-nipis",
+        "nama": "Jeruk nipis",
+        "satuan": "kg",
+        "deskripsi": "Jeruk nipis untuk bumbu, minuman, dan pelengkap menu.",
+        "gambar": "/produk/jeruk-nipis-5f76c24f1f.webp"
+      }
+    ]
+  },
+  {
+    "id": "bumbu-rempah",
+    "kategori": "Bumbu & rempah",
+    "deskripsi": "Bumbu dasar dan rempah untuk racikan masakan harian maupun kebutuhan usaha.",
+    "items": [
+      {
+        "id": "empon-empon",
+        "nama": "Empon-empon",
+        "satuan": "kg",
+        "deskripsi": "Racikan empon-empon; jenis dan komposisi mengikuti permintaan.",
+        "alias": [
+          "jahe",
+          "kunyit",
+          "lengkuas",
+          "kencur"
+        ],
+        "gambar": "/produk/empon-empon-8b91d4332d.webp",
+        "fotoCatatan": "Foto jahe sebagai ilustrasi empon-empon. Komposisi dikonfirmasi."
+      },
+      {
+        "id": "cabai-berbagai-jenis",
+        "nama": "Cabai (berbagai jenis)",
+        "satuan": "kg",
+        "deskripsi": "Cabai rawit, merah, atau jenis lain; pilihan dikonfirmasi saat pemesanan.",
+        "gambar": "/produk/cabai-berbagai-jenis-c0c0c7162b.webp"
+      },
+      {
+        "id": "bawang-merah",
+        "nama": "Bawang merah",
+        "satuan": "kg",
+        "deskripsi": "Bawang merah untuk bumbu dasar dan aneka masakan.",
+        "gambar": "/produk/bawang-merah-71d4d962cb.webp"
+      },
+      {
+        "id": "bawang-putih",
+        "nama": "Bawang putih",
+        "satuan": "kg",
+        "deskripsi": "Bawang putih untuk racikan bumbu dan olahan dapur.",
+        "gambar": "/produk/bawang-putih-603b1d2c33.webp"
+      },
+      {
+        "id": "kemiri",
+        "nama": "Kemiri",
+        "satuan": "kg",
+        "deskripsi": "Kemiri untuk bumbu halus dan racikan masakan.",
+        "gambar": "/produk/kemiri-dc94663d55.webp",
+        "fotoCatatan": "Foto biji kemiri; bentuk kupas/berkulit dikonfirmasi."
+      },
+      {
+        "id": "ketumbar",
+        "nama": "Ketumbar",
+        "satuan": "kg",
+        "deskripsi": "Ketumbar untuk racikan bumbu; bentuk dikonfirmasi saat pemesanan.",
+        "gambar": "/produk/ketumbar-229a66ab6b.webp"
+      },
+      {
+        "id": "merica-lada",
+        "nama": "Merica / lada",
+        "satuan": "kg",
+        "deskripsi": "Merica untuk bumbu masakan; jenis dan bentuk sesuai permintaan.",
+        "gambar": "/produk/merica-lada-9bebf3c229.webp"
+      },
+      {
+        "id": "saori",
+        "nama": "Saori",
+        "satuan": "bungkus",
+        "deskripsi": "Bumbu Saori; varian dan ukuran kemasan dikonfirmasi.",
+        "gambar": "/produk/saori-624465058f.webp",
+        "fotoCatatan": "Foto contoh kemasan; merek, ukuran, dan varian dikonfirmasi."
+      },
+      {
+        "id": "kaldu-jamur",
+        "nama": "Kaldu jamur",
+        "satuan": "bungkus",
+        "deskripsi": "Kaldu jamur untuk pelengkap rasa; merek dan ukuran dikonfirmasi.",
+        "gambar": "/produk/kaldu-jamur-33e2464c8c.webp",
+        "fotoCatatan": "Foto contoh kemasan; merek, ukuran, dan varian dikonfirmasi."
+      }
+    ]
+  },
+  {
+    "id": "tepung-bahan-toko",
+    "kategori": "Tepung & bahan toko",
+    "deskripsi": "Tepung, santan, dan bahan pelengkap. Merek serta ukuran kemasan dikonfirmasi.",
+    "items": [
+      {
+        "id": "tepung-panir",
+        "nama": "Tepung panir",
+        "satuan": "kg",
+        "deskripsi": "Tepung panir untuk pelapis gorengan dan olahan dapur.",
+        "alias": [
+          "tepung roti"
+        ],
+        "gambar": "/produk/tepung-panir-c0ba8c812f.webp",
+        "fotoCatatan": "Foto contoh tepung panir; merek dan kemasan dikonfirmasi."
+      },
+      {
+        "id": "rose-brand",
+        "nama": "Rose Brand",
+        "satuan": "bungkus",
+        "deskripsi": "Bahan merek Rose Brand; jenis produk dan ukuran sesuai permintaan.",
+        "gambar": "/produk/rose-brand-117da393a5.webp",
+        "fotoCatatan": "Foto contoh kemasan; merek, ukuran, dan varian dikonfirmasi."
+      },
+      {
+        "id": "segitiga-biru",
+        "nama": "Segitiga Biru",
+        "satuan": "bungkus",
+        "deskripsi": "Tepung terigu Segitiga Biru; ukuran kemasan dikonfirmasi.",
+        "gambar": "/produk/segitiga-biru-61bc897155.webp",
+        "fotoCatatan": "Foto contoh kemasan; merek, ukuran, dan varian dikonfirmasi."
+      },
+      {
+        "id": "lencana-merah",
+        "nama": "Lencana Merah",
+        "satuan": "bungkus",
+        "deskripsi": "Tepung terigu Lencana Merah; ukuran kemasan dikonfirmasi.",
+        "gambar": "/produk/lencana-merah-d818fef488.webp",
+        "fotoCatatan": "Foto contoh kemasan; merek, ukuran, dan varian dikonfirmasi."
+      },
+      {
+        "id": "tepung-kiloan",
+        "nama": "Tepung kiloan",
+        "satuan": "kg",
+        "deskripsi": "Tepung kiloan; jenis tepung mengikuti kebutuhan dan dikonfirmasi.",
+        "gambar": "/produk/tepung-kiloan-1313423798.webp"
+      },
+      {
+        "id": "mayones",
+        "nama": "Mayones",
+        "satuan": "bungkus",
+        "deskripsi": "Mayones untuk saus dan pelengkap makanan; merek serta ukuran dikonfirmasi.",
+        "gambar": "/produk/mayones-c83697da5b.webp"
+      },
+      {
+        "id": "sun-kara",
+        "nama": "Sun Kara",
+        "satuan": "bungkus",
+        "deskripsi": "Santan Sun Kara; ukuran dan varian kemasan dikonfirmasi.",
+        "gambar": "/produk/sun-kara-d95962b2ae.webp",
+        "fotoCatatan": "Foto contoh kemasan; merek, ukuran, dan varian dikonfirmasi."
+      }
+    ]
+  },
+  {
+    "id": "sembako-pelengkap",
+    "kategori": "Sembako & pelengkap",
+    "deskripsi": "Beras, telur, kacang, dan kelapa untuk kebutuhan dapur rumah tangga serta usaha.",
+    "items": [
+      {
+        "id": "beras-cap-lele",
+        "nama": "Beras cap Lele",
+        "satuan": "kg",
+        "deskripsi": "Beras merek cap Lele; ukuran kemasan dan stok dikonfirmasi.",
+        "gambar": "/produk/beras-cap-lele-65737e6fa7.webp",
+        "fotoCatatan": "Foto beras sebagai ilustrasi, bukan kemasan merek."
+      },
+      {
+        "id": "beras-cap-warok",
+        "nama": "Beras cap Warok",
+        "satuan": "kg",
+        "deskripsi": "Beras merek cap Warok; ukuran kemasan dan stok dikonfirmasi.",
+        "gambar": "/produk/beras-cap-lele-65737e6fa7.webp",
+        "fotoCatatan": "Foto beras sebagai ilustrasi, bukan kemasan merek."
+      },
+      {
+        "id": "beras-cap-paus",
+        "nama": "Beras cap Paus",
+        "satuan": "kg",
+        "deskripsi": "Beras merek cap Paus; ukuran kemasan dan stok dikonfirmasi.",
+        "gambar": "/produk/beras-cap-lele-65737e6fa7.webp",
+        "fotoCatatan": "Foto beras sebagai ilustrasi, bukan kemasan merek."
+      },
+      {
+        "id": "beras-lima-jaya",
+        "nama": "Beras Lima Jaya",
+        "satuan": "kg",
+        "deskripsi": "Beras merek Lima Jaya; ukuran kemasan dan stok dikonfirmasi.",
+        "gambar": "/produk/beras-cap-lele-65737e6fa7.webp",
+        "fotoCatatan": "Foto beras sebagai ilustrasi, bukan kemasan merek."
+      },
+      {
+        "id": "telur-ayam",
+        "nama": "Telur ayam",
+        "satuan": "kg",
+        "deskripsi": "Telur ayam untuk olahan dapur, katering, dan kebutuhan harian.",
+        "gambar": "/produk/telur-ayam-b1fd669038.webp"
+      },
+      {
+        "id": "telur-puyuh",
+        "nama": "Telur puyuh",
+        "satuan": "kg",
+        "deskripsi": "Telur puyuh untuk lauk dan olahan pendamping.",
+        "gambar": "/produk/telur-puyuh-39768a78f5.webp"
+      },
+      {
+        "id": "kacang-sambel",
+        "nama": "Kacang sambel",
+        "satuan": "kg",
+        "deskripsi": "Kacang sambel; jenis olahan dan ukuran pemesanan dikonfirmasi.",
+        "gambar": "/produk/kacang-oven-efb52f95c6.webp",
+        "fotoCatatan": "Foto kacang sebagai ilustrasi; jenis olahan dikonfirmasi."
+      },
+      {
+        "id": "kacang-oven",
+        "nama": "Kacang oven",
+        "satuan": "kg",
+        "deskripsi": "Kacang oven untuk kudapan dan kebutuhan usaha.",
+        "gambar": "/produk/kacang-oven-efb52f95c6.webp"
+      },
+      {
+        "id": "kelapa-tua",
+        "nama": "Kelapa tua",
+        "satuan": "buah",
+        "deskripsi": "Kelapa tua untuk kebutuhan santan dan olahan masakan.",
+        "gambar": "/produk/kelapa-tua-ed8de933d1.webp"
+      },
+      {
+        "id": "kelapa-muda",
+        "nama": "Kelapa muda",
+        "satuan": "buah",
+        "deskripsi": "Kelapa muda untuk minuman dan olahan kudapan.",
+        "gambar": "/produk/kelapa-muda-7fac7e96fd.webp"
+      },
+      {
+        "id": "kelapa-parut",
+        "nama": "Kelapa parut",
+        "satuan": "kg",
+        "deskripsi": "Kelapa parut untuk santan, kue, dan pelengkap masakan.",
+        "gambar": "/produk/kelapa-parut-a126a2d4cb.webp"
+      }
     ]
   }
 ]

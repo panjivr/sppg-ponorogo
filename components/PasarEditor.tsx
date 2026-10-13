@@ -8,7 +8,7 @@ import { parseGmaps } from "@/lib/sppgMeta";
 const CoordPicker = dynamic(() => import("@/components/CoordPicker"), {
   ssr: false,
   loading: () => (
-    <div className="grid h-56 place-items-center rounded-md bg-slate-100 text-sm text-slate-400">
+    <div className="grid h-56 place-items-center rounded-md bg-page text-sm text-muted">
       Memuat peta…
     </div>
   ),
@@ -63,7 +63,7 @@ export default function PasarEditor({
   }
 
   const inp =
-    "w-full rounded-md border border-slate-300 px-2 py-1.5 text-sm focus:border-brand focus:outline-none focus:ring-1 focus:ring-brand";
+    "w-full rounded-md border border-hairline px-2 py-1.5 text-sm focus:border-brand focus:outline-none focus:ring-1 focus:ring-brand";
 
   return (
     <div className="space-y-4">
@@ -120,11 +120,11 @@ export default function PasarEditor({
         </div>
       </div>
 
-      <div className="flex flex-wrap gap-2 border-t border-slate-200 pt-3">
+      <div className="flex flex-wrap gap-2 border-t border-hairline pt-3">
         <button onClick={save} className="rounded-md bg-brand px-4 py-2 text-sm font-semibold text-white hover:bg-brand-dark">
           💾 Simpan
         </button>
-        <button onClick={onCancel} className="rounded-md border border-slate-300 px-4 py-2 text-sm hover:bg-slate-100">
+        <button onClick={onCancel} className="rounded-md border border-hairline px-4 py-2 text-sm hover:bg-page">
           Batal
         </button>
         {onResetPoint && (
@@ -133,7 +133,7 @@ export default function PasarEditor({
           </button>
         )}
         {onDelete && (
-          <button onClick={onDelete} className="ml-auto rounded-md border border-red-300 px-3 py-2 text-sm text-red-600 hover:bg-red-50">
+          <button onClick={onDelete} className="ml-auto rounded-md border border-red-300 px-3 py-2 text-sm text-danger-readable hover:bg-red-50">
             Hapus
           </button>
         )}
@@ -145,7 +145,7 @@ export default function PasarEditor({
 function L({ label, children, className = "" }: { label: string; children: React.ReactNode; className?: string }) {
   return (
     <label className={`block ${className}`}>
-      <span className="mb-0.5 block text-[11px] font-medium uppercase tracking-wide text-slate-400">{label}</span>
+      <span className="mb-0.5 block text-xs font-medium uppercase tracking-wide text-muted">{label}</span>
       {children}
     </label>
   );

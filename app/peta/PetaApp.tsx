@@ -22,7 +22,7 @@ import DataPanel from "@/components/DataPanel";
 const MapView = dynamic(() => import("@/components/MapView"), {
   ssr: false,
   loading: () => (
-    <div className="flex h-full items-center justify-center bg-slate-200 text-slate-500">
+    <div className="flex h-full items-center justify-center bg-surface2 text-ink2">
       Memuat peta…
     </div>
   ),
@@ -110,20 +110,20 @@ export default function PetaApp() {
   }, [placing]);
 
   return (
-    <main className="flex min-h-[100dvh] flex-col md:h-[calc(100dvh-3.5rem)] md:flex-row">
+    <div className="flex min-h-[100dvh] flex-col md:h-[calc(100dvh-3.5rem)] md:flex-row">
       {/* Sidebar */}
-      <aside className="safe-b flex w-full flex-col border-b border-slate-200 bg-white pb-16 md:h-full md:w-96 md:shrink-0 md:border-b-0 md:border-r md:pb-0 md:shadow-sm">
+      <aside className="safe-b flex w-full flex-col border-b border-hairline bg-surface pb-16 md:h-full md:w-96 md:shrink-0 md:border-b-0 md:border-r md:pb-0 md:shadow-sm">
         {/* Di HP header ini redundan: brand, Blast WA & Katalog sudah ada di nav global. */}
         <header className="hidden items-center justify-between gap-2 bg-gradient-to-r from-brand-dark to-brand px-4 py-3.5 text-white md:flex">
           <div className="flex items-center gap-2.5">
-            <span className="grid h-9 w-9 shrink-0 place-items-center rounded-lg bg-white/15 text-lg">
+            <span className="grid h-9 w-9 shrink-0 place-items-center rounded-lg bg-surface/15 text-lg">
               🍚
             </span>
             <div>
               <h1 className="text-base font-bold leading-tight">
                 Peta SPPG Ponorogo
               </h1>
-              <p className="text-[11px] text-brand-light">
+              <p className="text-xs text-green-100">
                 Database dapur MBG &amp; analisis lokasi ruko supplier
               </p>
             </div>
@@ -131,20 +131,20 @@ export default function PetaApp() {
           <div className="flex shrink-0 items-center gap-1.5">
             <Link
               href="/blast"
-              className="rounded-full border border-white/40 px-3 py-1.5 text-xs font-medium transition hover:bg-white/15"
+              className="rounded-full border border-white/40 px-3 py-1.5 text-xs font-medium transition hover:bg-surface/15"
             >
               💬 Blast WA
             </Link>
             <Link
               href="/supplier"
-              className="rounded-full border border-white/40 px-3 py-1.5 text-xs font-medium transition hover:bg-white/15"
+              className="rounded-full border border-white/40 px-3 py-1.5 text-xs font-medium transition hover:bg-surface/15"
             >
               🏪 Katalog
             </Link>
           </div>
         </header>
 
-        <nav className="flex border-b border-slate-200 text-sm">
+        <nav className="flex border-b border-hairline text-sm">
           {(
             [
               ["analisis", "Analisis"],
@@ -158,7 +158,7 @@ export default function PetaApp() {
               className={`flex-1 px-2 py-2.5 transition ${
                 tab === id
                   ? "border-b-2 border-brand font-semibold text-brand"
-                  : "border-b-2 border-transparent text-slate-500 hover:bg-slate-50 hover:text-slate-700"
+                  : "border-b-2 border-transparent text-ink2 hover:bg-surface2 hover:text-ink"
               }`}
             >
               {label}
@@ -212,8 +212,8 @@ export default function PetaApp() {
           {tab === "data" &&
             (showForm ? (
               <div className="space-y-3">
-                <div className="rounded-lg border border-slate-200 bg-white p-3">
-                  <h2 className="mb-2 text-sm font-semibold text-slate-700">
+                <div className="rounded-lg border border-hairline bg-surface p-3">
+                  <h2 className="mb-2 text-sm font-semibold text-ink">
                     {editingSppg ? "Edit SPPG" : "Tambah SPPG baru"}
                   </h2>
                   <SppgForm
@@ -254,14 +254,14 @@ export default function PetaApp() {
             ))}
         </div>
 
-        <footer className="flex items-center justify-between gap-2 border-t border-slate-200 px-4 py-2 text-[10px] text-slate-400">
+        <footer className="flex items-center justify-between gap-2 border-t border-hairline px-4 py-2 text-xs text-muted">
           <span>
             Data awal database resmi & sebagian koordinat perkiraan. Peta ©
             OpenStreetMap.
           </span>
           <Link
             href="/admin"
-            className="shrink-0 rounded border border-slate-200 px-2 py-0.5 font-medium text-slate-500 hover:bg-slate-50 hover:text-brand"
+            className="shrink-0 rounded border border-hairline px-2 py-0.5 font-medium text-ink2 hover:bg-surface2 hover:text-brand"
           >
             🛠️ Admin
           </Link>
@@ -298,6 +298,6 @@ export default function PetaApp() {
           }}
         />
       </section>
-    </main>
+    </div>
   );
 }

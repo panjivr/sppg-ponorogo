@@ -2,6 +2,7 @@
 
 import { useEffect, useMemo, useRef, useState } from "react";
 import Link from "next/link";
+import Icon from "@/components/Icon";
 import type { Sppg, Pasar } from "@/lib/types";
 import {
   getAllSppg,
@@ -19,7 +20,13 @@ import {
   resetPasarOverride,
   isPasarOverridden,
 } from "@/lib/storage";
-import { computeStats, fmt, statusMeta, STATUS_META, parseGmaps } from "@/lib/sppgMeta";
+import {
+  computeStats,
+  fmt,
+  statusMeta,
+  STATUS_META,
+  parseGmaps,
+} from "@/lib/sppgMeta";
 import AdminEditor from "@/components/AdminEditor";
 import PasarEditor from "@/components/PasarEditor";
 
@@ -72,11 +79,17 @@ export default function AdminPage() {
   const [bulkResult, setBulkResult] = useState<string | null>(null);
 
   function normName(s: string) {
-    return s.toLowerCase().replace(/[^a-z0-9]+/g, " ").trim();
+    return s
+      .toLowerCase()
+      .replace(/[^a-z0-9]+/g, " ")
+      .trim();
   }
 
   function handleBulkPasar() {
-    const lines = bulkText.split("\n").map((l) => l.trim()).filter(Boolean);
+    const lines = bulkText
+      .split("\n")
+      .map((l) => l.trim())
+      .filter(Boolean);
     const current = getAllPasar();
     const byName = new Map(current.map((p) => [normName(p.nama), p]));
     let updated = 0;
@@ -94,7 +107,10 @@ export default function AdminPage() {
       } else {
         const m = line.match(/(https?:\/\/|-?\d{1,3}\.\d{3,})/);
         if (m) {
-          nama = line.slice(0, m.index).replace(/[,;]\s*$/, "").trim();
+          nama = line
+            .slice(0, m.index)
+            .replace(/[,;]\s*$/, "")
+            .trim();
           rest = line.slice(m.index).trim();
         } else {
           nama = line;
@@ -102,15 +118,25 @@ export default function AdminPage() {
       }
       const coord = parseGmaps(rest);
       const hit = byName.get(normName(nama));
-      if (!hit) { unmatched.push(nama || line); continue; }
-      if (!coord) { noCoord.push(nama); continue; }
+      if (!hit) {
+        unmatched.push(nama || line);
+        continue;
+      }
+      if (!coord) {
+        noCoord.push(nama);
+        continue;
+      }
       updatePasar({ ...hit, lat: coord.lat, lng: coord.lng, perkiraan: false });
       updated++;
     }
     refreshPasar();
     const parts = [`${updated} pasar diperbarui`];
-    if (noCoord.length) parts.push(`${noCoord.length} tanpa koordinat (${noCoord.join(", ")})`);
-    if (unmatched.length) parts.push(`${unmatched.length} nama tak cocok (${unmatched.join(", ")})`);
+    if (noCoord.length)
+      parts.push(`${noCoord.length} tanpa koordinat (${noCoord.join(", ")})`);
+    if (unmatched.length)
+      parts.push(
+        `${unmatched.length} nama tak cocok (${unmatched.join(", ")})`,
+      );
     setBulkResult(parts.join(" · "));
     if (updated) setBulkText("");
   }
@@ -147,29 +173,29 @@ export default function AdminPage() {
       Array.from(new Set(list.map((s) => s.kecamatan)))
         .filter(Boolean)
         .sort((a, b) => a.localeCompare(b, "id")),
-    [list]
+    [list],
   );
   const filtered = useMemo(() => {
     const n = q.trim().toLowerCase();
     return list
-      .filter((s) => (kec === "all" || s.kecamatan === kec))
-      .filter((s) => (!perkOnly || s.perkiraan))
+      .filter((s) => kec === "all" || s.kecamatan === kec)
+      .filter((s) => !perkOnly || s.perkiraan)
       .filter(
         (s) =>
           !n ||
           s.nama.toLowerCase().includes(n) ||
           s.kecamatan.toLowerCase().includes(n) ||
-          (s.detail?.namaKa ?? "").toLowerCase().includes(n)
+          (s.detail?.namaKa ?? "").toLowerCase().includes(n),
       )
       .sort(
         (a, b) =>
           a.kecamatan.localeCompare(b.kecamatan, "id") ||
-          a.nama.localeCompare(b.nama, "id")
+          a.nama.localeCompare(b.nama, "id"),
       );
   }, [list, q, kec, perkOnly]);
   const perkiraanCount = useMemo(
     () => list.filter((s) => s.perkiraan).length,
-    [list]
+    [list],
   );
 
   function handleSave(s: Sppg) {
@@ -210,7 +236,7 @@ export default function AdminPage() {
   // --- Gate ---
   if (!authed) {
     return (
-      <main className="grid min-h-screen place-items-center bg-slate-100 p-4">
+      <div className="grid min-h-screen place-items-center bg-page p-4">
         <form
           onSubmit={(e) => {
             e.preventDefault();
@@ -221,14 +247,16 @@ export default function AdminPage() {
               setAuthed(true);
             } else alert("Kata sandi salah.");
           }}
-          className="w-full max-w-sm space-y-3 rounded-xl border border-slate-200 bg-white p-6 shadow-sm"
+          className="w-full max-w-sm space-y-3 rounded-xl border border-hairline bg-surface p-6 shadow-sm"
         >
           <div className="text-center">
-            <div className="text-3xl">🔐</div>
-            <h1 className="mt-1 text-lg font-bold text-slate-800">
+            <div className="flex justify-center text-brand">
+              <Icon name="lock" />
+            </div>
+            <h1 className="mt-1 text-lg font-bold text-ink">
               Admin — Database SPPG Ponorogo
             </h1>
-            <p className="text-xs text-slate-500">
+            <p className="text-xs text-ink2">
               Masukkan kata sandi untuk mengelola data.
             </p>
           </div>
@@ -237,45 +265,59 @@ export default function AdminPage() {
             value={pass}
             onChange={(e) => setPass(e.target.value)}
             placeholder="Kata sandi admin"
-            className="w-full rounded-md border border-slate-300 px-3 py-2 text-sm focus:border-brand focus:outline-none focus:ring-1 focus:ring-brand"
+            className="w-full rounded-md border border-hairline px-3 py-2 text-sm focus:border-brand focus:outline-none focus:ring-1 focus:ring-brand"
             autoFocus
           />
           <button className="w-full rounded-md bg-brand px-3 py-2 text-sm font-semibold text-white hover:bg-brand-dark">
             Masuk
           </button>
-          <p className="text-center text-[11px] text-slate-400">
-            Kata sandi awal: <code className="font-mono">sppg-admin</code> — ubah di{" "}
-            <code className="font-mono">app/admin/page.tsx</code>.
+          <p className="text-center text-xs text-muted">
+            Kata sandi awal: <code className="font-mono">sppg-admin</code> —
+            ubah di <code className="font-mono">app/admin/page.tsx</code>.
           </p>
-          <Link href="/" className="block text-center text-xs text-brand hover:underline">
+          <Link
+            href="/"
+            className="block text-center text-xs text-brand hover:underline"
+          >
             ← Kembali ke peta
           </Link>
         </form>
-      </main>
+      </div>
     );
   }
 
   return (
-    <main className="min-h-screen bg-slate-100">
+    <div className="min-h-screen bg-page">
       {/* Header */}
-      <header className="sticky top-0 z-10 flex items-center justify-between gap-2 bg-gradient-to-r from-brand-dark to-brand px-4 py-3 text-white shadow">
+      <header className="sticky top-0 z-10 flex items-center justify-between gap-2 bg-brand-dark px-4 py-3 text-white shadow">
         <div className="flex items-center gap-2.5">
-          <span className="grid h-9 w-9 place-items-center rounded-lg bg-white/15 text-lg">🛠️</span>
+          <span className="grid h-9 w-9 place-items-center rounded-lg bg-surface/15 text-lg">
+            <Icon name="settings" />
+          </span>
           <div>
-            <h1 className="text-base font-bold leading-tight">Admin Database SPPG</h1>
-            <p className="text-[11px] text-brand-light">Kelola titik & jumlah penerima manfaat</p>
+            <h1 className="text-base font-bold leading-tight">
+              Admin Database SPPG
+            </h1>
+            <p className="text-xs text-green-100">
+              Kelola titik & jumlah penerima manfaat
+            </p>
           </div>
         </div>
         <div className="flex items-center gap-2">
-          <Link href="/" className="rounded-full border border-white/40 px-3 py-1.5 text-xs font-medium hover:bg-white/15">
-            🗺 Peta
+          <Link
+            href="/peta"
+            className="rounded-full border border-white/40 px-3 py-1.5 text-xs font-medium hover:bg-surface/15"
+          >
+            <Icon name="map" className="mr-1 inline" /> Peta
           </Link>
           <button
             onClick={() => {
-              try { sessionStorage.removeItem(AUTH_KEY); } catch {}
+              try {
+                sessionStorage.removeItem(AUTH_KEY);
+              } catch {}
               setAuthed(false);
             }}
-            className="rounded-full border border-white/40 px-3 py-1.5 text-xs font-medium hover:bg-white/15"
+            className="rounded-full border border-white/40 px-3 py-1.5 text-xs font-medium hover:bg-surface/15"
           >
             Keluar
           </button>
@@ -284,37 +326,49 @@ export default function AdminPage() {
 
       <div className="mx-auto max-w-5xl p-4">
         {/* Mode tabs */}
-        <div className="mb-4 inline-flex rounded-lg border border-slate-200 bg-white p-1 shadow-sm">
-          {([["sppg", "🍚 Data SPPG"], ["pasar", "🛒 Pasar"]] as const).map(
-            ([m, label]) => (
-              <button
-                key={m}
-                onClick={() => {
-                  setMode(m);
-                  setEditing(null);
-                  setEditingPasar(null);
-                }}
-                className={`rounded-md px-4 py-1.5 text-sm font-medium ${
-                  mode === m
-                    ? "bg-brand text-white"
-                    : "text-slate-600 hover:bg-slate-50"
-                }`}
-              >
-                {label}
-              </button>
-            )
-          )}
+        <div className="mb-4 inline-flex rounded-lg border border-hairline bg-surface p-1 shadow-sm">
+          {(
+            [
+              ["sppg", "Data SPPG"],
+              ["pasar", "Pasar"],
+            ] as const
+          ).map(([m, label]) => (
+            <button
+              key={m}
+              onClick={() => {
+                setMode(m);
+                setEditing(null);
+                setEditingPasar(null);
+              }}
+              className={`rounded-md px-4 py-1.5 text-sm font-medium ${
+                mode === m
+                  ? "bg-brand text-white"
+                  : "text-ink2 hover:bg-surface2"
+              }`}
+            >
+              <Icon
+                name={m === "sppg" ? "users" : "bag"}
+                className="mr-1 inline"
+              />
+              {label}
+            </button>
+          ))}
         </div>
 
         {mode === "pasar" ? (
           editingPasar ? (
-            <div className="rounded-xl border border-slate-200 bg-white p-4 shadow-sm">
+            <div className="rounded-xl border border-hairline bg-surface p-4 shadow-sm">
               <div className="mb-3 flex items-center gap-2">
-                <button onClick={() => setEditingPasar(null)} className="text-sm text-brand hover:underline">
+                <button
+                  onClick={() => setEditingPasar(null)}
+                  className="text-sm text-brand hover:underline"
+                >
                   ← Kembali ke daftar
                 </button>
-                <h2 className="ml-auto text-sm font-semibold text-slate-500">
-                  {pasarList.some((x) => x.id === editingPasar.id) ? "Edit pasar" : "Tambah pasar"}
+                <h2 className="ml-auto text-sm font-semibold text-ink2">
+                  {pasarList.some((x) => x.id === editingPasar.id)
+                    ? "Edit pasar"
+                    : "Tambah pasar"}
                 </h2>
               </div>
               <PasarEditor
@@ -333,7 +387,8 @@ export default function AdminPage() {
                     : undefined
                 }
                 onDelete={
-                  editingPasar.buatanUser && pasarList.some((x) => x.id === editingPasar.id)
+                  editingPasar.buatanUser &&
+                  pasarList.some((x) => x.id === editingPasar.id)
                     ? () => {
                         if (confirm("Hapus pasar ini?")) {
                           deletePasar(editingPasar.id);
@@ -348,14 +403,14 @@ export default function AdminPage() {
           ) : (
             <>
               <div className="mb-3 flex items-center justify-between gap-2">
-                <p className="text-sm text-slate-500">
-                  <strong className="text-slate-700">{pasarList.length}</strong> pasar
+                <p className="text-sm text-ink2">
+                  <strong className="text-ink">{pasarList.length}</strong> pasar
                   tradisional — untuk peta kebutuhan/kompetitor supplier.
                 </p>
                 <div className="flex gap-2">
                   <button
                     onClick={() => setBulkOpen((v) => !v)}
-                    className="rounded-md border border-slate-300 bg-white px-3 py-2 text-sm hover:bg-slate-50"
+                    className="rounded-md border border-hairline bg-surface px-3 py-2 text-sm hover:bg-surface2"
                   >
                     📋 Impor massal titik
                   </button>
@@ -369,25 +424,34 @@ export default function AdminPage() {
               </div>
 
               {bulkOpen && (
-                <div className="mb-3 rounded-xl border border-slate-200 bg-white p-3 shadow-sm">
-                  <h3 className="text-sm font-semibold text-slate-700">
+                <div className="mb-3 rounded-xl border border-hairline bg-surface p-3 shadow-sm">
+                  <h3 className="text-sm font-semibold text-ink">
                     Impor titik pasar dari Google Maps
                   </h3>
-                  <p className="mt-1 text-[11px] leading-relaxed text-slate-500">
+                  <p className="mt-1 text-xs leading-relaxed text-ink2">
                     Tempel satu pasar per baris:{" "}
-                    <code className="font-mono">Nama Pasar | URL-Google-Maps</code> atau{" "}
-                    <code className="font-mono">Nama Pasar | -7.8xxxx, 111.4xxxx</code>.
-                    Nama dicocokkan dengan pasar yang ada. Gunakan{" "}
-                    <strong>URL lengkap</strong> yang memuat <code className="font-mono">@lat,lng</code>{" "}
-                    (buka lokasi di Google Maps → salin URL dari address bar), bukan link pendek{" "}
-                    <code className="font-mono">maps.app.goo.gl</code> (tak memuat koordinat).
+                    <code className="font-mono">
+                      Nama Pasar | URL-Google-Maps
+                    </code>{" "}
+                    atau{" "}
+                    <code className="font-mono">
+                      Nama Pasar | -7.8xxxx, 111.4xxxx
+                    </code>
+                    . Nama dicocokkan dengan pasar yang ada. Gunakan{" "}
+                    <strong>URL lengkap</strong> yang memuat{" "}
+                    <code className="font-mono">@lat,lng</code> (buka lokasi di
+                    Google Maps → salin URL dari address bar), bukan link pendek{" "}
+                    <code className="font-mono">maps.app.goo.gl</code> (tak
+                    memuat koordinat).
                   </p>
                   <textarea
                     value={bulkText}
                     onChange={(e) => setBulkText(e.target.value)}
                     rows={6}
-                    placeholder={"Pasar Legi Songgolangit | https://www.google.com/maps/@-7.8677,111.4716,17z\nPasar Babadan | -7.8155, 111.5106"}
-                    className="mt-2 w-full rounded-md border border-slate-300 px-2 py-1.5 font-mono text-xs focus:border-brand focus:outline-none"
+                    placeholder={
+                      "Pasar Legi Songgolangit | https://www.google.com/maps/@-7.8677,111.4716,17z\nPasar Babadan | -7.8155, 111.5106"
+                    }
+                    className="mt-2 w-full rounded-md border border-hairline px-2 py-1.5 font-mono text-xs focus:border-brand focus:outline-none"
                   />
                   <div className="mt-2 flex items-center gap-2">
                     <button
@@ -397,15 +461,15 @@ export default function AdminPage() {
                       Terapkan
                     </button>
                     {bulkResult && (
-                      <span className="text-[11px] text-slate-600">{bulkResult}</span>
+                      <span className="text-xs text-ink2">{bulkResult}</span>
                     )}
                   </div>
                 </div>
               )}
-              <div className="overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm">
+              <div className="overflow-hidden rounded-xl border border-hairline bg-surface shadow-sm">
                 <div className="overflow-x-auto">
                   <table className="w-full text-sm">
-                    <thead className="bg-slate-50 text-left text-[11px] uppercase tracking-wide text-slate-500">
+                    <thead className="bg-surface2 text-left text-xs uppercase tracking-wide text-ink2">
                       <tr>
                         <th className="px-3 py-2">Nama / Kategori</th>
                         <th className="px-3 py-2">Kecamatan</th>
@@ -416,28 +480,51 @@ export default function AdminPage() {
                     <tbody>
                       {pasarList
                         .slice()
-                        .sort((a, b) => a.kecamatan.localeCompare(b.kecamatan, "id") || a.nama.localeCompare(b.nama, "id"))
+                        .sort(
+                          (a, b) =>
+                            a.kecamatan.localeCompare(b.kecamatan, "id") ||
+                            a.nama.localeCompare(b.nama, "id"),
+                        )
                         .map((p) => {
-                          const changed = p.buatanUser || isPasarOverridden(p.id);
+                          const changed =
+                            p.buatanUser || isPasarOverridden(p.id);
                           return (
-                            <tr key={p.id} className="border-t border-slate-100 hover:bg-slate-50">
+                            <tr
+                              key={p.id}
+                              className="border-t border-hairline hover:bg-surface2"
+                            >
                               <td className="px-3 py-2">
-                                <div className="font-medium text-slate-800">
-                                  🛒 {p.nama || <span className="text-slate-400">(tanpa nama)</span>}
+                                <div className="font-medium text-ink">
+                                  🛒{" "}
+                                  {p.nama || (
+                                    <span className="text-muted">
+                                      (tanpa nama)
+                                    </span>
+                                  )}
                                   {changed && (
-                                    <span className="ml-2 rounded bg-amber-100 px-1.5 py-0.5 text-[10px] font-medium text-amber-700">
+                                    <span className="ml-2 rounded bg-amber-100 px-1.5 py-0.5 text-xs font-medium text-amber-700">
                                       {p.buatanUser ? "baru" : "diedit"}
                                     </span>
                                   )}
                                 </div>
-                                {p.kategori && <div className="text-[11px] text-slate-500">{p.kategori}</div>}
+                                {p.kategori && (
+                                  <div className="text-xs text-ink2">
+                                    {p.kategori}
+                                  </div>
+                                )}
                               </td>
-                              <td className="px-3 py-2 text-slate-600">{p.kecamatan || "–"}</td>
+                              <td className="px-3 py-2 text-ink2">
+                                {p.kecamatan || "–"}
+                              </td>
                               <td className="px-3 py-2">
-                                <div className="font-mono text-[11px] text-slate-600">
+                                <div className="font-mono text-xs text-ink2">
                                   {p.lat.toFixed(5)}, {p.lng.toFixed(5)}
                                 </div>
-                                {p.perkiraan && <span className="text-[10px] text-amber-600">⚠ perkiraan</span>}
+                                {p.perkiraan && (
+                                  <span className="text-xs text-warning-readable">
+                                    ⚠ perkiraan
+                                  </span>
+                                )}
                               </td>
                               <td className="px-3 py-2 text-right">
                                 <button
@@ -454,20 +541,26 @@ export default function AdminPage() {
                   </table>
                 </div>
               </div>
-              <p className="mt-3 text-[11px] leading-relaxed text-slate-500">
-                Koordinat awal masih perkiraan (pusat kecamatan). Buka pasar di Google Maps,
-                salin URL, lalu tempel di editor agar titiknya persis.
+              <p className="mt-3 text-xs leading-relaxed text-ink2">
+                Koordinat awal masih perkiraan (pusat kecamatan). Buka pasar di
+                Google Maps, salin URL, lalu tempel di editor agar titiknya
+                persis.
               </p>
             </>
           )
         ) : editing ? (
-          <div className="rounded-xl border border-slate-200 bg-white p-4 shadow-sm">
+          <div className="rounded-xl border border-hairline bg-surface p-4 shadow-sm">
             <div className="mb-3 flex items-center gap-2">
-              <button onClick={() => setEditing(null)} className="text-sm text-brand hover:underline">
+              <button
+                onClick={() => setEditing(null)}
+                className="text-sm text-brand hover:underline"
+              >
                 ← Kembali ke daftar
               </button>
-              <h2 className="ml-auto text-sm font-semibold text-slate-500">
-                {list.some((x) => x.id === editing.id) ? "Edit data" : "Tambah data baru"}
+              <h2 className="ml-auto text-sm font-semibold text-ink2">
+                {list.some((x) => x.id === editing.id)
+                  ? "Edit data"
+                  : "Tambah data baru"}
               </h2>
             </div>
             <AdminEditor
@@ -502,11 +595,22 @@ export default function AdminPage() {
           <>
             {/* Dashboard jumlah data */}
             <section className="mb-4 grid grid-cols-2 gap-3 sm:grid-cols-4 lg:grid-cols-6">
-              <Card label="Total dapur" value={fmt(stats.total)} accent="text-brand" />
-              <Card label="Total PM/hari" value={fmt(stats.totalPM)} accent="text-emerald-600" />
+              <Card
+                label="Total dapur"
+                value={fmt(stats.total)}
+                accent="text-brand"
+              />
+              <Card
+                label="Total PM/hari"
+                value={fmt(stats.totalPM)}
+                accent="text-emerald-600"
+              />
               <Card label="Operasional" value={fmt(stats.operasional)} />
               <Card label="Akan operasional" value={fmt(stats.akan)} />
-              <Card label="Berhenti/suspend" value={fmt(stats.berhenti + stats.suspend)} />
+              <Card
+                label="Berhenti/suspend"
+                value={fmt(stats.berhenti + stats.suspend)}
+              />
               <Card label="Kecamatan" value={fmt(stats.kecamatan)} />
             </section>
 
@@ -518,10 +622,16 @@ export default function AdminPage() {
               >
                 + Tambah SPPG
               </button>
-              <button onClick={handleExport} className="rounded-md border border-slate-300 bg-white px-3 py-2 text-sm hover:bg-slate-50">
-                ⬇ Ekspor JSON
+              <button
+                onClick={handleExport}
+                className="rounded-md border border-hairline bg-surface px-3 py-2 text-sm hover:bg-surface2"
+              >
+                <Icon name="download" className="mr-1 inline" /> Ekspor JSON
               </button>
-              <button onClick={() => fileRef.current?.click()} className="rounded-md border border-slate-300 bg-white px-3 py-2 text-sm hover:bg-slate-50">
+              <button
+                onClick={() => fileRef.current?.click()}
+                className="rounded-md border border-hairline bg-surface px-3 py-2 text-sm hover:bg-surface2"
+              >
                 ⬆ Impor JSON
               </button>
               <input
@@ -537,12 +647,16 @@ export default function AdminPage() {
               />
               <button
                 onClick={() => {
-                  if (confirm("Hapus SEMUA koreksi & titik tambahan, kembali ke data awal?")) {
+                  if (
+                    confirm(
+                      "Hapus SEMUA koreksi & titik tambahan, kembali ke data awal?",
+                    )
+                  ) {
                     resetAll();
                     refresh();
                   }
                 }}
-                className="rounded-md border border-red-300 bg-white px-3 py-2 text-sm text-red-600 hover:bg-red-50"
+                className="rounded-md border border-red-300 bg-surface px-3 py-2 text-sm text-danger-readable hover:bg-red-50"
               >
                 ↺ Reset ke data awal
               </button>
@@ -553,18 +667,27 @@ export default function AdminPage() {
                 value={q}
                 onChange={(e) => setQ(e.target.value)}
                 placeholder="Cari nama / kecamatan / kepala SPPG…"
-                className="min-w-[200px] flex-1 rounded-md border border-slate-300 px-3 py-2 text-sm focus:border-brand focus:outline-none"
+                className="min-w-[200px] flex-1 rounded-md border border-hairline px-3 py-2 text-sm focus:border-brand focus:outline-none"
               />
-              <select value={kec} onChange={(e) => setKec(e.target.value)} className="rounded-md border border-slate-300 px-2 py-2 text-sm">
+              <select
+                aria-label="Filter kecamatan SPPG"
+                value={kec}
+                onChange={(e) => setKec(e.target.value)}
+                className="rounded-md border border-hairline px-2 py-2 text-sm"
+              >
                 <option value="all">Semua kecamatan</option>
-                {kecamatanList.map((k) => <option key={k} value={k}>{k}</option>)}
+                {kecamatanList.map((k) => (
+                  <option key={k} value={k}>
+                    {k}
+                  </option>
+                ))}
               </select>
               <button
                 onClick={() => setPerkOnly((v) => !v)}
                 className={`rounded-md border px-3 py-2 text-sm font-medium ${
                   perkOnly
                     ? "border-amber-400 bg-amber-50 text-amber-700"
-                    : "border-slate-300 bg-white text-slate-600 hover:bg-slate-50"
+                    : "border-hairline bg-surface text-ink2 hover:bg-surface2"
                 }`}
                 title="Tampilkan hanya titik yang koordinatnya masih perkiraan"
               >
@@ -573,10 +696,10 @@ export default function AdminPage() {
             </div>
 
             {/* Tabel data */}
-            <div className="overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm">
+            <div className="overflow-hidden rounded-xl border border-hairline bg-surface shadow-sm">
               <div className="overflow-x-auto">
                 <table className="w-full text-sm">
-                  <thead className="bg-slate-50 text-left text-[11px] uppercase tracking-wide text-slate-500">
+                  <thead className="bg-surface2 text-left text-xs uppercase tracking-wide text-ink2">
                     <tr>
                       <th className="px-3 py-2">Nama / Kecamatan</th>
                       <th className="px-3 py-2">Status</th>
@@ -590,33 +713,48 @@ export default function AdminPage() {
                       const meta = statusMeta(s.status);
                       const changed = s.buatanUser || isOverridden(s.id);
                       return (
-                        <tr key={s.id} className="border-t border-slate-100 hover:bg-slate-50">
+                        <tr
+                          key={s.id}
+                          className="border-t border-hairline hover:bg-surface2"
+                        >
                           <td className="px-3 py-2">
-                            <div className="font-medium text-slate-800">
-                              {s.nama || <span className="text-slate-400">(tanpa nama)</span>}
+                            <div className="font-medium text-ink">
+                              {s.nama || (
+                                <span className="text-muted">(tanpa nama)</span>
+                              )}
                               {changed && (
-                                <span className="ml-2 rounded bg-amber-100 px-1.5 py-0.5 text-[10px] font-medium text-amber-700">
+                                <span className="ml-2 rounded bg-amber-100 px-1.5 py-0.5 text-xs font-medium text-amber-700">
                                   {s.buatanUser ? "baru" : "diedit"}
                                 </span>
                               )}
                             </div>
-                            <div className="text-[11px] text-slate-500">
-                              {s.desa ? `${s.desa} · ` : ""}{s.kecamatan || "–"}
+                            <div className="text-xs text-ink2">
+                              {s.desa ? `${s.desa} · ` : ""}
+                              {s.kecamatan || "–"}
                             </div>
                           </td>
                           <td className="px-3 py-2">
-                            <span className={`inline-flex items-center gap-1 rounded-full px-2 py-0.5 text-[11px] font-medium ring-1 ring-inset ${meta.badge}`}>
-                              <span className="h-1.5 w-1.5 rounded-full" style={{ background: meta.color }} />
+                            <span
+                              className={`inline-flex items-center gap-1 rounded-full px-2 py-0.5 text-xs font-medium ring-1 ring-inset ${meta.badge}`}
+                            >
+                              <span
+                                className="h-1.5 w-1.5 rounded-full"
+                                style={{ background: meta.color }}
+                              />
                               {meta.label}
                             </span>
                           </td>
-                          <td className="px-3 py-2 text-right tabular-nums font-medium">{fmt(s.porsi)}</td>
+                          <td className="px-3 py-2 text-right tabular-nums font-medium">
+                            {fmt(s.porsi)}
+                          </td>
                           <td className="px-3 py-2">
-                            <div className="font-mono text-[11px] text-slate-600">
+                            <div className="font-mono text-xs text-ink2">
                               {s.lat.toFixed(5)}, {s.lng.toFixed(5)}
                             </div>
                             {s.perkiraan && (
-                              <span className="text-[10px] text-amber-600">⚠ perkiraan</span>
+                              <span className="text-xs text-warning-readable">
+                                ⚠ perkiraan
+                              </span>
                             )}
                           </td>
                           <td className="px-3 py-2 text-right">
@@ -632,7 +770,10 @@ export default function AdminPage() {
                     })}
                     {filtered.length === 0 && (
                       <tr>
-                        <td colSpan={5} className="px-3 py-6 text-center text-slate-400">
+                        <td
+                          colSpan={5}
+                          className="px-3 py-6 text-center text-muted"
+                        >
                           Tidak ada data yang cocok.
                         </td>
                       </tr>
@@ -642,24 +783,35 @@ export default function AdminPage() {
               </div>
             </div>
 
-            <p className="mt-3 text-[11px] leading-relaxed text-slate-500">
-              Semua perubahan tersimpan otomatis di <strong>localStorage browser ini</strong>.
-              Untuk cadangan/berbagi atau menjadikannya data permanen aplikasi, gunakan
-              <strong> Ekspor JSON</strong> lalu ganti isi <code className="font-mono">data/sppg.json</code>.
-              Gate kata sandi bersifat client-side (bukan keamanan server) — lindungi URL ini bila perlu.
+            <p className="mt-3 text-xs leading-relaxed text-ink2">
+              Semua perubahan tersimpan otomatis di{" "}
+              <strong>localStorage browser ini</strong>. Untuk cadangan/berbagi
+              atau menjadikannya data permanen aplikasi, gunakan
+              <strong> Ekspor JSON</strong> lalu ganti isi{" "}
+              <code className="font-mono">data/sppg.json</code>. Gate kata sandi
+              bersifat client-side (bukan keamanan server) — lindungi URL ini
+              bila perlu.
             </p>
           </>
         )}
       </div>
-    </main>
+    </div>
   );
 }
 
-function Card({ label, value, accent = "text-slate-800" }: { label: string; value: string; accent?: string }) {
+function Card({
+  label,
+  value,
+  accent = "text-ink",
+}: {
+  label: string;
+  value: string;
+  accent?: string;
+}) {
   return (
-    <div className="rounded-xl border border-slate-200 bg-white p-3 shadow-sm">
+    <div className="rounded-xl border border-hairline bg-surface p-3 shadow-sm">
       <div className={`text-xl font-bold tabular-nums ${accent}`}>{value}</div>
-      <div className="text-[11px] leading-tight text-slate-500">{label}</div>
+      <div className="text-xs leading-tight text-ink2">{label}</div>
     </div>
   );
 }

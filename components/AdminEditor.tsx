@@ -10,7 +10,7 @@ const IZIN_OPTS = ["", "SUDAH", "PROSES", "BELUM PENGAJUAN"];
 const CoordPicker = dynamic(() => import("@/components/CoordPicker"), {
   ssr: false,
   loading: () => (
-    <div className="grid h-56 place-items-center rounded-md bg-slate-100 text-sm text-slate-400">
+    <div className="grid h-56 place-items-center rounded-md bg-page text-sm text-muted">
       Memuat peta…
     </div>
   ),
@@ -151,8 +151,8 @@ export default function AdminEditor({
   }
 
   const inp =
-    "w-full rounded-md border border-slate-300 px-2 py-1.5 text-sm focus:border-brand focus:outline-none focus:ring-1 focus:ring-brand";
-  const lbl = "text-[11px] font-medium uppercase tracking-wide text-slate-400";
+    "w-full rounded-md border border-hairline px-2 py-1.5 text-sm focus:border-brand focus:outline-none focus:ring-1 focus:ring-brand";
+  const lbl = "text-xs font-medium uppercase tracking-wide text-muted";
 
   return (
     <div className="space-y-5">
@@ -200,7 +200,7 @@ export default function AdminEditor({
             <input className={inp} value={f.lng} onChange={(e) => set("lng", e.target.value)} inputMode="decimal" />
           </L>
         </div>
-        <p className="mt-1 text-[11px] text-slate-500">
+        <p className="mt-1 text-xs text-ink2">
           Klik peta atau geser 📍 untuk menaruh titik. Cocokkan dengan lokasi di{" "}
           {f.gmaps ? (
             <a href={f.gmaps} target="_blank" rel="noopener noreferrer" className="font-medium text-blue-600 underline">Google Maps</a>
@@ -226,7 +226,7 @@ export default function AdminEditor({
             }}
           />
         </div>
-        <p className="text-[11px] text-slate-400">
+        <p className="text-xs text-muted">
           Buka lokasi di Google Maps, salin URL-nya (atau ketik &quot;lat, lng&quot;), tempel di sini — titik langsung disamakan.
         </p>
         <div className="mt-2">
@@ -263,7 +263,7 @@ export default function AdminEditor({
           <Derived label="3B" value={derived.pm3bTotal} />
           <Derived label="Total PM/hari" value={derived.porsi} strong />
         </div>
-        <p className="mt-1 text-[11px] text-slate-500">Total dihitung otomatis dari rincian di atas.</p>
+        <p className="mt-1 text-xs text-ink2">Total dihitung otomatis dari rincian di atas.</p>
       </Section>
 
       {/* Kontak & administrasi */}
@@ -289,7 +289,7 @@ export default function AdminEditor({
         <div className="space-y-2">
           {PERIJINAN_ITEMS.map((it) => (
             <div key={it.key} className="grid grid-cols-12 items-center gap-2">
-              <span className="col-span-5 text-xs text-slate-600 sm:col-span-4">{it.label}</span>
+              <span className="col-span-5 text-xs text-ink2 sm:col-span-4">{it.label}</span>
               <select
                 className={`${inp} col-span-7 sm:col-span-3`}
                 value={(izin[it.key] as string) ?? ""}
@@ -321,11 +321,11 @@ export default function AdminEditor({
       </Section>
 
       {/* Aksi */}
-      <div className="sticky bottom-0 -mx-4 flex flex-wrap gap-2 border-t border-slate-200 bg-white px-4 py-3">
+      <div className="sticky bottom-0 -mx-4 flex flex-wrap gap-2 border-t border-hairline bg-surface px-4 py-3">
         <button onClick={save} className="rounded-md bg-brand px-4 py-2 text-sm font-semibold text-white hover:bg-brand-dark">
           💾 Simpan perubahan
         </button>
-        <button onClick={onCancel} className="rounded-md border border-slate-300 px-4 py-2 text-sm hover:bg-slate-100">
+        <button onClick={onCancel} className="rounded-md border border-hairline px-4 py-2 text-sm hover:bg-page">
           Batal
         </button>
         {onResetPoint && (
@@ -334,7 +334,7 @@ export default function AdminEditor({
           </button>
         )}
         {onDelete && (
-          <button onClick={onDelete} className="ml-auto rounded-md border border-red-300 px-3 py-2 text-sm text-red-600 hover:bg-red-50">
+          <button onClick={onDelete} className="ml-auto rounded-md border border-red-300 px-3 py-2 text-sm text-danger-readable hover:bg-red-50">
             Hapus titik ini
           </button>
         )}
@@ -346,7 +346,7 @@ export default function AdminEditor({
 function Section({ title, children }: { title: string; children: React.ReactNode }) {
   return (
     <section>
-      <h3 className="mb-2 border-b border-slate-200 pb-1 text-sm font-semibold text-slate-700">{title}</h3>
+      <h3 className="mb-2 border-b border-hairline pb-1 text-sm font-semibold text-ink">{title}</h3>
       {children}
     </section>
   );
@@ -355,7 +355,7 @@ function Section({ title, children }: { title: string; children: React.ReactNode
 function L({ label, children, className = "" }: { label: string; children: React.ReactNode; className?: string }) {
   return (
     <label className={`block ${className}`}>
-      <span className="mb-0.5 block text-[11px] font-medium uppercase tracking-wide text-slate-400">{label}</span>
+      <span className="mb-0.5 block text-xs font-medium uppercase tracking-wide text-muted">{label}</span>
       {children}
     </label>
   );
@@ -364,8 +364,8 @@ function L({ label, children, className = "" }: { label: string; children: React
 function Derived({ label, value, strong }: { label: string; value: number; strong?: boolean }) {
   return (
     <div>
-      <div className={`tabular-nums ${strong ? "text-lg font-bold text-brand" : "text-base font-semibold text-slate-700"}`}>{fmt(value)}</div>
-      <div className="text-[10px] text-slate-500">{label}</div>
+      <div className={`tabular-nums ${strong ? "text-lg font-bold text-brand" : "text-base font-semibold text-ink"}`}>{fmt(value)}</div>
+      <div className="text-xs text-ink2">{label}</div>
     </div>
   );
 }

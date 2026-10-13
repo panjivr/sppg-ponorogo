@@ -6,6 +6,7 @@ import { ASUMSI, BISNIS } from "@/lib/config";
 import { num, persen, rupiah } from "@/lib/format";
 
 export const metadata = {
+  robots: { index: false, follow: false },
   title: "Metodologi, Sumber Data & Batasan",
   description:
     "Dari mana data 85 dapur SPPG Ponorogo berasal, bagaimana koordinat diperoleh, asumsi ekonomi yang dipakai, dan batasan yang harus Anda tahu sebelum mengambil keputusan.",

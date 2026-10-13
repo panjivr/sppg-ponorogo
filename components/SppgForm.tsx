@@ -83,7 +83,7 @@ export default function SppgForm({
   }
 
   const input =
-    "w-full rounded border border-slate-300 px-2 py-1 text-sm focus:border-brand focus:outline-none";
+    "w-full rounded border border-hairline px-2 py-1 text-sm focus:border-brand focus:outline-none";
 
   return (
     <form onSubmit={submit} className="space-y-2">
@@ -156,7 +156,7 @@ export default function SppgForm({
         <button
           type="button"
           onClick={onCancel}
-          className="rounded border border-slate-300 px-2 py-1.5 text-sm hover:bg-slate-100"
+          className="rounded border border-hairline px-2 py-1.5 text-sm hover:bg-page"
         >
           Batal
         </button>
@@ -165,7 +165,7 @@ export default function SppgForm({
         <button
           type="button"
           onClick={() => onDelete(editing.id)}
-          className="w-full rounded border border-red-300 px-2 py-1 text-xs text-red-600 hover:bg-red-50"
+          className="w-full rounded border border-red-300 px-2 py-1 text-xs text-danger-readable hover:bg-red-50"
         >
           Hapus titik ini
         </button>
