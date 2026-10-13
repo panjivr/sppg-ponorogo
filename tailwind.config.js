@@ -27,6 +27,19 @@ module.exports = {
         warning: "var(--st-warning)",
         serious: "var(--st-serious)",
         critical: "var(--st-critical)",
+        // Brand Bumbu Pawon (landing publik)
+        bumbu: {
+          forest: "#14532D",
+          green: "#16A34A",
+          lime: "#A3E635",
+          yellow: "#FACC15",
+          cream: "#FFFBEB",
+          dark: "#17251B",
+        },
+      },
+      fontFamily: {
+        sans: ["Inter", "ui-sans-serif", "system-ui", "sans-serif"],
+        display: ['"Plus Jakarta Sans"', "Inter", "sans-serif"],
       },
       borderColor: { DEFAULT: "var(--hairline)" },
       maxWidth: { content: "1200px" },

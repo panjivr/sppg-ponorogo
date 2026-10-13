@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import Nav from "@/components/Nav";
+import Shell from "@/components/Shell";
 import { SITE } from "@/lib/config";
 import "./globals.css";
 
@@ -96,8 +96,7 @@ export default function RootLayout({
         >
           Lewati ke konten utama
         </a>
-        <Nav />
-        <main id="konten">{children}</main>
+        <Shell>{children}</Shell>
       </body>
     </html>
   );
