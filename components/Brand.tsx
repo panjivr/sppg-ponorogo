@@ -9,7 +9,7 @@ export default function Brand({ compact = false }: { compact?: boolean }) {
         <span className="brand-name">
           Bumbu Pawon<span className="brand-dot">.</span>
         </span>
-        {!compact && <span className="brand-caption">MAS DHOO · PONOROGO</span>}
+        {!compact && <span className="brand-caption">PONOROGO</span>}
       </span>
     </span>
   );

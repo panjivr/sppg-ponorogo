@@ -30,7 +30,7 @@ export default function PublicFooter() {
             {ALAMAT}
           </p>
           <a
-            href={waLink("Halo Bumbu Pawon Mas Dhoo, saya ingin memesan.")}
+            href={waLink("Halo Bumbu Pawon, saya ingin memesan.")}
             target="_blank"
             rel="noopener noreferrer"
             className="footer-contact"
@@ -45,10 +45,7 @@ export default function PublicFooter() {
         </div>
       </div>
       <div className="site-container footer-bottom">
-        <span>Bumbu Pawon Mas Dhoo · Ponorogo</span>
-        <Link href="/ringkasan">
-          Area pengelola <Icon name="arrow" />
-        </Link>
+        <span>Bumbu Pawon · Ponorogo</span>
       </div>
     </footer>
   );

@@ -5,7 +5,7 @@
 // ============================================================
 
 /** Nama bisnis / brand supplier. */
-export const NAMA_BISNIS = "Bumbu Pawon Mas Dhoo";
+export const NAMA_BISNIS = "Bumbu Pawon";
 
 /** Tagline singkat. */
 export const TAGLINE =
@@ -58,5 +58,5 @@ export const SITE = {
   url: "https://sppg-ponorogo-web-mr-ps-projects-8da5766a.vercel.app",
   nama: "Bumbu Pawon",
   deskripsi:
-    "Bumbu Pawon Mas Dhoo, grosir dan supplier sayuran segar, polo pendem, buah, bumbu, dan sembako di Lor Prapatan Jetis, Ponorogo. Minta penawaran melalui WhatsApp.",
+    "Bumbu Pawon, grosir dan supplier sayuran segar, polo pendem, buah, bumbu, dan sembako di Lor Prapatan Jetis, Ponorogo. Minta penawaran melalui WhatsApp.",
 };

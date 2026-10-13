@@ -5,10 +5,10 @@ import { ALAMAT, TELEPON, WA_NUMBER, waLink } from "@/lib/config";
 import { KATALOG, PRODUK } from "@/lib/catalog";
 export const metadata = {
   title: {
-    absolute: "Bumbu Pawon Mas Dhoo — Supplier Sayur & Sembako Ponorogo",
+    absolute: "Bumbu Pawon — Supplier Sayur & Sembako Ponorogo",
   },
   description:
-    "Belanja sayur segar, jamur, polo pendem, buah, bumbu dan sembako di Bumbu Pawon Mas Dhoo, Lor Prapatan Jetis, Ponorogo. Grosir dan eceran, pesan via WhatsApp.",
+    "Belanja sayur segar, jamur, polo pendem, buah, bumbu dan sembako di Bumbu Pawon, Lor Prapatan Jetis, Ponorogo. Grosir dan eceran, pesan via WhatsApp.",
   alternates: { canonical: "/" },
 };
 const featuredIds = ["kubis", "wortel", "brokoli", "kentang"];
@@ -51,7 +51,7 @@ export default function Home() {
             </h1>
             <p className="hero-description">
               Sayur segar, bumbu, buah, hingga sembako. Temukan kebutuhan dapur
-              Anda di <strong>Bumbu Pawon Mas Dhoo</strong>, lalu pesan dengan
+              Anda di <strong>Bumbu Pawon</strong>, lalu pesan dengan
               mudah lewat WhatsApp.
             </p>
             <div className="hero-actions">
@@ -60,7 +60,7 @@ export default function Home() {
               </Link>
               <a
                 href={waLink(
-                  "Halo Bumbu Pawon Mas Dhoo, saya ingin meminta penawaran kebutuhan dapur.",
+                  "Halo Bumbu Pawon, saya ingin meminta penawaran kebutuhan dapur.",
                 )}
                 className="button button-secondary"
                 target="_blank"
@@ -178,7 +178,7 @@ export default function Home() {
           Butuh jenis jamur, buah, cabai, atau bahan toko lainnya?{" "}
           <a
             href={waLink(
-              "Halo Bumbu Pawon Mas Dhoo, saya mencari bahan di luar katalog. Berikut kebutuhannya:",
+              "Halo Bumbu Pawon, saya mencari bahan di luar katalog. Berikut kebutuhannya:",
             )}
             target="_blank"
             rel="noopener noreferrer"
@@ -203,7 +203,7 @@ export default function Home() {
             </p>
             <a
               href={waLink(
-                "Halo Bumbu Pawon Mas Dhoo, saya ingin membahas pengadaan bahan untuk usaha/SPPG. Kebutuhan dan jadwal saya:",
+                "Halo Bumbu Pawon, saya ingin membahas pengadaan bahan untuk usaha/SPPG. Kebutuhan dan jadwal saya:",
               )}
               className="button button-accent"
               target="_blank"
@@ -266,7 +266,7 @@ export default function Home() {
           <a
             className="button button-primary"
             href={waLink(
-              "Halo Bumbu Pawon Mas Dhoo, saya ingin memesan. Berikut daftar belanja saya:",
+              "Halo Bumbu Pawon, saya ingin memesan. Berikut daftar belanja saya:",
             )}
             target="_blank"
             rel="noopener noreferrer"

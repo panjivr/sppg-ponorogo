@@ -8,7 +8,7 @@ import { SITE } from "@/lib/config";
  */
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: "Bumbu Pawon Mas Dhoo",
+    name: "Bumbu Pawon",
     short_name: "Bumbu Pawon",
     description: SITE.deskripsi,
     start_url: "/",

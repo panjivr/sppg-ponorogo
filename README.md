@@ -1,4 +1,4 @@
-# Bumbu Pawon Mas Dhoo — Katalog Supplier Ponorogo
+# Bumbu Pawon — Katalog Supplier Ponorogo
 
 Website publik untuk katalog sayuran, jamur, polo pendem, buah, bumbu, dan sembako; dilengkapi alat pengelola data SPPG Ponorogo.
 

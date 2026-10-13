@@ -5,7 +5,7 @@ import "./globals.css";
 export const metadata: Metadata = {
   metadataBase: new URL(SITE.url),
   title: {
-    default: "Bumbu Pawon Mas Dhoo — Supplier Sayur & Sembako Ponorogo",
+    default: "Bumbu Pawon — Supplier Sayur & Sembako Ponorogo",
     template: "%s · Bumbu Pawon",
   },
   description: SITE.deskripsi,
@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     type: "website",
     locale: "id_ID",
     siteName: BISNIS.nama,
-    title: "Bumbu Pawon Mas Dhoo — Kebutuhan Dapur Ponorogo",
+    title: "Bumbu Pawon — Kebutuhan Dapur Ponorogo",
     description: SITE.deskripsi,
   },
   twitter: {

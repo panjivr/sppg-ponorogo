@@ -17,7 +17,7 @@ const sources: PhotoSource[] = raw;
 export const metadata = {
   title: "Sumber & Kredit Foto Produk",
   description:
-    "Sumber, pembuat, dan lisensi foto produk yang ditampilkan dalam katalog Bumbu Pawon Mas Dhoo.",
+    "Sumber, pembuat, dan lisensi foto produk yang ditampilkan dalam katalog Bumbu Pawon.",
   alternates: { canonical: "/kredit-foto" },
 };
 export default function PhotoCredits() {

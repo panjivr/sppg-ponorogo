@@ -1,6 +1,6 @@
 import { ImageResponse } from "next/og";
 export const alt =
-  "Bumbu Pawon Mas Dhoo — Grosir dan supplier kebutuhan dapur di Ponorogo";
+  "Bumbu Pawon — Grosir dan supplier kebutuhan dapur di Ponorogo";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 export default function Image() {
@@ -38,7 +38,7 @@ export default function Image() {
             <path d="M20 4C11 3 4 7 4 13a7 7 0 0 0 7 7c6 0 10-7 9-16Z" />
             <path d="m4 20 11-11" />
           </svg>
-          BUMBU PAWON MAS DHOO
+          BUMBU PAWON
         </div>
         <div
           style={{

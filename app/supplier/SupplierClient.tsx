@@ -155,7 +155,7 @@ export default function SupplierClient() {
             <Icon name="chevron" />
             <span aria-current="page">Katalog</span>
           </nav>
-          <p className="eyebrow">KATALOG BUMBU PAWON MAS DHOO</p>
+          <p className="eyebrow">KATALOG BUMBU PAWON</p>
           <h1>
             Daftar belanja dapur,
             <br />

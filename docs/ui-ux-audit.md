@@ -1,4 +1,4 @@
-# Audit Bumbu Pawon Mas Dhoo
+# Audit Bumbu Pawon
 
 ## Tujuan dan panduan
 
@@ -11,7 +11,7 @@ Panduan: [UI UX Pro Max](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill
 | Temuan awal | Perubahan |
 |---|---|
 | Katalog supplier ikut terkunci di area pengelola | Landing, katalog, rincian produk, dan kredit foto dapat diakses publik |
-| Nama toko, nomor WhatsApp, dan informasi landing berbeda | Nama Bumbu Pawon Mas Dhoo dan nomor `0878-9261-4999` konsisten; keputusan nomor dikonfirmasi pengguna |
+| Nama toko, nomor WhatsApp, dan informasi landing berbeda | Nama Bumbu Pawon dan nomor `0878-9261-4999` konsisten; keputusan nomor dikonfirmasi pengguna |
 | Katalog 31 item tidak sesuai daftar pengguna | 61 produk dalam 7 kategori; istilah lokal disimpan, duplikasi dibersihkan, permintaan bahan lain disediakan |
 | Harga contoh dan klaim buka 24 jam belum terkonfirmasi | Alur permintaan penawaran: konfirmasi stok, varian, ukuran, harga, dan pengiriman; tidak ada harga atau jam buka rekaan |
 | Landing memakai dua `<main>`; beberapa halaman internal juga bertumpuk | Satu landmark utama per halaman dan tautan lewati konten |

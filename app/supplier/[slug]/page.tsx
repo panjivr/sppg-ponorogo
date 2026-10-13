@@ -18,7 +18,7 @@ export function generateMetadata({
   if (!p) return {};
   return {
     title: `${p.nama} di Ponorogo`,
-    description: `${p.deskripsi} Minta harga ${p.nama.toLowerCase()} di Bumbu Pawon Mas Dhoo, Ponorogo.`,
+    description: `${p.deskripsi} Minta harga ${p.nama.toLowerCase()} di Bumbu Pawon, Ponorogo.`,
     alternates: { canonical: `/supplier/${p.id}` },
     openGraph: {
       title: `${p.nama} — Bumbu Pawon`,
