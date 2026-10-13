@@ -1,4 +1,3 @@
-import seed from "@/data/sppg.json";
 import pasarSeed from "@/data/pasar.json";
 import type { Sppg, CandidateRuko, Pasar } from "./types";
 
@@ -8,8 +7,27 @@ const KEY_RUKO = "sppg-ponorogo:ruko";
 const KEY_PASAR_USER = "sppg-ponorogo:pasar-user";
 const KEY_PASAR_OVERRIDE = "sppg-ponorogo:pasar-override";
 
-const seedData = seed as Sppg[];
+let seedData: Sppg[] = [];
+export function initializePrivateData(data: Sppg[]) { seedData = data; }
+export function migrateLegacyPrivateData() {
+  let migrated = false;
+  for (const key of [KEY_SPPG_USER, KEY_SPPG_OVERRIDE]) {
+    try {
+      const raw = window.localStorage.getItem(key);
+      if (raw) { privateMemory.set(key, JSON.parse(raw)); migrated = true; window.localStorage.removeItem(key); }
+    } catch {}
+  }
+  return migrated;
+}
+export function clearPrivateData() {
+  seedData = [];
+  privateMemory.clear();
+  for (const key of [KEY_SPPG_USER, KEY_SPPG_OVERRIDE, "sppg-ponorogo:admin-auth"]) {
+    try { window.localStorage.removeItem(key); window.sessionStorage.removeItem(key); } catch {}
+  }
+}
 const pasarData = pasarSeed as Pasar[];
+const privateMemory = new Map<string, unknown>();
 
 function isBrowser(): boolean {
   return typeof window !== "undefined";
@@ -17,6 +35,7 @@ function isBrowser(): boolean {
 
 function read<T>(key: string, fallback: T): T {
   if (!isBrowser()) return fallback;
+  if (key === KEY_SPPG_USER || key === KEY_SPPG_OVERRIDE) return (privateMemory.get(key) as T) ?? fallback;
   try {
     const raw = window.localStorage.getItem(key);
     return raw ? (JSON.parse(raw) as T) : fallback;
@@ -27,6 +46,7 @@ function read<T>(key: string, fallback: T): T {
 
 function write<T>(key: string, value: T): void {
   if (!isBrowser()) return;
+  if (key === KEY_SPPG_USER || key === KEY_SPPG_OVERRIDE) { privateMemory.set(key, value); return; }
   try {
     window.localStorage.setItem(key, JSON.stringify(value));
   } catch {

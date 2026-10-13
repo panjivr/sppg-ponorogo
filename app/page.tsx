@@ -55,19 +55,19 @@ export default function Home() {
               mudah lewat WhatsApp.
             </p>
             <div className="hero-actions">
-              <Link href="/supplier" className="button button-primary">
+              <Link href="/supplier" className="button button-secondary">
                 Jelajahi katalog <Icon name="arrow" />
               </Link>
               <a
                 href={waLink(
                   "Halo Bumbu Pawon, saya ingin meminta penawaran kebutuhan dapur.",
                 )}
-                className="button button-secondary"
+                className="button button-accent"
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 <Icon name="chat" />
-                Minta penawaran
+                Pesan via WhatsApp
               </a>
             </div>
             <div className="hero-location">

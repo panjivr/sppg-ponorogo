@@ -1,3 +1,4 @@
+import { headers } from "next/headers";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -69,7 +70,7 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
   return (
     <div className="site-container product-detail">
       <script
-        type="application/ld+json"
+        nonce={headers().get("x-nonce") || undefined} type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(schema).replace(/</g, "\\u003c"),
         }}

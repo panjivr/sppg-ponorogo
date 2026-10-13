@@ -285,7 +285,7 @@ export default function SupplierClient() {
                           if (event.detail === 0) setFocusProduct(p.id);
                         }}
                         disabled={!ready}
-                        aria-label={`Tambahkan ${p.nama} ke daftar kebutuhan`}
+                        aria-label={`Pilih ${p.nama} untuk daftar kebutuhan`}
                       >
                         <Icon name="plus" />
                         Pilih

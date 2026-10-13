@@ -1,7 +1,8 @@
+import { SPPG_SEED } from "@/lib/server/sppg";
 import Link from "next/link";
 import { NavSpacer } from "@/components/Nav";
 import { Card, SectionTitle } from "@/components/ui";
-import { SPPG_SEED, daftarKecamatan, ringkasStatus } from "@/lib/data";
+import { daftarKecamatan, ringkasStatus } from "@/lib/data";
 import { ASUMSI, BISNIS } from "@/lib/config";
 import { num, persen, rupiah } from "@/lib/format";
 
@@ -197,9 +198,9 @@ export default function Tentang() {
               <strong className="text-ink">
                 Perubahan Anda tersimpan di perangkat ini saja.
               </strong>{" "}
-              Koreksi data dan calon ruko disimpan di penyimpanan browser
-              (localStorage), belum di database bersama — jadi belum bisa dilihat
-              rekan kerja di perangkat lain.
+              Koreksi SPPG berada dalam memori sesi dan hilang saat reload atau logout.
+              Calon ruko masih tersimpan per perangkat; perubahan belum dibagi
+              melalui database bersama.
             </li>
             <li>
               <strong className="text-ink">Independen.</strong> Web ini alat

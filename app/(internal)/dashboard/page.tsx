@@ -1,8 +1,8 @@
+import { SPPG_SEED } from "@/lib/server/sppg";
 import Link from "next/link";
 import { NavSpacer } from "@/components/Nav";
 import { BarList, Card, SectionTitle, Stat, StatusBreakdown } from "@/components/ui";
 import {
-  SPPG_SEED,
   daftarKecamatan,
   hitungPasar,
   nilaiBahanTahunan,

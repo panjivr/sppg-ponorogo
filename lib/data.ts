@@ -1,10 +1,7 @@
-import seed from "@/data/sppg.json";
 import { ASUMSI } from "./config";
 import type { Sppg, SppgStatus } from "./types";
 import { STATUS_ORDER } from "./sppgMeta";
 
-/** Data dasar dari database resmi (statis, tidak berubah saat runtime). */
-export const SPPG_SEED = seed as Sppg[];
 
 /* ------------------------------------------------------------
    Agregasi

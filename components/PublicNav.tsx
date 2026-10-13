@@ -1,13 +1,16 @@
 "use client";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Brand from "@/components/Brand";
 import Icon from "@/components/Icon";
 import { waLink } from "@/lib/config";
 export default function PublicNav() {
   const path = usePathname();
   const router = useRouter();
+  useEffect(() => {
+    try { sessionStorage.removeItem('sppg-ponorogo:admin-auth'); } catch {}
+  }, []);
   const logoTaps = useRef({ count: 0, time: 0 });
   function handleLogoClick(event: React.MouseEvent<HTMLAnchorElement>) {
     setOpen(false);

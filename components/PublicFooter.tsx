@@ -45,7 +45,7 @@ export default function PublicFooter() {
         </div>
       </div>
       <div className="site-container footer-bottom">
-        <span>Bumbu Pawon · Ponorogo</span>
+        <span>Bumbu Pawon · Ponorogo — usaha supplier independen, bukan situs resmi SPPG/BGN.</span>
       </div>
     </footer>
   );

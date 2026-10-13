@@ -1,3 +1,5 @@
+> Keamanan: login admin kini diverifikasi server dan database SPPG tidak dikirim tanpa sesi. Konfigurasi admin baru wajib diisi di Vercel; lihat [panduan keamanan](docs/security-remediation.md). Rute internal berada dalam `app/(internal)`.
+
 # Bumbu Pawon — Katalog Supplier Ponorogo
 
 Website publik untuk katalog sayuran, jamur, polo pendem, buah, bumbu, dan sembako; dilengkapi alat pengelola data SPPG Ponorogo.
@@ -130,7 +132,7 @@ hanya berjarak ΔE 13,6 — terlalu dekat untuk bersebelahan.
 **SEO** — metadata per halaman, canonical, Open Graph, sitemap, robots, dan
 JSON-LD `Dataset`.
 
-**Performa** — halaman publik dan 61 rincian produk **statis** (SSG); bundle bersama 87 KB;
+**Performa** — halaman memakai rendering server untuk CSP dengan nonce; bundle bersama sekitar 87 KB;
 Leaflet dimuat dinamis (`ssr: false`) hanya di halaman peta.
 
 ---
@@ -140,11 +142,11 @@ Leaflet dimuat dinamis (`ssr: false`) hanya di halaman peta.
 ```
 app/
   layout.tsx          metadata, tema, nav, JSON-LD
-  page.tsx            landing (server, statis)
+  page.tsx            landing (server)
   peta/               PetaApp.tsx — peta + panel (analisis/ruko/data)
   admin/              editor data SPPG & pasar
   blast/              blast WhatsApp
-  dashboard/          analisis pasar (server, statis)
+  dashboard/          analisis pasar (server, wajib login)
   direktori/          DirektoriClient.tsx — tabel + ekspor
   supplier/           SupplierClient.tsx — katalog + keranjang
   tentang/            metodologi
@@ -166,7 +168,7 @@ lib/
   types.ts            tipe Sppg/Pasar/CandidateRuko + rincian PM & perizinan
   sppgMeta.ts         STATUS_META (label, warna, ikon), format, grup yayasan
   marketing.ts        templat pesan & pemilihan target blast
-  storage.ts          localStorage: SPPG, pasar, override, impor/reset
+  storage.ts          memori sesi SPPG; penyimpanan browser pasar/ruko
   data.ts             agregasi, ukuran pasar, filter, ekspor CSV/GeoJSON
   geo.ts              haversine, centroid berbobot, skoring kisi
   store.ts            repository async di atas storage.ts (siap tukar ke DB)
@@ -206,8 +208,7 @@ Produk katalog: `data/produk.json`. Harga dan stok dikonfirmasi lewat penawaran 
 
 ## Batas yang diketahui (jujur)
 
-- **Penyimpanan masih lokal.** Koreksi data dan calon ruko disimpan di
-  `localStorage` — per-perangkat, belum dibagi antar pengguna.
+- **Penyimpanan belum bersama.** Data dasar SPPG dibaca melalui API wajib login. Koreksi SPPG berada di memori sesi dan hilang saat reload/logout; calon ruko masih per perangkat.
   Jalur migrasinya sudah disiapkan: seluruh akses data melewati antarmuka
   `SppgRepo` / `RukoRepo` di `lib/store.ts`. Untuk multi-pengguna, buat API
   route + Postgres/Supabase, tulis adapter dengan bentuk yang sama, lalu tukar

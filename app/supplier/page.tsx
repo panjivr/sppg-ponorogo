@@ -1,3 +1,4 @@
+import { headers } from "next/headers";
 import SupplierClient from "./SupplierClient";
 import { PRODUK } from "@/lib/catalog";
 import { SITE } from "@/lib/config";
@@ -27,7 +28,7 @@ export default function SupplierPage() {
   return (
     <>
       <script
-        type="application/ld+json"
+        nonce={headers().get("x-nonce") || undefined} type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c"),
         }}

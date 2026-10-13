@@ -2,7 +2,6 @@
 
 import { usePathname } from "next/navigation";
 import Nav from "@/components/Nav";
-import AdminGate from "@/components/AdminGate";
 import PublicNav from "@/components/PublicNav";
 import PublicFooter from "@/components/PublicFooter";
 
@@ -39,9 +38,9 @@ export default function Shell({ children }: { children: React.ReactNode }) {
   }
 
   return (
-    <AdminGate>
+    <>
       <Nav />
       <main id="konten">{children}</main>
-    </AdminGate>
+    </>
   );
 }

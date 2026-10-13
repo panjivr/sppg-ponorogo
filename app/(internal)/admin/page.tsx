@@ -1,4 +1,5 @@
 "use client";
+import { logout } from "@/lib/logout";
 
 import { useEffect, useMemo, useRef, useState } from "react";
 import Link from "next/link";
@@ -42,8 +43,6 @@ function blankPasar(): Pasar {
   };
 }
 
-const ADMIN_PASS = "sppg-admin";
-const AUTH_KEY = "sppg-ponorogo:admin-auth";
 
 function blankSppg(): Sppg {
   return {
@@ -63,8 +62,6 @@ function blankSppg(): Sppg {
 }
 
 export default function AdminPage() {
-  const [authed, setAuthed] = useState(false);
-  const [pass, setPass] = useState("");
   const [list, setList] = useState<Sppg[]>([]);
   const [editing, setEditing] = useState<Sppg | null>(null);
   const [q, setQ] = useState("");
@@ -142,17 +139,9 @@ export default function AdminPage() {
   }
 
   useEffect(() => {
-    try {
-      if (sessionStorage.getItem(AUTH_KEY) === "1") setAuthed(true);
-    } catch {}
+    setList(getAllSppg());
+    setPasarList(getAllPasar());
   }, []);
-
-  useEffect(() => {
-    if (authed) {
-      setList(getAllSppg());
-      setPasarList(getAllPasar());
-    }
-  }, [authed]);
 
   function refresh() {
     setList(getAllSppg());
@@ -233,59 +222,6 @@ export default function AdminPage() {
     reader.readAsText(file);
   }
 
-  // --- Gate ---
-  if (!authed) {
-    return (
-      <div className="grid min-h-screen place-items-center bg-page p-4">
-        <form
-          onSubmit={(e) => {
-            e.preventDefault();
-            if (pass === ADMIN_PASS) {
-              try {
-                sessionStorage.setItem(AUTH_KEY, "1");
-              } catch {}
-              setAuthed(true);
-            } else alert("Kata sandi salah.");
-          }}
-          className="w-full max-w-sm space-y-3 rounded-xl border border-hairline bg-surface p-6 shadow-sm"
-        >
-          <div className="text-center">
-            <div className="flex justify-center text-brand">
-              <Icon name="lock" />
-            </div>
-            <h1 className="mt-1 text-lg font-bold text-ink">
-              Admin — Database SPPG Ponorogo
-            </h1>
-            <p className="text-xs text-ink2">
-              Masukkan kata sandi untuk mengelola data.
-            </p>
-          </div>
-          <input
-            type="password"
-            value={pass}
-            onChange={(e) => setPass(e.target.value)}
-            placeholder="Kata sandi admin"
-            className="w-full rounded-md border border-hairline px-3 py-2 text-sm focus:border-brand focus:outline-none focus:ring-1 focus:ring-brand"
-            autoFocus
-          />
-          <button className="w-full rounded-md bg-brand px-3 py-2 text-sm font-semibold text-white hover:bg-brand-dark">
-            Masuk
-          </button>
-          <p className="text-center text-xs text-muted">
-            Kata sandi awal: <code className="font-mono">sppg-admin</code> —
-            ubah di <code className="font-mono">app/admin/page.tsx</code>.
-          </p>
-          <Link
-            href="/"
-            className="block text-center text-xs text-brand hover:underline"
-          >
-            ← Kembali ke peta
-          </Link>
-        </form>
-      </div>
-    );
-  }
-
   return (
     <div className="min-h-screen bg-page">
       {/* Header */}
@@ -311,12 +247,7 @@ export default function AdminPage() {
             <Icon name="map" className="mr-1 inline" /> Peta
           </Link>
           <button
-            onClick={() => {
-              try {
-                sessionStorage.removeItem(AUTH_KEY);
-              } catch {}
-              setAuthed(false);
-            }}
+            onClick={logout}
             className="rounded-full border border-white/40 px-3 py-1.5 text-xs font-medium hover:bg-surface/15"
           >
             Keluar
@@ -784,13 +715,10 @@ export default function AdminPage() {
             </div>
 
             <p className="mt-3 text-xs leading-relaxed text-ink2">
-              Semua perubahan tersimpan otomatis di{" "}
-              <strong>localStorage browser ini</strong>. Untuk cadangan/berbagi
-              atau menjadikannya data permanen aplikasi, gunakan
-              <strong> Ekspor JSON</strong> lalu ganti isi{" "}
-              <code className="font-mono">data/sppg.json</code>. Gate kata sandi
-              bersifat client-side (bukan keamanan server) — lindungi URL ini
-              bila perlu.
+              Koreksi SPPG disimpan sementara selama sesi browser dan hilang
+              setelah keluar atau memuat ulang. Gunakan Ekspor JSON hanya pada
+              perangkat yang berwenang untuk membuat cadangan. Data dasar
+              diakses melalui server setelah autentikasi.
             </p>
           </>
         )}

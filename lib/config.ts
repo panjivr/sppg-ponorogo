@@ -55,7 +55,7 @@ export const ASUMSI = {
 
 /** Situs — dipakai untuk SEO (sitemap, canonical, Open Graph). */
 export const SITE = {
-  url: "https://sppg-ponorogo-web-mr-ps-projects-8da5766a.vercel.app",
+  url: process.env.NEXT_PUBLIC_SITE_URL || "https://sppg-ponorogo-web.vercel.app",
   nama: "Bumbu Pawon",
   deskripsi:
     "Bumbu Pawon, grosir dan supplier sayuran segar, polo pendem, buah, bumbu, dan sembako di Lor Prapatan Jetis, Ponorogo. Minta penawaran melalui WhatsApp.",

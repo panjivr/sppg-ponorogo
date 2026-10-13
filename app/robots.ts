@@ -6,15 +6,6 @@ export default function robots(): MetadataRoute.Robots {
       {
         userAgent: "*",
         allow: "/",
-        disallow: [
-          "/admin",
-          "/blast",
-          "/peta",
-          "/dashboard",
-          "/direktori",
-          "/ringkasan",
-          "/tentang",
-        ],
       },
     ],
     sitemap: `${SITE.url}/sitemap.xml`,
