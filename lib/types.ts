@@ -73,6 +73,11 @@ export interface SppgDetail {
   perijinan?: SppgPerijinan;
   /** Sumber/tanggal angka PM, mis. "Laporan harian 31 Agustus 2026". */
   pmAsOf?: string;
+  statusAsOf?: string;
+  kaContactNeedsVerification?: boolean;
+  dailyReportDate?: string;
+  jumlahKpm?: number | null;
+  pmReconciled?: boolean;
   /** Tautan akun Instagram SPPG. */
   instagram?: string;
   /** Tautan akun TikTok SPPG. */

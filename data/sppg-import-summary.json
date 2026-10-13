@@ -1,0 +1,28 @@
+{
+  "importAsOf": "2026-10-14",
+  "dailyWorkbook": "LAPORAN HARIAN BULAN OKTOBER.xlsx",
+  "pmWorkbook": "DATA PM KABUPATEN PONOROGO.xlsx",
+  "dailySha256": "4151d645ba57380048de5d28cab663a082aae0a56b90ec01d7060834f3c18159",
+  "pmSha256": "cdac340af5a49fc56302874919d79b4d5c2d241e5bfd290f7b9cdaf84fb3f66a",
+  "sppgCount": 85,
+  "updatedPmCount": 50,
+  "retainedPriorPmCount": 35,
+  "latestStatuses": {
+    "operasional": 72,
+    "akan": 8,
+    "berhenti": 2,
+    "suspend": 3
+  },
+  "dailyRecords": 1189,
+  "dailyTotalMismatches": 19,
+  "pmGroupRows": 832,
+  "possibleDuplicateRows": 20,
+  "pmTotalMismatches": 37,
+  "notes": [
+    "Dates after cutoff excluded. Blank/default zero daily totals do not overwrite last positive report.",
+    "PM workbook has no SPPG foreign key. Do not join groups to kitchens by kecamatan.",
+    "Example/template rows excluded; valid named rows with blank row numbers retained.",
+    "NIK/PIC phone fields omitted from PM analytics because they are unnecessary for aggregate reporting.",
+    "Totals kept as reported; inconsistent subtotals and possible duplicate groups flagged, not silently reconciled."
+  ]
+}

@@ -34,6 +34,8 @@ export default function SppgDetailCard({
 
   return (
     <div className="space-y-3 text-sm">
+      {d.pmReconciled === false && <p role="status" className="rounded-lg border border-hairline bg-surface p-3 text-ink">Total PM dari sumber berbeda dengan jumlah rincian; perlu verifikasi.</p>}
+      {d.kaContactNeedsVerification && <p role="status" className="rounded-lg border border-hairline bg-surface p-3 text-ink">Nama kepala berubah pada laporan baru. Nomor kontak masih dari sumber lama dan perlu diverifikasi.</p>}
       {/* Header identitas */}
       <div className="flex flex-wrap items-center gap-1.5">
         <span

@@ -2,7 +2,7 @@
 const nextConfig = {
   reactStrictMode: true,
   async headers() {
-    const privateRoutes = ["admin", "blast", "peta", "dashboard", "direktori", "ringkasan", "tentang"];
+    const privateRoutes = ["admin", "blast", "peta", "dashboard", "direktori", "ringkasan", "tentang", "laporan"];
     return [{ source: "/:path*", headers: [
       { key: "X-Content-Type-Options", value: "nosniff" },
       { key: "X-Frame-Options", value: "DENY" },

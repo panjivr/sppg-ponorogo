@@ -61,6 +61,7 @@ export default function Dashboard() {
         <h1 className="text-2xl font-bold tracking-tight sm:text-3xl">
           Analisis pasar supplier MBG
         </h1>
+      <p className="mt-3 text-sm text-ink2">Status diperbarui sampai 14 Oktober 2026. Angka PM memakai laporan valid terakhir tiap dapur; tanggalnya dapat berbeda dan sebagian masih memakai laporan sebelumnya. Rincian tersedia di Laporan & PM.</p>
         <p className="mt-2 max-w-2xl text-sm leading-relaxed text-ink2">
           Seberapa besar uang yang berputar untuk belanja bahan pangan program
           MBG di Ponorogo, dan di mana permintaan itu terkumpul. Semua angka

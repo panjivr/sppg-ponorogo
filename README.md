@@ -57,11 +57,13 @@ yang paling strategis, dan mengukur besarnya pasar yang diperebutkan.
 |---|---|
 | Dapur terdata | **85** |
 | Kecamatan tercakup | **21** (seluruh kabupaten) |
-| Dapur operasional | **68** |
-| Penerima manfaat/hari (operasional) | **165.888** porsi |
+| Dapur operasional | **72** |
+| Penerima manfaat/hari (operasional) | **167.206** porsi |
 | Koordinat GPS asli | **71 / 85** (sisanya perkiraan, ditandai) |
-| Belanja pangan/tahun | **± Rp 431 M** |
-| Pasar bahan/tahun (60%) | **± Rp 259 M** |
+| Belanja pangan/tahun | **± Rp 435 M** |
+| Pasar bahan/tahun (60%) | **± Rp 261 M** |
+
+Status per 14 Oktober 2026. Angka PM memakai laporan valid terakhir tiap dapur, bukan total distribusi serentak hari tersebut; 35 dapur masih memakai sumber sebelumnya. Data sekolah/posyandu terpisah tersedia di `/laporan`.
 
 Semua angka rupiah diturunkan dari asumsi terbuka di `lib/config.ts` dan
 dijelaskan di halaman `/tentang`.

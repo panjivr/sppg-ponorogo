@@ -6,7 +6,7 @@ export async function middleware(request: NextRequest) {
   const headers = new Headers(request.headers);
   headers.set('x-nonce', nonce);
   headers.set('Content-Security-Policy', csp);
-  const privateRoute = /^\/(admin|dashboard|blast|direktori|peta|ringkasan|tentang)(\/|$)/.test(request.nextUrl.pathname);
+  const privateRoute = /^\/(admin|dashboard|blast|direktori|peta|ringkasan|tentang|laporan)(\/|$)/.test(request.nextUrl.pathname);
   let response: NextResponse;
   if (privateRoute && !await verifySession(request.cookies.get(SESSION_COOKIE)?.value)) {
     const url = new URL('/login', request.url);

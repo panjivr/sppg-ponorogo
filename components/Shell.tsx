@@ -14,6 +14,7 @@ const INTERNAL = new Set<string>([
   "/blast",
   "/ringkasan",
   "/tentang",
+  "/laporan",
 ]);
 
 /**

@@ -9,6 +9,7 @@ const LINKS: { href: string; label: string; icon: IconName }[] = [
   { href: "/peta", label: "Peta", icon: "map" },
   { href: "/dashboard", label: "Analisis", icon: "chart" },
   { href: "/direktori", label: "Direktori", icon: "users" },
+  { href: "/laporan", label: "Laporan & PM", icon: "chart" },
   { href: "/admin", label: "Kelola data", icon: "settings" },
   { href: "/blast", label: "Pesan WA", icon: "chat" },
   { href: "/tentang", label: "Metodologi", icon: "info" },
