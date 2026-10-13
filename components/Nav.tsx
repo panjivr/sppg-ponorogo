@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 import { applyTheme, getTheme, setTheme, type Theme } from "@/lib/store";
 
 const LINKS = [
-  { href: "/", label: "Beranda", icon: "🏠" },
+  { href: "/ringkasan", label: "Beranda", icon: "🏠" },
   { href: "/peta", label: "Peta", icon: "🗺️" },
   { href: "/dashboard", label: "Analisis", icon: "📊" },
   { href: "/direktori", label: "Direktori", icon: "📋" },
@@ -60,7 +60,7 @@ export default function Nav() {
           aria-label="Navigasi utama"
         >
           <Link
-            href="/"
+            href="/ringkasan"
             className="mr-3 flex items-center gap-2 font-bold tracking-tight"
           >
             <span aria-hidden="true">🍚</span>
@@ -88,7 +88,7 @@ export default function Nav() {
 
       {/* ---------- Compact header: mobile ---------- */}
       <header className="safe-t sticky top-0 z-[1100] flex items-center justify-between border-b border-hairline bg-surface/95 px-3 py-2 backdrop-blur md:hidden">
-        <Link href="/" className="flex items-center gap-2 font-bold">
+        <Link href="/ringkasan" className="flex items-center gap-2 font-bold">
           <span aria-hidden="true">🍚</span>
           <span className="text-sm">SPPG Ponorogo</span>
         </Link>
