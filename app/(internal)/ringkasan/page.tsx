@@ -50,8 +50,8 @@ export default function Beranda() {
             yang beroperasi di Ponorogo. Web ini memetakan seluruhnya,
             menghitung ukuran pasarnya, dan membantu Anda menentukan{" "}
             <strong className="text-ink">titik ruko supplier</strong> yang
-            paling strategis — termasuk keunggulan buka 24 jam, karena dapur MBG
-            bekerja pada malam hari.
+            paling strategis untuk pengadaan Bumbu Pawon. Stok, harga, dan
+            jadwal pengiriman tetap dikonfirmasi melalui WhatsApp toko.
           </p>
 
           <div className="mt-6 flex flex-wrap gap-3">

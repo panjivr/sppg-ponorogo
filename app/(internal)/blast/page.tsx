@@ -14,13 +14,16 @@ import {
   toVcard,
   TEMPLATE_VARS,
   DEFAULT_TEMPLATE,
+  resolveSavedTemplate,
   type Recipient,
 } from "@/lib/marketing";
 
-const TPL_KEY = "sppg-ponorogo:wa-template";
+const TPL_KEY = "bumbu-pawon:wa-template:v2";
+const LEGACY_TPL_KEY = "sppg-ponorogo:wa-template";
 const SENT_KEY = "sppg-ponorogo:wa-sent";
 
 export default function BlastPage() {
+  const [ready, setReady] = useState(false);
   const [list, setList] = useState<Sppg[]>([]);
   const [includeKa, setIncludeKa] = useState(true);
   const [includePic, setIncludePic] = useState(false);
@@ -33,18 +36,19 @@ export default function BlastPage() {
   useEffect(() => {
     setList(getAllSppg());
     try {
-      const t = localStorage.getItem(TPL_KEY);
-      if (t) setTpl(t);
+      setTpl(resolveSavedTemplate(localStorage.getItem(TPL_KEY), localStorage.getItem(LEGACY_TPL_KEY)));
       const s = localStorage.getItem(SENT_KEY);
       if (s) setSent(new Set(JSON.parse(s)));
     } catch {}
+    setReady(true);
   }, []);
 
   useEffect(() => {
+    if (!ready) return;
     try {
       localStorage.setItem(TPL_KEY, tpl);
     } catch {}
-  }, [tpl]);
+  }, [tpl, ready]);
 
   function persistSent(next: Set<string>) {
     setSent(next);
@@ -129,10 +133,10 @@ export default function BlastPage() {
           </span>
           <div>
             <h1 className="text-base font-bold leading-tight">
-              Blast WhatsApp Marketing
+              Penawaran WhatsApp · Bumbu Pawon
             </h1>
             <p className="text-xs text-green-100">
-              Kirim penawaran ke kontak SPPG — aman via wa.me
+              Penawaran bahan dapur sesuai katalog Bumbu Pawon
             </p>
           </div>
         </div>
@@ -150,14 +154,16 @@ export default function BlastPage() {
           <strong>Kirim manual & bertahap.</strong> Alat ini membuka WhatsApp
           dengan pesan sudah terisi — Anda tetap menekan kirim. Hindari mengirim
           ratusan pesan sekaligus / terlalu cepat agar nomor tidak diblokir
-          WhatsApp. Sebar ke penerima yang relevan saja.
+          WhatsApp. Sebar ke penerima yang relevan saja. Penanda hanya mencatat pembukaan draft; bukan bukti pesan terkirim.
         </div>
 
+        {list.some(s => s.detail?.kaContactNeedsVerification) && <p className="mb-4 rounded-lg border border-hairline bg-surface p-3 text-sm">Kontak kepala yang namanya berubah pada laporan terbaru tidak dimasukkan ke daftar penawaran sampai nomor kontak diverifikasi.</p>}
         <div className="grid grid-cols-1 gap-4 lg:grid-cols-[360px_1fr]">
           {/* Panel kiri: template & filter */}
           <div className="space-y-4">
             <section className="rounded-xl border border-hairline bg-surface p-3 shadow-sm">
-              <h2 className="mb-2 text-sm font-semibold text-ink">Pesan</h2>
+              <h2 className="mb-2 text-sm font-semibold text-ink">Pesan penawaran</h2>
+              <button className="button button-secondary mb-3 w-full" type="button" onClick={() => setTpl(DEFAULT_TEMPLATE)}>Gunakan template Bumbu Pawon</button>
               <textarea
                 aria-label="Templat pesan WhatsApp"
                 value={tpl}
@@ -178,8 +184,7 @@ export default function BlastPage() {
                 ))}
               </div>
               <p className="mt-1 text-xs text-muted">
-                Sesuaikan pesan dengan kebutuhan penerima sebelum membuka
-                WhatsApp.
+                Informasi toko dan katalog mengikuti landing page. Template khusus lama tetap dipertahankan; gunakan tombol di atas untuk menggantinya. Periksa pesan sebelum membuka WhatsApp.
               </p>
             </section>
 
@@ -284,7 +289,7 @@ export default function BlastPage() {
                   {selectedRecipients.length} penerima dipilih
                   <span className="ml-2 text-xs font-normal text-ink2">
                     {sent.size > 0 &&
-                      `· ${selectedRecipients.filter((r) => sent.has(r.id)).length} terkirim · `}
+                      `· ${selectedRecipients.filter((r) => sent.has(r.id)).length} ditandai · `}
                     {pending.length} tersisa
                   </span>
                 </div>
@@ -294,7 +299,7 @@ export default function BlastPage() {
                 disabled={pending.length === 0}
                 className="rounded-md bg-green-800 px-4 py-2 text-sm font-semibold text-white hover:bg-green-900 disabled:opacity-40"
               >
-                ▶ Kirim berikutnya ({pending.length})
+                Buka WhatsApp berikutnya ({pending.length})
               </button>
               <button
                 onClick={() => selectAll(true)}
@@ -313,7 +318,7 @@ export default function BlastPage() {
                   onClick={() => persistSent(new Set())}
                   className="rounded-md border border-amber-300 px-2 py-2 text-xs text-amber-700 hover:bg-amber-50"
                 >
-                  ↺ Reset terkirim
+                  Reset penanda
                 </button>
               )}
             </section>
@@ -390,7 +395,7 @@ export default function BlastPage() {
                                   : "bg-green-800 text-white hover:bg-green-900"
                               }`}
                             >
-                              {isSent ? "✓ ulangi" : "Kirim"}
+                              {isSent ? "Buka lagi" : "Buka WhatsApp"}
                             </button>
                           </td>
                         </tr>

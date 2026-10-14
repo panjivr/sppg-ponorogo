@@ -74,7 +74,7 @@ export default function PetaApp() {
         lng: p.lng,
         catatan: "",
         radiusKm,
-        buka24Jam: true,
+        buka24Jam: false,
         createdAt: Date.now(),
       };
       persistRuko([...rukoList, r]);
@@ -124,7 +124,7 @@ export default function PetaApp() {
                 Peta SPPG Ponorogo
               </h1>
               <p className="text-xs text-green-100">
-                Database dapur MBG &amp; analisis lokasi ruko supplier
+                Data dapur &amp; perencanaan pengadaan Bumbu Pawon
               </p>
             </div>
           </div>

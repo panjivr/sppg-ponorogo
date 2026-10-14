@@ -95,7 +95,7 @@ export default function RukoManager({
                   onUpdate({ ...r, buka24Jam: e.target.checked })
                 }
               />
-              Buka 24 jam
+              Simulasi ruko buka 24 jam
             </label>
 
             <textarea

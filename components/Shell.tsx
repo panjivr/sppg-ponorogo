@@ -1,6 +1,7 @@
 "use client";
 
 import { usePathname } from "next/navigation";
+import AdminBusinessInfo from "@/components/AdminBusinessInfo";
 import Nav from "@/components/Nav";
 import PublicNav from "@/components/PublicNav";
 import PublicFooter from "@/components/PublicFooter";
@@ -41,7 +42,7 @@ export default function Shell({ children }: { children: React.ReactNode }) {
   return (
     <>
       <Nav />
-      <main id="konten">{children}</main>
+      <main id="konten"><AdminBusinessInfo />{children}</main>
     </>
   );
 }

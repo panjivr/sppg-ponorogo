@@ -1,5 +1,6 @@
 import type { Sppg } from "./types";
-import { BISNIS } from "./config";
+import { BISNIS, SITE, WA_NUMBER } from "./config";
+import { KATALOG } from "./catalog";
 
 export type Peran = "Ka SPPG" | "PIC Yayasan";
 
@@ -40,7 +41,7 @@ export function buildRecipients(
   for (const s of list) {
     const d = s.detail ?? {};
     const rows: [Peran, string | undefined, string | undefined][] = [];
-    if (opts.includeKa) rows.push(["Ka SPPG", d.namaKa, d.nomorKa]);
+    if (opts.includeKa && !d.kaContactNeedsVerification) rows.push(["Ka SPPG", d.namaKa, d.nomorKa]);
     if (opts.includePic) rows.push(["PIC Yayasan", d.picNama, d.picNomor]);
     for (const [peran, nama, nomor] of rows) {
       const norm = normalizePhone(nomor);
@@ -68,6 +69,13 @@ export const TEMPLATE_VARS: { key: string; label: string }[] = [
   { key: "yayasan", label: "Yayasan" },
   { key: "porsi", label: "Jumlah porsi/hari" },
   { key: "peran", label: "Peran kontak" },
+  { key: "bisnis", label: "Nama bisnis" },
+  { key: "alamat", label: "Alamat toko" },
+  { key: "telepon", label: "Nomor WhatsApp toko" },
+  { key: "wa_toko", label: "Tautan WhatsApp toko" },
+  { key: "katalog", label: "Tautan katalog publik" },
+  { key: "kategori", label: "Kategori produk" },
+  { key: "layanan", label: "Area layanan" },
 ];
 
 /** Ganti {var} di template dengan nilai dari penerima. */
@@ -80,6 +88,13 @@ export function renderTemplate(tpl: string, r: Recipient): string {
     yayasan: r.sppg.detail?.yayasan ?? "",
     porsi: (r.sppg.porsi || 0).toLocaleString("id-ID"),
     peran: r.peran,
+    bisnis: BISNIS.nama,
+    alamat: BISNIS.alamat,
+    telepon: BISNIS.telepon,
+    wa_toko: `https://wa.me/${WA_NUMBER}`,
+    katalog: `${SITE.url}/supplier`,
+    kategori: KATALOG.map(k => k.kategori).join(", "),
+    layanan: BISNIS.areaLayanan,
   };
   return tpl.replace(/\{(\w+)\}/g, (m, k) => (k in map ? map[k] : m));
 }
@@ -89,7 +104,32 @@ export function waSendLink(r: Recipient, tpl: string): string {
   return `https://wa.me/${r.nomor}?text=${encodeURIComponent(renderTemplate(tpl, r))}`;
 }
 
-export const DEFAULT_TEMPLATE = `Halo {contact},\n\nSaya dari ${BISNIS.nama}, supplier kebutuhan dapur di Ponorogo.\n\nBoleh saya bantu menyusun penawaran untuk kebutuhan {nama} di Kec. {kecamatan}? Kirim daftar bahan, jumlah, dan jadwal yang dibutuhkan; stok, harga, serta pengiriman akan dikonfirmasi terlebih dahulu.\n\nTerima kasih.`;
+export const LEGACY_DEFAULT_TEMPLATE = `Halo {contact},\n\nSaya dari ${BISNIS.nama}, supplier kebutuhan dapur di Ponorogo.\n\nBoleh saya bantu menyusun penawaran untuk kebutuhan {nama} di Kec. {kecamatan}? Kirim daftar bahan, jumlah, dan jadwal yang dibutuhkan; stok, harga, serta pengiriman akan dikonfirmasi terlebih dahulu.\n\nTerima kasih.`;
+
+export const DEFAULT_TEMPLATE = `Halo {contact},
+
+Kami dari {bisnis}, grosir dan supplier kebutuhan dapur untuk rumah, usaha, dan pengadaan di {layanan}.
+
+Pilihan bahan kami: {kategori}. Melayani grosir dan eceran sesuai kebutuhan.
+
+Boleh kami membantu menyiapkan penawaran untuk {nama} di Kec. {kecamatan}? Kirim daftar bahan, jumlah, dan jadwal kebutuhan. Stok, harga, kemasan, serta jadwal pengiriman akan dikonfirmasi saat pemesanan.
+
+Katalog: {katalog}
+Alamat: {alamat}
+WhatsApp: {telepon}
+{wa_toko}
+
+Terima kasih,
+{bisnis}`;
+
+/** Upgrade the previous default; preserve customized drafts and their legacy backup. */
+export function resolveSavedTemplate(current: string | null, legacy: string | null): string {
+  if (current?.trim()) return current;
+  if (!legacy?.trim() || legacy === LEGACY_DEFAULT_TEMPLATE) return DEFAULT_TEMPLATE;
+  return legacy.replace(/Bumbu Pawon Mas Dhoo/gi, BISNIS.nama)
+    .replace(/0822[ -]?3166[ -]?7384/g, BISNIS.telepon)
+    .replace(/sppg-ponorogo-web-mr-ps-projects-8da5766a\.vercel\.app/g, new URL(SITE.url).host);
+}
 
 /** Ekspor penerima ke CSV. */
 export function toCsv(rows: Recipient[]): string {

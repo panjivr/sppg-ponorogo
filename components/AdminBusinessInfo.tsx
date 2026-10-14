@@ -1,0 +1,6 @@
+import Link from 'next/link';
+import { BISNIS, SITE, waLink } from '@/lib/config';
+import { KATALOG, PRODUK } from '@/lib/catalog';
+export default function AdminBusinessInfo() {
+  return <details className="border-b border-hairline bg-surface px-4 py-3 text-sm"><summary className="cursor-pointer font-semibold">Profil {BISNIS.nama} · informasi toko</summary><div className="mx-auto mt-3 max-w-6xl space-y-2 text-ink2"><p>{BISNIS.tagline} Grosir dan eceran untuk rumah, usaha, dan pengadaan.</p><p>{BISNIS.alamat} · WhatsApp {BISNIS.telepon} · {BISNIS.areaLayanan}</p><p>{PRODUK.length} pilihan produk dalam {KATALOG.length} kategori: {KATALOG.map(k=>k.kategori).join(', ')}.</p><p>Stok, harga, kemasan, dan jadwal pengiriman dikonfirmasi saat pemesanan. Usaha supplier independen, bukan situs resmi SPPG/BGN.</p><div className="flex flex-wrap gap-3"><Link className="button button-secondary" href="/supplier">Lihat katalog publik</Link><a className="button button-secondary" href={SITE.url} target="_blank" rel="noopener noreferrer">Buka website toko</a><a className="button button-primary" href={waLink(`Halo ${BISNIS.nama}, saya ingin meminta penawaran kebutuhan dapur.`)} target="_blank" rel="noopener noreferrer">WhatsApp toko</a></div></div></details>;
+}

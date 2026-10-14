@@ -34,6 +34,8 @@ export const BISNIS = {
   tagline: TAGLINE,
   waNumber: WA_NUMBER,
   areaLayanan: AREA_LAYANAN,
+  alamat: ALAMAT,
+  telepon: TELEPON,
 };
 
 /**

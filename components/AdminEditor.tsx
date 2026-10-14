@@ -72,6 +72,7 @@ export default function AdminEditor({
     // kontak
     namaKa: d.namaKa ?? "",
     nomorKa: d.nomorKa ?? "",
+    kaContactNeedsVerification: d.kaContactNeedsVerification ?? false,
     yayasan: d.yayasan ?? "",
     bankVa: d.bankVa ?? "",
     picNama: d.picNama ?? "",
@@ -136,6 +137,7 @@ export default function AdminEditor({
         jenis: f.jenis.trim() || undefined,
         namaKa: f.namaKa.trim() || undefined,
         nomorKa: f.nomorKa.trim() || undefined,
+        kaContactNeedsVerification: f.kaContactNeedsVerification,
         statusLabel: f.statusLabel.trim() || undefined,
         tglOperasional: f.tglOperasional.trim() || undefined,
         tglTarget: f.tglTarget.trim() || undefined,
@@ -271,6 +273,7 @@ export default function AdminEditor({
         <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
           <L label="Kepala SPPG"><input className={inp} value={f.namaKa} onChange={(e) => set("namaKa", e.target.value)} /></L>
           <L label="Nomor Ka SPPG"><input className={inp} value={f.nomorKa} onChange={(e) => set("nomorKa", e.target.value)} inputMode="tel" /></L>
+          {d.kaContactNeedsVerification && <label className="flex items-center gap-2 text-sm"><input type="checkbox" checked={!f.kaContactNeedsVerification} onChange={e => set("kaContactNeedsVerification", !e.target.checked)} />Nomor kepala sudah saya verifikasi</label>}
           <L label="Yayasan"><input className={inp} value={f.yayasan} onChange={(e) => set("yayasan", e.target.value)} /></L>
           <L label="Bank (VA)"><input className={inp} value={f.bankVa} onChange={(e) => set("bankVa", e.target.value)} /></L>
           <L label="PIC yayasan"><input className={inp} value={f.picNama} onChange={(e) => set("picNama", e.target.value)} /></L>

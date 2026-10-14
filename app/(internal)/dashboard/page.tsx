@@ -85,7 +85,7 @@ export default function Dashboard() {
           <Stat
             label="Belanja pangan / hari"
             value={rupiahRingkas(pasar.belanjaHarian)}
-            hint={`${rupiah(ASUMSI.hargaPerPorsi)} per porsi`}
+            hint={`Asumsi ${rupiah(ASUMSI.hargaPerPorsi)} per porsi, bukan harga produk`}
           />
           <Stat
             label="Belanja pangan / tahun"

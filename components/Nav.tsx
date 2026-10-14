@@ -1,4 +1,5 @@
 "use client";
+import { BISNIS } from "@/lib/config";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import { usePathname } from "next/navigation";
@@ -57,7 +58,7 @@ export default function Nav() {
           >
             <Icon name="leaf" />
             <span className="font-semibold leading-tight">
-              Bumbu Pawon
+              {BISNIS.nama}
               <span className="block text-xs font-normal tracking-wider text-muted">
                 AREA PENGELOLA · SPPG
               </span>

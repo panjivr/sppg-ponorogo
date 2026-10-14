@@ -100,6 +100,25 @@ try:
         expect(page.get_by_role('button', name='Keluar', exact=True)).to_be_visible()
         expect(page.get_by_text(seed[0]['nama'], exact=True).first).to_be_visible()
         assert page.evaluate("localStorage.getItem('sppg-ponorogo:sppg-override')") is None
+        page.evaluate("localStorage.setItem('sppg-ponorogo:wa-template', 'Halo {contact}, catatan khusus')")
+        page.goto(BASE + '/blast')
+        expect(page.get_by_label('Templat pesan WhatsApp', exact=True)).to_have_value('Halo {contact}, catatan khusus')
+        page.get_by_role('button', name='Gunakan template Bumbu Pawon', exact=True).click()
+        expect(page.locator('.whitespace-pre-wrap').first).to_contain_text('0878-9261-4999')
+        preview = page.locator('.whitespace-pre-wrap').first.inner_text()
+        assert 'Lor Prapatan Jetis' in preview and 'https://sppg-ponorogo-web.vercel.app/supplier' in preview
+        assert 'dikonfirmasi saat pemesanan' in preview and 'Mas Dhoo' not in preview
+        page.evaluate("() => { window.__drafts=[]; window.open=(url)=>{window.__drafts.push(url);return null}; }")
+        page.get_by_role('button', name=re.compile('^Buka WhatsApp berikutnya')).click()
+        from urllib.parse import urlparse, parse_qs
+        draft = page.evaluate('window.__drafts[0]')
+        parsed = urlparse(draft)
+        assert parsed.netloc == 'wa.me' and parsed.path.startswith('/62')
+        text = parse_qs(parsed.query)['text'][0]
+        assert '0878-9261-4999' in text and 'https://sppg-ponorogo-web.vercel.app/supplier' in text
+        expect(page.get_by_role('button', name='Buka lagi', exact=True).first).to_be_visible()
+        page.reload()
+        expect(page.get_by_label('Templat pesan WhatsApp', exact=True)).to_have_value(re.compile(r'\{bisnis\}'))
         page.goto(BASE + '/laporan')
         expect(page.get_by_role('heading', name='Laporan Oktober & penerima manfaat', exact=True)).to_be_visible()
         expect(page.get_by_label('Tanggal laporan', exact=True)).to_have_value('2026-10-14')
