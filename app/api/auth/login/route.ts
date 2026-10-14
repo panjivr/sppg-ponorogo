@@ -1,3 +1,4 @@
+import { ADMIN_PASSWORD_HASH } from '@/lib/server/admin-config';
 import { sameOrigin } from "@/lib/server/origin";
 import { NextRequest, NextResponse } from 'next/server';
 import { scryptSync, timingSafeEqual } from 'node:crypto';
@@ -13,8 +14,8 @@ export async function POST(request: NextRequest) {
   const attempt = attempts.get(ip) || { count: 0, until: now + 900_000 };
   if (attempt.count >= 5 || attempts.size > 10_000) return new NextResponse(null, { status: 429, headers: { 'Retry-After': '900', 'Cache-Control': 'no-store' } });
   attempt.count++; attempts.set(ip, attempt);
-  const configured = process.env.ADMIN_PASSWORD_HASH;
-  if (!configured || !process.env.ADMIN_SESSION_SECRET || process.env.ADMIN_SESSION_SECRET.length < 32) return NextResponse.json({ error: 'Akses admin belum dikonfigurasi.' }, { status: 503 });
+  const configured = ADMIN_PASSWORD_HASH;
+  if (!configured) return NextResponse.json({ error: 'Akses admin belum dikonfigurasi.' }, { status: 503 });
   if (Number(request.headers.get('content-length') || 0) > 2048) return new NextResponse(null, { status: 413 });
   let password: unknown;
   try { password = (await request.json()).password; } catch { return new NextResponse(null, { status: 400 }); }

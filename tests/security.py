@@ -5,10 +5,14 @@ from http.cookies import SimpleCookie
 ROOT = Path(__file__).resolve().parents[1]
 PORT = 3012
 BASE = f'http://127.0.0.1:{PORT}'
-password = secrets.token_urlsafe(30)
-salt = secrets.token_hex(16)
-hash_value = hashlib.scrypt(password.encode(), salt=salt.encode(), n=16384, r=8, p=1, dklen=64).hex()
-env = {**os.environ, 'ADMIN_PASSWORD_HASH': salt + ':' + hash_value, 'ADMIN_SESSION_SECRET': secrets.token_urlsafe(48), 'NEXT_TELEMETRY_DISABLED': '1'}
+import getpass
+password = os.environ.get('SECURITY_TEST_PASSWORD') or getpass.getpass('Admin password for integration test: ')
+if not password: raise SystemExit('A real test password is required')
+# Obsolete Vercel variables deliberately invalid: repository config must take precedence.
+env = {**os.environ, 'ADMIN_PASSWORD_HASH': 'obsolete', 'ADMIN_SESSION_SECRET': 'obsolete', 'NEXT_TELEMETRY_DISABLED': '1'}
+key_source = (ROOT / 'lib/server/session-secret.generated.ts').read_text()
+build_key = re.search(r'BUILD_SESSION_SECRET = "([^"]+)"', key_source).group(1)
+verifier = re.search(r'ADMIN_PASSWORD_HASH = "([^"]+)"', (ROOT / 'lib/server/admin-config.ts').read_text()).group(1)
 class NoRedirect(urllib.request.HTTPRedirectHandler):
     def redirect_request(self, *args, **kwargs): return None
 opener = urllib.request.build_opener(NoRedirect())
@@ -50,7 +54,7 @@ try:
         assert status == 200 and 'no-store' in headers['Cache-Control'], route
     assert request('/admin', cookie=cookie[:-1] + ('0' if cookie[-1] != '0' else '1'))[0] == 307
     expired = str(int(time.time()) - 1) + ':' + secrets.token_hex(16)
-    signed = hmac.new(env['ADMIN_SESSION_SECRET'].encode(), expired.encode(), hashlib.sha256).hexdigest()
+    signed = hmac.new(build_key.encode(), expired.encode(), hashlib.sha256).hexdigest()
     assert request('/admin', cookie='bp_admin_session=' + expired + '.' + signed)[0] == 307
     assert request('/api/auth/logout', {}, cookie=cookie, origin='https://attacker.example')[0] == 403
     status, headers, _ = request('/api/auth/logout', {}, cookie=cookie)
@@ -68,7 +72,7 @@ try:
     # No confidential seed values or previous hardcoded password in public JS.
     seed = json.loads((ROOT / 'data/sppg.json').read_text())
     pm = json.loads((ROOT / 'data/pm-kabupaten.json').read_text())
-    forbidden = [row['nama'] for row in seed] + [row['nama'] for row in pm if len(row['nama']) > 15] + ['sppg-admin']
+    forbidden = [row['nama'] for row in seed] + [row['nama'] for row in pm if len(row['nama']) > 15] + ['sppg-admin', password, build_key, verifier]
     for asset in (ROOT / '.next/static').rglob('*.js'):
         text = asset.read_text()
         assert not any(value in text for value in forbidden), f'Private data found in {asset}'
@@ -117,10 +121,12 @@ try:
             if request('/')[0] == 200: break
         except OSError: pass
         time.sleep(.1)
-    else: raise AssertionError('Fail-closed server failed to start')
-    assert request('/admin', cookie=cookie)[0] == 307
-    assert request('/api/admin/sppg', cookie=cookie)[0] == 401
-    assert request('/api/auth/login', {'password': password})[0] == 503
-    print('PASS server auth, forged session, old password rejection, protected RSC, CSRF, logout, rate limit, no private JS data, CSP, favicon, mobile catalog.')
+    else: raise AssertionError('No-environment server failed to start')
+    assert request('/admin')[0] == 307
+    assert request('/api/admin/sppg')[0] == 401
+    assert request('/api/auth/login', {'password': password})[0] == 200
+    assert request('/admin', cookie=cookie)[0] == 200
+    assert request('/api/admin/sppg', cookie=cookie)[0] == 200
+    print('PASS server auth, forged session, old password rejection, protected RSC, CSRF, logout, rate limit, no private JS data/password/verifier/signing key, CSP, favicon, mobile catalog, login with empty/obsolete Vercel variables and shared sessions across server restart.')
 finally:
     process.terminate(); process.wait(timeout=10)

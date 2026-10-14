@@ -1,4 +1,4 @@
-> Keamanan: login admin kini diverifikasi server dan database SPPG tidak dikirim tanpa sesi. Konfigurasi admin baru wajib diisi di Vercel; lihat [panduan keamanan](docs/security-remediation.md). Rute internal berada dalam `app/(internal)`.
+> Keamanan: login admin kini diverifikasi server dan database SPPG tidak dikirim tanpa sesi. Konfigurasi login berada pada kode server; kunci sesi dibuat otomatis saat build, tanpa variabel autentikasi Vercel; lihat [panduan keamanan](docs/security-remediation.md). Rute internal berada dalam `app/(internal)`.
 
 # Bumbu Pawon — Katalog Supplier Ponorogo
 

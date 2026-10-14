@@ -11,16 +11,13 @@
 - Favicon ICO tersedia. Label tombol Pilih menyertakan teks yang terlihat. `labu-siam-manisa` dipertahankan: “manisa” adalah alias labu siam dalam katalog, bukan typo.
 - Hero memakai hijau gelap, aksen hangat untuk pemesanan dan tombol “Pesan via WhatsApp”. Tidak ada harga, pelanggan, pengiriman harian, foto gudang, mitra atau testimoni yang dikarang. Footer menjelaskan usaha supplier independen, bukan situs resmi SPPG/BGN.
 
-## Konfigurasi admin wajib
+## Konfigurasi admin dari repository
 
-Tidak ada password produksi atau kunci sesi di repository. Jika konfigurasi belum tersedia, login ditolak dan semua data privat tetap tertutup.
+Login tidak lagi memerlukan `ADMIN_PASSWORD_HASH` atau `ADMIN_SESSION_SECRET` di Vercel. Variabel lama diabaikan. Password yang dipilih pemilik diperiksa server terhadap hash scrypt dalam `lib/server/admin-config.ts` (ditandai server-only); password plaintext tidak berada di repository atau bundle publik.
 
-1. Pada komputer tepercaya, jalankan `python scripts/create-admin-env.py`. Masukkan password baru minimal 16 karakter. Alat menghasilkan `.env.admin.local` dengan izin 0600 dan tidak mencetak nilai kredensial; file diabaikan Git.
-2. Masukkan `ADMIN_PASSWORD_HASH` dan `ADMIN_SESSION_SECRET` dari file tersebut melalui **Vercel Project → Settings → Environment Variables → Production**, kemudian redeploy. Jangan menaruh nilai di chat, kode, atau GitHub Actions log. Simpan password baru di pengelola password.
-3. Pastikan `NEXT_PUBLIC_SITE_URL=https://sppg-ponorogo-web.vercel.app` jika variabel itu sudah dikonfigurasi dengan domain lama.
-4. Untuk mengganti password atau mencabut seluruh sesi, ganti kedua nilai dan redeploy.
+`npm run build` menjalankan prebuild untuk membuat kunci sesi acak 48 byte dalam `lib/server/session-secret.generated.ts`. File ini diabaikan Git dan tidak masuk client bundle. Kunci yang sama dibundel pada fungsi server dan middleware dalam satu deployment sehingga sesi tetap bekerja antar-instance. Build berikutnya membuat kunci baru, mencabut sesi deployment sebelumnya pada versi baru. `npm run dev` mempersiapkan kunci lokal melalui predev. Gunakan build script repository, bukan memanggil next build langsung pada checkout yang belum dipersiapkan.
 
-Persyaratan nama variabel juga disimpan pada draft cloud environment; ini **tidak** mengubah konfigurasi Vercel. Review/save dan publish draft hanya mengaktifkan konfigurasi cloud tersebut.
+Mengganti password: jalankan `python scripts/change-admin-password.py` pada perangkat tepercaya, commit hanya perubahan hash server, lalu deploy melalui branch produksi. Jangan commit file kunci yang dihasilkan atau membuka akses ke build artifact privat. Tidak diperlukan salin Environment Variables Vercel.
 
 ## Penutupan kebocoran historis
 
@@ -28,4 +25,4 @@ Kode baru mencegah pengiriman data tanpa sesi. Ini tidak dapat menarik kembali s
 
 ## Validasi
 
-`npm run build` dan `python tests/security.py` menguji versi produksi dengan kredensial acak sementara yang tidak dicetak: semua tujuh halaman privat dan request RSC ditolak tanpa sesi; API menolak sesi palsu; password lama ditolak; login sah dan database 85 entri bekerja; cookie aman; sesi diubah/kedaluwarsa ditolak; CSRF login/logout ditolak; logout menghilangkan akses; batas percobaan aktif; bundle publik tidak memuat nama seed/password lama; CSP dan interaksi katalog mobile berjalan; favicon tersedia; robots tidak membeberkan rute privat. Pengujian ini tidak menyatakan deployment live atau Lighthouse terbaru sudah diverifikasi.
+`npm run build` dan `python tests/security.py` menguji versi produksi dengan password pengujian yang dimasukkan lewat prompt atau SECURITY_TEST_PASSWORD dan tidak dicetak: semua tujuh halaman privat dan request RSC ditolak tanpa sesi; API menolak sesi palsu; password lama ditolak; login sah dan database 85 entri bekerja; cookie aman; login tanpa variabel Vercel dan dengan variabel lama yang salah; sesi tetap valid setelah proses server restart; sesi diubah/kedaluwarsa ditolak; CSRF login/logout ditolak; logout menghilangkan akses; batas percobaan aktif; bundle publik tidak memuat nama seed, password, hash verifier atau kunci sesi; CSP dan interaksi katalog mobile berjalan; favicon tersedia; robots tidak membeberkan rute privat. Pengujian ini tidak menyatakan deployment live atau Lighthouse terbaru sudah diverifikasi.

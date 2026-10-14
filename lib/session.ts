@@ -1,7 +1,8 @@
+import { BUILD_SESSION_SECRET } from '@/lib/server/session-secret.generated';
 export const SESSION_COOKIE = 'bp_admin_session';
 const encoder = new TextEncoder();
 async function key() {
-  const secret = process.env.ADMIN_SESSION_SECRET;
+  const secret = BUILD_SESSION_SECRET;
   if (!secret || secret.length < 32) return null;
   return crypto.subtle.importKey('raw', encoder.encode(secret), { name: 'HMAC', hash: 'SHA-256' }, false, ['sign', 'verify']);
 }
