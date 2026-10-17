@@ -1,8 +1,8 @@
 import Link from "next/link";
 import Icon from "@/components/Icon";
-import ProductPhoto from "@/components/ProductPhoto";
+import LandingHero from "@/components/LandingHero";
 import { ALAMAT, TELEPON, WA_NUMBER, waLink } from "@/lib/config";
-import { KATALOG, PRODUK } from "@/lib/catalog";
+import { KATALOG } from "@/lib/catalog";
 export const metadata = {
   title: {
     absolute: "Bumbu Pawon — Supplier Sayur & Sembako Ponorogo",
@@ -11,7 +11,6 @@ export const metadata = {
     "Belanja sayur segar, jamur, polo pendem, buah, bumbu dan sembako di Bumbu Pawon, Lor Prapatan Jetis, Ponorogo. Grosir dan eceran, pesan via WhatsApp.",
   alternates: { canonical: "/" },
 };
-const featuredIds = ["kubis", "wortel", "brokoli", "kentang"];
 const faq = [
   {
     q: "Apakah bisa belanja eceran dan grosir?",
@@ -37,83 +36,7 @@ const faq = [
 export default function Home() {
   return (
     <>
-      <section className="hero-section">
-        <div className="site-container hero-grid">
-          <div className="hero-copy">
-            <p className="eyebrow">
-              <span className="eyebrow-dot" />
-              GROSIR & SUPPLIER · PONOROGO
-            </p>
-            <h1>
-              Dari dapur rumah
-              <br />
-              sampai <em>dapur usaha.</em>
-            </h1>
-            <p className="hero-description">
-              Sayur segar, bumbu, buah, hingga sembako. Temukan kebutuhan dapur
-              Anda di <strong>Bumbu Pawon</strong>, lalu pesan dengan
-              mudah lewat WhatsApp.
-            </p>
-            <div className="hero-actions">
-              <Link href="/supplier" className="button button-secondary">
-                Jelajahi katalog <Icon name="arrow" />
-              </Link>
-              <a
-                href={waLink(
-                  "Halo Bumbu Pawon, saya ingin meminta penawaran kebutuhan dapur.",
-                )}
-                className="button button-accent"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Icon name="chat" />
-                Pesan via WhatsApp
-              </a>
-            </div>
-            <div className="hero-location">
-              <Icon name="location" />
-              <span>Lor Prapatan Jetis, Ponorogo</span>
-            </div>
-          </div>
-          <div className="hero-visual">
-            <div className="hero-visual-label">
-              <Icon name="leaf" />
-              <span>DAPUR TERISI, MASAK LEBIH MUDAH</span>
-            </div>
-            <div className="hero-products">
-              {featuredIds.map((id, index) => {
-                const p = PRODUK.find((x) => x.id === id)!;
-                return (
-                  <Link
-                    href={`/supplier/${p.id}`}
-                    key={id}
-                    className={`hero-product hero-product-${index}`}
-                  >
-                    <ProductPhoto
-                      nama={p.nama}
-                      src={p.gambar}
-                      priority={index < 2}
-                    />
-                    <span>
-                      {p.nama}
-                      <Icon name="arrow" />
-                    </span>
-                  </Link>
-                );
-              })}
-            </div>
-            <div className="hero-visual-footer">
-              <span>
-                <strong>{PRODUK.length}</strong> pilihan produk
-              </span>
-              <span>
-                <Icon name="check" />
-                Grosir & eceran
-              </span>
-            </div>
-          </div>
-        </div>
-      </section>
+      <LandingHero />
       <section className="benefit-strip" aria-label="Layanan belanja">
         <div className="site-container benefit-grid">
           {[
